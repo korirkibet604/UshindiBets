@@ -1,8 +1,8 @@
 // hooks/useLiveEvents.js
-import { useState, useEffect, useRef } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useState, useEffect, useRef } from "react";
+import { useSofaScoreApi } from "./useSofaScoreApi";
 
-export const useLiveEvents = (sport = 'football', pollInterval = 15000) => {
+export const useLiveEvents = (sport = "football", pollInterval = 15000) => {
   const { getLiveEvents, loading, error } = useSofaScoreApi();
   const [events, setEvents] = useState(null);
   const intervalRef = useRef();
@@ -10,9 +10,9 @@ export const useLiveEvents = (sport = 'football', pollInterval = 15000) => {
   const fetchLiveEvents = async () => {
     try {
       const liveEvents = await getLiveEvents(sport);
-      setEvents(liveEvents?.events || []);
+      setEvents(liveEvents?.data || []);
     } catch (err) {
-      console.error('Error fetching live events:', err);
+      console.error("Error fetching live events:", err);
     }
   };
 
@@ -50,6 +50,6 @@ export const useLiveEvents = (sport = 'football', pollInterval = 15000) => {
     error,
     refetch: fetchLiveEvents,
     startPolling,
-    stopPolling
+    stopPolling,
   };
 };

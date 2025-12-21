@@ -57,7 +57,8 @@ function Home() {
         const allLeagues = new Map();
 
         // Add leagues from live events
-        if (events) {
+        /*if (events) {
+            console.log(events)
             events.forEach(event => {
                 if (event.tournament && !allLeagues.has(event.tournament.id)) {
                     allLeagues.set(event.tournament.id, {
@@ -89,7 +90,7 @@ function Home() {
                 }
             });
         }
-        setLeagues(Array.from(allLeagues.values()));
+        setLeagues(Array.from(allLeagues.values()));*/
     }, [events, fixtures]);
 
     // Filter fixtures based on status, league, and search
@@ -143,7 +144,7 @@ function Home() {
 
     return (
         <div className="main-content">
-            <Controls
+            {/*<Controls
                 isLive={true}
                 leagues={leagues}
                 selectedDate={selectedDate}
@@ -154,99 +155,84 @@ function Home() {
                 onSearchChange={setSearchQuery}
             />
 
-            {/* Live Matches Section */}
+             Live Matches Section 
             <div className="section-header">
                 <h2><i className="fas fa-bolt"></i> Live Matches</h2>
                 <NavLink to="/live" className="view-all">View All {filteredEvents && filteredEvents.length} <i class="fas fa-solid fa-arrow-right"></i></NavLink>
-            </div>
+            </div>*/}
 
             <div className="matches-grid">
-                {filteredEvents && filteredEvents.length > 0 ? (
-                    filteredEvents.slice(0, 5).map(event => (
-                        <div className="match-card live" key={event.id} onClick={() => navigate(`/live/${event.id}`)}>
-                            <div className="match-status">
-                                <span>{event.tournament.name}</span>
-                                {event.status.type !== "inprogress" ?
-                                    <span>Finished</span> :
-                                    <div className="live-indicator">
-                                        <i className="fas fa-circle"></i> LIVE
-                                    </div>
-                                }
-                            </div>
-                            <div className="match-teams">
-                                <div className="team">
-                                    <img
-                                        src={`https://img.sofascore.com/api/v1/team/${event.homeTeam.id}/image`}
-                                        alt=""
-                                        className="team-logo"
-                                    />
-                                    <div className="team-name">{event.homeTeam.name}</div>
-                                </div>
-                                <div className="match-score">
-                                    <div className="score">
-                                        <span className={
-                                            event.status.type === "inprogress" &&
-                                            ["Started", "1st half", "2nd half"].includes(event.status.description) ? "live-score" : ""
-                                        }>
-                                            {event.homeScore.current}
-                                        </span>
-                                        -
-                                        <span className={
-                                            event.status.type === "inprogress" &&
-                                            ["Started", "1st half", "2nd half"].includes(event.status.description) ? "live-score" : ""
-                                        }>
-                                            {event.awayScore.current}
-                                        </span>
-                                    </div>
-                                    <div className="match-time">
-                                        {event.status.type === "inprogress" ?
-                                            (event.status.description === "Halftime" ? "HT" :
-                                            `${formatElapsedTime(event.time?.currentPeriodStartTimestamp, event.lastPeriod === "period2")}'`)
-                                            : new Date(event.startTimestamp * 1000).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
-                                        }
-                                    </div>
-                                </div>
-                                <div className="team">
-                                    <img
-                                        src={`https://img.sofascore.com/api/v1/team/${event.awayTeam.id}/image`}
-                                        alt=""
-                                        className="team-logo"
-                                    />
-                                    <div className="team-name">{event.awayTeam.name}</div>
-                                </div>
-                            </div>
-                                {
-                                    /*BETTING_FREE ? (DEBUG ?
-                                        (<div className="match-info">
-                                            <span><i className="fas fa-stadium"></i>{game.venue}</span>
-                                            <span><i className="fas fa-user"></i>{game.attendance}</span>
-                                        </div>) :
-                                        (<div className="match-actions">
-                                            <button className="action-btn" onClick={() => navigate('/fixtures')}><i className="fas fa-chart-line"></i> Stats</button>
-                                            <button className="action-btn" onClick={() => navigate('/leagues')}><i className="fas fa-video"></i> Watch</button>
-                                            <button className="action-btn" onClick={(e) => e.preventDefault()}><i className="far fa-bell"></i> Alert</button>
-                                        </div>)) :*/
-
-                                    !BETTING_FREE && (<div className="betting-options">
-                                        <div className="bet-option">
-                                            <div className="option-name">Home</div>
-                                            <div className="option-odds">1.84</div>
-                                        </div>
-                                        <div className="bet-option">
-                                            <div className="option-name">Draw</div>
-                                            <div className="option-odds">3.14</div>
-                                        </div>
-                                        <div className="bet-option">
-                                            <div className="option-name">Away</div>
-                                            <div className="option-odds">2.83</div>
-                                        </div>
-                                    </div>)
-                                }
-                        </div>
-                    ))
-                ) : (
+                {/*filteredEvents && filteredEvents.length > 0 ? (
+                    filteredEvents.slice(0, 5)*/events && events.map(event => (
+    <div className="match-card live" key={event.match_id} onClick={() => navigate(`/live/${event.match_id}`)}>
+        <div className="match-status">
+            <span>{event.competition_name} • {event.category}</span>
+            {event.live_match_status === 1 ?
+                <div className="live-indicator">
+                    <i className="fas fa-circle"></i> LIVE
+                </div>
+                : <span>Not Started</span>
+            }
+        </div>
+        <div className="match-teams">
+            <div className="team">
+                <div className="team-name">{event.home_team}</div>
+            </div>
+            <div className="match-score">
+                <div className="score">
+                    <span>{event.current_score.split(':')[0]}</span>
+                    -
+                    <span>{event.current_score.split(':')[1]}</span>
+                </div>
+                <div className="match-time">
+                    {event.live_match_status === 1 ? 
+                        (event.match_time === "0" ? event.event_status : `${event.match_time}'`)
+                        : new Date(event.start_time).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+                    }
+                </div>
+            </div>
+            <div className="team">
+                <div className="team-name">{event.away_team}</div>
+            </div>
+        </div>
+        <div className="betting-options">
+            {event.odds && event.odds[0]?.odds ? (
+                <>
+                    <div className="bet-option">
+                        <div className="option-name">{event.odds[0].odds[0]?.display || "Home"}</div>
+                        <div className="option-odds">{event.odds[0].odds[0]?.odd_value || event.home_odd}</div>
+                    </div>
+                    <div className="bet-option">
+                        <div className="option-name">{event.odds[0].odds[1]?.display || "Draw"}</div>
+                        <div className="option-odds">{event.odds[0].odds[1]?.odd_value || event.neutral_odd}</div>
+                    </div>
+                    <div className="bet-option">
+                        <div className="option-name">{event.odds[0].odds[2]?.display || "Away"}</div>
+                        <div className="option-odds">{event.odds[0].odds[2]?.odd_value || event.away_odd}</div>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <div className="bet-option">
+                        <div className="option-name">Home</div>
+                        <div className="option-odds">{event.home_odd}</div>
+                    </div>
+                    <div className="bet-option">
+                        <div className="option-name">Draw</div>
+                        <div className="option-odds">{event.neutral_odd}</div>
+                    </div>
+                    <div className="bet-option">
+                        <div className="option-name">Away</div>
+                        <div className="option-odds">{event.away_odd}</div>
+                    </div>
+                </>
+            )}
+        </div>
+    </div>
+))
+                /*) : (
                     <div className="no-matches">No live matches found</div>
-                )}
+                )*/}
             </div>
 
             <div className="section-header">
@@ -264,11 +250,6 @@ function Home() {
                             </div>
                             <div className="match-teams">
                                 <div className="team">
-                                    <img
-                                        src={`https://img.sofascore.com/api/v1/team/${match.homeTeam.id}/image`}
-                                        alt=""
-                                        className="team-logo"
-                                    />
                                     <div className="team-name">{match.homeTeam.name}</div>
                                 </div>
                                 <div className="match-score">
@@ -278,11 +259,6 @@ function Home() {
                                     </div>
                                 </div>
                                 <div className="team">
-                                    <img
-                                        src={`https://img.sofascore.com/api/v1/team/${match.awayTeam.id}/image`}
-                                        alt=""
-                                        className="team-logo"
-                                    />
                                     <div className="team-name">{match.awayTeam.name}</div>
                                 </div>
                             </div>
@@ -311,84 +287,6 @@ function Home() {
                     <div className="no-matches">No upcoming matches found</div>
                 )}
             </div>
-
-            {/* Recent Results Section */}
-            {BETTING_FREE && (
-                <>
-                    <div className="section-header">
-                        <h2><i className="fas fa-history"></i> Recent Results</h2>
-                        <NavLink to="/" className="view-all">View All {recent && recent.length} <i class="fas fa-solid fa-arrow-right"></i></NavLink>
-                    </div>
-
-                    <div className="matches-grid">
-                        {recent && recent.length > 0 ? (
-                            recent.slice(0, 5).map(match => (
-                                <div className="match-card" key={match.id} onClick={() => navigate(`/live/${match.id}`)}>
-                                    <div className="match-status">
-                                        <span>{match.tournament.name}</span>
-                                        <span>
-                                            {(() => {
-                                                const matchDate = new Date(match.startTimestamp * 1000);
-                                                const today = new Date();
-
-                                                if (matchDate.getDate() === today.getDate() &&
-                                                    matchDate.getMonth() === today.getMonth() &&
-                                                    matchDate.getFullYear() === today.getFullYear()) {
-                                                    return `Today, ${matchDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}`;
-                                                } else {
-                                                    return matchDate.toLocaleDateString('en-GB', {
-                                                        day: 'numeric',
-                                                        month: 'short',
-                                                        year: 'numeric'
-                                                    }).replace(/(\d+)/, (day) => {
-                                                        const d = parseInt(day);
-                                                        return d + (d % 10 === 1 && d !== 11 ? 'st' :
-                                                            d % 10 === 2 && d !== 12 ? 'nd' :
-                                                            d % 10 === 3 && d !== 13 ? 'rd' : 'th');
-                                                    }) + `, ${matchDate.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}`;
-                                                }
-                                            })()}
-                                        </span>
-                                    </div>
-                                    <div className="match-teams">
-                                        <div className="team">
-                                            <img
-                                                src={`https://img.sofascore.com/api/v1/team/${match.homeTeam.id}/image`}
-                                                alt=""
-                                                className="team-logo"
-                                            />
-                                            <div className="team-name">{match.homeTeam.name}</div>
-                                        </div>
-                                        <div className="match-score">
-                                            <div className="score">{match.homeScore.display} - {match.awayScore.display}</div>
-                                            <div className="match-time">FT</div>
-                                        </div>
-                                        <div className="team">
-                                            <img
-                                                src={`https://img.sofascore.com/api/v1/team/${match.awayTeam.id}/image`}
-                                                alt=""
-                                                className="team-logo"
-                                            />
-                                            <div className="team-name">{match.awayTeam.name}</div>
-                                        </div>
-                                    </div>
-                                    {/*<div className="match-actions">
-                                    {
-                                        match.hasEventPlayerStatistics && <button className="action-btn"><i className="fas fa-chart-line"></i> Stats</button>
-                                    }
-                                    {
-                                        match.hasGlobalHighlights && <button className="action-btn"><i className="fas fa-video"></i> Highlights</button>
-                                    }
-                                    <button className="action-btn"><i className="fas fa-share-alt"></i> Share</button>
-                                    </div>*/}
-                                </div>
-                            ))
-                        ) : (
-                            <div className="no-matches">No recent matches found</div>
-                        )}
-                    </div>
-                </>
-            )}
 
             {!BETTING_FREE && (
                 <>

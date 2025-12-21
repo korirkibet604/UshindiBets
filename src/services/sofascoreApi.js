@@ -1,24 +1,24 @@
 // services/sofascoreApi.js
-import axios from 'axios';
+import axios from "axios";
 
 // Direct SofaScore API URL
-const BASE_URL = 'https://api.sofascore.com/';
+const BASE_URL = "https://live.betika.com/v1/uo/";
 
 // Create axios instance with base configuration
 const apiClient = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'User-Agent': 'MCP-Server',//'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36'
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    "User-Agent": "MCP-Server", //'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36'
   },
 });
 
 // Request interceptor
 apiClient.interceptors.request.use(
   (config) => {
-    console.log('Making API request to:', config.url);
+    console.log("Making API request to:", config.url);
     return config;
   },
   (error) => Promise.reject(error)
@@ -28,26 +28,31 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error('API Error:', error);
+    console.error("API Error:", error);
     return Promise.reject(error);
   }
 );
 
 // API service methods
 export const sofascoreApi = {
+  //all sports
+  getSports: () => apiClient.get(`/sports`),
+
+  //all games
+  getAllGames: () => axios.get("https://stp.betika.com/games-list"),
   // ===== MATCH ENDPOINTS =====
 
   // Scheduled events by date
   getScheduledEvents: (sport, date) =>
     apiClient.get(`api/v1/sport/${sport}/scheduled-events/${date}`),
-
   // Live events
   getLiveEvents: (sport) =>
-    apiClient.get(`api/v1/sport/${sport}/events/live`),
+    axios.get(
+      `https://live.betika.com/v1/uo/matches?page=1&limit=100&sub_type_id=2,186,340&sport=soccer&sort=1`
+    ),
 
   // Match by ID
-  getMatchById: (matchId) =>
-    apiClient.get(`api/v1/event/${matchId}`),
+  getMatchById: (matchId) => apiClient.get(`api/v1/event/${matchId}`),
 
   // Match statistics
   getMatchStatistics: (matchId) =>
@@ -70,8 +75,7 @@ export const sofascoreApi = {
     apiClient.get(`api/v1/event/${matchId}/lineups`),
 
   // Match odds
-  getMatchOdds: (matchId) =>
-    apiClient.get(`mobile/v4/event/${matchId}/odds`),
+  getMatchOdds: (matchId) => apiClient.get(`mobile/v4/event/${matchId}/odds`),
 
   // Match details
   getMatchDetails: (matchId) =>
@@ -86,8 +90,7 @@ export const sofascoreApi = {
     apiClient.get(`api/v1/event/${matchId}/pregame-form`),
 
   // Event graph
-  getEventGraph: (matchId) =>
-    apiClient.get(`api/v1/event/${matchId}/graph`),
+  getEventGraph: (matchId) => apiClient.get(`api/v1/event/${matchId}/graph`),
 
   // Match highlights
   getMatchHighlights: (matchId) =>
@@ -110,12 +113,10 @@ export const sofascoreApi = {
     apiClient.get(`mobile/v4/team/${teamId}/performance`),
 
   // Team players
-  getTeamPlayers: (teamId) =>
-    apiClient.get(`mobile/v4/team/${teamId}/players`),
+  getTeamPlayers: (teamId) => apiClient.get(`mobile/v4/team/${teamId}/players`),
 
   // Team details
-  getTeamDetails: (teamId) =>
-    apiClient.get(`mobile/v4/team/${teamId}/details`),
+  getTeamDetails: (teamId) => apiClient.get(`mobile/v4/team/${teamId}/details`),
 
   // Team past & next matches
   getTeamLastNext: (teamId) =>
@@ -143,33 +144,48 @@ export const sofascoreApi = {
 
   // Tournament top players
   getTournamentTopPlayers: (tournamentId, seasonId) =>
-    apiClient.get(`mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/top-players`),
+    apiClient.get(
+      `mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/top-players`
+    ),
 
   // Tournament standings
   getTournamentStandings: (tournamentId, seasonId) =>
-    apiClient.get(`mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/standings`),
+    apiClient.get(
+      `mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/standings`
+    ),
 
   // Tournament events/matches
   getTournamentEvents: (tournamentId, seasonId) =>
-    apiClient.get(`mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/events`),
+    apiClient.get(
+      `mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/events`
+    ),
 
   // Cup tree
   getCupTree: (tournamentId, seasonId) =>
-    apiClient.get(`mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/cuptree`),
+    apiClient.get(
+      `mobile/v4/unique-tournament/${tournamentId}/season/${seasonId}/cuptree`
+    ),
 
   // ===== ADDITIONAL ENDPOINTS =====
 
   // Tournament statistics
   getTournamentStatistics: (tournamentId, seasonId) =>
-    apiClient.get(`api/v1/unique-tournament/${tournamentId}/season/${seasonId}/statistics`),
+    apiClient.get(
+      `api/v1/unique-tournament/${tournamentId}/season/${seasonId}/statistics`
+    ),
 
   // Player tournament statistics
   getPlayerTournamentStats: (playerId, tournamentId, seasonId) =>
-    apiClient.get(`api/v1/player/${playerId}/unique-tournament/${tournamentId}/season/${seasonId}/statistics/overall`),
+    apiClient.get(
+      `api/v1/player/${playerId}/unique-tournament/${tournamentId}/season/${seasonId}/statistics/overall`
+    ),
 
   // Tournament statistics with filters
   getTournamentStatsWithFilters: (tournamentId, seasonId, params = {}) =>
-    apiClient.get(`api/v1/unique-tournament/${tournamentId}/season/${seasonId}/statistics`, { params }),
+    apiClient.get(
+      `api/v1/unique-tournament/${tournamentId}/season/${seasonId}/statistics`,
+      { params }
+    ),
 };
 
 export default sofascoreApi;

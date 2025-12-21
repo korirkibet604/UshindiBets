@@ -26,6 +26,7 @@
             gap: 10px;
             font-weight: 600;
             font-size: 1.4rem;
+
             i {
                 color: var(--highlight);
                 background: rgba(255, 77, 109, 0.1);
@@ -41,7 +42,7 @@
                 gap: 6px;
                 font-size: 1.1rem;
 
-                i{
+                i {
                     width: 24px;
                     height: 24px;
                 }
@@ -51,12 +52,13 @@
                 gap: 3px;
                 font-size: 0.7rem;
 
-                i{
+                i {
                     width: 20px;
                     height: 20px;
                 }
             }
         }
+
         .view-all {
             color: var(--highlight);
             text-decoration: none;
@@ -64,12 +66,13 @@
             transition: var(--transition);
             padding: 5px 10px;
             border-radius: 6px;
+
             &:hover {
                 background: rgba(255, 77, 109, 0.1);
             }
 
             @media screen and (max-width: 1501px) {
-                &{
+                & {
                     padding: 3px 5px;
                     border-radius: 4px;
                     font-size: 12px;
@@ -83,6 +86,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 25px;
+
         @media screen and (max-width: 576px) {
             gap: 10px;
             gap: 0;
@@ -90,7 +94,7 @@
         }
 
         @media screen and (max-width: 1501px) {
-            &{
+            & {
                 gap: 5px;
             }
         }
@@ -159,6 +163,7 @@
                     margin-bottom: 8px;
                     font-size: 0.7rem;
                 }
+
                 .live-indicator {
                     background: var(--highlight);
                     color: white;
@@ -174,7 +179,8 @@
 
                 @media screen and (max-width: 576px) {
                     font-size: 0.7em;
-                    .live-indicator{
+
+                    .live-indicator {
                         padding: 2px 4px;
                         font-size: 0.6em;
                     }
@@ -183,7 +189,8 @@
 
                 @media screen and (max-width: 1501px) {
                     font-size: 0.7em;
-                    .live-indicator{
+
+                    .live-indicator {
                         padding: 1.5px 3px;
                         font-size: 0.6em;
                     }
@@ -195,6 +202,7 @@
                 justify-content: space-between;
                 align-items: center;
                 gap: 15px;
+
                 @media screen and (max-width: 576px) {
                     gap: 6px;
                 }
@@ -208,6 +216,7 @@
                     flex-direction: column;
                     align-items: center;
                     flex: 1;
+
                     .team-logo {
                         width: 60px;
                         height: 60px;
@@ -234,6 +243,7 @@
                             margin-bottom: 4px;
                         }
                     }
+
                     .team-name {
                         font-weight: 600;
                         text-align: center;
@@ -266,20 +276,22 @@
                         font-weight: 700;
                         margin: 5px 0;
                         letter-spacing: 1px;
+
                         //font-family: 'Courier New', monospace;
                         .live-score {
                             animation: colorPulse 1.5s infinite;
                         }
 
                         @media screen and (max-width: 576px) {
-                            &{
+                            & {
                                 font-size: 1rem;
                                 font-weight: 600;
                                 margin: 3px 0;
                             }
                         }
+
                         @media screen and (max-width: 1501px) {
-                            &{
+                            & {
                                 font-size: 0.7rem;
                                 font-weight: 600;
                                 margin: 2px 0;
@@ -297,6 +309,7 @@
                     }
                 }
             }
+
             /*two*/
             .match-info {
                 display: flex;
@@ -311,6 +324,7 @@
                 grid-template-columns: repeat(3, 1fr);
                 gap: 10px;
                 margin-top: 10px;
+
                 .bet-option {
                     background: rgba(255, 255, 255, 0.05);
                     border-radius: 6px;
@@ -318,10 +332,12 @@
                     text-align: center;
                     cursor: pointer;
                     transition: var(--transition);
+
                     &:hover {
                         background: rgba(14, 165, 233, 0.2);
                         transform: translateY(-2px);
                     }
+
                     &.selected {
                         background: var(--accent);
                         box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.5);
@@ -340,7 +356,8 @@
 
                     @media screen and (max-width: 576px) {
                         padding: 4px;
-                        .option-name{
+
+                        .option-name {
                             font-size: 0.8rem;
                             margin-bottom: 4px;
                         }
@@ -353,7 +370,8 @@
 
                     @media screen and (max-width: 1501px) {
                         padding: 2px;
-                        .option-name{
+
+                        .option-name {
                             font-size: 0.7rem;
                             margin-bottom: 2px;
                         }
@@ -406,6 +424,7 @@
 
                     @media screen and (max-width: 576px) {
                         padding: 5px 12px;
+
                         i {
                             font-size: 0.6rem;
                         }
@@ -413,6 +432,7 @@
 
                     @media screen and (max-width: 1501px) {
                         padding: 2.5px 6px;
+
                         i {
                             font-size: 0.5rem;
                         }
@@ -509,7 +529,8 @@
         gap: 20px;
     }
 
-    .nav-links, .filter-btn {
+    .nav-links,
+    .filter-btn {
         width: 100%;
         justify-content: center;
     }
@@ -539,16 +560,32 @@
 
 
 @keyframes pulse {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
 }
 
 /* Live animation for demo */
 @keyframes colorPulse {
-    0% { color: var(--text); }
-    50% { color: var(--highlight); }
-    100% { color: var(--text); }
+    0% {
+        color: var(--text);
+    }
+
+    50% {
+        color: var(--highlight);
+    }
+
+    100% {
+        color: var(--text);
+    }
 }
 
 /* Add to your Detail.scss or Home.scss */
@@ -583,7 +620,8 @@
     color: #6c757d;
 }
 
-.polling-toggle-btn, .refresh-btn {
+.polling-toggle-btn,
+.refresh-btn {
     padding: 8px 16px;
     border: 1px solid #007bff;
     background: white;
@@ -594,7 +632,8 @@
     transition: all 0.2s;
 }
 
-.polling-toggle-btn:hover, .refresh-btn:hover {
+.polling-toggle-btn:hover,
+.refresh-btn:hover {
     background: #007bff;
     color: white;
 }
@@ -620,7 +659,15 @@
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.4; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

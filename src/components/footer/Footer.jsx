@@ -1,6 +1,6 @@
 
 import './Footer.scss';
-import { APP_NAME, BETTING_FREE } from '../../constants';
+import { APP_NAME} from '../../constants';
 import { NavLink } from 'react-router-dom';
 
 function Footer() {
@@ -42,13 +42,8 @@ function Footer() {
                 </div>
       </div>
       <div className="copyright">
-      {
-        BETTING_FREE ? <>
-          <p>&copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.</p>
-          </> : <>
-            <p>© {new Date().getFullYear()} {APP_NAME}. Licensed and regulated by the UK Gambling Commission</p>
-          <p>18+ | Gamble responsibly | begambleaware.org</p></>
-      }
+        <p>© {new Date().getFullYear()} {APP_NAME}. Licensed and regulated by the UK Gambling Commission</p>
+        <p>18+ | Gamble responsibly | begambleaware.org</p>
       </div>
     </footer>
   )

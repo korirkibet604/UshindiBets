@@ -1,6 +1,6 @@
 // hooks/useSofaScoreApi.js
-import { useState, useCallback } from 'react';
-import { sofascoreApi } from '../services/sofascoreApi';
+import { useState, useCallback } from "react";
+import { sofascoreApi } from "../services/sofascoreApi";
 
 export const useSofaScoreApi = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,8 @@ export const useSofaScoreApi = () => {
       const response = await apiCall(...params);
       return response.data;
     } catch (err) {
-      const errorMessage = err.response?.data?.message || err.message || 'An error occurred';
+      const errorMessage =
+        err.response?.data?.message || err.message || "An error occurred";
       setError(errorMessage);
       throw err;
     } finally {
@@ -26,15 +27,19 @@ export const useSofaScoreApi = () => {
     error,
     clearError: () => setError(null),
 
+    //betika endpoints
+    getBetikaSports: () => makeRequest(sofascoreApi.getSports),
+
+    getBetikaAllGames: () => makeRequest(sofascoreApi.getAllGames),
+
     // Match endpoints
-    getScheduledEvents: (sport = 'football', date) =>
+    getScheduledEvents: (sport = "football", date) =>
       makeRequest(sofascoreApi.getScheduledEvents, sport, date),
 
-    getLiveEvents: (sport = 'football') =>
+    getLiveEvents: (sport = "football") =>
       makeRequest(sofascoreApi.getLiveEvents, sport),
 
-    getMatchById: (matchId) =>
-      makeRequest(sofascoreApi.getMatchById, matchId),
+    getMatchById: (matchId) => makeRequest(sofascoreApi.getMatchById, matchId),
 
     getMatchStatistics: (matchId) =>
       makeRequest(sofascoreApi.getMatchStatistics, matchId),
@@ -48,8 +53,7 @@ export const useSofaScoreApi = () => {
     getMatchLineups: (matchId) =>
       makeRequest(sofascoreApi.getMatchLineups, matchId),
 
-    getMatchOdds: (matchId) =>
-      makeRequest(sofascoreApi.getMatchOdds, matchId),
+    getMatchOdds: (matchId) => makeRequest(sofascoreApi.getMatchOdds, matchId),
 
     getMatchDetails: (matchId) =>
       makeRequest(sofascoreApi.getMatchDetails, matchId),

@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { BETTING_FREE } from '../../constants'
 import './Controls.scss'
-
-const sports = ["Football", "Basketball", "Tennis", "Cricket", "Esports", "Live Betting", "Promotions"];
+import { useSports } from '../../hooks/useSports';
 
 function Controls({isLive=false, leagues=[], selectedDate, onDateChange, selectedLeague, onLeagueChange, searchQuery, onSearchChange}) {
     const [currentDate, setCurrentDate] = useState(selectedDate || new Date());
     const [showDatePicker, setShowDatePicker] = useState(false);
-    const [selectedSport, setSelectedSport] = useState("football");
+    const { sports, sportsLoading, sportsError } = useSports();
+    const [selectedSport, setSelectedSport] = useState("");
     const [selectedCategory, setSelectedCategory] = useState('all');
 
     // Generate categories from leagues
@@ -99,6 +99,10 @@ function Controls({isLive=false, leagues=[], selectedDate, onDateChange, selecte
         }
     }, [categories]);
 
+    useEffect(() => {
+        sports.length > 0 && setSelectedSport(sports[0].sport_id);
+    }, [sports]);
+
     // Close date picker when clicking outside
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -113,17 +117,17 @@ function Controls({isLive=false, leagues=[], selectedDate, onDateChange, selecte
 
     return (
         <div>
-            {!BETTING_FREE && <div className="filters">
+            <div className="filters">
                 {
                     sports.map(sport => {
                         return (<button
-                            key={sport}
-                            className={`filter-btn ${sport.toLocaleLowerCase() === selectedSport ? "active" : ""}`}
-                            onClick={() => setSelectedSport(sport.toLocaleLowerCase())}
-                        >{sport}</button>)
+                            key={sport.sport_id}
+                            className={`filter-btn ${sport.sport_id === selectedSport ? "active" : ""}`}
+                            onClick={() => setSelectedSport(sport.sport_id)}
+                        >{sport.sport_name}</button>)
                     })
                 }
-            </div>}
+            </div>
             {!isLive && (
                 <div className="date-selector">
                     <div className="date-navigation">

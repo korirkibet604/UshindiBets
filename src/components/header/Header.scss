@@ -2,7 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 10px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: fixed;
     z-index: 100;
@@ -10,30 +10,19 @@ header {
     background: var(--secondary);
     top: 0;
     left: 0;
+    width: 100%;
 
-    @media screen and (max-width: 768px) {
-        padding: 10px 0;
-        margin-bottom: 20px;
-        padding: 10px 0;
-    }
+
     .logo {
         display: flex;
         align-items: center;
         gap: 12px;
         font-size: 1.8rem;
         font-weight: 700;
-
-        @media screen and (max-width: 576px) {
-            font-size: 1.5rem;
-        }
-
-        /*two*//*three*/
         color: var(--text);
         text-decoration: none;
-        i {
-            color: var(--highlight);
 
-            /*two*//*three*/
+        i {
             color: var(--highlight);
             background: rgba(255, 77, 109, 0.1);
             width: 42px;
@@ -42,122 +31,173 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
-
-            /*three*/
-            background: rgba(244, 63, 94, 0.1);
         }
 
         @media screen and (max-width: 576px) {
-            font-size: 1.5rem;
-        }
-    }
-    .nav-links {
-        display: flex;
-        gap: 25px;
-        a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-            transition: var(--transition);
-            &:hover, &.active {
-                color: var(--text);
-            }
-            &.active::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: var(--highlight);
-                border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            display: none;
+
+            i {
+                width: 35px;
+                height: 35px;
             }
         }
     }
 
-    .icon-button {
-        background: none;
-        border: none;
-        color: var(--text-secondary);
-        cursor: pointer;
-        font-size: 16px;
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
+    .header-wrapper {
         display: flex;
         align-items: center;
-        justify-content: center;
-        background: var(--card-bg);
-        margin-top:10px;
-        margin-right: 10px;
+        justify-content: space-evenly;
+        gap: 20px;
+        flex: 1;
 
-        &:hover {
-            background: var(--card-hover);
-            color: var(--text-primary);
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+
+            a {
+                text-decoration: none;
+                color: var(--text-secondary);
+                font-weight: 500;
+                position: relative;
+                padding: 5px 0;
+                transition: var(--transition);
+
+                &:hover,
+                &.active {
+                    color: var(--text);
+                }
+
+                &.active::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background: var(--highlight);
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        /*three*/
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .balance {
+                background: var(--card-bg);
+                padding: 8px 15px;
+                border-radius: 30px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                box-shadow: var(--shadow);
+
+                i {
+                    color: var(--success);
+                }
+            }
+
+            .account-btn {
+                background: var(--accent);
+                border: none;
+                padding: 10px 20px;
+                border-radius: 30px;
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &:hover {
+                    background: #0284c7;
+                    transform: translateY(-2px);
+                }
+            }
+
+            &>.icon-button {
+                display: none;
+            }
+
+            @media screen and (max-width: 576px) {
+                gap: 10px;
+                padding: 0 5px;
+                flex-direction: row-reverse;
+
+                .balance,
+                .account-btn {
+                    padding: 6px 8px;
+                    gap: 5px;
+
+                    i {
+                        font-size: 14px;
+                    }
+                }
+
+                .icon-button {
+                    display: block;
+                }
+            }
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 16px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+
+            &:hover {
+                background: var(--card-hover);
+                color: var(--text-primary);
+            }
         }
     }
+
+
 
     @media screen and (max-width: 768px) {
-        & > .icon-button{
+        padding: 5px 0;
+        margin-bottom: 20px;
+        padding: 10px 0;
+
+        .header-wrapper {
+            width: 100%;
+            position: relative;
+            flex-direction: column-reverse;
+
+            &>.icon-button {
+                display: none;
+            }
+        }
+
+        .nav-links {
+            gap: 15px;
+            width: 100%;
+        }
+
+        /*.icon-button {
             position: absolute;
-            right: 15px;
-            margin-top:10px;
-            top: auto;
+            right: 10px;
+            margin-top: 5px;
+            top: -20px;
             bottom: auto;
-        }
+        }*/
     }
 
-    /*three*/
-    .user-actions {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        .balance {
-            background: var(--card-bg);
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow);
-            i {
-                color: var(--success);
-            }
-
-            @media screen and (max-width: 576px) {
-                padding: 8px 10px;
-
-            }
-        }
-
-        .account-btn {
-            background: var(--accent);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            &:hover {
-                background: #0284c7;
-                transform: translateY(-2px);
-            }
-
-            @media screen and (max-width: 576px) {
-                padding: 10px 15px;
-
-            }
-        }
-
-        @media screen and (max-width: 576px) {
-            gap: 5px;
-        }
-    }
 }
