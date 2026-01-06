@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Direct SofaScore API URL
-const BASE_URL = "https://live.betika.com/v1/uo/";
+const BASE_URL = "https://api.betika.com/v1"; //https://live.betika.com/v1/uo/
 
 // Create axios instance with base configuration
 const apiClient = axios.create({
@@ -40,16 +40,45 @@ export const sofascoreApi = {
 
   //all games
   getAllGames: () => axios.get("https://stp.betika.com/games-list"),
-  // ===== MATCH ENDPOINTS =====
 
-  // Scheduled events by date
-  getScheduledEvents: (sport, date) =>
-    apiClient.get(`api/v1/sport/${sport}/scheduled-events/${date}`),
   // Live events
   getLiveEvents: (sport) =>
     axios.get(
       `https://live.betika.com/v1/uo/matches?page=1&limit=100&sub_type_id=2,186,340&sport=soccer&sort=1`
     ),
+
+  // ===== MATCH ENDPOINTS =====
+
+  // Scheduled events by date
+  getScheduledEvents: (sport, date) =>
+    apiClient.get(
+      `/uo/matches?page=${1}&limit=${10}&tab=&sub_type_id=${
+        (1, 186, 34)
+      }0&sport_id=${14}`
+    ),
+
+  //https://live.betika.com/v1/uo/matches?page=1&limit=100&sub_type_id=2,186,340&sport=soccer&sort=1
+  //https://live.betika.com/v1/uo/matches?page=1&limit=1000&sub_type_id=1,186,340&sport=null&sort=1
+  //https://live.betika.com/v1/uo/match?id=4167144
+  //https://live.betika.com/v1/uo/sports
+  //https://live.betika.com/v1/uo/
+
+  //https://api.betika.com/v1/uo/matches?page=1&limit=10&tab=upcoming&sub_type_id=1,186,340&sport_id=14&sort_id=2&period_id=9&esports=false
+  //https://api.betika.com/v1/uo/matches?page=1&limit=10&tab=&sub_type_id=1,186,340&sport_id=14&tag_id=&sort_id=1&period_id=-1&esports=false
+  //https://api.betika.com/v1/uo/matches?page=1&limit=100&tab=&sub_type_id=1,186,340&sport_id=14&sort_id=1&period_id=-1&esports=false
+  //https://api.betika.com/v1/uo/matches?page=1&limit=10&tab=&sub_type_id=1,186,340&sport_id=14&sort_id=1&period_id=-1&esports=false
+  //https://api.betika.com/v1/uo/matches?page=1&limit=10&tab=&sub_type_id=1,186,340&sport_id=14
+  //https://api.betika.com/v1/uo/match?parent_match_id=57797145
+
+  //https://api.betika.com/v1/sports
+  //https://api.betika.com/v1/uo/sports
+  //https://api.betika.com/v1/uo/sport?page=1&limit=1000&id=14
+
+  //https://api.betika.com/v1/uo/totalMatches
+  //https://stp.betika.com/games-list
+  //https://api.betika.com/v1/jackpot/previous
+  //https://api.betika.com/v1/jackpot/events
+  //https://api.betika.com/v1/jackpot/event?id=2482
 
   // Match by ID
   getMatchById: (matchId) => apiClient.get(`api/v1/event/${matchId}`),

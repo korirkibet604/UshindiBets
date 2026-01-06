@@ -5,230 +5,226 @@
 //example response
 
 const data = {
-    "events": [
-      {
-        "tournament": {
-          "name": "Premier League",
-          "slug": "premier-league",
-          "category": {
-            "name": "England",
-            "slug": "england",
-            "sport": {
-              "name": "Football",
-              "slug": "football",
-              "id": 1
+  events: [
+    {
+      tournament: {
+        name: "Premier League",
+        slug: "premier-league",
+        category: {
+          name: "England",
+          slug: "england",
+          sport: {
+            name: "Football",
+            slug: "football",
+            id: 1,
+          },
+          id: 1,
+          country: {
+            alpha2: "EN",
+            alpha3: "ENG",
+            name: "England",
+            slug: "england",
+          },
+          flag: "england",
+          alpha2: "EN",
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "إنجلترا",
+              hi: "इंग्लैंड",
+              bn: "ইংল্যান্ড",
             },
-            "id": 1,
-            "country": {
-              "alpha2": "EN",
-              "alpha3": "ENG",
-              "name": "England",
-              "slug": "england"
+            shortNameTranslation: {},
+          },
+        },
+        uniqueTournament: {
+          name: "Premier League",
+          slug: "premier-league",
+          category: {
+            name: "England",
+            slug: "england",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
             },
-            "flag": "england",
-            "alpha2": "EN",
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "إنجلترا",
-                "hi": "इंग्लैंड",
-                "bn": "ইংল্যান্ড"
+            id: 1,
+            country: {
+              alpha2: "EN",
+              alpha3: "ENG",
+              name: "England",
+              slug: "england",
+            },
+            flag: "england",
+            alpha2: "EN",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "إنجلترا",
+                hi: "इंग्लैंड",
+                bn: "ইংল্যান্ড",
               },
-              "shortNameTranslation": {}
-            }
-          },
-          "uniqueTournament": {
-            "name": "Premier League",
-            "slug": "premier-league",
-            "category": {
-              "name": "England",
-              "slug": "england",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 1,
-              "country": {
-                "alpha2": "EN",
-                "alpha3": "ENG",
-                "name": "England",
-                "slug": "england"
-              },
-              "flag": "england",
-              "alpha2": "EN",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "إنجلترا",
-                  "hi": "इंग्लैंड",
-                  "bn": "ইংল্যান্ড"
-                },
-                "shortNameTranslation": {}
-              }
+              shortNameTranslation: {},
             },
-            "userCount": 1247430,
-            "hasPerformanceGraphFeature": false,
-            "id": 17,
-            "country": {},
-            "hasEventPlayerStatistics": true,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "الدوري الإنجليزي الممتاز",
-                "hi": "प्रिमियर लीग",
-                "bn": "প্রিমিয়ার লীগ"
-              },
-              "shortNameTranslation": {}
-            }
           },
-          "priority": 699,
-          "id": 1,
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "الدوري الإنجليزي الممتاز",
-              "hi": "प्रिमियर लीग",
-              "bn": "প্রিমিয়ার লীগ"
+          userCount: 1247430,
+          hasPerformanceGraphFeature: false,
+          id: 17,
+          country: {},
+          hasEventPlayerStatistics: true,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "الدوري الإنجليزي الممتاز",
+              hi: "प्रिमियर लीग",
+              bn: "প্রিমিয়ার লীগ",
             },
-            "shortNameTranslation": {}
-          }
-        },
-        "season": {
-          "name": "Premier League 25/26",
-          "year": "25/26",
-          "editor": false,
-          "id": 76986
-        },
-        "roundInfo": {
-          "round": 11
-        },
-        "customId": "Pkb",
-        "status": {
-          "code": 100,
-          "description": "Ended",
-          "type": "finished"
-        },
-        "winnerCode": 1,
-        "homeTeam": {
-          "name": "Aston Villa",
-          "slug": "aston-villa",
-          "shortName": "Aston Villa",
-          "gender": "M",
-          "sport": {
-            "name": "Football",
-            "slug": "football",
-            "id": 1
+            shortNameTranslation: {},
           },
-          "userCount": 872204,
-          "nameCode": "AVL",
-          "disabled": false,
-          "national": false,
-          "type": 0,
-          "id": 40,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
+        },
+        priority: 699,
+        id: 1,
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "الدوري الإنجليزي الممتاز",
+            hi: "प्रिमियर लीग",
+            bn: "প্রিমিয়ার লীগ",
           },
-          "subTeams": [],
-          "teamColors": {
-            "primary": "#374df5",
-            "secondary": "#374df5",
-            "text": "#ffffff"
+          shortNameTranslation: {},
+        },
+      },
+      season: {
+        name: "Premier League 25/26",
+        year: "25/26",
+        editor: false,
+        id: 76986,
+      },
+      roundInfo: {
+        round: 11,
+      },
+      customId: "Pkb",
+      status: {
+        code: 100,
+        description: "Ended",
+        type: "finished",
+      },
+      winnerCode: 1,
+      homeTeam: {
+        name: "Aston Villa",
+        slug: "aston-villa",
+        shortName: "Aston Villa",
+        gender: "M",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        userCount: 872204,
+        nameCode: "AVL",
+        disabled: false,
+        national: false,
+        type: 0,
+        id: 40,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        subTeams: [],
+        teamColors: {
+          primary: "#374df5",
+          secondary: "#374df5",
+          text: "#ffffff",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "أستون فيلا",
+            ru: "Астон Вилла",
+            hi: "एस्टन विला",
+            bn: "অ্যাস্টন ভিলা",
           },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "أستون فيلا",
-              "ru": "Астон Вилла",
-              "hi": "एस्टन विला",
-              "bn": "অ্যাস্টন ভিলা"
-            },
-            "shortNameTranslation": {}
-          }
+          shortNameTranslation: {},
         },
-        "awayTeam": {
-          "name": "Bournemouth",
-          "slug": "bournemouth",
-          "shortName": "Bournemouth",
-          "gender": "M",
-          "sport": {
-            "name": "Football",
-            "slug": "football",
-            "id": 1
+      },
+      awayTeam: {
+        name: "Bournemouth",
+        slug: "bournemouth",
+        shortName: "Bournemouth",
+        gender: "M",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        userCount: 297771,
+        nameCode: "BOU",
+        disabled: false,
+        national: false,
+        type: 0,
+        id: 60,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        subTeams: [],
+        teamColors: {
+          primary: "#374df5",
+          secondary: "#374df5",
+          text: "#ffffff",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "بورنموث",
+            ru: "Борнмут",
+            hi: "बोर्नमाउथ",
+            bn: "বোর্নেমাউথ",
           },
-          "userCount": 297771,
-          "nameCode": "BOU",
-          "disabled": false,
-          "national": false,
-          "type": 0,
-          "id": 60,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
-          },
-          "subTeams": [],
-          "teamColors": {
-            "primary": "#374df5",
-            "secondary": "#374df5",
-            "text": "#ffffff"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "بورنموث",
-              "ru": "Борнмут",
-              "hi": "बोर्नमाउथ",
-              "bn": "বোর্নেমাউথ"
-            },
-            "shortNameTranslation": {}
-          }
+          shortNameTranslation: {},
         },
-        "homeScore": {
-          "current": 4,
-          "display": 4,
-          "period1": 2,
-          "period2": 2,
-          "normaltime": 4
-        },
-        "awayScore": {
-          "current": 0,
-          "display": 0,
-          "period1": 0,
-          "period2": 0,
-          "normaltime": 0
-        },
-        "time": {
-          "injuryTime1": 7,
-          "injuryTime2": 4,
-          "currentPeriodStartTimestamp": 1762700906
-        },
-        "changes": {
-          "changes": [
-            "status.code",
-            "status.description",
-            "status.type"
-          ],
-          "changeTimestamp": 1762703856
-        },
-        "hasGlobalHighlights": false,
-        "hasXg": true,
-        "hasEventPlayerStatistics": true,
-        "hasEventPlayerHeatMap": true,
-        "detailId": 1,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 14025014,
-        "varInProgress": {
-          "homeTeam": false,
-          "awayTeam": false
-        },
-        "slug": "bournemouth-aston-villa",
-        "startTimestamp": 1762696800,
-        "finalResultOnly": false,
-        "feedLocked": false,
-        "isEditor": false
-      }
-    ]
-}
+      },
+      homeScore: {
+        current: 4,
+        display: 4,
+        period1: 2,
+        period2: 2,
+        normaltime: 4,
+      },
+      awayScore: {
+        current: 0,
+        display: 0,
+        period1: 0,
+        period2: 0,
+        normaltime: 0,
+      },
+      time: {
+        injuryTime1: 7,
+        injuryTime2: 4,
+        currentPeriodStartTimestamp: 1762700906,
+      },
+      changes: {
+        changes: ["status.code", "status.description", "status.type"],
+        changeTimestamp: 1762703856,
+      },
+      hasGlobalHighlights: false,
+      hasXg: true,
+      hasEventPlayerStatistics: true,
+      hasEventPlayerHeatMap: true,
+      detailId: 1,
+      crowdsourcingDataDisplayEnabled: false,
+      id: 14025014,
+      varInProgress: {
+        homeTeam: false,
+        awayTeam: false,
+      },
+      slug: "bournemouth-aston-villa",
+      startTimestamp: 1762696800,
+      finalResultOnly: false,
+      feedLocked: false,
+      isEditor: false,
+    },
+  ],
+};
 
 //live events
 //https://api.sofascore.com/api/v1/sport/football/events/live
@@ -237,230 +233,226 @@ const data = {
 //example response
 
 const data1 = {
-    "events": [
-      {
-        "tournament": {
-          "name": "Premier League",
-          "slug": "premier-league",
-          "category": {
-            "name": "England",
-            "slug": "england",
-            "sport": {
-              "name": "Football",
-              "slug": "football",
-              "id": 1
+  events: [
+    {
+      tournament: {
+        name: "Premier League",
+        slug: "premier-league",
+        category: {
+          name: "England",
+          slug: "england",
+          sport: {
+            name: "Football",
+            slug: "football",
+            id: 1,
+          },
+          id: 1,
+          country: {
+            alpha2: "EN",
+            alpha3: "ENG",
+            name: "England",
+            slug: "england",
+          },
+          flag: "england",
+          alpha2: "EN",
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "إنجلترا",
+              hi: "इंग्लैंड",
+              bn: "ইংল্যান্ড",
             },
-            "id": 1,
-            "country": {
-              "alpha2": "EN",
-              "alpha3": "ENG",
-              "name": "England",
-              "slug": "england"
+            shortNameTranslation: {},
+          },
+        },
+        uniqueTournament: {
+          name: "Premier League",
+          slug: "premier-league",
+          category: {
+            name: "England",
+            slug: "england",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
             },
-            "flag": "england",
-            "alpha2": "EN",
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "إنجلترا",
-                "hi": "इंग्लैंड",
-                "bn": "ইংল্যান্ড"
+            id: 1,
+            country: {
+              alpha2: "EN",
+              alpha3: "ENG",
+              name: "England",
+              slug: "england",
+            },
+            flag: "england",
+            alpha2: "EN",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "إنجلترا",
+                hi: "इंग्लैंड",
+                bn: "ইংল্যান্ড",
               },
-              "shortNameTranslation": {}
-            }
-          },
-          "uniqueTournament": {
-            "name": "Premier League",
-            "slug": "premier-league",
-            "category": {
-              "name": "England",
-              "slug": "england",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 1,
-              "country": {
-                "alpha2": "EN",
-                "alpha3": "ENG",
-                "name": "England",
-                "slug": "england"
-              },
-              "flag": "england",
-              "alpha2": "EN",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "إنجلترا",
-                  "hi": "इंग्लैंड",
-                  "bn": "ইংল্যান্ড"
-                },
-                "shortNameTranslation": {}
-              }
+              shortNameTranslation: {},
             },
-            "userCount": 1247430,
-            "hasPerformanceGraphFeature": false,
-            "id": 17,
-            "country": {},
-            "hasEventPlayerStatistics": true,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "الدوري الإنجليزي الممتاز",
-                "hi": "प्रिमियर लीग",
-                "bn": "প্রিমিয়ার লীগ"
-              },
-              "shortNameTranslation": {}
-            }
           },
-          "priority": 699,
-          "id": 1,
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "الدوري الإنجليزي الممتاز",
-              "hi": "प्रिमियर लीग",
-              "bn": "প্রিমিয়ার লীগ"
+          userCount: 1247430,
+          hasPerformanceGraphFeature: false,
+          id: 17,
+          country: {},
+          hasEventPlayerStatistics: true,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "الدوري الإنجليزي الممتاز",
+              hi: "प्रिमियर लीग",
+              bn: "প্রিমিয়ার লীগ",
             },
-            "shortNameTranslation": {}
-          }
-        },
-        "season": {
-          "name": "Premier League 25/26",
-          "year": "25/26",
-          "editor": false,
-          "id": 76986
-        },
-        "roundInfo": {
-          "round": 11
-        },
-        "customId": "Pkb",
-        "status": {
-          "code": 100,
-          "description": "Ended",
-          "type": "finished"
-        },
-        "winnerCode": 1,
-        "homeTeam": {
-          "name": "Aston Villa",
-          "slug": "aston-villa",
-          "shortName": "Aston Villa",
-          "gender": "M",
-          "sport": {
-            "name": "Football",
-            "slug": "football",
-            "id": 1
+            shortNameTranslation: {},
           },
-          "userCount": 872204,
-          "nameCode": "AVL",
-          "disabled": false,
-          "national": false,
-          "type": 0,
-          "id": 40,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
+        },
+        priority: 699,
+        id: 1,
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "الدوري الإنجليزي الممتاز",
+            hi: "प्रिमियर लीग",
+            bn: "প্রিমিয়ার লীগ",
           },
-          "subTeams": [],
-          "teamColors": {
-            "primary": "#374df5",
-            "secondary": "#374df5",
-            "text": "#ffffff"
+          shortNameTranslation: {},
+        },
+      },
+      season: {
+        name: "Premier League 25/26",
+        year: "25/26",
+        editor: false,
+        id: 76986,
+      },
+      roundInfo: {
+        round: 11,
+      },
+      customId: "Pkb",
+      status: {
+        code: 100,
+        description: "Ended",
+        type: "finished",
+      },
+      winnerCode: 1,
+      homeTeam: {
+        name: "Aston Villa",
+        slug: "aston-villa",
+        shortName: "Aston Villa",
+        gender: "M",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        userCount: 872204,
+        nameCode: "AVL",
+        disabled: false,
+        national: false,
+        type: 0,
+        id: 40,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        subTeams: [],
+        teamColors: {
+          primary: "#374df5",
+          secondary: "#374df5",
+          text: "#ffffff",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "أستون فيلا",
+            ru: "Астон Вилла",
+            hi: "एस्टन विला",
+            bn: "অ্যাস্টন ভিলা",
           },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "أستون فيلا",
-              "ru": "Астон Вилла",
-              "hi": "एस्टन विला",
-              "bn": "অ্যাস্টন ভিলা"
-            },
-            "shortNameTranslation": {}
-          }
+          shortNameTranslation: {},
         },
-        "awayTeam": {
-          "name": "Bournemouth",
-          "slug": "bournemouth",
-          "shortName": "Bournemouth",
-          "gender": "M",
-          "sport": {
-            "name": "Football",
-            "slug": "football",
-            "id": 1
+      },
+      awayTeam: {
+        name: "Bournemouth",
+        slug: "bournemouth",
+        shortName: "Bournemouth",
+        gender: "M",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        userCount: 297771,
+        nameCode: "BOU",
+        disabled: false,
+        national: false,
+        type: 0,
+        id: 60,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        subTeams: [],
+        teamColors: {
+          primary: "#374df5",
+          secondary: "#374df5",
+          text: "#ffffff",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "بورنموث",
+            ru: "Борнмут",
+            hi: "बोर्नमाउथ",
+            bn: "বোর্নেমাউথ",
           },
-          "userCount": 297771,
-          "nameCode": "BOU",
-          "disabled": false,
-          "national": false,
-          "type": 0,
-          "id": 60,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
-          },
-          "subTeams": [],
-          "teamColors": {
-            "primary": "#374df5",
-            "secondary": "#374df5",
-            "text": "#ffffff"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "بورنموث",
-              "ru": "Борнмут",
-              "hi": "बोर्नमाउथ",
-              "bn": "বোর্নেমাউথ"
-            },
-            "shortNameTranslation": {}
-          }
+          shortNameTranslation: {},
         },
-        "homeScore": {
-          "current": 4,
-          "display": 4,
-          "period1": 2,
-          "period2": 2,
-          "normaltime": 4
-        },
-        "awayScore": {
-          "current": 0,
-          "display": 0,
-          "period1": 0,
-          "period2": 0,
-          "normaltime": 0
-        },
-        "time": {
-          "injuryTime1": 7,
-          "injuryTime2": 4,
-          "currentPeriodStartTimestamp": 1762700906
-        },
-        "changes": {
-          "changes": [
-            "status.code",
-            "status.description",
-            "status.type"
-          ],
-          "changeTimestamp": 1762703856
-        },
-        "hasGlobalHighlights": false,
-        "hasXg": true,
-        "hasEventPlayerStatistics": true,
-        "hasEventPlayerHeatMap": true,
-        "detailId": 1,
-        "crowdsourcingDataDisplayEnabled": false,
-        "id": 14025014,
-        "varInProgress": {
-          "homeTeam": false,
-          "awayTeam": false
-        },
-        "slug": "bournemouth-aston-villa",
-        "startTimestamp": 1762696800,
-        "finalResultOnly": false,
-        "feedLocked": false,
-        "isEditor": false
-      }
-    ]
-}
+      },
+      homeScore: {
+        current: 4,
+        display: 4,
+        period1: 2,
+        period2: 2,
+        normaltime: 4,
+      },
+      awayScore: {
+        current: 0,
+        display: 0,
+        period1: 0,
+        period2: 0,
+        normaltime: 0,
+      },
+      time: {
+        injuryTime1: 7,
+        injuryTime2: 4,
+        currentPeriodStartTimestamp: 1762700906,
+      },
+      changes: {
+        changes: ["status.code", "status.description", "status.type"],
+        changeTimestamp: 1762703856,
+      },
+      hasGlobalHighlights: false,
+      hasXg: true,
+      hasEventPlayerStatistics: true,
+      hasEventPlayerHeatMap: true,
+      detailId: 1,
+      crowdsourcingDataDisplayEnabled: false,
+      id: 14025014,
+      varInProgress: {
+        homeTeam: false,
+        awayTeam: false,
+      },
+      slug: "bournemouth-aston-villa",
+      startTimestamp: 1762696800,
+      finalResultOnly: false,
+      feedLocked: false,
+      isEditor: false,
+    },
+  ],
+};
 
 //match by id
 //https://api.sofascore.com/api/v1/event/14025014
@@ -469,422 +461,418 @@ const data1 = {
 //example response
 
 const data2 = {
-    "event": {
-      "correctAiInsight": false,
-      "correctHalftimeAiInsight": true,
-      "tournament": {
-        "name": "Premier League",
-        "slug": "premier-league",
-        "category": {
-          "name": "England",
-          "slug": "england",
-          "sport": {
-            "name": "Football",
-            "slug": "football",
-            "id": 1
+  event: {
+    correctAiInsight: false,
+    correctHalftimeAiInsight: true,
+    tournament: {
+      name: "Premier League",
+      slug: "premier-league",
+      category: {
+        name: "England",
+        slug: "england",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        id: 1,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        flag: "england",
+        alpha2: "EN",
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "إنجلترا",
+            hi: "इंग्लैंड",
+            bn: "ইংল্যান্ড",
           },
-          "id": 1,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
+          shortNameTranslation: {},
+        },
+      },
+      uniqueTournament: {
+        name: "Premier League",
+        slug: "premier-league",
+        primaryColorHex: "#3c1c5a",
+        secondaryColorHex: "#f80158",
+        category: {
+          name: "England",
+          slug: "england",
+          sport: {
+            name: "Football",
+            slug: "football",
+            id: 1,
           },
-          "flag": "england",
-          "alpha2": "EN",
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "إنجلترا",
-              "hi": "इंग्लैंड",
-              "bn": "ইংল্যান্ড"
+          id: 1,
+          country: {
+            alpha2: "EN",
+            alpha3: "ENG",
+            name: "England",
+            slug: "england",
+          },
+          flag: "england",
+          alpha2: "EN",
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "إنجلترا",
+              hi: "इंग्लैंड",
+              bn: "ইংল্যান্ড",
             },
-            "shortNameTranslation": {}
-          }
-        },
-        "uniqueTournament": {
-          "name": "Premier League",
-          "slug": "premier-league",
-          "primaryColorHex": "#3c1c5a",
-          "secondaryColorHex": "#f80158",
-          "category": {
-            "name": "England",
-            "slug": "england",
-            "sport": {
-              "name": "Football",
-              "slug": "football",
-              "id": 1
-            },
-            "id": 1,
-            "country": {
-              "alpha2": "EN",
-              "alpha3": "ENG",
-              "name": "England",
-              "slug": "england"
-            },
-            "flag": "england",
-            "alpha2": "EN",
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "إنجلترا",
-                "hi": "इंग्लैंड",
-                "bn": "ইংল্যান্ড"
-              },
-              "shortNameTranslation": {}
-            }
+            shortNameTranslation: {},
           },
-          "userCount": 1247430,
-          "hasRounds": true,
-          "hasPerformanceGraphFeature": true,
-          "id": 17,
-          "country": {},
-          "hasEventPlayerStatistics": true,
-          "displayInverseHomeAwayTeams": false,
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "الدوري الإنجليزي الممتاز",
-              "hi": "प्रिमियर लीग",
-              "bn": "প্রিমিয়ার লীগ"
-            },
-            "shortNameTranslation": {}
-          }
         },
-        "priority": 699,
-        "isGroup": false,
-        "competitionType": 1,
-        "isLive": false,
-        "id": 1,
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "الدوري الإنجليزي الممتاز",
-            "hi": "प्रिमियर लीग",
-            "bn": "প্রিমিয়ার লীগ"
+        userCount: 1247430,
+        hasRounds: true,
+        hasPerformanceGraphFeature: true,
+        id: 17,
+        country: {},
+        hasEventPlayerStatistics: true,
+        displayInverseHomeAwayTeams: false,
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "الدوري الإنجليزي الممتاز",
+            hi: "प्रिमियर लीग",
+            bn: "প্রিমিয়ার লীগ",
           },
-          "shortNameTranslation": {}
-        }
+          shortNameTranslation: {},
+        },
       },
-      "season": {
-        "name": "Premier League 25/26",
-        "year": "25/26",
-        "editor": false,
-        "id": 76986
+      priority: 699,
+      isGroup: false,
+      competitionType: 1,
+      isLive: false,
+      id: 1,
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "الدوري الإنجليزي الممتاز",
+          hi: "प्रिमियर लीग",
+          bn: "প্রিমিয়ার লীগ",
+        },
+        shortNameTranslation: {},
       },
-      "roundInfo": {
-        "round": 11
+    },
+    season: {
+      name: "Premier League 25/26",
+      year: "25/26",
+      editor: false,
+      id: 76986,
+    },
+    roundInfo: {
+      round: 11,
+    },
+    customId: "Pkb",
+    status: {
+      code: 100,
+      description: "Ended",
+      type: "finished",
+    },
+    winnerCode: 1,
+    venue: {
+      city: {
+        name: "Birmingham",
       },
-      "customId": "Pkb",
-      "status": {
-        "code": 100,
-        "description": "Ended",
-        "type": "finished"
+      venueCoordinates: {
+        latitude: 52.509126,
+        longitude: -1.885035,
       },
-      "winnerCode": 1,
-      "venue": {
-        "city": {
-          "name": "Birmingham"
-        },
-        "venueCoordinates": {
-          "latitude": 52.509126,
-          "longitude": -1.885035
-        },
-        "hidden": false,
-        "slug": "villa-park",
-        "name": "Villa Park",
-        "capacity": 42640,
-        "id": 815,
-        "country": {
-          "alpha2": "EN",
-          "alpha3": "ENG",
-          "name": "England",
-          "slug": "england"
-        },
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "فيلا بارك",
-            "hi": "विला पार्क",
-            "bn": "ভিলা পার্ক"
-          },
-          "shortNameTranslation": {}
-        },
-        "stadium": {
-          "name": "Villa Park",
-          "capacity": 42640
-        }
+      hidden: false,
+      slug: "villa-park",
+      name: "Villa Park",
+      capacity: 42640,
+      id: 815,
+      country: {
+        alpha2: "EN",
+        alpha3: "ENG",
+        name: "England",
+        slug: "england",
       },
-      "referee": {
-        "name": "John Brooks",
-        "slug": "brooks-john",
-        "yellowCards": 1140,
-        "redCards": 24,
-        "yellowRedCards": 14,
-        "games": 290,
-        "sport": {
-          "id": 1,
-          "slug": "football",
-          "name": "Football"
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "فيلا بارك",
+          hi: "विला पार्क",
+          bn: "ভিলা পার্ক",
         },
-        "id": 785811,
-        "country": {
-          "alpha2": "EN",
-          "alpha3": "ENG",
-          "name": "England",
-          "slug": "england"
-        },
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "بروكس، جون",
-            "hi": "ब्रूक्स, जॉन",
-            "bn": "ব্রুকস, জন"
-          },
-          "shortNameTranslation": {}
-        }
+        shortNameTranslation: {},
       },
-      "homeTeam": {
-        "name": "Aston Villa",
-        "slug": "aston-villa",
-        "shortName": "Aston Villa",
-        "gender": "M",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "userCount": 872204,
-        "manager": {
-          "name": "Unai Emery",
-          "slug": "unai-emery",
-          "shortName": "U. Emery",
-          "id": 53062,
-          "country": {
-            "alpha2": "ES",
-            "alpha3": "ESP",
-            "name": "Spain",
-            "slug": "spain"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "أوني إيمري",
-              "hi": "उनाई एमेरी",
-              "bn": "উনাই এমেরি"
-            },
-            "shortNameTranslation": {
-              "ar": "أ. إيمري",
-              "hi": "यू. एमेरी",
-              "bn": "ইউ. এমেরি"
-            }
-          }
-        },
-        "venue": {
-          "city": {
-            "name": "Birmingham"
-          },
-          "venueCoordinates": {
-            "latitude": 52.509126,
-            "longitude": -1.885035
-          },
-          "hidden": false,
-          "slug": "villa-park",
-          "name": "Villa Park",
-          "capacity": 42640,
-          "id": 815,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "فيلا بارك",
-              "hi": "विला पार्क",
-              "bn": "ভিলা পার্ক"
-            },
-            "shortNameTranslation": {}
-          },
-          "stadium": {
-            "name": "Villa Park",
-            "capacity": 42640
-          }
-        },
-        "nameCode": "AVL",
-        "class": 4,
-        "disabled": false,
-        "national": false,
-        "type": 0,
-        "id": 40,
-        "country": {
-          "alpha2": "EN",
-          "alpha3": "ENG",
-          "name": "England",
-          "slug": "england"
-        },
-        "fullName": "Aston Villa",
-        "subTeams": [],
-        "teamColors": {
-          "primary": "#670e36",
-          "secondary": "#94bee5",
-          "text": "#94bee5"
-        },
-        "foundationDateTimestamp": -3024345600,
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "أستون فيلا",
-            "ru": "Астон Вилла",
-            "hi": "एस्टन विला",
-            "bn": "অ্যাস্টন ভিলা"
-          },
-          "shortNameTranslation": {}
-        },
-        "timeActive": []
+      stadium: {
+        name: "Villa Park",
+        capacity: 42640,
       },
-      "awayTeam": {
-        "name": "Bournemouth",
-        "slug": "bournemouth",
-        "shortName": "Bournemouth",
-        "gender": "M",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "userCount": 297771,
-        "manager": {
-          "name": "Andoni Iraola",
-          "slug": "andoni-iraola",
-          "shortName": "A. Iraola",
-          "id": 790205,
-          "country": {
-            "alpha2": "ES",
-            "alpha3": "ESP",
-            "name": "Spain",
-            "slug": "spain"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "أندوني إيراولا",
-              "hi": "एंडोनी इरोला",
-              "bn": "আন্দোনি ইরাওলা"
-            },
-            "shortNameTranslation": {
-              "ar": "أ. إيراولا",
-              "hi": "ए. इरोला",
-              "bn": "এ. ইরাওলা"
-            }
-          }
-        },
-        "venue": {
-          "city": {
-            "name": "Bournemouth"
-          },
-          "venueCoordinates": {
-            "latitude": 50.735181,
-            "longitude": -1.838328
-          },
-          "hidden": false,
-          "slug": "vitality-stadium",
-          "name": "Vitality Stadium",
-          "capacity": 11700,
-          "id": 2990,
-          "country": {
-            "alpha2": "EN",
-            "alpha3": "ENG",
-            "name": "England",
-            "slug": "england"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "ملعب فيتاليتي",
-              "hi": "विटैलिटी स्टेडियम",
-              "bn": "ভাইটালিটি স্টেডিয়াম"
-            },
-            "shortNameTranslation": {}
-          },
-          "stadium": {
-            "name": "Vitality Stadium",
-            "capacity": 11700
-          }
-        },
-        "nameCode": "BOU",
-        "class": 0,
-        "disabled": false,
-        "national": false,
-        "type": 0,
-        "id": 60,
-        "country": {
-          "alpha2": "EN",
-          "alpha3": "ENG",
-          "name": "England",
-          "slug": "england"
-        },
-        "fullName": "Bournemouth",
-        "subTeams": [],
-        "teamColors": {
-          "primary": "#000000",
-          "secondary": "#cc0000",
-          "text": "#cc0000"
-        },
-        "foundationDateTimestamp": -2240524800,
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "بورنموث",
-            "ru": "Борнмут",
-            "hi": "बोर्नमाउथ",
-            "bn": "বোর্নেমাউথ"
-          },
-          "shortNameTranslation": {}
-        },
-        "timeActive": []
+    },
+    referee: {
+      name: "John Brooks",
+      slug: "brooks-john",
+      yellowCards: 1140,
+      redCards: 24,
+      yellowRedCards: 14,
+      games: 290,
+      sport: {
+        id: 1,
+        slug: "football",
+        name: "Football",
       },
-      "homeScore": {
-        "current": 4,
-        "display": 4,
-        "period1": 2,
-        "period2": 2,
-        "normaltime": 4
+      id: 785811,
+      country: {
+        alpha2: "EN",
+        alpha3: "ENG",
+        name: "England",
+        slug: "england",
       },
-      "awayScore": {
-        "current": 0,
-        "display": 0,
-        "period1": 0,
-        "period2": 0,
-        "normaltime": 0
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "بروكس، جون",
+          hi: "ब्रूक्स, जॉन",
+          bn: "ব্রুকস, জন",
+        },
+        shortNameTranslation: {},
       },
-      "time": {
-        "injuryTime1": 7,
-        "injuryTime2": 4,
-        "currentPeriodStartTimestamp": 1762700906
+    },
+    homeTeam: {
+      name: "Aston Villa",
+      slug: "aston-villa",
+      shortName: "Aston Villa",
+      gender: "M",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
       },
-      "changes": {
-        "changes": [
-          "status.code",
-          "status.description",
-          "status.type"
-        ],
-        "changeTimestamp": 1762703856
+      userCount: 872204,
+      manager: {
+        name: "Unai Emery",
+        slug: "unai-emery",
+        shortName: "U. Emery",
+        id: 53062,
+        country: {
+          alpha2: "ES",
+          alpha3: "ESP",
+          name: "Spain",
+          slug: "spain",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "أوني إيمري",
+            hi: "उनाई एमेरी",
+            bn: "উনাই এমেরি",
+          },
+          shortNameTranslation: {
+            ar: "أ. إيمري",
+            hi: "यू. एमेरी",
+            bn: "ইউ. এমেরি",
+          },
+        },
       },
-      "hasGlobalHighlights": false,
-      "hasXg": true,
-      "hasEventPlayerStatistics": true,
-      "hasEventPlayerHeatMap": true,
-      "detailId": 1,
-      "crowdsourcingDataDisplayEnabled": false,
-      "id": 14025014,
-      "defaultPeriodCount": 2,
-      "defaultPeriodLength": 45,
-      "defaultOvertimeLength": 15,
-      "varInProgress": {
-        "homeTeam": false,
-        "awayTeam": false
+      venue: {
+        city: {
+          name: "Birmingham",
+        },
+        venueCoordinates: {
+          latitude: 52.509126,
+          longitude: -1.885035,
+        },
+        hidden: false,
+        slug: "villa-park",
+        name: "Villa Park",
+        capacity: 42640,
+        id: 815,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "فيلا بارك",
+            hi: "विला पार्क",
+            bn: "ভিলা পার্ক",
+          },
+          shortNameTranslation: {},
+        },
+        stadium: {
+          name: "Villa Park",
+          capacity: 42640,
+        },
       },
-      "slug": "bournemouth-aston-villa",
-      "currentPeriodStartTimestamp": 1762700906,
-      "startTimestamp": 1762696800,
-      "finalResultOnly": false,
-      "feedLocked": true,
-      "seasonStatisticsType": "overall",
-      "showTotoPromo": true,
-      "isEditor": false
-    }
-}
+      nameCode: "AVL",
+      class: 4,
+      disabled: false,
+      national: false,
+      type: 0,
+      id: 40,
+      country: {
+        alpha2: "EN",
+        alpha3: "ENG",
+        name: "England",
+        slug: "england",
+      },
+      fullName: "Aston Villa",
+      subTeams: [],
+      teamColors: {
+        primary: "#670e36",
+        secondary: "#94bee5",
+        text: "#94bee5",
+      },
+      foundationDateTimestamp: -3024345600,
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "أستون فيلا",
+          ru: "Астон Вилла",
+          hi: "एस्टन विला",
+          bn: "অ্যাস্টন ভিলা",
+        },
+        shortNameTranslation: {},
+      },
+      timeActive: [],
+    },
+    awayTeam: {
+      name: "Bournemouth",
+      slug: "bournemouth",
+      shortName: "Bournemouth",
+      gender: "M",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      userCount: 297771,
+      manager: {
+        name: "Andoni Iraola",
+        slug: "andoni-iraola",
+        shortName: "A. Iraola",
+        id: 790205,
+        country: {
+          alpha2: "ES",
+          alpha3: "ESP",
+          name: "Spain",
+          slug: "spain",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "أندوني إيراولا",
+            hi: "एंडोनी इरोला",
+            bn: "আন্দোনি ইরাওলা",
+          },
+          shortNameTranslation: {
+            ar: "أ. إيراولا",
+            hi: "ए. इरोला",
+            bn: "এ. ইরাওলা",
+          },
+        },
+      },
+      venue: {
+        city: {
+          name: "Bournemouth",
+        },
+        venueCoordinates: {
+          latitude: 50.735181,
+          longitude: -1.838328,
+        },
+        hidden: false,
+        slug: "vitality-stadium",
+        name: "Vitality Stadium",
+        capacity: 11700,
+        id: 2990,
+        country: {
+          alpha2: "EN",
+          alpha3: "ENG",
+          name: "England",
+          slug: "england",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "ملعب فيتاليتي",
+            hi: "विटैलिटी स्टेडियम",
+            bn: "ভাইটালিটি স্টেডিয়াম",
+          },
+          shortNameTranslation: {},
+        },
+        stadium: {
+          name: "Vitality Stadium",
+          capacity: 11700,
+        },
+      },
+      nameCode: "BOU",
+      class: 0,
+      disabled: false,
+      national: false,
+      type: 0,
+      id: 60,
+      country: {
+        alpha2: "EN",
+        alpha3: "ENG",
+        name: "England",
+        slug: "england",
+      },
+      fullName: "Bournemouth",
+      subTeams: [],
+      teamColors: {
+        primary: "#000000",
+        secondary: "#cc0000",
+        text: "#cc0000",
+      },
+      foundationDateTimestamp: -2240524800,
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "بورنموث",
+          ru: "Борнмут",
+          hi: "बोर्नमाउथ",
+          bn: "বোর্নেমাউথ",
+        },
+        shortNameTranslation: {},
+      },
+      timeActive: [],
+    },
+    homeScore: {
+      current: 4,
+      display: 4,
+      period1: 2,
+      period2: 2,
+      normaltime: 4,
+    },
+    awayScore: {
+      current: 0,
+      display: 0,
+      period1: 0,
+      period2: 0,
+      normaltime: 0,
+    },
+    time: {
+      injuryTime1: 7,
+      injuryTime2: 4,
+      currentPeriodStartTimestamp: 1762700906,
+    },
+    changes: {
+      changes: ["status.code", "status.description", "status.type"],
+      changeTimestamp: 1762703856,
+    },
+    hasGlobalHighlights: false,
+    hasXg: true,
+    hasEventPlayerStatistics: true,
+    hasEventPlayerHeatMap: true,
+    detailId: 1,
+    crowdsourcingDataDisplayEnabled: false,
+    id: 14025014,
+    defaultPeriodCount: 2,
+    defaultPeriodLength: 45,
+    defaultOvertimeLength: 15,
+    varInProgress: {
+      homeTeam: false,
+      awayTeam: false,
+    },
+    slug: "bournemouth-aston-villa",
+    currentPeriodStartTimestamp: 1762700906,
+    startTimestamp: 1762696800,
+    finalResultOnly: false,
+    feedLocked: true,
+    seasonStatisticsType: "overall",
+    showTotoPromo: true,
+    isEditor: false,
+  },
+};
 
 //match statistics by match id
 //https://api.sofascore.com/mobile/v4/event/14025014/statistics
@@ -893,523 +881,523 @@ const data2 = {
 //example response
 
 const data3 = {
-    "periods": [
-      {
-        "period": "ALL",
-        "groups": [
-          {
-            "groupName": "Match overview",
-            "statisticsItems": [
-              {
-                "name": "Ball possession",
-                "home": "52%",
-                "away": "48%",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 52,
-                "awayValue": 48
-              },
-              {
-                "name": "Expected goals",
-                "home": "1.33",
-                "away": "2.00",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 1.33,
-                "awayValue": 2
-              },
-              {
-                "name": "Big chances",
-                "home": "2",
-                "away": "3",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 2,
-                "awayValue": 3
-              },
-              {
-                "name": "Total shots",
-                "home": "16",
-                "away": "13",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 16,
-                "awayValue": 13
-              },
-              {
-                "name": "Goalkeeper saves",
-                "home": "4",
-                "away": "4",
-                "compareCode": 3,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 4,
-                "awayValue": 4
-              },
-              {
-                "name": "Corner kicks",
-                "home": "6",
-                "away": "9",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 6,
-                "awayValue": 9
-              },
-              {
-                "name": "Fouls",
-                "home": "8",
-                "away": "20",
-                "compareCode": 2,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 8,
-                "awayValue": 20
-              },
-              {
-                "name": "Passes",
-                "home": "343",
-                "away": "314",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 343,
-                "awayValue": 314
-              },
-              {
-                "name": "Tackles",
-                "home": "20",
-                "away": "16",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 20,
-                "awayValue": 16
-              },
-              {
-                "name": "Free kicks",
-                "home": "20",
-                "away": "7",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 20,
-                "awayValue": 7
-              },
-              {
-                "name": "Yellow cards",
-                "home": "2",
-                "away": "2",
-                "compareCode": 3,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 2,
-                "awayValue": 2
-              }
-            ]
-          },
-          {
-            "groupName": "Shots",
-            "statisticsItems": [
-              {
-                "name": "Total shots",
-                "home": "16",
-                "away": "13",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 16,
-                "awayValue": 13
-              },
-              {
-                "name": "Shots on target",
-                "home": "8",
-                "away": "4",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 8,
-                "awayValue": 4
-              },
-              {
-                "name": "Hit woodwork",
-                "home": "0",
-                "away": "1",
-                "compareCode": 2,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 0,
-                "awayValue": 1
-              },
-              {
-                "name": "Shots off target",
-                "home": "2",
-                "away": "5",
-                "compareCode": 2,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 2,
-                "awayValue": 5
-              },
-              {
-                "name": "Blocked shots",
-                "home": "6",
-                "away": "4",
-                "compareCode": 1,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 6,
-                "awayValue": 4
-              },
-              {
-                "name": "Shots inside box",
-                "home": "10",
-                "away": "7",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 10,
-                "awayValue": 7
-              },
-              {
-                "name": "Shots outside box",
-                "home": "6",
-                "away": "6",
-                "compareCode": 3,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 6,
-                "awayValue": 6
-              }
-            ]
-          },
-          {
-            "groupName": "Attack",
-            "statisticsItems": [
-              {
-                "name": "Big chances missed",
-                "home": "2",
-                "away": "3",
-                "compareCode": 2,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 2,
-                "awayValue": 3
-              },
-              {
-                "name": "Through balls",
-                "home": "0",
-                "away": "2",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 0,
-                "awayValue": 2
-              },
-              {
-                "name": "Touches in penalty area",
-                "home": "26",
-                "away": "14",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 26,
-                "awayValue": 14
-              },
-              {
-                "name": "Fouled in final third",
-                "home": "5",
-                "away": "4",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 5,
-                "awayValue": 4
-              },
-              {
-                "name": "Offsides",
-                "home": "0",
-                "away": "1",
-                "compareCode": 2,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 0,
-                "awayValue": 1
-              }
-            ]
-          },
-          {
-            "groupName": "Passes",
-            "statisticsItems": [
-              {
-                "name": "Accurate passes",
-                "home": "270",
-                "away": "253",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 270,
-                "awayValue": 253
-              },
-              {
-                "name": "Throw-ins",
-                "home": "15",
-                "away": "22",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 15,
-                "awayValue": 22
-              },
-              {
-                "name": "Final third entries",
-                "home": "54",
-                "away": "43",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 54,
-                "awayValue": 43
-              },
-              {
-                "name": "Final third phase",
-                "home": "72/110 (65%)",
-                "away": "69/94 (73%)",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 72,
-                "awayValue": 69,
-                "homeTotal": 110,
-                "awayTotal": 94
-              },
-              {
-                "name": "Long balls",
-                "home": "19/47 (40%)",
-                "away": "16/35 (46%)",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 19,
-                "awayValue": 16,
-                "homeTotal": 47,
-                "awayTotal": 35
-              },
-              {
-                "name": "Crosses",
-                "home": "3/16 (19%)",
-                "away": "2/21 (10%)",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 3,
-                "awayValue": 2,
-                "homeTotal": 16,
-                "awayTotal": 21
-              }
-            ]
-          },
-          {
-            "groupName": "Duels",
-            "statisticsItems": [
-              {
-                "name": "Duels",
-                "home": "53%",
-                "away": "47%",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 53,
-                "awayValue": 47
-              },
-              {
-                "name": "Dispossessed",
-                "home": "11",
-                "away": "6",
-                "compareCode": 1,
-                "statisticsType": "negative",
-                "valueType": "event",
-                "homeValue": 11,
-                "awayValue": 6
-              },
-              {
-                "name": "Ground duels",
-                "home": "43/78 (55%)",
-                "away": "35/78 (45%)",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 43,
-                "awayValue": 35,
-                "homeTotal": 78,
-                "awayTotal": 78
-              },
-              {
-                "name": "Aerial duels",
-                "home": "7/17 (41%)",
-                "away": "10/17 (59%)",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 7,
-                "awayValue": 10,
-                "homeTotal": 17,
-                "awayTotal": 17
-              },
-              {
-                "name": "Dribbles",
-                "home": "4/9 (44%)",
-                "away": "12/26 (46%)",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 4,
-                "awayValue": 12,
-                "homeTotal": 9,
-                "awayTotal": 26
-              }
-            ]
-          },
-          {
-            "groupName": "Defending",
-            "statisticsItems": [
-              {
-                "name": "Tackles won",
-                "home": "65%",
-                "away": "56%",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "team",
-                "homeValue": 13,
-                "awayValue": 9,
-                "homeTotal": 20,
-                "awayTotal": 16
-              },
-              {
-                "name": "Total tackles",
-                "home": "20",
-                "away": "16",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 20,
-                "awayValue": 16
-              },
-              {
-                "name": "Interceptions",
-                "home": "8",
-                "away": "12",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 8,
-                "awayValue": 12
-              },
-              {
-                "name": "Recoveries",
-                "home": "40",
-                "away": "44",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 40,
-                "awayValue": 44
-              },
-              {
-                "name": "Clearances",
-                "home": "22",
-                "away": "35",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 22,
-                "awayValue": 35
-              }
-            ]
-          },
-          {
-            "groupName": "Goalkeeping",
-            "statisticsItems": [
-              {
-                "name": "Total saves",
-                "home": "4",
-                "away": "4",
-                "compareCode": 3,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 4,
-                "awayValue": 4
-              },
-              {
-                "name": "Goals prevented",
-                "home": "1.37",
-                "away": "-1.10",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 1.3733,
-                "awayValue": -1.0955
-              },
-              {
-                "name": "Big saves",
-                "home": "1",
-                "away": "1",
-                "compareCode": 3,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 1,
-                "awayValue": 1
-              },
-              {
-                "name": "High claims",
-                "home": "2",
-                "away": "0",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 2,
-                "awayValue": 0
-              },
-              {
-                "name": "Punches",
-                "home": "0",
-                "away": "1",
-                "compareCode": 2,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 0,
-                "awayValue": 1
-              },
-              {
-                "name": "Goal kicks",
-                "home": "7",
-                "away": "4",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 7,
-                "awayValue": 4
-              },
-              {
-                "name": "Penalty saves",
-                "home": "1",
-                "away": "0",
-                "compareCode": 1,
-                "statisticsType": "positive",
-                "valueType": "event",
-                "homeValue": 1,
-                "awayValue": 0
-              }
-            ]
-          }
-        ]
-      }
-    ]
-}
+  periods: [
+    {
+      period: "ALL",
+      groups: [
+        {
+          groupName: "Match overview",
+          statisticsItems: [
+            {
+              name: "Ball possession",
+              home: "52%",
+              away: "48%",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 52,
+              awayValue: 48,
+            },
+            {
+              name: "Expected goals",
+              home: "1.33",
+              away: "2.00",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 1.33,
+              awayValue: 2,
+            },
+            {
+              name: "Big chances",
+              home: "2",
+              away: "3",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 2,
+              awayValue: 3,
+            },
+            {
+              name: "Total shots",
+              home: "16",
+              away: "13",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 16,
+              awayValue: 13,
+            },
+            {
+              name: "Goalkeeper saves",
+              home: "4",
+              away: "4",
+              compareCode: 3,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 4,
+              awayValue: 4,
+            },
+            {
+              name: "Corner kicks",
+              home: "6",
+              away: "9",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 6,
+              awayValue: 9,
+            },
+            {
+              name: "Fouls",
+              home: "8",
+              away: "20",
+              compareCode: 2,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 8,
+              awayValue: 20,
+            },
+            {
+              name: "Passes",
+              home: "343",
+              away: "314",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 343,
+              awayValue: 314,
+            },
+            {
+              name: "Tackles",
+              home: "20",
+              away: "16",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 20,
+              awayValue: 16,
+            },
+            {
+              name: "Free kicks",
+              home: "20",
+              away: "7",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 20,
+              awayValue: 7,
+            },
+            {
+              name: "Yellow cards",
+              home: "2",
+              away: "2",
+              compareCode: 3,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 2,
+              awayValue: 2,
+            },
+          ],
+        },
+        {
+          groupName: "Shots",
+          statisticsItems: [
+            {
+              name: "Total shots",
+              home: "16",
+              away: "13",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 16,
+              awayValue: 13,
+            },
+            {
+              name: "Shots on target",
+              home: "8",
+              away: "4",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 8,
+              awayValue: 4,
+            },
+            {
+              name: "Hit woodwork",
+              home: "0",
+              away: "1",
+              compareCode: 2,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 0,
+              awayValue: 1,
+            },
+            {
+              name: "Shots off target",
+              home: "2",
+              away: "5",
+              compareCode: 2,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 2,
+              awayValue: 5,
+            },
+            {
+              name: "Blocked shots",
+              home: "6",
+              away: "4",
+              compareCode: 1,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 6,
+              awayValue: 4,
+            },
+            {
+              name: "Shots inside box",
+              home: "10",
+              away: "7",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 10,
+              awayValue: 7,
+            },
+            {
+              name: "Shots outside box",
+              home: "6",
+              away: "6",
+              compareCode: 3,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 6,
+              awayValue: 6,
+            },
+          ],
+        },
+        {
+          groupName: "Attack",
+          statisticsItems: [
+            {
+              name: "Big chances missed",
+              home: "2",
+              away: "3",
+              compareCode: 2,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 2,
+              awayValue: 3,
+            },
+            {
+              name: "Through balls",
+              home: "0",
+              away: "2",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 0,
+              awayValue: 2,
+            },
+            {
+              name: "Touches in penalty area",
+              home: "26",
+              away: "14",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 26,
+              awayValue: 14,
+            },
+            {
+              name: "Fouled in final third",
+              home: "5",
+              away: "4",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 5,
+              awayValue: 4,
+            },
+            {
+              name: "Offsides",
+              home: "0",
+              away: "1",
+              compareCode: 2,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 0,
+              awayValue: 1,
+            },
+          ],
+        },
+        {
+          groupName: "Passes",
+          statisticsItems: [
+            {
+              name: "Accurate passes",
+              home: "270",
+              away: "253",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 270,
+              awayValue: 253,
+            },
+            {
+              name: "Throw-ins",
+              home: "15",
+              away: "22",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 15,
+              awayValue: 22,
+            },
+            {
+              name: "Final third entries",
+              home: "54",
+              away: "43",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 54,
+              awayValue: 43,
+            },
+            {
+              name: "Final third phase",
+              home: "72/110 (65%)",
+              away: "69/94 (73%)",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 72,
+              awayValue: 69,
+              homeTotal: 110,
+              awayTotal: 94,
+            },
+            {
+              name: "Long balls",
+              home: "19/47 (40%)",
+              away: "16/35 (46%)",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 19,
+              awayValue: 16,
+              homeTotal: 47,
+              awayTotal: 35,
+            },
+            {
+              name: "Crosses",
+              home: "3/16 (19%)",
+              away: "2/21 (10%)",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 3,
+              awayValue: 2,
+              homeTotal: 16,
+              awayTotal: 21,
+            },
+          ],
+        },
+        {
+          groupName: "Duels",
+          statisticsItems: [
+            {
+              name: "Duels",
+              home: "53%",
+              away: "47%",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 53,
+              awayValue: 47,
+            },
+            {
+              name: "Dispossessed",
+              home: "11",
+              away: "6",
+              compareCode: 1,
+              statisticsType: "negative",
+              valueType: "event",
+              homeValue: 11,
+              awayValue: 6,
+            },
+            {
+              name: "Ground duels",
+              home: "43/78 (55%)",
+              away: "35/78 (45%)",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 43,
+              awayValue: 35,
+              homeTotal: 78,
+              awayTotal: 78,
+            },
+            {
+              name: "Aerial duels",
+              home: "7/17 (41%)",
+              away: "10/17 (59%)",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 7,
+              awayValue: 10,
+              homeTotal: 17,
+              awayTotal: 17,
+            },
+            {
+              name: "Dribbles",
+              home: "4/9 (44%)",
+              away: "12/26 (46%)",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 4,
+              awayValue: 12,
+              homeTotal: 9,
+              awayTotal: 26,
+            },
+          ],
+        },
+        {
+          groupName: "Defending",
+          statisticsItems: [
+            {
+              name: "Tackles won",
+              home: "65%",
+              away: "56%",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "team",
+              homeValue: 13,
+              awayValue: 9,
+              homeTotal: 20,
+              awayTotal: 16,
+            },
+            {
+              name: "Total tackles",
+              home: "20",
+              away: "16",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 20,
+              awayValue: 16,
+            },
+            {
+              name: "Interceptions",
+              home: "8",
+              away: "12",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 8,
+              awayValue: 12,
+            },
+            {
+              name: "Recoveries",
+              home: "40",
+              away: "44",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 40,
+              awayValue: 44,
+            },
+            {
+              name: "Clearances",
+              home: "22",
+              away: "35",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 22,
+              awayValue: 35,
+            },
+          ],
+        },
+        {
+          groupName: "Goalkeeping",
+          statisticsItems: [
+            {
+              name: "Total saves",
+              home: "4",
+              away: "4",
+              compareCode: 3,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 4,
+              awayValue: 4,
+            },
+            {
+              name: "Goals prevented",
+              home: "1.37",
+              away: "-1.10",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 1.3733,
+              awayValue: -1.0955,
+            },
+            {
+              name: "Big saves",
+              home: "1",
+              away: "1",
+              compareCode: 3,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 1,
+              awayValue: 1,
+            },
+            {
+              name: "High claims",
+              home: "2",
+              away: "0",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 2,
+              awayValue: 0,
+            },
+            {
+              name: "Punches",
+              home: "0",
+              away: "1",
+              compareCode: 2,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 0,
+              awayValue: 1,
+            },
+            {
+              name: "Goal kicks",
+              home: "7",
+              away: "4",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 7,
+              awayValue: 4,
+            },
+            {
+              name: "Penalty saves",
+              home: "1",
+              away: "0",
+              compareCode: 1,
+              statisticsType: "positive",
+              valueType: "event",
+              homeValue: 1,
+              awayValue: 0,
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 //match incidents
 //https://api.sofascore.com/api/v1/event/14025014/incidents
@@ -1418,429 +1406,428 @@ const data3 = {
 //example response
 
 const data4 = {
-    "incidents": [
-      {
-        "text": "FT",
-        "homeScore": 4,
-        "awayScore": 0,
-        "isLive": false,
-        "time": 90,
-        "addedTime": 999,
-        "timeSeconds": 5400,
-        "reversedPeriodTime": 1,
-        "reversedPeriodTimeSeconds": 0,
-        "periodTimeSeconds": 2700,
-        "incidentType": "period"
-      },
-      {
-        "length": 4,
-        "time": 90,
-        "addedTime": 0,
-        "reversedPeriodTime": 1,
-        "incidentType": "injuryTime"
-      },
-      {
-        "playerIn": {
-          "name": "Evann Guessand",
-          "firstName": "",
-          "lastName": "",
-          "slug": "evann-guessand",
-          "shortName": "E. Guessand",
-          "position": "F",
-          "jerseyNumber": "29",
-          "height": 185,
-          "userCount": 3196,
-          "gender": "M",
-          "id": 930245,
-          "marketValueCurrency": "EUR",
-          "dateOfBirthTimestamp": 993945600,
-          "proposedMarketValueRaw": {
-            "value": 29000000,
-            "currency": "EUR"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "إيفان غيساند",
-              "hi": "इवान गेसैंड",
-              "bn": "ইভান গেসান্ড"
-            },
-            "shortNameTranslation": {
-              "ar": "إ. غيساند",
-              "hi": "ई. गेसैंड",
-              "bn": "ই. গেসান্ড"
-            }
-          }
-        },
-        "playerOut": {
-          "name": "Morgan Rogers",
-          "firstName": "",
-          "lastName": "",
-          "slug": "morgan-rogers",
-          "shortName": "M. Rogers",
-          "position": "M",
-          "jerseyNumber": "27",
-          "height": 187,
-          "userCount": 7980,
-          "gender": "M",
-          "sofascoreId": "mrogers",
-          "id": 948261,
-          "marketValueCurrency": "EUR",
-          "dateOfBirthTimestamp": 1027641600,
-          "proposedMarketValueRaw": {
-            "value": 62000000,
-            "currency": "EUR"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "مورغان روجرز",
-              "hi": "मॉर्गन रोजर्स",
-              "bn": "মরগান রজার্স"
-            },
-            "shortNameTranslation": {
-              "ar": "م. روجرز",
-              "hi": "एम. रोजर्स",
-              "bn": "এম. রজার্স"
-            }
-          }
-        },
-        "id": 125109931,
-        "time": 86,
-        "injury": false,
-        "isHome": true,
-        "incidentClass": "regular",
-        "reversedPeriodTime": 5,
-        "incidentType": "substitution"
-      },
-      {
-        "homeScore": 4,
-        "awayScore": 0,
-        "player": {
-          "name": "Donyell Malen",
-          "firstName": "",
-          "lastName": "",
-          "slug": "donyell-malen",
-          "shortName": "D. Malen",
-          "position": "F",
-          "jerseyNumber": "17",
-          "height": 176,
-          "userCount": 8606,
-          "gender": "M",
-          "sofascoreId": "donyellmalen",
-          "id": 803039,
-          "marketValueCurrency": "EUR",
-          "dateOfBirthTimestamp": 916704000,
-          "proposedMarketValueRaw": {
-            "value": 27000000,
-            "currency": "EUR"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "دونيل مالين",
-              "hi": "डोनियेल मालेन",
-              "bn": "ডনিএল ম্যালেন"
-            },
-            "shortNameTranslation": {
-              "ar": "د. مالين",
-              "hi": "डी. मालेन",
-              "bn": "ডি. ম্যালেন"
-            }
-          }
-        },
-        "assist1": {
-          "name": "Youri Tielemans",
-          "firstName": "",
-          "lastName": "",
-          "slug": "youri-tielemans",
-          "shortName": "Y. Tielemans",
-          "position": "M",
-          "jerseyNumber": "8",
-          "height": 177,
-          "userCount": 9762,
-          "gender": "M",
-          "sofascoreId": "youritielemans",
-          "id": 331737,
-          "marketValueCurrency": "EUR",
-          "dateOfBirthTimestamp": 862963200,
-          "proposedMarketValueRaw": {
-            "value": 41000000,
-            "currency": "EUR"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "يوري تيليمانس",
-              "hi": "यूरी टिएलमान्स",
-              "bn": "ইউরি টিএলেম্যান্স"
-            },
-            "shortNameTranslation": {
-              "ar": "ي. تيليمانس",
-              "hi": "वाई. टिएलमान्स",
-              "bn": "ওয়াই. টিএলেম্যান্স"
-            }
-          }
-        },
-        "footballPassingNetworkAction": [
-          {
-            "player": {
-              "name": "Lucas Digne",
-              "slug": "lucas-digne",
-              "shortName": "L. Digne",
-              "position": "D",
-              "jerseyNumber": "12",
-              "height": 178,
-              "userCount": 4466,
-              "gender": "M",
-              "sofascoreId": "LDigne",
-              "id": 96538,
-              "marketValueCurrency": "EUR",
-              "dateOfBirthTimestamp": 743126400,
-              "proposedMarketValueRaw": {
-                "value": 9200000,
-                "currency": "EUR"
-              },
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "لوكاس دين",
-                  "hi": "लुकास डिग्ने",
-                  "bn": "লুকাস ডিগনে"
-                },
-                "shortNameTranslation": {
-                  "ar": "ل. دين",
-                  "hi": "एल. डिग्ने",
-                  "bn": "এল. ডিগনে"
-                }
-              }
-            },
-            "eventType": "corner",
-            "time": 82,
-            "playerCoordinates": {
-              "x": 99.4,
-              "y": 0.7
-            },
-            "passEndCoordinates": {
-              "x": 94.9,
-              "y": 7.2
-            },
-            "isHome": true
-          }
-        ],
-        "id": 326940733,
-        "time": 82,
-        "isHome": true,
-        "incidentClass": "regular",
-        "reversedPeriodTime": 9,
-        "incidentType": "goal"
-      },
-      {
-        "player": {
-          "name": "Adrien Truffert",
-          "firstName": "",
-          "lastName": "",
-          "slug": "truffert-adrien",
-          "shortName": "A. Truffert",
-          "position": "M",
-          "jerseyNumber": "3",
-          "height": 176,
-          "userCount": 1426,
-          "gender": "M",
-          "id": 999028,
-          "marketValueCurrency": "EUR",
-          "dateOfBirthTimestamp": 1006214400,
-          "proposedMarketValueRaw": {
-            "value": 13900000,
-            "currency": "EUR"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "تروفيرت، أدريان",
-              "hi": "ट्रफर्ट, एड्रियन",
-              "bn": "ট্রুফার্ট, অ্যাড্রিয়েন"
-            },
-            "shortNameTranslation": {
-              "ar": "أ. تروفيرت",
-              "hi": "ए. ट्रफर्ट",
-              "bn": "এ. ট্রুফার্ট"
-            }
-          }
-        },
-        "playerName": "Adrien Truffert",
-        "reason": "Foul",
-        "rescinded": false,
-        "id": 124318234,
-        "time": 38,
-        "isHome": false,
-        "incidentClass": "yellow",
-        "reversedPeriodTime": 8,
-        "incidentType": "card"
-      },
-      {
-        "text": "HT",
-        "homeScore": 2,
-        "awayScore": 0,
-        "isLive": false,
-        "time": 45,
-        "addedTime": 999,
-        "timeSeconds": 2700,
-        "reversedPeriodTime": 1,
-        "reversedPeriodTimeSeconds": 0,
-        "periodTimeSeconds": 2700,
-        "incidentType": "period"
-      },
-      {
-        "homeScore": 1,
-        "awayScore": 0,
-        "player": {
-          "name": "Emiliano Buendía",
-          "slug": "emiliano-buendia",
-          "shortName": "E. Buendía",
-          "position": "M",
-          "jerseyNumber": "10",
-          "height": 170,
-          "userCount": 6167,
-          "gender": "M",
-          "sofascoreId": "EM10Buendia",
-          "id": 783126,
-          "marketValueCurrency": "EUR",
-          "dateOfBirthTimestamp": 851472000,
-          "proposedMarketValueRaw": {
-            "value": 13700000,
-            "currency": "EUR"
-          },
-          "fieldTranslations": {
-            "nameTranslation": {
-              "ar": "إميليانو بوينديا",
-              "hi": "एमिलियानो बुएंडिया",
-              "bn": "এমিলিয়ানো বুয়েন্দিয়া"
-            },
-            "shortNameTranslation": {
-              "ar": "إ. بوينديا",
-              "hi": "ई. बुएंडिया",
-              "bn": "ই. বুয়েন্দিয়া"
-            }
-          }
-        },
-        "footballPassingNetworkAction": [
-          {
-            "player": {
-              "name": "Emiliano Buendía",
-              "slug": "emiliano-buendia",
-              "shortName": "E. Buendía",
-              "position": "M",
-              "jerseyNumber": "10",
-              "height": 170,
-              "userCount": 6167,
-              "gender": "M",
-              "sofascoreId": "EM10Buendia",
-              "id": 783126,
-              "marketValueCurrency": "EUR",
-              "dateOfBirthTimestamp": 851472000,
-              "proposedMarketValueRaw": {
-                "value": 13700000,
-                "currency": "EUR"
-              },
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "إميليانو بوينديا",
-                  "hi": "एमिलियानो बुएंडिया",
-                  "bn": "এমিলিয়ানো বুয়েন্দিয়া"
-                },
-                "shortNameTranslation": {
-                  "ar": "إ. بوينديا",
-                  "hi": "ई. बुएंडिया",
-                  "bn": "ই. বুয়েন্দিয়া"
-                }
-              }
-            },
-            "eventType": "goal",
-            "bodyPart": "right-foot",
-            "time": 28,
-            "playerCoordinates": {
-              "x": 80.9,
-              "y": 53.8
-            },
-            "gkCoordinates": {
-              "x": 98.8,
-              "y": 49.3
-            },
-            "goalShotCoordinates": {
-              "x": 100,
-              "y": 52.6
-            },
-            "goalMouthCoordinates": {
-              "x": 36.02,
-              "y": 47.33
-            },
-            "goalkeeper": {
-              "name": "Đorđe Petrović",
-              "slug": "dorde-petrovic",
-              "shortName": "Đ. Petrović",
-              "position": "G",
-              "jerseyNumber": "1",
-              "height": 194,
-              "userCount": 9622,
-              "gender": "M",
-              "sofascoreId": "dj.petrovic12",
-              "id": 882604,
-              "marketValueCurrency": "EUR",
-              "dateOfBirthTimestamp": 939340800,
-              "proposedMarketValueRaw": {
-                "value": 29000000,
-                "currency": "EUR"
-              },
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "دوردي بتروفيتش",
-                  "hi": "डोरे पेट्रोविक",
-                  "bn": "ডোরে পেট্রোভিচ"
-                },
-                "shortNameTranslation": {
-                  "ar": "د. بتروفيتش",
-                  "hi": "डी. पेट्रोविक",
-                  "bn": "ডি. পেট্রোভিচ"
-                }
-              }
-            },
-            "isHome": true,
-            "goalType": "regular"
-          }
-        ],
-        "id": 326931696,
-        "time": 28,
-        "isHome": true,
-        "incidentClass": "regular",
-        "reversedPeriodTime": 18,
-        "incidentType": "goal"
-      }
-    ],
-    "home": {
-      "goalkeeperColor": {
-        "primary": "4b4b4d",
-        "number": "cbde8d",
-        "outline": "4b4b4d",
-        "fancyNumber": "ffffff"
-      },
-      "playerColor": {
-        "primary": "88002d",
-        "number": "ffffff",
-        "outline": "88002d",
-        "fancyNumber": "ffffff"
-      }
+  incidents: [
+    {
+      text: "FT",
+      homeScore: 4,
+      awayScore: 0,
+      isLive: false,
+      time: 90,
+      addedTime: 999,
+      timeSeconds: 5400,
+      reversedPeriodTime: 1,
+      reversedPeriodTimeSeconds: 0,
+      periodTimeSeconds: 2700,
+      incidentType: "period",
     },
-    "away": {
-      "goalkeeperColor": {
-        "primary": "d6f148",
-        "number": "020300",
-        "outline": "d6f148",
-        "fancyNumber": "222226"
+    {
+      length: 4,
+      time: 90,
+      addedTime: 0,
+      reversedPeriodTime: 1,
+      incidentType: "injuryTime",
+    },
+    {
+      playerIn: {
+        name: "Evann Guessand",
+        firstName: "",
+        lastName: "",
+        slug: "evann-guessand",
+        shortName: "E. Guessand",
+        position: "F",
+        jerseyNumber: "29",
+        height: 185,
+        userCount: 3196,
+        gender: "M",
+        id: 930245,
+        marketValueCurrency: "EUR",
+        dateOfBirthTimestamp: 993945600,
+        proposedMarketValueRaw: {
+          value: 29000000,
+          currency: "EUR",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "إيفان غيساند",
+            hi: "इवान गेसैंड",
+            bn: "ইভান গেসান্ড",
+          },
+          shortNameTranslation: {
+            ar: "إ. غيساند",
+            hi: "ई. गेसैंड",
+            bn: "ই. গেসান্ড",
+          },
+        },
       },
-      "playerColor": {
-        "primary": "e7bacc",
-        "number": "203f9d",
-        "outline": "e7bacc",
-        "fancyNumber": "222226"
-      }
-    }
-}
-
+      playerOut: {
+        name: "Morgan Rogers",
+        firstName: "",
+        lastName: "",
+        slug: "morgan-rogers",
+        shortName: "M. Rogers",
+        position: "M",
+        jerseyNumber: "27",
+        height: 187,
+        userCount: 7980,
+        gender: "M",
+        sofascoreId: "mrogers",
+        id: 948261,
+        marketValueCurrency: "EUR",
+        dateOfBirthTimestamp: 1027641600,
+        proposedMarketValueRaw: {
+          value: 62000000,
+          currency: "EUR",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "مورغان روجرز",
+            hi: "मॉर्गन रोजर्स",
+            bn: "মরগান রজার্স",
+          },
+          shortNameTranslation: {
+            ar: "م. روجرز",
+            hi: "एम. रोजर्स",
+            bn: "এম. রজার্স",
+          },
+        },
+      },
+      id: 125109931,
+      time: 86,
+      injury: false,
+      isHome: true,
+      incidentClass: "regular",
+      reversedPeriodTime: 5,
+      incidentType: "substitution",
+    },
+    {
+      homeScore: 4,
+      awayScore: 0,
+      player: {
+        name: "Donyell Malen",
+        firstName: "",
+        lastName: "",
+        slug: "donyell-malen",
+        shortName: "D. Malen",
+        position: "F",
+        jerseyNumber: "17",
+        height: 176,
+        userCount: 8606,
+        gender: "M",
+        sofascoreId: "donyellmalen",
+        id: 803039,
+        marketValueCurrency: "EUR",
+        dateOfBirthTimestamp: 916704000,
+        proposedMarketValueRaw: {
+          value: 27000000,
+          currency: "EUR",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "دونيل مالين",
+            hi: "डोनियेल मालेन",
+            bn: "ডনিএল ম্যালেন",
+          },
+          shortNameTranslation: {
+            ar: "د. مالين",
+            hi: "डी. मालेन",
+            bn: "ডি. ম্যালেন",
+          },
+        },
+      },
+      assist1: {
+        name: "Youri Tielemans",
+        firstName: "",
+        lastName: "",
+        slug: "youri-tielemans",
+        shortName: "Y. Tielemans",
+        position: "M",
+        jerseyNumber: "8",
+        height: 177,
+        userCount: 9762,
+        gender: "M",
+        sofascoreId: "youritielemans",
+        id: 331737,
+        marketValueCurrency: "EUR",
+        dateOfBirthTimestamp: 862963200,
+        proposedMarketValueRaw: {
+          value: 41000000,
+          currency: "EUR",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "يوري تيليمانس",
+            hi: "यूरी टिएलमान्स",
+            bn: "ইউরি টিএলেম্যান্স",
+          },
+          shortNameTranslation: {
+            ar: "ي. تيليمانس",
+            hi: "वाई. टिएलमान्स",
+            bn: "ওয়াই. টিএলেম্যান্স",
+          },
+        },
+      },
+      footballPassingNetworkAction: [
+        {
+          player: {
+            name: "Lucas Digne",
+            slug: "lucas-digne",
+            shortName: "L. Digne",
+            position: "D",
+            jerseyNumber: "12",
+            height: 178,
+            userCount: 4466,
+            gender: "M",
+            sofascoreId: "LDigne",
+            id: 96538,
+            marketValueCurrency: "EUR",
+            dateOfBirthTimestamp: 743126400,
+            proposedMarketValueRaw: {
+              value: 9200000,
+              currency: "EUR",
+            },
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "لوكاس دين",
+                hi: "लुकास डिग्ने",
+                bn: "লুকাস ডিগনে",
+              },
+              shortNameTranslation: {
+                ar: "ل. دين",
+                hi: "एल. डिग्ने",
+                bn: "এল. ডিগনে",
+              },
+            },
+          },
+          eventType: "corner",
+          time: 82,
+          playerCoordinates: {
+            x: 99.4,
+            y: 0.7,
+          },
+          passEndCoordinates: {
+            x: 94.9,
+            y: 7.2,
+          },
+          isHome: true,
+        },
+      ],
+      id: 326940733,
+      time: 82,
+      isHome: true,
+      incidentClass: "regular",
+      reversedPeriodTime: 9,
+      incidentType: "goal",
+    },
+    {
+      player: {
+        name: "Adrien Truffert",
+        firstName: "",
+        lastName: "",
+        slug: "truffert-adrien",
+        shortName: "A. Truffert",
+        position: "M",
+        jerseyNumber: "3",
+        height: 176,
+        userCount: 1426,
+        gender: "M",
+        id: 999028,
+        marketValueCurrency: "EUR",
+        dateOfBirthTimestamp: 1006214400,
+        proposedMarketValueRaw: {
+          value: 13900000,
+          currency: "EUR",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "تروفيرت، أدريان",
+            hi: "ट्रफर्ट, एड्रियन",
+            bn: "ট্রুফার্ট, অ্যাড্রিয়েন",
+          },
+          shortNameTranslation: {
+            ar: "أ. تروفيرت",
+            hi: "ए. ट्रफर्ट",
+            bn: "এ. ট্রুফার্ট",
+          },
+        },
+      },
+      playerName: "Adrien Truffert",
+      reason: "Foul",
+      rescinded: false,
+      id: 124318234,
+      time: 38,
+      isHome: false,
+      incidentClass: "yellow",
+      reversedPeriodTime: 8,
+      incidentType: "card",
+    },
+    {
+      text: "HT",
+      homeScore: 2,
+      awayScore: 0,
+      isLive: false,
+      time: 45,
+      addedTime: 999,
+      timeSeconds: 2700,
+      reversedPeriodTime: 1,
+      reversedPeriodTimeSeconds: 0,
+      periodTimeSeconds: 2700,
+      incidentType: "period",
+    },
+    {
+      homeScore: 1,
+      awayScore: 0,
+      player: {
+        name: "Emiliano Buendía",
+        slug: "emiliano-buendia",
+        shortName: "E. Buendía",
+        position: "M",
+        jerseyNumber: "10",
+        height: 170,
+        userCount: 6167,
+        gender: "M",
+        sofascoreId: "EM10Buendia",
+        id: 783126,
+        marketValueCurrency: "EUR",
+        dateOfBirthTimestamp: 851472000,
+        proposedMarketValueRaw: {
+          value: 13700000,
+          currency: "EUR",
+        },
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "إميليانو بوينديا",
+            hi: "एमिलियानो बुएंडिया",
+            bn: "এমিলিয়ানো বুয়েন্দিয়া",
+          },
+          shortNameTranslation: {
+            ar: "إ. بوينديا",
+            hi: "ई. बुएंडिया",
+            bn: "ই. বুয়েন্দিয়া",
+          },
+        },
+      },
+      footballPassingNetworkAction: [
+        {
+          player: {
+            name: "Emiliano Buendía",
+            slug: "emiliano-buendia",
+            shortName: "E. Buendía",
+            position: "M",
+            jerseyNumber: "10",
+            height: 170,
+            userCount: 6167,
+            gender: "M",
+            sofascoreId: "EM10Buendia",
+            id: 783126,
+            marketValueCurrency: "EUR",
+            dateOfBirthTimestamp: 851472000,
+            proposedMarketValueRaw: {
+              value: 13700000,
+              currency: "EUR",
+            },
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "إميليانو بوينديا",
+                hi: "एमिलियानो बुएंडिया",
+                bn: "এমিলিয়ানো বুয়েন্দিয়া",
+              },
+              shortNameTranslation: {
+                ar: "إ. بوينديا",
+                hi: "ई. बुएंडिया",
+                bn: "ই. বুয়েন্দিয়া",
+              },
+            },
+          },
+          eventType: "goal",
+          bodyPart: "right-foot",
+          time: 28,
+          playerCoordinates: {
+            x: 80.9,
+            y: 53.8,
+          },
+          gkCoordinates: {
+            x: 98.8,
+            y: 49.3,
+          },
+          goalShotCoordinates: {
+            x: 100,
+            y: 52.6,
+          },
+          goalMouthCoordinates: {
+            x: 36.02,
+            y: 47.33,
+          },
+          goalkeeper: {
+            name: "Đorđe Petrović",
+            slug: "dorde-petrovic",
+            shortName: "Đ. Petrović",
+            position: "G",
+            jerseyNumber: "1",
+            height: 194,
+            userCount: 9622,
+            gender: "M",
+            sofascoreId: "dj.petrovic12",
+            id: 882604,
+            marketValueCurrency: "EUR",
+            dateOfBirthTimestamp: 939340800,
+            proposedMarketValueRaw: {
+              value: 29000000,
+              currency: "EUR",
+            },
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "دوردي بتروفيتش",
+                hi: "डोरे पेट्रोविक",
+                bn: "ডোরে পেট্রোভিচ",
+              },
+              shortNameTranslation: {
+                ar: "د. بتروفيتش",
+                hi: "डी. पेट्रोविक",
+                bn: "ডি. পেট্রোভিচ",
+              },
+            },
+          },
+          isHome: true,
+          goalType: "regular",
+        },
+      ],
+      id: 326931696,
+      time: 28,
+      isHome: true,
+      incidentClass: "regular",
+      reversedPeriodTime: 18,
+      incidentType: "goal",
+    },
+  ],
+  home: {
+    goalkeeperColor: {
+      primary: "4b4b4d",
+      number: "cbde8d",
+      outline: "4b4b4d",
+      fancyNumber: "ffffff",
+    },
+    playerColor: {
+      primary: "88002d",
+      number: "ffffff",
+      outline: "88002d",
+      fancyNumber: "ffffff",
+    },
+  },
+  away: {
+    goalkeeperColor: {
+      primary: "d6f148",
+      number: "020300",
+      outline: "d6f148",
+      fancyNumber: "222226",
+    },
+    playerColor: {
+      primary: "e7bacc",
+      number: "203f9d",
+      outline: "e7bacc",
+      fancyNumber: "222226",
+    },
+  },
+};
 
 //match head2head/h2h
 //https://api.sofascore.com/mobile/v4/event/14025014/head2head
@@ -1850,348 +1837,333 @@ const data4 = {
 //example response
 
 const data6 = {
-    "sport": {
-      "id": 1,
-      "name": "Football",
-      "slug": "football"
+  sport: {
+    id: 1,
+    name: "Football",
+    slug: "football",
+  },
+  rows: 1,
+  tournaments: [
+    {
+      tournament: {
+        name: "Premier League",
+        id: 1,
+        uniqueId: 17,
+        uniqueName: "Premier League",
+        hasEventPlayerStatistics: true,
+        hasRounds: true,
+      },
+      category: {
+        name: "England",
+        priority: 10,
+        mcc: [234, 235],
+        id: 1,
+        flag: "england",
+      },
+      season: {
+        name: "Premier League 25/26",
+        year: "25/26",
+        id: 76986,
+      },
+      hasEventPlayerStatistics: true,
+      hasEventPlayerHeatMap: null,
+      hasBoxScore: null,
+      displayInverseHomeAwayTeams: false,
+      events: [
+        {
+          roundInfo: {
+            round: 25,
+          },
+          status: {
+            code: 0,
+            type: "notstarted",
+          },
+          homeTeam: {
+            name: "Bournemouth",
+            slug: "bournemouth",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 60,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Aston Villa",
+            slug: "aston-villa",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 40,
+            subTeams: [],
+          },
+          homeScore: {},
+          awayScore: {},
+          time: {},
+          changes: {
+            changeTimestamp: 0,
+          },
+          hasHighlights: false,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: false,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 14025155,
+          cardsCode: "00",
+          statusDescription: "-",
+          startTimestamp: 1770476400,
+          webUrl: "/football/match/bournemouth-aston-villa/Pkb#id:14025155",
+          hasTime: false,
+          resultOnly: false,
+        },
+        {
+          roundInfo: {
+            round: 11,
+          },
+          status: {
+            code: 100,
+            type: "finished",
+          },
+          winnerCode: 1,
+          homeTeam: {
+            name: "Aston Villa",
+            slug: "aston-villa",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 40,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Bournemouth",
+            slug: "bournemouth",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 60,
+            subTeams: [],
+          },
+          homeScore: {
+            current: 4,
+            display: 4,
+            period1: 2,
+            period2: 2,
+            normaltime: 4,
+          },
+          awayScore: {
+            current: 0,
+            display: 0,
+            period1: 0,
+            period2: 0,
+            normaltime: 0,
+          },
+          time: {},
+          changes: {
+            changes: ["status.code", "status.description", "status.type"],
+            changeTimestamp: 1762703856,
+          },
+          hasHighlights: false,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: false,
+          hasEventPlayerStatistics: true,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 14025014,
+          cardsCode: "00",
+          statusDescription: "FT",
+          hasLiveForm: true,
+          startTimestamp: 1762696800,
+          webUrl: "/football/match/bournemouth-aston-villa/Pkb#id:14025014",
+          hasTime: false,
+          resultOnly: false,
+        },
+        {
+          roundInfo: {
+            round: 36,
+          },
+          status: {
+            code: 100,
+            type: "finished",
+          },
+          winnerCode: 2,
+          homeTeam: {
+            name: "Bournemouth",
+            slug: "bournemouth",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 60,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Aston Villa",
+            slug: "aston-villa",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 40,
+            subTeams: [],
+          },
+          homeScore: {
+            current: 0,
+            display: 0,
+            period1: 0,
+            period2: 0,
+            normaltime: 0,
+          },
+          awayScore: {
+            current: 1,
+            display: 1,
+            period1: 1,
+            period2: 0,
+            normaltime: 1,
+          },
+          time: {},
+          changes: {
+            changes: ["status.code", "status.description", "status.type"],
+            changeTimestamp: 1746901841,
+          },
+          hasHighlights: true,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: true,
+          hasEventPlayerStatistics: true,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 12436570,
+          cardsCode: "01",
+          statusDescription: "FT",
+          hasLiveForm: true,
+          startTimestamp: 1746894600,
+          webUrl: "/football/match/bournemouth-aston-villa/Pkb#id:12436570",
+          hasTime: false,
+          resultOnly: false,
+        },
+        {
+          roundInfo: {
+            round: 9,
+          },
+          status: {
+            code: 100,
+            type: "finished",
+          },
+          winnerCode: 3,
+          homeTeam: {
+            name: "Aston Villa",
+            slug: "aston-villa",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 40,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Bournemouth",
+            slug: "bournemouth",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 60,
+            subTeams: [],
+          },
+          homeScore: {
+            current: 1,
+            display: 1,
+            period1: 0,
+            period2: 1,
+            normaltime: 1,
+          },
+          awayScore: {
+            current: 1,
+            display: 1,
+            period1: 0,
+            period2: 1,
+            normaltime: 1,
+          },
+          time: {},
+          changes: {
+            changes: [
+              "status.code",
+              "status.description",
+              "status.type",
+              "awayScore.period2",
+              "awayScore.normaltime",
+            ],
+            changeTimestamp: 1729958289,
+          },
+          hasHighlights: false,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: false,
+          hasEventPlayerStatistics: true,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 12437041,
+          cardsCode: "00",
+          statusDescription: "FT",
+          hasLiveForm: true,
+          startTimestamp: 1729951200,
+          webUrl: "/football/match/bournemouth-aston-villa/Pkb#id:12437041",
+          hasTime: false,
+          resultOnly: false,
+        },
+        {
+          roundInfo: {
+            round: 34,
+          },
+          status: {
+            code: 100,
+            type: "finished",
+          },
+          winnerCode: 1,
+          homeTeam: {
+            name: "Aston Villa",
+            slug: "aston-villa",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 40,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Bournemouth",
+            slug: "bournemouth",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 60,
+            subTeams: [],
+          },
+          homeScore: {
+            current: 3,
+            display: 3,
+            period1: 1,
+            period2: 2,
+            normaltime: 3,
+          },
+          awayScore: {
+            current: 1,
+            display: 1,
+            period1: 1,
+            period2: 0,
+            normaltime: 1,
+          },
+          time: {},
+          changes: {
+            changes: ["status.code", "status.description", "status.type"],
+            changeTimestamp: 1713715139,
+          },
+          hasHighlights: true,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: true,
+          hasEventPlayerStatistics: true,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 11352420,
+          cardsCode: "00",
+          statusDescription: "FT",
+          hasLiveForm: true,
+          startTimestamp: 1713708000,
+          webUrl: "/football/match/bournemouth-aston-villa/Pkb#id:11352420",
+          hasTime: false,
+          resultOnly: false,
+        },
+      ],
     },
-    "rows": 1,
-    "tournaments": [
-      {
-        "tournament": {
-          "name": "Premier League",
-          "id": 1,
-          "uniqueId": 17,
-          "uniqueName": "Premier League",
-          "hasEventPlayerStatistics": true,
-          "hasRounds": true
-        },
-        "category": {
-          "name": "England",
-          "priority": 10,
-          "mcc": [
-            234,
-            235
-          ],
-          "id": 1,
-          "flag": "england"
-        },
-        "season": {
-          "name": "Premier League 25/26",
-          "year": "25/26",
-          "id": 76986
-        },
-        "hasEventPlayerStatistics": true,
-        "hasEventPlayerHeatMap": null,
-        "hasBoxScore": null,
-        "displayInverseHomeAwayTeams": false,
-        "events": [
-          {
-            "roundInfo": {
-              "round": 25
-            },
-            "status": {
-              "code": 0,
-              "type": "notstarted"
-            },
-            "homeTeam": {
-              "name": "Bournemouth",
-              "slug": "bournemouth",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 60,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Aston Villa",
-              "slug": "aston-villa",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 40,
-              "subTeams": []
-            },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-              "changeTimestamp": 0
-            },
-            "hasHighlights": false,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": false,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 14025155,
-            "cardsCode": "00",
-            "statusDescription": "-",
-            "startTimestamp": 1770476400,
-            "webUrl": "/football/match/bournemouth-aston-villa/Pkb#id:14025155",
-            "hasTime": false,
-            "resultOnly": false
-          },
-          {
-            "roundInfo": {
-              "round": 11
-            },
-            "status": {
-              "code": 100,
-              "type": "finished"
-            },
-            "winnerCode": 1,
-            "homeTeam": {
-              "name": "Aston Villa",
-              "slug": "aston-villa",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 40,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Bournemouth",
-              "slug": "bournemouth",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 60,
-              "subTeams": []
-            },
-            "homeScore": {
-              "current": 4,
-              "display": 4,
-              "period1": 2,
-              "period2": 2,
-              "normaltime": 4
-            },
-            "awayScore": {
-              "current": 0,
-              "display": 0,
-              "period1": 0,
-              "period2": 0,
-              "normaltime": 0
-            },
-            "time": {},
-            "changes": {
-              "changes": [
-                "status.code",
-                "status.description",
-                "status.type"
-              ],
-              "changeTimestamp": 1762703856
-            },
-            "hasHighlights": false,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": false,
-            "hasEventPlayerStatistics": true,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 14025014,
-            "cardsCode": "00",
-            "statusDescription": "FT",
-            "hasLiveForm": true,
-            "startTimestamp": 1762696800,
-            "webUrl": "/football/match/bournemouth-aston-villa/Pkb#id:14025014",
-            "hasTime": false,
-            "resultOnly": false
-          },
-          {
-            "roundInfo": {
-              "round": 36
-            },
-            "status": {
-              "code": 100,
-              "type": "finished"
-            },
-            "winnerCode": 2,
-            "homeTeam": {
-              "name": "Bournemouth",
-              "slug": "bournemouth",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 60,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Aston Villa",
-              "slug": "aston-villa",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 40,
-              "subTeams": []
-            },
-            "homeScore": {
-              "current": 0,
-              "display": 0,
-              "period1": 0,
-              "period2": 0,
-              "normaltime": 0
-            },
-            "awayScore": {
-              "current": 1,
-              "display": 1,
-              "period1": 1,
-              "period2": 0,
-              "normaltime": 1
-            },
-            "time": {},
-            "changes": {
-              "changes": [
-                "status.code",
-                "status.description",
-                "status.type"
-              ],
-              "changeTimestamp": 1746901841
-            },
-            "hasHighlights": true,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": true,
-            "hasEventPlayerStatistics": true,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 12436570,
-            "cardsCode": "01",
-            "statusDescription": "FT",
-            "hasLiveForm": true,
-            "startTimestamp": 1746894600,
-            "webUrl": "/football/match/bournemouth-aston-villa/Pkb#id:12436570",
-            "hasTime": false,
-            "resultOnly": false
-          },
-          {
-            "roundInfo": {
-              "round": 9
-            },
-            "status": {
-              "code": 100,
-              "type": "finished"
-            },
-            "winnerCode": 3,
-            "homeTeam": {
-              "name": "Aston Villa",
-              "slug": "aston-villa",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 40,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Bournemouth",
-              "slug": "bournemouth",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 60,
-              "subTeams": []
-            },
-            "homeScore": {
-              "current": 1,
-              "display": 1,
-              "period1": 0,
-              "period2": 1,
-              "normaltime": 1
-            },
-            "awayScore": {
-              "current": 1,
-              "display": 1,
-              "period1": 0,
-              "period2": 1,
-              "normaltime": 1
-            },
-            "time": {},
-            "changes": {
-              "changes": [
-                "status.code",
-                "status.description",
-                "status.type",
-                "awayScore.period2",
-                "awayScore.normaltime"
-              ],
-              "changeTimestamp": 1729958289
-            },
-            "hasHighlights": false,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": false,
-            "hasEventPlayerStatistics": true,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 12437041,
-            "cardsCode": "00",
-            "statusDescription": "FT",
-            "hasLiveForm": true,
-            "startTimestamp": 1729951200,
-            "webUrl": "/football/match/bournemouth-aston-villa/Pkb#id:12437041",
-            "hasTime": false,
-            "resultOnly": false
-          },
-          {
-            "roundInfo": {
-              "round": 34
-            },
-            "status": {
-              "code": 100,
-              "type": "finished"
-            },
-            "winnerCode": 1,
-            "homeTeam": {
-              "name": "Aston Villa",
-              "slug": "aston-villa",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 40,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Bournemouth",
-              "slug": "bournemouth",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 60,
-              "subTeams": []
-            },
-            "homeScore": {
-              "current": 3,
-              "display": 3,
-              "period1": 1,
-              "period2": 2,
-              "normaltime": 3
-            },
-            "awayScore": {
-              "current": 1,
-              "display": 1,
-              "period1": 1,
-              "period2": 0,
-              "normaltime": 1
-            },
-            "time": {},
-            "changes": {
-              "changes": [
-                "status.code",
-                "status.description",
-                "status.type"
-              ],
-              "changeTimestamp": 1713715139
-            },
-            "hasHighlights": true,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": true,
-            "hasEventPlayerStatistics": true,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 11352420,
-            "cardsCode": "00",
-            "statusDescription": "FT",
-            "hasLiveForm": true,
-            "startTimestamp": 1713708000,
-            "webUrl": "/football/match/bournemouth-aston-villa/Pkb#id:11352420",
-            "hasTime": false,
-            "resultOnly": false
-          }
-        ]
-      }
-    ]
-}
+  ],
+};
 
 //match lineups
 //https://api.sofascore.com/mobile/v4/event/14025014/lineups
@@ -2203,414 +2175,414 @@ const data6 = {
 //example response
 
 const data7 = {
-    "confirmed": true,
-    "home": [
-      {
-        "player": {
-          "name": "Emiliano Martínez",
-          "slug": "emiliano-martinez",
-          "shortName": "E. Martínez",
-          "id": 158263
-        },
-        "position": 1,
-        "jerseyNumber": "23",
-        "substitute": false,
-        "positionName": "Goalkeeper",
-        "positionNameshort": "G",
-        "rating": "8.1",
-        "captain": false,
-        "shirtNumber": 23
+  confirmed: true,
+  home: [
+    {
+      player: {
+        name: "Emiliano Martínez",
+        slug: "emiliano-martinez",
+        shortName: "E. Martínez",
+        id: 158263,
       },
-      {
-        "player": {
-          "name": "Matty Cash",
-          "slug": "matty-cash",
-          "shortName": "M. Cash",
-          "id": 833956
-        },
-        "position": 2,
-        "jerseyNumber": "2",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.7",
-        "captain": false,
-        "shirtNumber": 2
-      },
-      {
-        "player": {
-          "name": "Ezri Konsa",
-          "slug": "ezri-konsa",
-          "shortName": "E. Konsa",
-          "id": 827679
-        },
-        "position": 3,
-        "jerseyNumber": "4",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "7.2",
-        "captain": false,
-        "shirtNumber": 4
-      },
-      {
-        "player": {
-          "name": "Pau Torres",
-          "slug": "pau-torres",
-          "shortName": "P. Torres",
-          "id": 864169
-        },
-        "position": 4,
-        "jerseyNumber": "14",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.6",
-        "captain": false,
-        "shirtNumber": 14
-      },
-      {
-        "player": {
-          "name": "Lucas Digne",
-          "slug": "lucas-digne",
-          "shortName": "L. Digne",
-          "id": 96538
-        },
-        "position": 5,
-        "jerseyNumber": "12",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.9",
-        "captain": false,
-        "shirtNumber": 12
-      },
-      {
-        "player": {
-          "name": "John McGinn",
-          "slug": "john-mcginn",
-          "shortName": "J. McGinn",
-          "id": 250223
-        },
-        "position": 6,
-        "jerseyNumber": "7",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "7.6",
-        "captain": true,
-        "shirtNumber": 7
-      },
-      {
-        "player": {
-          "name": "Boubacar Kamara",
-          "slug": "boubacar-kamara",
-          "shortName": "B. Kamara",
-          "id": 826204
-        },
-        "position": 7,
-        "jerseyNumber": "44",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "7.0",
-        "captain": false,
-        "shirtNumber": 44
-      },
-      {
-        "player": {
-          "name": "Amadou Onana",
-          "slug": "amadou-onana",
-          "shortName": "A. Onana",
-          "id": 923973
-        },
-        "position": 8,
-        "jerseyNumber": "24",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "8.2",
-        "captain": false,
-        "shirtNumber": 24
-      },
-      {
-        "player": {
-          "name": "Emiliano Buendía",
-          "slug": "emiliano-buendia",
-          "shortName": "E. Buendía",
-          "id": 783126
-        },
-        "position": 9,
-        "jerseyNumber": "10",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "8.5",
-        "captain": false,
-        "shirtNumber": 10
-      },
-      {
-        "player": {
-          "name": "Morgan Rogers",
-          "slug": "morgan-rogers",
-          "shortName": "M. Rogers",
-          "id": 948261
-        },
-        "position": 10,
-        "jerseyNumber": "27",
-        "substitute": false,
-        "positionName": "Forward",
-        "positionNameshort": "F",
-        "rating": "6.1",
-        "captain": false,
-        "shirtNumber": 27
-      },
-      {
-        "player": {
-          "name": "Ollie Watkins",
-          "slug": "ollie-watkins",
-          "shortName": "O. Watkins",
-          "id": 555386
-        },
-        "position": 11,
-        "jerseyNumber": "11",
-        "substitute": false,
-        "positionName": "Forward",
-        "positionNameshort": "F",
-        "rating": "6.5",
-        "captain": false,
-        "shirtNumber": 11
-      }
-    ],
-    "away": [
-      {
-        "player": {
-          "name": "Đorđe Petrović",
-          "slug": "dorde-petrovic",
-          "shortName": "Đ. Petrović",
-          "id": 882604
-        },
-        "position": 1,
-        "jerseyNumber": "1",
-        "substitute": false,
-        "positionName": "Goalkeeper",
-        "positionNameshort": "G",
-        "rating": "7.0",
-        "captain": false,
-        "shirtNumber": 1
-      },
-      {
-        "player": {
-          "name": "Adam Smith",
-          "slug": "adam-smith",
-          "shortName": "A. Smith",
-          "id": 44566
-        },
-        "position": 2,
-        "jerseyNumber": "15",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.7",
-        "captain": true,
-        "shirtNumber": 15
-      },
-      {
-        "player": {
-          "name": "Veljko Milosavljević",
-          "slug": "milosavljevic-veljko",
-          "shortName": "V. Milosavljević",
-          "id": 1406130
-        },
-        "position": 3,
-        "jerseyNumber": "44",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.7",
-        "captain": false,
-        "shirtNumber": 44
-      },
-      {
-        "player": {
-          "name": "Marcos Senesi",
-          "slug": "marcos-senesi",
-          "shortName": "M. Senesi",
-          "id": 830659
-        },
-        "position": 4,
-        "jerseyNumber": "5",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.3",
-        "captain": false,
-        "shirtNumber": 5
-      },
-      {
-        "player": {
-          "name": "Adrien Truffert",
-          "slug": "truffert-adrien",
-          "shortName": "A. Truffert",
-          "id": 999028
-        },
-        "position": 5,
-        "jerseyNumber": "3",
-        "substitute": false,
-        "positionName": "Defender",
-        "positionNameshort": "D",
-        "rating": "6.3",
-        "captain": false,
-        "shirtNumber": 3
-      },
-      {
-        "player": {
-          "name": "Alex Scott",
-          "slug": "alex-scott",
-          "shortName": "A. Scott",
-          "id": 1104986
-        },
-        "position": 6,
-        "jerseyNumber": "8",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "7.4",
-        "captain": false,
-        "shirtNumber": 8
-      },
-      {
-        "player": {
-          "name": "Tyler Adams",
-          "slug": "tyler-adams",
-          "shortName": "T. Adams",
-          "id": 800419
-        },
-        "position": 7,
-        "jerseyNumber": "12",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "6.3",
-        "captain": false,
-        "shirtNumber": 12
-      },
-      {
-        "player": {
-          "name": "Antoine Semenyo",
-          "slug": "antoine-semenyo",
-          "shortName": "A. Semenyo",
-          "id": 934354
-        },
-        "position": 8,
-        "jerseyNumber": "24",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "5.6",
-        "captain": false,
-        "shirtNumber": 24
-      },
-      {
-        "player": {
-          "name": "Justin Kluivert",
-          "slug": "justin-kluivert",
-          "shortName": "J. Kluivert",
-          "id": 851596
-        },
-        "position": 9,
-        "jerseyNumber": "19",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "6.4",
-        "captain": false,
-        "shirtNumber": 19
-      },
-      {
-        "player": {
-          "name": "Marcus Tavernier",
-          "slug": "marcus-tavernier",
-          "shortName": "M. Tavernier",
-          "id": 895576
-        },
-        "position": 10,
-        "jerseyNumber": "16",
-        "substitute": false,
-        "positionName": "Midfielder",
-        "positionNameshort": "M",
-        "rating": "6.8",
-        "captain": false,
-        "shirtNumber": 16
-      },
-      {
-        "player": {
-          "name": "Evanilson",
-          "slug": "evanilson",
-          "shortName": "Evanilson",
-          "id": 998490
-        },
-        "position": 11,
-        "jerseyNumber": "9",
-        "substitute": false,
-        "positionName": "Forward",
-        "positionNameshort": "F",
-        "rating": "6.3",
-        "captain": false,
-        "shirtNumber": 9
-      }
-    ],
-    "homeFormation": "4-4-2",
-    "awayFormation": "4-2-3-1",
-    "homeAverageAge": {
-      "eventPlayersAverageAge": 27.6,
-      "startersAverageAge": 28.09,
-      "substitutesAverageAge": 27
+      position: 1,
+      jerseyNumber: "23",
+      substitute: false,
+      positionName: "Goalkeeper",
+      positionNameshort: "G",
+      rating: "8.1",
+      captain: false,
+      shirtNumber: 23,
     },
-    "awayAverageAge": {
-      "eventPlayersAverageAge": 24.9,
-      "startersAverageAge": 25.45,
-      "substitutesAverageAge": 24.22
-    },
-    "homeManager": {
-      "id": 53062,
-      "name": "Unai Emery",
-      "slug": "unai-emery"
-    },
-    "awayManager": {
-      "id": 790205,
-      "name": "Andoni Iraola",
-      "slug": "andoni-iraola"
-    },
-    "teamAverageRatings": {
-      "homeTeam": "7.17",
-      "awayTeam": "6.44"
-    },
-    "homeColor": {
-      "player": {
-        "number": "ffffff",
-        "outline": "88002d",
-        "fancyNumber": "ffffff"
+    {
+      player: {
+        name: "Matty Cash",
+        slug: "matty-cash",
+        shortName: "M. Cash",
+        id: 833956,
       },
-      "goalkeeper": {
-        "number": "cbde8d",
-        "outline": "4b4b4d",
-        "fancyNumber": "ffffff"
-      }
+      position: 2,
+      jerseyNumber: "2",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.7",
+      captain: false,
+      shirtNumber: 2,
     },
-    "awayColor": {
-      "player": {
-        "number": "203f9d",
-        "outline": "e7bacc",
-        "fancyNumber": "222226"
+    {
+      player: {
+        name: "Ezri Konsa",
+        slug: "ezri-konsa",
+        shortName: "E. Konsa",
+        id: 827679,
       },
-      "goalkeeper": {
-        "number": "020300",
-        "outline": "d6f148",
-        "fancyNumber": "222226"
-      }
-    }
-}
+      position: 3,
+      jerseyNumber: "4",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "7.2",
+      captain: false,
+      shirtNumber: 4,
+    },
+    {
+      player: {
+        name: "Pau Torres",
+        slug: "pau-torres",
+        shortName: "P. Torres",
+        id: 864169,
+      },
+      position: 4,
+      jerseyNumber: "14",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.6",
+      captain: false,
+      shirtNumber: 14,
+    },
+    {
+      player: {
+        name: "Lucas Digne",
+        slug: "lucas-digne",
+        shortName: "L. Digne",
+        id: 96538,
+      },
+      position: 5,
+      jerseyNumber: "12",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.9",
+      captain: false,
+      shirtNumber: 12,
+    },
+    {
+      player: {
+        name: "John McGinn",
+        slug: "john-mcginn",
+        shortName: "J. McGinn",
+        id: 250223,
+      },
+      position: 6,
+      jerseyNumber: "7",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "7.6",
+      captain: true,
+      shirtNumber: 7,
+    },
+    {
+      player: {
+        name: "Boubacar Kamara",
+        slug: "boubacar-kamara",
+        shortName: "B. Kamara",
+        id: 826204,
+      },
+      position: 7,
+      jerseyNumber: "44",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "7.0",
+      captain: false,
+      shirtNumber: 44,
+    },
+    {
+      player: {
+        name: "Amadou Onana",
+        slug: "amadou-onana",
+        shortName: "A. Onana",
+        id: 923973,
+      },
+      position: 8,
+      jerseyNumber: "24",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "8.2",
+      captain: false,
+      shirtNumber: 24,
+    },
+    {
+      player: {
+        name: "Emiliano Buendía",
+        slug: "emiliano-buendia",
+        shortName: "E. Buendía",
+        id: 783126,
+      },
+      position: 9,
+      jerseyNumber: "10",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "8.5",
+      captain: false,
+      shirtNumber: 10,
+    },
+    {
+      player: {
+        name: "Morgan Rogers",
+        slug: "morgan-rogers",
+        shortName: "M. Rogers",
+        id: 948261,
+      },
+      position: 10,
+      jerseyNumber: "27",
+      substitute: false,
+      positionName: "Forward",
+      positionNameshort: "F",
+      rating: "6.1",
+      captain: false,
+      shirtNumber: 27,
+    },
+    {
+      player: {
+        name: "Ollie Watkins",
+        slug: "ollie-watkins",
+        shortName: "O. Watkins",
+        id: 555386,
+      },
+      position: 11,
+      jerseyNumber: "11",
+      substitute: false,
+      positionName: "Forward",
+      positionNameshort: "F",
+      rating: "6.5",
+      captain: false,
+      shirtNumber: 11,
+    },
+  ],
+  away: [
+    {
+      player: {
+        name: "Đorđe Petrović",
+        slug: "dorde-petrovic",
+        shortName: "Đ. Petrović",
+        id: 882604,
+      },
+      position: 1,
+      jerseyNumber: "1",
+      substitute: false,
+      positionName: "Goalkeeper",
+      positionNameshort: "G",
+      rating: "7.0",
+      captain: false,
+      shirtNumber: 1,
+    },
+    {
+      player: {
+        name: "Adam Smith",
+        slug: "adam-smith",
+        shortName: "A. Smith",
+        id: 44566,
+      },
+      position: 2,
+      jerseyNumber: "15",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.7",
+      captain: true,
+      shirtNumber: 15,
+    },
+    {
+      player: {
+        name: "Veljko Milosavljević",
+        slug: "milosavljevic-veljko",
+        shortName: "V. Milosavljević",
+        id: 1406130,
+      },
+      position: 3,
+      jerseyNumber: "44",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.7",
+      captain: false,
+      shirtNumber: 44,
+    },
+    {
+      player: {
+        name: "Marcos Senesi",
+        slug: "marcos-senesi",
+        shortName: "M. Senesi",
+        id: 830659,
+      },
+      position: 4,
+      jerseyNumber: "5",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.3",
+      captain: false,
+      shirtNumber: 5,
+    },
+    {
+      player: {
+        name: "Adrien Truffert",
+        slug: "truffert-adrien",
+        shortName: "A. Truffert",
+        id: 999028,
+      },
+      position: 5,
+      jerseyNumber: "3",
+      substitute: false,
+      positionName: "Defender",
+      positionNameshort: "D",
+      rating: "6.3",
+      captain: false,
+      shirtNumber: 3,
+    },
+    {
+      player: {
+        name: "Alex Scott",
+        slug: "alex-scott",
+        shortName: "A. Scott",
+        id: 1104986,
+      },
+      position: 6,
+      jerseyNumber: "8",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "7.4",
+      captain: false,
+      shirtNumber: 8,
+    },
+    {
+      player: {
+        name: "Tyler Adams",
+        slug: "tyler-adams",
+        shortName: "T. Adams",
+        id: 800419,
+      },
+      position: 7,
+      jerseyNumber: "12",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "6.3",
+      captain: false,
+      shirtNumber: 12,
+    },
+    {
+      player: {
+        name: "Antoine Semenyo",
+        slug: "antoine-semenyo",
+        shortName: "A. Semenyo",
+        id: 934354,
+      },
+      position: 8,
+      jerseyNumber: "24",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "5.6",
+      captain: false,
+      shirtNumber: 24,
+    },
+    {
+      player: {
+        name: "Justin Kluivert",
+        slug: "justin-kluivert",
+        shortName: "J. Kluivert",
+        id: 851596,
+      },
+      position: 9,
+      jerseyNumber: "19",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "6.4",
+      captain: false,
+      shirtNumber: 19,
+    },
+    {
+      player: {
+        name: "Marcus Tavernier",
+        slug: "marcus-tavernier",
+        shortName: "M. Tavernier",
+        id: 895576,
+      },
+      position: 10,
+      jerseyNumber: "16",
+      substitute: false,
+      positionName: "Midfielder",
+      positionNameshort: "M",
+      rating: "6.8",
+      captain: false,
+      shirtNumber: 16,
+    },
+    {
+      player: {
+        name: "Evanilson",
+        slug: "evanilson",
+        shortName: "Evanilson",
+        id: 998490,
+      },
+      position: 11,
+      jerseyNumber: "9",
+      substitute: false,
+      positionName: "Forward",
+      positionNameshort: "F",
+      rating: "6.3",
+      captain: false,
+      shirtNumber: 9,
+    },
+  ],
+  homeFormation: "4-4-2",
+  awayFormation: "4-2-3-1",
+  homeAverageAge: {
+    eventPlayersAverageAge: 27.6,
+    startersAverageAge: 28.09,
+    substitutesAverageAge: 27,
+  },
+  awayAverageAge: {
+    eventPlayersAverageAge: 24.9,
+    startersAverageAge: 25.45,
+    substitutesAverageAge: 24.22,
+  },
+  homeManager: {
+    id: 53062,
+    name: "Unai Emery",
+    slug: "unai-emery",
+  },
+  awayManager: {
+    id: 790205,
+    name: "Andoni Iraola",
+    slug: "andoni-iraola",
+  },
+  teamAverageRatings: {
+    homeTeam: "7.17",
+    awayTeam: "6.44",
+  },
+  homeColor: {
+    player: {
+      number: "ffffff",
+      outline: "88002d",
+      fancyNumber: "ffffff",
+    },
+    goalkeeper: {
+      number: "cbde8d",
+      outline: "4b4b4d",
+      fancyNumber: "ffffff",
+    },
+  },
+  awayColor: {
+    player: {
+      number: "203f9d",
+      outline: "e7bacc",
+      fancyNumber: "222226",
+    },
+    goalkeeper: {
+      number: "020300",
+      outline: "d6f148",
+      fancyNumber: "222226",
+    },
+  },
+};
 
 //team performance
 //https://api.sofascore.com/mobile/v4/team/523300/performance
@@ -2619,31 +2591,61 @@ const data7 = {
 //example response
 
 const data8 = [
-    {
-        "eventId": 14275459,
-        "points": -1,
-        "winFlag": "L",
-        "opponent": { "id": 548891, "name": "Worthing United FC" }
-    },
-    {
-        "eventId": 14549456,
-        "points": -1,
-        "winFlag": "L",
-        "opponent": { "id": 480413, "name": "Sheerwater FC" }
-    },
-    {
-        "eventId": 14275475,
-        "points": 1,
-        "winFlag": "W",
-        "opponent": { "id": 479843, "name": "Selsey FC" }
-    }, {
-        "eventId": 14275479,
-        "points": 1,
-        "winFlag": "W",
-        "opponent": { "id": 1105173, "name": "Ringmer AFC" }
-    },
-    { "eventId": 14275488, "points": 1, "winFlag": "W", "opponent": { "id": 297771, "name": "AFC Uckfield Town" } }, { "eventId": 14275502, "points": 1, "winFlag": "W", "opponent": { "id": 520897, "name": "Mile Oak" } }, { "eventId": 14275516, "points": 1, "winFlag": "W", "opponent": { "id": 1105169, "name": "Jarvis Brook FC" } }, { "eventId": 14275528, "points": 0, "winFlag": "D", "opponent": { "id": 38740, "name": "Godalming Town FC" } }, { "eventId": 14275544, "points": 1, "winFlag": "W", "opponent": { "id": 859383, "name": "Saltdean United" } }
-]
+  {
+    eventId: 14275459,
+    points: -1,
+    winFlag: "L",
+    opponent: { id: 548891, name: "Worthing United FC" },
+  },
+  {
+    eventId: 14549456,
+    points: -1,
+    winFlag: "L",
+    opponent: { id: 480413, name: "Sheerwater FC" },
+  },
+  {
+    eventId: 14275475,
+    points: 1,
+    winFlag: "W",
+    opponent: { id: 479843, name: "Selsey FC" },
+  },
+  {
+    eventId: 14275479,
+    points: 1,
+    winFlag: "W",
+    opponent: { id: 1105173, name: "Ringmer AFC" },
+  },
+  {
+    eventId: 14275488,
+    points: 1,
+    winFlag: "W",
+    opponent: { id: 297771, name: "AFC Uckfield Town" },
+  },
+  {
+    eventId: 14275502,
+    points: 1,
+    winFlag: "W",
+    opponent: { id: 520897, name: "Mile Oak" },
+  },
+  {
+    eventId: 14275516,
+    points: 1,
+    winFlag: "W",
+    opponent: { id: 1105169, name: "Jarvis Brook FC" },
+  },
+  {
+    eventId: 14275528,
+    points: 0,
+    winFlag: "D",
+    opponent: { id: 38740, name: "Godalming Town FC" },
+  },
+  {
+    eventId: 14275544,
+    points: 1,
+    winFlag: "W",
+    opponent: { id: 859383, name: "Saltdean United" },
+  },
+];
 
 //event/match odds
 //https://api.sofascore.com/mobile/v4/event/14025014/odds
@@ -2652,402 +2654,401 @@ const data8 = [
 //example response
 
 const data9 = {
-    "odds": [
-      {
-        "type": 1,
-        "regular": [
-          {
-            "odds": [
-              {
-                "decimalValue": "2.25",
-                "fractionalValue": "5/4",
-                "americanValue": "125",
-                "sourceId": "1914871695",
-                "winning": true,
-                "change": 1,
-                "choice": "1",
-                "betSlipLink": "http://link.sofascore.com/live-odds/"
-              },
-              {
-                "decimalValue": "3.40",
-                "fractionalValue": "12/5",
-                "americanValue": "240",
-                "sourceId": "1914871696",
-                "winning": false,
-                "change": -1,
-                "choice": "X",
-                "betSlipLink": "http://link.sofascore.com/live-odds/"
-              },
-              {
-                "decimalValue": "3.20",
-                "fractionalValue": "11/5",
-                "americanValue": "220",
-                "sourceId": "1914871697",
-                "winning": false,
-                "change": -1,
-                "choice": "2",
-                "betSlipLink": "http://link.sofascore.com/live-odds/"
-              }
-            ]
-          }
-        ],
-        "sourceId": 183399637,
-        "name": "Full time"
-      },
-      {
-        "type": 1,
-        "regular": [
-          {
-            "odds": [
-              {
-                "decimalValue": "1.36",
-                "fractionalValue": "4/11",
-                "americanValue": "-278",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964285430",
-                "winning": true,
-                "change": 0,
-                "choice": "1X"
-              },
-              {
-                "decimalValue": "1.62",
-                "fractionalValue": "8/13",
-                "americanValue": "-161",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964285418",
-                "winning": false,
-                "change": -1,
-                "choice": "X2"
-              },
-              {
-                "decimalValue": "1.30",
-                "fractionalValue": "3/10",
-                "americanValue": "-333",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964285425",
-                "winning": true,
-                "change": 1,
-                "choice": "12"
-              }
-            ]
-          }
-        ],
-        "sourceId": 183399637,
-        "name": "Double chance"
-      },
-      {
-        "type": 1,
-        "regular": [
-          {
-            "odds": [
-              {
-                "decimalValue": "2.88",
-                "fractionalValue": "15/8",
-                "americanValue": "188",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964284960",
-                "winning": true,
-                "change": 1,
-                "choice": "1"
-              },
-              {
-                "decimalValue": "2.20",
-                "fractionalValue": "6/5",
-                "americanValue": "120",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964284963",
-                "winning": false,
-                "change": -1,
-                "choice": "X"
-              },
-              {
-                "decimalValue": "3.60",
-                "fractionalValue": "13/5",
-                "americanValue": "260",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964284964",
-                "winning": false,
-                "change": 0,
-                "choice": "2"
-              }
-            ]
-          }
-        ],
-        "sourceId": 183399637,
-        "name": "1st half"
-      },
-      {
-        "type": 1,
-        "regular": [
-          {
-            "odds": [
-              {
-                "decimalValue": "1.57",
-                "fractionalValue": "4/7",
-                "americanValue": "-175",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964284947",
-                "winning": true,
-                "change": 0,
-                "choice": "1"
-              },
-              {
-                "decimalValue": "2.25",
-                "fractionalValue": "5/4",
-                "americanValue": "125",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964284948",
-                "winning": false,
-                "change": 0,
-                "choice": "2"
-              }
-            ]
-          }
-        ],
-        "sourceId": 183399637,
-        "name": "Draw no bet"
-      },
-      {
-        "type": 1,
-        "regular": [
-          {
-            "odds": [
-              {
-                "decimalValue": "1.67",
-                "fractionalValue": "4/6",
-                "americanValue": "-149",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288398",
-                "winning": false,
-                "change": 0,
-                "choice": "Yes"
-              },
-              {
-                "decimalValue": "2.10",
-                "fractionalValue": "11/10",
-                "americanValue": "110",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288402",
-                "winning": true,
-                "change": 0,
-                "choice": "No"
-              }
-            ]
-          }
-        ],
-        "sourceId": 183399637,
-        "name": "Both teams to score"
-      },
-      {
-        "type": 2,
-        "regular": [
-          {
-            "odds": [
-              {
-                "decimalValue": "1.05",
-                "fractionalValue": "1/20",
-                "americanValue": "-2000",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288231",
-                "winning": true,
-                "change": 1,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "11.00",
-                "fractionalValue": "10/1",
-                "americanValue": "1000",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288233",
-                "winning": false,
-                "change": -1,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "0.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "1.25",
-                "fractionalValue": "1/4",
-                "americanValue": "-400",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288220",
-                "winning": true,
-                "change": 0,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "4.00",
-                "fractionalValue": "3/1",
-                "americanValue": "300",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288209",
-                "winning": false,
-                "change": 0,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "1.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "1.91",
-                "fractionalValue": "10/11",
-                "americanValue": "-110",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1914871698",
-                "winning": true,
-                "change": 1,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "1.91",
-                "fractionalValue": "10/11",
-                "americanValue": "-110",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1914871699",
-                "winning": false,
-                "change": -1,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "2.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "3.20",
-                "fractionalValue": "11/5",
-                "americanValue": "220",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288212",
-                "winning": true,
-                "change": 1,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "1.36",
-                "fractionalValue": "4/11",
-                "americanValue": "-278",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288234",
-                "winning": false,
-                "change": -1,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "3.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "6.00",
-                "fractionalValue": "5/1",
-                "americanValue": "500",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288221",
-                "winning": false,
-                "change": 1,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "1.13",
-                "fractionalValue": "1/8",
-                "americanValue": "-769",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288215",
-                "winning": true,
-                "change": -1,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "4.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "13.00",
-                "fractionalValue": "12/1",
-                "americanValue": "1200",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288196",
-                "winning": false,
-                "change": 1,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "1.04",
-                "fractionalValue": "1/25",
-                "americanValue": "-2500",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288228",
-                "winning": true,
-                "change": -1,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "5.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "23.00",
-                "fractionalValue": "22/1",
-                "americanValue": "2200",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288229",
-                "winning": false,
-                "change": 0,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "1.01",
-                "fractionalValue": "1/80",
-                "americanValue": "-10000",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288207",
-                "winning": true,
-                "change": 0,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "6.5"
-          },
-          {
-            "odds": [
-              {
-                "decimalValue": "51.00",
-                "fractionalValue": "50/1",
-                "americanValue": "5000",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288224",
-                "winning": false,
-                "change": 0,
-                "choice": "Over"
-              },
-              {
-                "decimalValue": "1.00",
-                "fractionalValue": "1/500",
-                "americanValue": "0",
-                "betSlipLink": "http://link.sofascore.com/live-odds/",
-                "sourceId": "1964288226",
-                "winning": true,
-                "change": 0,
-                "choice": "Under"
-              }
-            ],
-            "handicap": "7.5"
-          }
-        ],
-        "sourceId": 183399637,
-        "name": "Match goals"
-      }
-    ]
-}
-
+  odds: [
+    {
+      type: 1,
+      regular: [
+        {
+          odds: [
+            {
+              decimalValue: "2.25",
+              fractionalValue: "5/4",
+              americanValue: "125",
+              sourceId: "1914871695",
+              winning: true,
+              change: 1,
+              choice: "1",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+            },
+            {
+              decimalValue: "3.40",
+              fractionalValue: "12/5",
+              americanValue: "240",
+              sourceId: "1914871696",
+              winning: false,
+              change: -1,
+              choice: "X",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+            },
+            {
+              decimalValue: "3.20",
+              fractionalValue: "11/5",
+              americanValue: "220",
+              sourceId: "1914871697",
+              winning: false,
+              change: -1,
+              choice: "2",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+            },
+          ],
+        },
+      ],
+      sourceId: 183399637,
+      name: "Full time",
+    },
+    {
+      type: 1,
+      regular: [
+        {
+          odds: [
+            {
+              decimalValue: "1.36",
+              fractionalValue: "4/11",
+              americanValue: "-278",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964285430",
+              winning: true,
+              change: 0,
+              choice: "1X",
+            },
+            {
+              decimalValue: "1.62",
+              fractionalValue: "8/13",
+              americanValue: "-161",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964285418",
+              winning: false,
+              change: -1,
+              choice: "X2",
+            },
+            {
+              decimalValue: "1.30",
+              fractionalValue: "3/10",
+              americanValue: "-333",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964285425",
+              winning: true,
+              change: 1,
+              choice: "12",
+            },
+          ],
+        },
+      ],
+      sourceId: 183399637,
+      name: "Double chance",
+    },
+    {
+      type: 1,
+      regular: [
+        {
+          odds: [
+            {
+              decimalValue: "2.88",
+              fractionalValue: "15/8",
+              americanValue: "188",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964284960",
+              winning: true,
+              change: 1,
+              choice: "1",
+            },
+            {
+              decimalValue: "2.20",
+              fractionalValue: "6/5",
+              americanValue: "120",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964284963",
+              winning: false,
+              change: -1,
+              choice: "X",
+            },
+            {
+              decimalValue: "3.60",
+              fractionalValue: "13/5",
+              americanValue: "260",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964284964",
+              winning: false,
+              change: 0,
+              choice: "2",
+            },
+          ],
+        },
+      ],
+      sourceId: 183399637,
+      name: "1st half",
+    },
+    {
+      type: 1,
+      regular: [
+        {
+          odds: [
+            {
+              decimalValue: "1.57",
+              fractionalValue: "4/7",
+              americanValue: "-175",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964284947",
+              winning: true,
+              change: 0,
+              choice: "1",
+            },
+            {
+              decimalValue: "2.25",
+              fractionalValue: "5/4",
+              americanValue: "125",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964284948",
+              winning: false,
+              change: 0,
+              choice: "2",
+            },
+          ],
+        },
+      ],
+      sourceId: 183399637,
+      name: "Draw no bet",
+    },
+    {
+      type: 1,
+      regular: [
+        {
+          odds: [
+            {
+              decimalValue: "1.67",
+              fractionalValue: "4/6",
+              americanValue: "-149",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288398",
+              winning: false,
+              change: 0,
+              choice: "Yes",
+            },
+            {
+              decimalValue: "2.10",
+              fractionalValue: "11/10",
+              americanValue: "110",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288402",
+              winning: true,
+              change: 0,
+              choice: "No",
+            },
+          ],
+        },
+      ],
+      sourceId: 183399637,
+      name: "Both teams to score",
+    },
+    {
+      type: 2,
+      regular: [
+        {
+          odds: [
+            {
+              decimalValue: "1.05",
+              fractionalValue: "1/20",
+              americanValue: "-2000",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288231",
+              winning: true,
+              change: 1,
+              choice: "Over",
+            },
+            {
+              decimalValue: "11.00",
+              fractionalValue: "10/1",
+              americanValue: "1000",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288233",
+              winning: false,
+              change: -1,
+              choice: "Under",
+            },
+          ],
+          handicap: "0.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "1.25",
+              fractionalValue: "1/4",
+              americanValue: "-400",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288220",
+              winning: true,
+              change: 0,
+              choice: "Over",
+            },
+            {
+              decimalValue: "4.00",
+              fractionalValue: "3/1",
+              americanValue: "300",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288209",
+              winning: false,
+              change: 0,
+              choice: "Under",
+            },
+          ],
+          handicap: "1.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "1.91",
+              fractionalValue: "10/11",
+              americanValue: "-110",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1914871698",
+              winning: true,
+              change: 1,
+              choice: "Over",
+            },
+            {
+              decimalValue: "1.91",
+              fractionalValue: "10/11",
+              americanValue: "-110",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1914871699",
+              winning: false,
+              change: -1,
+              choice: "Under",
+            },
+          ],
+          handicap: "2.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "3.20",
+              fractionalValue: "11/5",
+              americanValue: "220",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288212",
+              winning: true,
+              change: 1,
+              choice: "Over",
+            },
+            {
+              decimalValue: "1.36",
+              fractionalValue: "4/11",
+              americanValue: "-278",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288234",
+              winning: false,
+              change: -1,
+              choice: "Under",
+            },
+          ],
+          handicap: "3.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "6.00",
+              fractionalValue: "5/1",
+              americanValue: "500",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288221",
+              winning: false,
+              change: 1,
+              choice: "Over",
+            },
+            {
+              decimalValue: "1.13",
+              fractionalValue: "1/8",
+              americanValue: "-769",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288215",
+              winning: true,
+              change: -1,
+              choice: "Under",
+            },
+          ],
+          handicap: "4.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "13.00",
+              fractionalValue: "12/1",
+              americanValue: "1200",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288196",
+              winning: false,
+              change: 1,
+              choice: "Over",
+            },
+            {
+              decimalValue: "1.04",
+              fractionalValue: "1/25",
+              americanValue: "-2500",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288228",
+              winning: true,
+              change: -1,
+              choice: "Under",
+            },
+          ],
+          handicap: "5.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "23.00",
+              fractionalValue: "22/1",
+              americanValue: "2200",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288229",
+              winning: false,
+              change: 0,
+              choice: "Over",
+            },
+            {
+              decimalValue: "1.01",
+              fractionalValue: "1/80",
+              americanValue: "-10000",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288207",
+              winning: true,
+              change: 0,
+              choice: "Under",
+            },
+          ],
+          handicap: "6.5",
+        },
+        {
+          odds: [
+            {
+              decimalValue: "51.00",
+              fractionalValue: "50/1",
+              americanValue: "5000",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288224",
+              winning: false,
+              change: 0,
+              choice: "Over",
+            },
+            {
+              decimalValue: "1.00",
+              fractionalValue: "1/500",
+              americanValue: "0",
+              betSlipLink: "http://link.sofascore.com/live-odds/",
+              sourceId: "1964288226",
+              winning: true,
+              change: 0,
+              choice: "Under",
+            },
+          ],
+          handicap: "7.5",
+        },
+      ],
+      sourceId: 183399637,
+      name: "Match goals",
+    },
+  ],
+};
 
 //event/match details
 //https://api.sofascore.com/mobile/v4/event/14025014/details
@@ -3056,216 +3057,199 @@ const data9 = {
 //example response
 
 const data10 = {
-    "createdByNickname": null,
-    "eventEditorName": null,
-    "hasStandings": true,
-    "hasCupTree": false,
-    "hasIncidents": true,
-    "hasHighlights": false,
-    "hasHighlightsStream": false,
-    "game": {
-      "sport": {
-        "id": 1,
-        "name": "Football",
-        "slug": "football"
+  createdByNickname: null,
+  eventEditorName: null,
+  hasStandings: true,
+  hasCupTree: false,
+  hasIncidents: true,
+  hasHighlights: false,
+  hasHighlightsStream: false,
+  game: {
+    sport: {
+      id: 1,
+      name: "Football",
+      slug: "football",
+    },
+    rows: 1,
+    tournaments: [
+      {
+        tournament: {
+          name: "Premier League",
+          id: 1,
+          uniqueId: 17,
+          uniqueName: "Premier League",
+          hasEventPlayerStatistics: true,
+        },
+        category: {
+          name: "England",
+          priority: 10,
+          id: 1,
+          flag: "england",
+        },
+        season: {
+          name: "Premier League 25/26",
+          year: "25/26",
+          id: 76986,
+        },
+        hasEventPlayerStatistics: true,
+        hasEventPlayerHeatMap: null,
+        hasBoxScore: null,
+        displayInverseHomeAwayTeams: false,
+        events: [
+          {
+            roundInfo: {
+              round: 11,
+            },
+            customId: "Pkb",
+            status: {
+              code: 100,
+              type: "finished",
+            },
+            winnerCode: 1,
+            venue: {
+              city: {
+                name: "Birmingham",
+              },
+              id: 815,
+              hasImage: true,
+              country: {
+                name: "England",
+                flag: "england",
+              },
+              stadium: {
+                name: "Villa Park",
+                capacity: 42640,
+              },
+            },
+            referee: {
+              name: "John Brooks",
+              id: 785811,
+              yellowCardsPerGame: "3.93",
+              redCardsPerGame: "0.13",
+              country: {
+                name: "England",
+                flag: "england",
+              },
+            },
+            homeTeam: {
+              name: "Aston Villa",
+              slug: "aston-villa",
+              shortName: "Aston Villa",
+              gender: "M",
+              nameCode: "AVL",
+              disabled: false,
+              national: false,
+              id: 40,
+              subTeams: [],
+              teamColors: {
+                primary: "#670e36",
+                secondary: "#94bee5",
+                text: "#94bee5",
+              },
+            },
+            awayTeam: {
+              name: "Bournemouth",
+              slug: "bournemouth",
+              shortName: "Bournemouth",
+              gender: "M",
+              nameCode: "BOU",
+              disabled: false,
+              national: false,
+              id: 60,
+              subTeams: [],
+              teamColors: {
+                primary: "#000000",
+                secondary: "#cc0000",
+                text: "#cc0000",
+              },
+            },
+            homeScore: {
+              current: 4,
+              display: 4,
+              period1: 2,
+              period2: 2,
+              normaltime: 4,
+            },
+            awayScore: {
+              current: 0,
+              display: 0,
+              period1: 0,
+              period2: 0,
+              normaltime: 0,
+            },
+            time: {},
+            changes: {
+              changes: ["status.code", "status.description", "status.type"],
+              changeTimestamp: 1762703856,
+            },
+            hasHighlights: false,
+            hasHighlightsStream: false,
+            hasGlobalHighlights: false,
+            hasEventPlayerStatistics: true,
+            hasEventPlayerHeatMap: true,
+            bestHomeTeamPlayer: {
+              player: {
+                id: 783126,
+                name: "Emiliano Buendía",
+                shortName: "E. Buendía",
+              },
+              value: "8.5",
+            },
+            bestAwayTeamPlayer: {
+              player: {
+                id: 1104986,
+                name: "Alex Scott",
+                shortName: "A. Scott",
+              },
+              value: "7.4",
+            },
+            id: 14025014,
+            cardsCode: "00",
+            defaultPeriodCount: 2,
+            defaultPeriodLength: 45,
+            statusDescription: "FT",
+            hasLiveForm: true,
+            startTimestamp: 1762696800,
+            webUrl: "/football/match/bournemouth-aston-villa/Pkb#id:14025014",
+            hasTime: false,
+            resultOnly: false,
+            showEventNote: false,
+            teamsForm: {
+              homeTeam: {
+                avgRating: "6.77",
+                position: "12",
+                points: "15",
+                form: ["W", "W", "W", "W", "L"],
+              },
+              awayTeam: {
+                avgRating: "6.81",
+                position: "7",
+                points: "18",
+                form: ["D", "W", "D", "W", "L"],
+              },
+              pointsLabel: "Pts",
+            },
+          },
+        ],
       },
-      "rows": 1,
-      "tournaments": [
-        {
-          "tournament": {
-            "name": "Premier League",
-            "id": 1,
-            "uniqueId": 17,
-            "uniqueName": "Premier League",
-            "hasEventPlayerStatistics": true
-          },
-          "category": {
-            "name": "England",
-            "priority": 10,
-            "id": 1,
-            "flag": "england"
-          },
-          "season": {
-            "name": "Premier League 25/26",
-            "year": "25/26",
-            "id": 76986
-          },
-          "hasEventPlayerStatistics": true,
-          "hasEventPlayerHeatMap": null,
-          "hasBoxScore": null,
-          "displayInverseHomeAwayTeams": false,
-          "events": [
-            {
-              "roundInfo": {
-                "round": 11
-              },
-              "customId": "Pkb",
-              "status": {
-                "code": 100,
-                "type": "finished"
-              },
-              "winnerCode": 1,
-              "venue": {
-                "city": {
-                  "name": "Birmingham"
-                },
-                "id": 815,
-                "hasImage": true,
-                "country": {
-                  "name": "England",
-                  "flag": "england"
-                },
-                "stadium": {
-                  "name": "Villa Park",
-                  "capacity": 42640
-                }
-              },
-              "referee": {
-                "name": "John Brooks",
-                "id": 785811,
-                "yellowCardsPerGame": "3.93",
-                "redCardsPerGame": "0.13",
-                "country": {
-                  "name": "England",
-                  "flag": "england"
-                }
-              },
-              "homeTeam": {
-                "name": "Aston Villa",
-                "slug": "aston-villa",
-                "shortName": "Aston Villa",
-                "gender": "M",
-                "nameCode": "AVL",
-                "disabled": false,
-                "national": false,
-                "id": 40,
-                "subTeams": [],
-                "teamColors": {
-                  "primary": "#670e36",
-                  "secondary": "#94bee5",
-                  "text": "#94bee5"
-                }
-              },
-              "awayTeam": {
-                "name": "Bournemouth",
-                "slug": "bournemouth",
-                "shortName": "Bournemouth",
-                "gender": "M",
-                "nameCode": "BOU",
-                "disabled": false,
-                "national": false,
-                "id": 60,
-                "subTeams": [],
-                "teamColors": {
-                  "primary": "#000000",
-                  "secondary": "#cc0000",
-                  "text": "#cc0000"
-                }
-              },
-              "homeScore": {
-                "current": 4,
-                "display": 4,
-                "period1": 2,
-                "period2": 2,
-                "normaltime": 4
-              },
-              "awayScore": {
-                "current": 0,
-                "display": 0,
-                "period1": 0,
-                "period2": 0,
-                "normaltime": 0
-              },
-              "time": {},
-              "changes": {
-                "changes": [
-                  "status.code",
-                  "status.description",
-                  "status.type"
-                ],
-                "changeTimestamp": 1762703856
-              },
-              "hasHighlights": false,
-              "hasHighlightsStream": false,
-              "hasGlobalHighlights": false,
-              "hasEventPlayerStatistics": true,
-              "hasEventPlayerHeatMap": true,
-              "bestHomeTeamPlayer": {
-                "player": {
-                  "id": 783126,
-                  "name": "Emiliano Buendía",
-                  "shortName": "E. Buendía"
-                },
-                "value": "8.5"
-              },
-              "bestAwayTeamPlayer": {
-                "player": {
-                  "id": 1104986,
-                  "name": "Alex Scott",
-                  "shortName": "A. Scott"
-                },
-                "value": "7.4"
-              },
-              "id": 14025014,
-              "cardsCode": "00",
-              "defaultPeriodCount": 2,
-              "defaultPeriodLength": 45,
-              "statusDescription": "FT",
-              "hasLiveForm": true,
-              "startTimestamp": 1762696800,
-              "webUrl": "/football/match/bournemouth-aston-villa/Pkb#id:14025014",
-              "hasTime": false,
-              "resultOnly": false,
-              "showEventNote": false,
-              "teamsForm": {
-                "homeTeam": {
-                  "avgRating": "6.77",
-                  "position": "12",
-                  "points": "15",
-                  "form": [
-                    "W",
-                    "W",
-                    "W",
-                    "W",
-                    "L"
-                  ]
-                },
-                "awayTeam": {
-                  "avgRating": "6.81",
-                  "position": "7",
-                  "points": "18",
-                  "form": [
-                    "D",
-                    "W",
-                    "D",
-                    "W",
-                    "L"
-                  ]
-                },
-                "pointsLabel": "Pts"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    "vote": {
-      "vote1": 26238,
-      "vote2": 12761,
-      "voteX": 8545,
-      "vote1Percentage": "55.19",
-      "voteXPercentage": "17.97",
-      "vote2Percentage": "26.84"
-    },
-    "hasStatistics": true,
-    "hasComments": false,
-    "hasInnings": false,
-    "hasLineups": true,
-    "hasOdds": true,
-    "hasTvChannels": true,
-    "hasLineupsImage": true
-}
-
+    ],
+  },
+  vote: {
+    vote1: 26238,
+    vote2: 12761,
+    voteX: 8545,
+    vote1Percentage: "55.19",
+    voteXPercentage: "17.97",
+    vote2Percentage: "26.84",
+  },
+  hasStatistics: true,
+  hasComments: false,
+  hasInnings: false,
+  hasLineups: true,
+  hasOdds: true,
+  hasTvChannels: true,
+  hasLineupsImage: true,
+};
 
 //event/match players stats
 //https://api.sofascore.com/mobile/v4/event/14025014/player-statistics
@@ -3274,400 +3258,400 @@ const data10 = {
 //example response
 
 const data11 = {
-    "home": [
-      {
-        "player": {
-          "name": "Emiliano Martínez",
-          "slug": "emiliano-martinez",
-          "shortName": "E. Martínez",
-          "position": "G",
-          "jerseyNumber": "23",
-          "id": 158263,
-          "nationality": "ARG",
-          "shirtNumber": 23,
-          "nationalityIOC": "ARG"
-        },
-        "statistics": [],
-        "substitute": false
+  home: [
+    {
+      player: {
+        name: "Emiliano Martínez",
+        slug: "emiliano-martinez",
+        shortName: "E. Martínez",
+        position: "G",
+        jerseyNumber: "23",
+        id: 158263,
+        nationality: "ARG",
+        shirtNumber: 23,
+        nationalityIOC: "ARG",
       },
-      {
-        "player": {
-          "name": "Matty Cash",
-          "slug": "matty-cash",
-          "shortName": "M. Cash",
-          "position": "D",
-          "jerseyNumber": "2",
-          "id": 833956,
-          "nationality": "POL",
-          "shirtNumber": 2,
-          "nationalityIOC": "POL"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Matty Cash",
+        slug: "matty-cash",
+        shortName: "M. Cash",
+        position: "D",
+        jerseyNumber: "2",
+        id: 833956,
+        nationality: "POL",
+        shirtNumber: 2,
+        nationalityIOC: "POL",
       },
-      {
-        "player": {
-          "name": "Ezri Konsa",
-          "slug": "ezri-konsa",
-          "shortName": "E. Konsa",
-          "position": "D",
-          "jerseyNumber": "4",
-          "id": 827679,
-          "nationality": "ENG",
-          "shirtNumber": 4,
-          "nationalityIOC": "ENG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Ezri Konsa",
+        slug: "ezri-konsa",
+        shortName: "E. Konsa",
+        position: "D",
+        jerseyNumber: "4",
+        id: 827679,
+        nationality: "ENG",
+        shirtNumber: 4,
+        nationalityIOC: "ENG",
       },
-      {
-        "player": {
-          "name": "Pau Torres",
-          "slug": "pau-torres",
-          "shortName": "P. Torres",
-          "position": "D",
-          "jerseyNumber": "14",
-          "id": 864169,
-          "nationality": "ESP",
-          "shirtNumber": 14,
-          "nationalityIOC": "ESP"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Pau Torres",
+        slug: "pau-torres",
+        shortName: "P. Torres",
+        position: "D",
+        jerseyNumber: "14",
+        id: 864169,
+        nationality: "ESP",
+        shirtNumber: 14,
+        nationalityIOC: "ESP",
       },
-      {
-        "player": {
-          "name": "Lucas Digne",
-          "slug": "lucas-digne",
-          "shortName": "L. Digne",
-          "position": "D",
-          "jerseyNumber": "12",
-          "id": 96538,
-          "nationality": "FRA",
-          "shirtNumber": 12,
-          "nationalityIOC": "FRA"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Lucas Digne",
+        slug: "lucas-digne",
+        shortName: "L. Digne",
+        position: "D",
+        jerseyNumber: "12",
+        id: 96538,
+        nationality: "FRA",
+        shirtNumber: 12,
+        nationalityIOC: "FRA",
       },
-      {
-        "player": {
-          "name": "John McGinn",
-          "slug": "john-mcginn",
-          "shortName": "J. McGinn",
-          "position": "M",
-          "jerseyNumber": "7",
-          "id": 250223,
-          "nationality": "SCO",
-          "shirtNumber": 7,
-          "nationalityIOC": "SCO"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "John McGinn",
+        slug: "john-mcginn",
+        shortName: "J. McGinn",
+        position: "M",
+        jerseyNumber: "7",
+        id: 250223,
+        nationality: "SCO",
+        shirtNumber: 7,
+        nationalityIOC: "SCO",
       },
-      {
-        "player": {
-          "name": "Boubacar Kamara",
-          "slug": "boubacar-kamara",
-          "shortName": "B. Kamara",
-          "position": "M",
-          "jerseyNumber": "44",
-          "id": 826204,
-          "nationality": "FRA",
-          "shirtNumber": 44,
-          "nationalityIOC": "FRA"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Boubacar Kamara",
+        slug: "boubacar-kamara",
+        shortName: "B. Kamara",
+        position: "M",
+        jerseyNumber: "44",
+        id: 826204,
+        nationality: "FRA",
+        shirtNumber: 44,
+        nationalityIOC: "FRA",
       },
-      {
-        "player": {
-          "name": "Amadou Onana",
-          "slug": "amadou-onana",
-          "shortName": "A. Onana",
-          "position": "M",
-          "jerseyNumber": "24",
-          "id": 923973,
-          "nationality": "BEL",
-          "shirtNumber": 24,
-          "nationalityIOC": "BEL"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Amadou Onana",
+        slug: "amadou-onana",
+        shortName: "A. Onana",
+        position: "M",
+        jerseyNumber: "24",
+        id: 923973,
+        nationality: "BEL",
+        shirtNumber: 24,
+        nationalityIOC: "BEL",
       },
-      {
-        "player": {
-          "name": "Emiliano Buendía",
-          "slug": "emiliano-buendia",
-          "shortName": "E. Buendía",
-          "position": "M",
-          "jerseyNumber": "10",
-          "id": 783126,
-          "nationality": "ARG",
-          "shirtNumber": 10,
-          "nationalityIOC": "ARG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Emiliano Buendía",
+        slug: "emiliano-buendia",
+        shortName: "E. Buendía",
+        position: "M",
+        jerseyNumber: "10",
+        id: 783126,
+        nationality: "ARG",
+        shirtNumber: 10,
+        nationalityIOC: "ARG",
       },
-      {
-        "player": {
-          "name": "Morgan Rogers",
-          "slug": "morgan-rogers",
-          "shortName": "M. Rogers",
-          "position": "M",
-          "jerseyNumber": "27",
-          "id": 948261,
-          "nationality": "ENG",
-          "shirtNumber": 27,
-          "nationalityIOC": "ENG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Morgan Rogers",
+        slug: "morgan-rogers",
+        shortName: "M. Rogers",
+        position: "M",
+        jerseyNumber: "27",
+        id: 948261,
+        nationality: "ENG",
+        shirtNumber: 27,
+        nationalityIOC: "ENG",
       },
-      {
-        "player": {
-          "name": "Ollie Watkins",
-          "slug": "ollie-watkins",
-          "shortName": "O. Watkins",
-          "position": "F",
-          "jerseyNumber": "11",
-          "id": 555386,
-          "nationality": "ENG",
-          "shirtNumber": 11,
-          "nationalityIOC": "ENG"
-        },
-        "statistics": [],
-        "substitute": false
-      }
-    ],
-    "away": [
-      {
-        "player": {
-          "name": "Đorđe Petrović",
-          "slug": "dorde-petrovic",
-          "shortName": "Đ. Petrović",
-          "position": "G",
-          "jerseyNumber": "1",
-          "id": 882604,
-          "nationality": "SRB",
-          "shirtNumber": 1,
-          "nationalityIOC": "SRB"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Ollie Watkins",
+        slug: "ollie-watkins",
+        shortName: "O. Watkins",
+        position: "F",
+        jerseyNumber: "11",
+        id: 555386,
+        nationality: "ENG",
+        shirtNumber: 11,
+        nationalityIOC: "ENG",
       },
-      {
-        "player": {
-          "name": "Adam Smith",
-          "slug": "adam-smith",
-          "shortName": "A. Smith",
-          "position": "D",
-          "jerseyNumber": "15",
-          "id": 44566,
-          "nationality": "ENG",
-          "shirtNumber": 15,
-          "nationalityIOC": "ENG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+  ],
+  away: [
+    {
+      player: {
+        name: "Đorđe Petrović",
+        slug: "dorde-petrovic",
+        shortName: "Đ. Petrović",
+        position: "G",
+        jerseyNumber: "1",
+        id: 882604,
+        nationality: "SRB",
+        shirtNumber: 1,
+        nationalityIOC: "SRB",
       },
-      {
-        "player": {
-          "name": "Veljko Milosavljević",
-          "slug": "milosavljevic-veljko",
-          "shortName": "V. Milosavljević",
-          "position": "D",
-          "jerseyNumber": "44",
-          "id": 1406130,
-          "nationality": "SRB",
-          "shirtNumber": 44,
-          "nationalityIOC": "SRB"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Adam Smith",
+        slug: "adam-smith",
+        shortName: "A. Smith",
+        position: "D",
+        jerseyNumber: "15",
+        id: 44566,
+        nationality: "ENG",
+        shirtNumber: 15,
+        nationalityIOC: "ENG",
       },
-      {
-        "player": {
-          "name": "Marcos Senesi",
-          "slug": "marcos-senesi",
-          "shortName": "M. Senesi",
-          "position": "D",
-          "jerseyNumber": "5",
-          "id": 830659,
-          "nationality": "ARG",
-          "shirtNumber": 5,
-          "nationalityIOC": "ARG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Veljko Milosavljević",
+        slug: "milosavljevic-veljko",
+        shortName: "V. Milosavljević",
+        position: "D",
+        jerseyNumber: "44",
+        id: 1406130,
+        nationality: "SRB",
+        shirtNumber: 44,
+        nationalityIOC: "SRB",
       },
-      {
-        "player": {
-          "name": "Adrien Truffert",
-          "slug": "truffert-adrien",
-          "shortName": "A. Truffert",
-          "position": "M",
-          "jerseyNumber": "3",
-          "id": 999028,
-          "nationality": "FRA",
-          "shirtNumber": 3,
-          "nationalityIOC": "FRA"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Marcos Senesi",
+        slug: "marcos-senesi",
+        shortName: "M. Senesi",
+        position: "D",
+        jerseyNumber: "5",
+        id: 830659,
+        nationality: "ARG",
+        shirtNumber: 5,
+        nationalityIOC: "ARG",
       },
-      {
-        "player": {
-          "name": "Alex Scott",
-          "slug": "alex-scott",
-          "shortName": "A. Scott",
-          "position": "M",
-          "jerseyNumber": "8",
-          "id": 1104986,
-          "nationality": "ENG",
-          "shirtNumber": 8,
-          "nationalityIOC": "ENG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Adrien Truffert",
+        slug: "truffert-adrien",
+        shortName: "A. Truffert",
+        position: "M",
+        jerseyNumber: "3",
+        id: 999028,
+        nationality: "FRA",
+        shirtNumber: 3,
+        nationalityIOC: "FRA",
       },
-      {
-        "player": {
-          "name": "Tyler Adams",
-          "slug": "tyler-adams",
-          "shortName": "T. Adams",
-          "position": "M",
-          "jerseyNumber": "12",
-          "id": 800419,
-          "nationality": "USA",
-          "shirtNumber": 12,
-          "nationalityIOC": "USA"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Alex Scott",
+        slug: "alex-scott",
+        shortName: "A. Scott",
+        position: "M",
+        jerseyNumber: "8",
+        id: 1104986,
+        nationality: "ENG",
+        shirtNumber: 8,
+        nationalityIOC: "ENG",
       },
-      {
-        "player": {
-          "name": "Antoine Semenyo",
-          "slug": "antoine-semenyo",
-          "shortName": "A. Semenyo",
-          "position": "M",
-          "jerseyNumber": "24",
-          "id": 934354,
-          "nationality": "GHA",
-          "shirtNumber": 24,
-          "nationalityIOC": "GHA"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Tyler Adams",
+        slug: "tyler-adams",
+        shortName: "T. Adams",
+        position: "M",
+        jerseyNumber: "12",
+        id: 800419,
+        nationality: "USA",
+        shirtNumber: 12,
+        nationalityIOC: "USA",
       },
-      {
-        "player": {
-          "name": "Justin Kluivert",
-          "slug": "justin-kluivert",
-          "shortName": "J. Kluivert",
-          "position": "M",
-          "jerseyNumber": "19",
-          "id": 851596,
-          "nationality": "NLD",
-          "shirtNumber": 19,
-          "nationalityIOC": "NED"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Antoine Semenyo",
+        slug: "antoine-semenyo",
+        shortName: "A. Semenyo",
+        position: "M",
+        jerseyNumber: "24",
+        id: 934354,
+        nationality: "GHA",
+        shirtNumber: 24,
+        nationalityIOC: "GHA",
       },
-      {
-        "player": {
-          "name": "Marcus Tavernier",
-          "slug": "marcus-tavernier",
-          "shortName": "M. Tavernier",
-          "position": "M",
-          "jerseyNumber": "16",
-          "id": 895576,
-          "nationality": "ENG",
-          "shirtNumber": 16,
-          "nationalityIOC": "ENG"
-        },
-        "statistics": [],
-        "substitute": false
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Justin Kluivert",
+        slug: "justin-kluivert",
+        shortName: "J. Kluivert",
+        position: "M",
+        jerseyNumber: "19",
+        id: 851596,
+        nationality: "NLD",
+        shirtNumber: 19,
+        nationalityIOC: "NED",
       },
-      {
-        "player": {
-          "name": "Evanilson",
-          "slug": "evanilson",
-          "shortName": "Evanilson",
-          "position": "F",
-          "jerseyNumber": "9",
-          "id": 998490,
-          "nationality": "BRA",
-          "shirtNumber": 9,
-          "nationalityIOC": "BRA"
-        },
-        "statistics": [],
-        "substitute": false
-      }
-    ],
-    "homeMissingPlayers": [
-      {
-        "player": {
-          "name": "Tyrone Mings",
-          "slug": "tyrone-mings",
-          "shortName": "T. Mings",
-          "position": "D",
-          "jerseyNumber": "40",
-          "id": 303638,
-          "nationality": "ENG",
-          "shirtNumber": 40,
-          "nationalityIOC": "ENG"
-        },
-        "type": "doubtful",
-        "reason": 1,
-        "externalType": 5
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Marcus Tavernier",
+        slug: "marcus-tavernier",
+        shortName: "M. Tavernier",
+        position: "M",
+        jerseyNumber: "16",
+        id: 895576,
+        nationality: "ENG",
+        shirtNumber: 16,
+        nationalityIOC: "ENG",
       },
-      {
-        "player": {
-          "name": "Andrés García",
-          "slug": "andres-garcia",
-          "shortName": "A. García",
-          "position": "D",
-          "jerseyNumber": "16",
-          "id": 1457536,
-          "nationality": "ESP",
-          "shirtNumber": 16,
-          "nationalityIOC": "ESP"
-        },
-        "type": "missing",
-        "reason": 1,
-        "description": "Muscle Injury",
-        "externalType": 5,
-        "expectedEndDate": {
-          "date": "2025-11-10 00:00:00.000000",
-          "timezone_type": 3,
-          "timezone": "UTC"
-        }
-      }
-    ],
-    "awayMissingPlayers": [
-      {
-        "player": {
-          "name": "Matai Akinmboni",
-          "slug": "matai-akinmboni",
-          "shortName": "M. Akinmboni",
-          "position": "D",
-          "jerseyNumber": "45",
-          "id": 1190712,
-          "nationality": "USA",
-          "shirtNumber": 45,
-          "nationalityIOC": "USA"
-        },
-        "type": "doubtful",
-        "reason": 1,
-        "description": "Muscle Injury",
-        "externalType": 5
-      }
-    ]
-}
+      statistics: [],
+      substitute: false,
+    },
+    {
+      player: {
+        name: "Evanilson",
+        slug: "evanilson",
+        shortName: "Evanilson",
+        position: "F",
+        jerseyNumber: "9",
+        id: 998490,
+        nationality: "BRA",
+        shirtNumber: 9,
+        nationalityIOC: "BRA",
+      },
+      statistics: [],
+      substitute: false,
+    },
+  ],
+  homeMissingPlayers: [
+    {
+      player: {
+        name: "Tyrone Mings",
+        slug: "tyrone-mings",
+        shortName: "T. Mings",
+        position: "D",
+        jerseyNumber: "40",
+        id: 303638,
+        nationality: "ENG",
+        shirtNumber: 40,
+        nationalityIOC: "ENG",
+      },
+      type: "doubtful",
+      reason: 1,
+      externalType: 5,
+    },
+    {
+      player: {
+        name: "Andrés García",
+        slug: "andres-garcia",
+        shortName: "A. García",
+        position: "D",
+        jerseyNumber: "16",
+        id: 1457536,
+        nationality: "ESP",
+        shirtNumber: 16,
+        nationalityIOC: "ESP",
+      },
+      type: "missing",
+      reason: 1,
+      description: "Muscle Injury",
+      externalType: 5,
+      expectedEndDate: {
+        date: "2025-11-10 00:00:00.000000",
+        timezone_type: 3,
+        timezone: "UTC",
+      },
+    },
+  ],
+  awayMissingPlayers: [
+    {
+      player: {
+        name: "Matai Akinmboni",
+        slug: "matai-akinmboni",
+        shortName: "M. Akinmboni",
+        position: "D",
+        jerseyNumber: "45",
+        id: 1190712,
+        nationality: "USA",
+        shirtNumber: 45,
+        nationalityIOC: "USA",
+      },
+      type: "doubtful",
+      reason: 1,
+      description: "Muscle Injury",
+      externalType: 5,
+    },
+  ],
+};
 
 //player details
 //https://api.sofascore.com/mobile/v4/player/158263/details
@@ -3676,219 +3660,219 @@ const data11 = {
 //example response
 
 const data12 = {
-    "name": "Emiliano Martínez",
-    "slug": "emiliano-martinez",
-    "shortName": "E. Martínez",
-    "team": {
-      "name": "Aston Villa",
-      "slug": "aston-villa",
-      "gender": "M",
-      "sport": {
-        "id": 1,
-        "name": "Football",
-        "slug": "football"
-      },
-      "disabled": false,
-      "national": false,
-      "id": 40,
-      "fullName": "Aston Villa",
-      "flag": "england",
-      "teamColors": {
-        "primary": "#670e36",
-        "secondary": "#94bee5",
-        "text": "#94bee5"
-      }
+  name: "Emiliano Martínez",
+  slug: "emiliano-martinez",
+  shortName: "E. Martínez",
+  team: {
+    name: "Aston Villa",
+    slug: "aston-villa",
+    gender: "M",
+    sport: {
+      id: 1,
+      name: "Football",
+      slug: "football",
     },
-    "position": "G",
-    "weight": 89,
-    "jerseyNumber": "23",
-    "height": 195,
-    "preferredFoot": "Right",
-    "statistics": [
-      {
-        "uniqueTournamentId": 17,
-        "uniqueTournamentName": "Premier League",
-        "seasons": [
-          {
-            "year": "25/26",
-            "id": 76986,
-            "active": true
-          },
-          {
-            "year": "24/25",
-            "id": 61627,
-            "active": false
-          },
-          {
-            "year": "23/24",
-            "id": 52186,
-            "active": false
-          },
-          {
-            "year": "22/23",
-            "id": 41886,
-            "active": false
-          },
-          {
-            "year": "21/22",
-            "id": 37036,
-            "active": false
-          },
-          {
-            "year": "20/21",
-            "id": 29415,
-            "active": false
-          },
-          {
-            "year": "19/20",
-            "id": 23776,
-            "active": false
-          },
-          {
-            "year": "16/17",
-            "id": 11733,
-            "active": false
-          },
-          {
-            "year": "14/15",
-            "id": 8186,
-            "active": false
-          }
-        ]
-      },
-      {
-        "uniqueTournamentId": 295,
-        "uniqueTournamentName": "World Cup Qual. CONMEBOL",
-        "seasons": [
-          {
-            "year": "2026",
-            "id": 53820,
-            "active": false
-          },
-          {
-            "year": "2022",
-            "id": 26781,
-            "active": false
-          }
-        ]
-      },
-      {
-        "uniqueTournamentId": 679,
-        "uniqueTournamentName": "UEFA Europa League",
-        "seasons": [
-          {
-            "year": "25/26",
-            "id": 76984,
-            "active": true
-          },
-          {
-            "year": "19/20",
-            "id": 23755,
-            "active": false
-          },
-          {
-            "year": "18/19",
-            "id": 17352,
-            "active": false
-          }
-        ]
-      },
-      {
-        "uniqueTournamentId": 7,
-        "uniqueTournamentName": "UEFA Champions League",
-        "seasons": [
-          {
-            "year": "24/25",
-            "id": 61644,
-            "active": false
-          },
-          {
-            "year": "14/15",
-            "id": 8226,
-            "active": false
-          },
-          {
-            "year": "all",
-            "id": 64433,
-            "active": false
-          }
-        ]
-      },
-      {
-        "uniqueTournamentId": 133,
-        "uniqueTournamentName": "Copa América",
-        "seasons": [
-          {
-            "year": "2024",
-            "id": 57114,
-            "active": false
-          },
-          {
-            "year": "2021",
-            "id": 26681,
-            "active": false
-          }
-        ]
-      }
-    ],
-    "hasTransferHistory": true,
-    "userCount": 65655,
-    "deceased": false,
-    "id": 158263,
-    "marketValueCurrency": "EUR",
-    "heightMeters": 1.95,
-    "nationality": "ARG",
-    "shirtNumber": 23,
-    "hasImage": true,
-    "age": 33,
-    "dateOfBirthFormated": "33 (2 Sep 1992)",
-    "flag": "argentina",
-    "nationalityIOC": "ARG",
-    "characteristicsData": {
-      "positive": [
+    disabled: false,
+    national: false,
+    id: 40,
+    fullName: "Aston Villa",
+    flag: "england",
+    teamColors: {
+      primary: "#670e36",
+      secondary: "#94bee5",
+      text: "#94bee5",
+    },
+  },
+  position: "G",
+  weight: 89,
+  jerseyNumber: "23",
+  height: 195,
+  preferredFoot: "Right",
+  statistics: [
+    {
+      uniqueTournamentId: 17,
+      uniqueTournamentName: "Premier League",
+      seasons: [
         {
-          "name": "Long shots saving",
-          "rank": 360
+          year: "25/26",
+          id: 76986,
+          active: true,
         },
         {
-          "name": "Handling",
-          "rank": 749
-        }
+          year: "24/25",
+          id: 61627,
+          active: false,
+        },
+        {
+          year: "23/24",
+          id: 52186,
+          active: false,
+        },
+        {
+          year: "22/23",
+          id: 41886,
+          active: false,
+        },
+        {
+          year: "21/22",
+          id: 37036,
+          active: false,
+        },
+        {
+          year: "20/21",
+          id: 29415,
+          active: false,
+        },
+        {
+          year: "19/20",
+          id: 23776,
+          active: false,
+        },
+        {
+          year: "16/17",
+          id: 11733,
+          active: false,
+        },
+        {
+          year: "14/15",
+          id: 8186,
+          active: false,
+        },
       ],
-      "negative": []
     },
-    "abilityData": [
+    {
+      uniqueTournamentId: 295,
+      uniqueTournamentName: "World Cup Qual. CONMEBOL",
+      seasons: [
+        {
+          year: "2026",
+          id: 53820,
+          active: false,
+        },
+        {
+          year: "2022",
+          id: 26781,
+          active: false,
+        },
+      ],
+    },
+    {
+      uniqueTournamentId: 679,
+      uniqueTournamentName: "UEFA Europa League",
+      seasons: [
+        {
+          year: "25/26",
+          id: 76984,
+          active: true,
+        },
+        {
+          year: "19/20",
+          id: 23755,
+          active: false,
+        },
+        {
+          year: "18/19",
+          id: 17352,
+          active: false,
+        },
+      ],
+    },
+    {
+      uniqueTournamentId: 7,
+      uniqueTournamentName: "UEFA Champions League",
+      seasons: [
+        {
+          year: "24/25",
+          id: 61644,
+          active: false,
+        },
+        {
+          year: "14/15",
+          id: 8226,
+          active: false,
+        },
+        {
+          year: "all",
+          id: 64433,
+          active: false,
+        },
+      ],
+    },
+    {
+      uniqueTournamentId: 133,
+      uniqueTournamentName: "Copa América",
+      seasons: [
+        {
+          year: "2024",
+          id: 57114,
+          active: false,
+        },
+        {
+          year: "2021",
+          id: 26681,
+          active: false,
+        },
+      ],
+    },
+  ],
+  hasTransferHistory: true,
+  userCount: 65655,
+  deceased: false,
+  id: 158263,
+  marketValueCurrency: "EUR",
+  heightMeters: 1.95,
+  nationality: "ARG",
+  shirtNumber: 23,
+  hasImage: true,
+  age: 33,
+  dateOfBirthFormated: "33 (2 Sep 1992)",
+  flag: "argentina",
+  nationalityIOC: "ARG",
+  characteristicsData: {
+    positive: [
       {
-        "name": "Aerial",
-        "value": 72,
-        "positionalAvg": 56
+        name: "Long shots saving",
+        rank: 360,
       },
       {
-        "name": "Anticipation",
-        "value": 60,
-        "positionalAvg": 38
+        name: "Handling",
+        rank: 749,
       },
-      {
-        "name": "Saves",
-        "value": 80,
-        "positionalAvg": 56
-      },
-      {
-        "name": "Ball distribution",
-        "value": 85,
-        "positionalAvg": 55
-      },
-      {
-        "name": "Tactical",
-        "value": 68,
-        "positionalAvg": 40
-      }
     ],
-    "detailedPositions": {
-      "main": "GK"
+    negative: [],
+  },
+  abilityData: [
+    {
+      name: "Aerial",
+      value: 72,
+      positionalAvg: 56,
     },
-    "proposedMarketValue": 15400000
-}
+    {
+      name: "Anticipation",
+      value: 60,
+      positionalAvg: 38,
+    },
+    {
+      name: "Saves",
+      value: 80,
+      positionalAvg: 56,
+    },
+    {
+      name: "Ball distribution",
+      value: 85,
+      positionalAvg: 55,
+    },
+    {
+      name: "Tactical",
+      value: 68,
+      positionalAvg: 40,
+    },
+  ],
+  detailedPositions: {
+    main: "GK",
+  },
+  proposedMarketValue: 15400000,
+};
 
 //player transfer history
 //https://api.sofascore.com/mobile/v4/player/158263/transfer-history
@@ -3897,217 +3881,217 @@ const data12 = {
 //example response
 
 const data13 = {
-    "transfers": [
-      {
-        "type": 3,
-        "transferFee": 17500000,
-        "transferFeeDescription": "17.5M €",
-        "transferDateTimestamp": 1600214400,
-        "from": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        },
-        "to": {
-          "name": "Aston Villa",
-          "id": 40,
-          "slug": "aston-villa"
-        }
+  transfers: [
+    {
+      type: 3,
+      transferFee: 17500000,
+      transferFeeDescription: "17.5M €",
+      transferDateTimestamp: 1600214400,
+      from: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
       },
-      {
-        "type": 2,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1559260800,
-        "from": {
-          "name": "Reading",
-          "id": 28,
-          "slug": "reading"
-        },
-        "to": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        }
+      to: {
+        name: "Aston Villa",
+        id: 40,
+        slug: "aston-villa",
       },
-      {
-        "type": 1,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1548201600,
-        "from": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        },
-        "to": {
-          "name": "Reading",
-          "id": 28,
-          "slug": "reading"
-        }
+    },
+    {
+      type: 2,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1559260800,
+      from: {
+        name: "Reading",
+        id: 28,
+        slug: "reading",
       },
-      {
-        "type": 2,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1530316800,
-        "from": {
-          "name": "Getafe",
-          "id": 2859,
-          "slug": "getafe"
-        },
-        "to": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        }
+      to: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
       },
-      {
-        "type": 1,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1501632000,
-        "from": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        },
-        "to": {
-          "name": "Getafe",
-          "id": 2859,
-          "slug": "getafe"
-        }
+    },
+    {
+      type: 1,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1548201600,
+      from: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
       },
-      {
-        "type": 2,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1464652800,
-        "from": {
-          "name": "Wolverhampton",
-          "id": 3,
-          "slug": "wolverhampton"
-        },
-        "to": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        }
+      to: {
+        name: "Reading",
+        id: 28,
+        slug: "reading",
       },
-      {
-        "type": 1,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1439251200,
-        "from": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        },
-        "to": {
-          "name": "Wolverhampton",
-          "id": 3,
-          "slug": "wolverhampton"
-        }
+    },
+    {
+      type: 2,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1530316800,
+      from: {
+        name: "Getafe",
+        id: 2859,
+        slug: "getafe",
       },
-      {
-        "type": 2,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1430697600,
-        "from": {
-          "name": "Rotherham United",
-          "id": 13,
-          "slug": "rotherham-united"
-        },
-        "to": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        }
+      to: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
       },
-      {
-        "type": 1,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1426809600,
-        "from": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        },
-        "to": {
-          "name": "Rotherham United",
-          "id": 13,
-          "slug": "rotherham-united"
-        }
+    },
+    {
+      type: 1,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1501632000,
+      from: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
       },
-      {
-        "type": 2,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1401494400,
-        "from": {
-          "name": "Sheffield Wednesday",
-          "id": 12,
-          "slug": "sheffield-wednesday"
-        },
-        "to": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        }
+      to: {
+        name: "Getafe",
+        id: 2859,
+        slug: "getafe",
       },
-      {
-        "type": 1,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1381795200,
-        "from": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        },
-        "to": {
-          "name": "Sheffield Wednesday",
-          "id": 12,
-          "slug": "sheffield-wednesday"
-        }
+    },
+    {
+      type: 2,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1464652800,
+      from: {
+        name: "Wolverhampton",
+        id: 3,
+        slug: "wolverhampton",
       },
-      {
-        "type": 3,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1341100800,
-        "from": {
-          "name": "Arsenal U21",
-          "id": 36554,
-          "slug": "arsenal-u21"
-        },
-        "to": {
-          "name": "Arsenal",
-          "id": 42,
-          "slug": "arsenal"
-        }
+      to: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
       },
-      {
-        "type": 1,
-        "transferFee": 0,
-        "transferFeeDescription": "-",
-        "transferDateTimestamp": 1336089600,
-        "from": {
-          "name": "Arsenal U21",
-          "id": 36554,
-          "slug": "arsenal-u21"
-        },
-        "to": {
-          "name": "Oxford United",
-          "id": 95,
-          "slug": "oxford-united"
-        }
-      }
-    ]
-}
+    },
+    {
+      type: 1,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1439251200,
+      from: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
+      },
+      to: {
+        name: "Wolverhampton",
+        id: 3,
+        slug: "wolverhampton",
+      },
+    },
+    {
+      type: 2,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1430697600,
+      from: {
+        name: "Rotherham United",
+        id: 13,
+        slug: "rotherham-united",
+      },
+      to: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
+      },
+    },
+    {
+      type: 1,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1426809600,
+      from: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
+      },
+      to: {
+        name: "Rotherham United",
+        id: 13,
+        slug: "rotherham-united",
+      },
+    },
+    {
+      type: 2,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1401494400,
+      from: {
+        name: "Sheffield Wednesday",
+        id: 12,
+        slug: "sheffield-wednesday",
+      },
+      to: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
+      },
+    },
+    {
+      type: 1,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1381795200,
+      from: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
+      },
+      to: {
+        name: "Sheffield Wednesday",
+        id: 12,
+        slug: "sheffield-wednesday",
+      },
+    },
+    {
+      type: 3,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1341100800,
+      from: {
+        name: "Arsenal U21",
+        id: 36554,
+        slug: "arsenal-u21",
+      },
+      to: {
+        name: "Arsenal",
+        id: 42,
+        slug: "arsenal",
+      },
+    },
+    {
+      type: 1,
+      transferFee: 0,
+      transferFeeDescription: "-",
+      transferDateTimestamp: 1336089600,
+      from: {
+        name: "Arsenal U21",
+        id: 36554,
+        slug: "arsenal-u21",
+      },
+      to: {
+        name: "Oxford United",
+        id: 95,
+        slug: "oxford-united",
+      },
+    },
+  ],
+};
 
 //event/match pregame form
 //https://api.sofascore.com/api/v1/event/14025014/pregame-form
@@ -4116,145 +4100,20 @@ const data13 = {
 //example response
 
 const data14 = {
-    "homeTeam": {
-      "avgRating": "6.77",
-      "position": 12,
-      "value": "15",
-      "form": [
-        "W",
-        "W",
-        "W",
-        "W",
-        "L"
-      ]
-    },
-    "awayTeam": {
-      "avgRating": "6.81",
-      "position": 7,
-      "value": "18",
-      "form": [
-        "D",
-        "W",
-        "D",
-        "W",
-        "L"
-      ]
-    },
-    "label": "Pts"
-}
-
-//categories
-//https://api.sofascore.com/api/v1/sport/football/categories
-//@GET("https://api.sofascore.com/api/v1/sport/{sport}/categories")
-
-//example response
-
-const data15 = {
-    "categories": [
-      {
-        "name": "England",
-        "slug": "england",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "priority": 10,
-        "id": 1,
-        "flag": "england",
-        "alpha2": "EN",
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "إنجلترا",
-            "hi": "इंग्लैंड",
-            "bn": "ইংল্যান্ড"
-          },
-          "shortNameTranslation": {}
-        }
-      },
-      {
-        "name": "Brazil",
-        "slug": "brazil",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "priority": 0,
-        "id": 13,
-        "flag": "brazil",
-        "alpha2": "BR",
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "البرازيل"
-          },
-          "shortNameTranslation": {}
-        }
-      },
-      {
-        "name": "Germany",
-        "slug": "germany",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "priority": 8,
-        "id": 30,
-        "flag": "germany",
-        "alpha2": "DE",
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "ألمانيا",
-            "hi": "जर्मनी",
-            "bn": "জার্মানি"
-          },
-          "shortNameTranslation": {}
-        }
-      },
-      {
-        "name": "Spain",
-        "slug": "spain",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "priority": 9,
-        "id": 32,
-        "flag": "spain",
-        "alpha2": "ES",
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "إسبانيا",
-            "hi": "स्पेन",
-            "bn": "স্পেন"
-          },
-          "shortNameTranslation": {}
-        }
-      },
-      {
-        "name": "World",
-        "slug": "world",
-        "sport": {
-          "name": "Football",
-          "slug": "football",
-          "id": 1
-        },
-        "priority": 20,
-        "id": 1468,
-        "flag": "international",
-        "fieldTranslations": {
-          "nameTranslation": {
-            "ar": "العالم",
-            "hi": "विश्व",
-            "bn": "বিশ্ব"
-          },
-          "shortNameTranslation": {}
-        }
-      }
-    ]
-}
+  homeTeam: {
+    avgRating: "6.77",
+    position: 12,
+    value: "15",
+    form: ["W", "W", "W", "W", "L"],
+  },
+  awayTeam: {
+    avgRating: "6.81",
+    position: 7,
+    value: "18",
+    form: ["D", "W", "D", "W", "L"],
+  },
+  label: "Pts",
+};
 
 //players of a team
 //https://api.sofascore.com/mobile/v4/team/42338/players
@@ -4262,102 +4121,102 @@ const data15 = {
 
 //example response
 
-const data16 = {
-    "players": [
-      {
-        "name": "Iván Morales",
-        "slug": "ivan-morales",
-        "shortName": "I. Morales",
-        "team": {
-          "name": "Sarmiento",
-          "slug": "sarmiento",
-          "gender": "M",
-          "sport": {
-            "id": 1,
-            "name": "Football",
-            "slug": "football"
-          },
-          "disabled": false,
-          "national": false,
-          "id": 42338,
-          "fullName": "Sarmiento",
-          "flag": "argentina",
-          "teamColors": {
-            "primary": "#006600",
-            "secondary": "#006600",
-            "text": "#006600"
-          }
+const data15 = {
+  players: [
+    {
+      name: "Iván Morales",
+      slug: "ivan-morales",
+      shortName: "I. Morales",
+      team: {
+        name: "Sarmiento",
+        slug: "sarmiento",
+        gender: "M",
+        sport: {
+          id: 1,
+          name: "Football",
+          slug: "football",
         },
-        "position": "F",
-        "weight": 72,
-        "jerseyNumber": "18",
-        "height": 179,
-        "preferredFoot": "Right",
-        "hasTransferHistory": true,
-        "userCount": 563,
-        "id": 848075,
-        "marketValueCurrency": "EUR",
-        "heightMeters": 1.79,
-        "nationality": "CHL",
-        "shirtNumber": 18,
-        "hasImage": true,
-        "age": 26,
-        "dateOfBirthFormated": "26 (29 Jul 1999)",
-        "flag": "chile",
-        "nationalityIOC": "CHI",
-        "detailedPositions": {
-          "main": "ST"
+        disabled: false,
+        national: false,
+        id: 42338,
+        fullName: "Sarmiento",
+        flag: "argentina",
+        teamColors: {
+          primary: "#006600",
+          secondary: "#006600",
+          text: "#006600",
         },
-        "proposedMarketValue": 370000
       },
-      {
-        "name": "Lucas Pratto",
-        "slug": "lucas-pratto",
-        "shortName": "L. Pratto",
-        "team": {
-          "name": "Sarmiento",
-          "slug": "sarmiento",
-          "gender": "M",
-          "sport": {
-            "id": 1,
-            "name": "Football",
-            "slug": "football"
-          },
-          "disabled": false,
-          "national": false,
-          "id": 42338,
-          "fullName": "Sarmiento",
-          "flag": "argentina",
-          "teamColors": {
-            "primary": "#006600",
-            "secondary": "#006600",
-            "text": "#006600"
-          }
+      position: "F",
+      weight: 72,
+      jerseyNumber: "18",
+      height: 179,
+      preferredFoot: "Right",
+      hasTransferHistory: true,
+      userCount: 563,
+      id: 848075,
+      marketValueCurrency: "EUR",
+      heightMeters: 1.79,
+      nationality: "CHL",
+      shirtNumber: 18,
+      hasImage: true,
+      age: 26,
+      dateOfBirthFormated: "26 (29 Jul 1999)",
+      flag: "chile",
+      nationalityIOC: "CHI",
+      detailedPositions: {
+        main: "ST",
+      },
+      proposedMarketValue: 370000,
+    },
+    {
+      name: "Lucas Pratto",
+      slug: "lucas-pratto",
+      shortName: "L. Pratto",
+      team: {
+        name: "Sarmiento",
+        slug: "sarmiento",
+        gender: "M",
+        sport: {
+          id: 1,
+          name: "Football",
+          slug: "football",
         },
-        "position": "F",
-        "weight": 87,
-        "jerseyNumber": "12",
-        "height": 188,
-        "preferredFoot": "Right",
-        "hasTransferHistory": true,
-        "userCount": 442,
-        "id": 39244,
-        "marketValueCurrency": "EUR",
-        "heightMeters": 1.88,
-        "nationality": "ARG",
-        "shirtNumber": 12,
-        "hasImage": true,
-        "age": 37,
-        "dateOfBirthFormated": "37 (4 Jun 1988)",
-        "flag": "argentina",
-        "nationalityIOC": "ARG",
-        "detailedPositions": {
-          "main": "ST"
+        disabled: false,
+        national: false,
+        id: 42338,
+        fullName: "Sarmiento",
+        flag: "argentina",
+        teamColors: {
+          primary: "#006600",
+          secondary: "#006600",
+          text: "#006600",
         },
-        "proposedMarketValue": 155000
-      }
-    ]
-}
+      },
+      position: "F",
+      weight: 87,
+      jerseyNumber: "12",
+      height: 188,
+      preferredFoot: "Right",
+      hasTransferHistory: true,
+      userCount: 442,
+      id: 39244,
+      marketValueCurrency: "EUR",
+      heightMeters: 1.88,
+      nationality: "ARG",
+      shirtNumber: 12,
+      hasImage: true,
+      age: 37,
+      dateOfBirthFormated: "37 (4 Jun 1988)",
+      flag: "argentina",
+      nationalityIOC: "ARG",
+      detailedPositions: {
+        main: "ST",
+      },
+      proposedMarketValue: 155000,
+    },
+  ],
+};
 
 //team details
 //https://api.sofascore.com/mobile/v4/team/42338/details
@@ -4365,434 +4224,434 @@ const data16 = {
 
 //example response
 
-const data17 = {
-    "team": {
-      "name": "Sarmiento",
-      "slug": "sarmiento",
-      "gender": "M",
-      "sport": {
-        "id": 1,
-        "name": "Football",
-        "slug": "football"
+const data16 = {
+  team: {
+    name: "Sarmiento",
+    slug: "sarmiento",
+    gender: "M",
+    sport: {
+      id: 1,
+      name: "Football",
+      slug: "football",
+    },
+    userCount: 9010,
+    manager: {
+      name: "Facundo Sava",
+      slug: "facundo-sava",
+      shortName: "F. Sava",
+      id: 39701,
+      nationalityIOC: "ARG",
+    },
+    venue: {
+      city: {
+        name: "Junin",
       },
-      "userCount": 9010,
-      "manager": {
-        "name": "Facundo Sava",
-        "slug": "facundo-sava",
-        "shortName": "F. Sava",
-        "id": 39701,
-        "nationalityIOC": "ARG"
+      id: 8975,
+      hasImage: false,
+      country: {
+        name: "Argentina",
+        flag: "argentina",
       },
-      "venue": {
-        "city": {
-          "name": "Junin"
-        },
-        "id": 8975,
-        "hasImage": false,
-        "country": {
-          "name": "Argentina",
-          "flag": "argentina"
-        },
-        "stadium": {
-          "name": "Estadio Eva Perón",
-          "capacity": 22000
-        }
+      stadium: {
+        name: "Estadio Eva Perón",
+        capacity: 22000,
       },
-      "nameCode": "CAS",
-      "disabled": false,
-      "national": false,
-      "id": 42338,
-      "fullName": "Sarmiento",
-      "shortName": "Sarmiento",
-      "countryIOC": "ARG",
-      "countryISO": "ARG",
-      "flag": "argentina",
-      "teamColors": {
-        "primary": "#006600",
-        "secondary": "#006600",
-        "text": "#006600"
+    },
+    nameCode: "CAS",
+    disabled: false,
+    national: false,
+    id: 42338,
+    fullName: "Sarmiento",
+    shortName: "Sarmiento",
+    countryIOC: "ARG",
+    countryISO: "ARG",
+    flag: "argentina",
+    teamColors: {
+      primary: "#006600",
+      secondary: "#006600",
+      text: "#006600",
+    },
+    foundationDateTimestamp: -1854144000,
+    tournamentInfo: [
+      {
+        id: 68,
+        name: "Liga Profesional de Fútbol",
+        uniqueId: 155,
+        uniqueName: "Liga Profesional de Fútbol",
       },
-      "foundationDateTimestamp": -1854144000,
-      "tournamentInfo": [
+      {
+        id: 273,
+        name: "Copa Argentina",
+        uniqueId: 1024,
+        uniqueName: "Copa Argentina",
+      },
+    ],
+    totalPlayers: 32,
+    foreignPlayers: 4,
+    country: "Argentina",
+    foreignPlayersPercentage: "0%",
+    transfers: {
+      out: [
         {
-          "id": 68,
-          "name": "Liga Profesional de Fútbol",
-          "uniqueId": 155,
-          "uniqueName": "Liga Profesional de Fútbol"
-        },
-        {
-          "id": 273,
-          "name": "Copa Argentina",
-          "uniqueId": 1024,
-          "uniqueName": "Copa Argentina"
-        }
-      ],
-      "totalPlayers": 32,
-      "foreignPlayers": 4,
-      "country": "Argentina",
-      "foreignPlayersPercentage": "0%",
-      "transfers": {
-        "out": [
-          {
-            "player": {
-              "name": "Gabriel Carabajal",
-              "slug": "gabriel-carabajal",
-              "shortName": "Gabriel Carabajal",
-              "id": 830742
+          player: {
+            name: "Gabriel Carabajal",
+            slug: "gabriel-carabajal",
+            shortName: "Gabriel Carabajal",
+            id: 830742,
+          },
+          transfer: {
+            type: 3,
+            transferFee: 0,
+            transferFeeDescription: "Free",
+            transferDateTimestamp: 1754352000,
+            from: {
+              name: "Sarmiento",
+              id: 42338,
+              slug: "sarmiento",
             },
-            "transfer": {
-              "type": 3,
-              "transferFee": 0,
-              "transferFeeDescription": "Free",
-              "transferDateTimestamp": 1754352000,
-              "from": {
-                "name": "Sarmiento",
-                "id": 42338,
-                "slug": "sarmiento"
-              },
-              "to": {
-                "name": "Quilmes Atlético Club",
-                "id": 4936,
-                "slug": "quilmes-atletico-club"
-              }
-            }
-          }
+            to: {
+              name: "Quilmes Atlético Club",
+              id: 4936,
+              slug: "quilmes-atletico-club",
+            },
+          },
+        },
+      ],
+      in: [
+        {
+          player: {
+            name: "José Devecchi",
+            slug: "jose-devecchi",
+            shortName: "J. Devecchi",
+            id: 578460,
+          },
+          transfer: {
+            type: 1,
+            transferFee: 0,
+            transferFeeDescription: "-",
+            transferDateTimestamp: 1753228800,
+            from: {
+              name: "San Lorenzo",
+              id: 3201,
+              slug: "san-lorenzo",
+            },
+            to: {
+              name: "Sarmiento",
+              id: 42338,
+              slug: "sarmiento",
+            },
+          },
+        },
+      ],
+    },
+    goalDistribution: [
+      {
+        name: "Liga Profesional de Fútbol",
+        uniqueTournament: {
+          name: "Liga Profesional de Fútbol",
+          id: 155,
+        },
+        year: "2025",
+        season: {
+          name: "Torneo Clausura",
+          year: "2025",
+          id: 77826,
+        },
+        overall: {
+          matches: 15,
+          scored: [
+            {
+              value: 3,
+              percentage: 25,
+              startMinute: 1,
+              endMinute: 15,
+            },
+            {
+              value: 2,
+              percentage: 16,
+              startMinute: 16,
+              endMinute: 30,
+            },
+            {
+              value: 3,
+              percentage: 25,
+              startMinute: 31,
+              endMinute: 45,
+            },
+            {
+              value: 2,
+              percentage: 16,
+              startMinute: 46,
+              endMinute: 60,
+            },
+            {
+              value: 1,
+              percentage: 8,
+              startMinute: 61,
+              endMinute: 75,
+            },
+            {
+              value: 1,
+              percentage: 8,
+              startMinute: 76,
+              endMinute: 90,
+            },
+          ],
+          conceded: [
+            {
+              value: 1,
+              percentage: 6,
+              startMinute: 1,
+              endMinute: 15,
+            },
+            {
+              value: 1,
+              percentage: 6,
+              startMinute: 16,
+              endMinute: 30,
+            },
+            {
+              value: 2,
+              percentage: 12,
+              startMinute: 31,
+              endMinute: 45,
+            },
+            {
+              value: 1,
+              percentage: 6,
+              startMinute: 46,
+              endMinute: 60,
+            },
+            {
+              value: 4,
+              percentage: 25,
+              startMinute: 61,
+              endMinute: 75,
+            },
+            {
+              value: 7,
+              percentage: 43,
+              startMinute: 76,
+              endMinute: 90,
+            },
+          ],
+        },
+        home: {
+          matches: 8,
+          scored: [
+            {
+              value: 3,
+              percentage: 37,
+              startMinute: 1,
+              endMinute: 15,
+            },
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 16,
+              endMinute: 30,
+            },
+            {
+              value: 3,
+              percentage: 37,
+              startMinute: 31,
+              endMinute: 45,
+            },
+            {
+              value: 2,
+              percentage: 25,
+              startMinute: 46,
+              endMinute: 60,
+            },
+            {
+              value: 0,
+              percentage: 0,
+              startMinute: 61,
+              endMinute: 75,
+            },
+            {
+              value: 0,
+              percentage: 0,
+              startMinute: 76,
+              endMinute: 90,
+            },
+          ],
+          conceded: [
+            {
+              value: 1,
+              percentage: 9,
+              startMinute: 1,
+              endMinute: 15,
+            },
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 16,
+              endMinute: 30,
+            },
+            {
+              value: 2,
+              percentage: 18,
+              startMinute: 31,
+              endMinute: 45,
+            },
+            {
+              value: 1,
+              percentage: 9,
+              startMinute: 46,
+              endMinute: 60,
+            },
+            {
+              value: 3,
+              percentage: 27,
+              startMinute: 61,
+              endMinute: 75,
+            },
+            {
+              value: 4,
+              percentage: 36,
+              startMinute: 76,
+              endMinute: 90,
+            },
+          ],
+        },
+        away: {
+          matches: 7,
+          scored: [
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 1,
+              endMinute: 15,
+            },
+            {
+              value: 2,
+              percentage: 50,
+              startMinute: 16,
+              endMinute: 30,
+            },
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 31,
+              endMinute: 45,
+            },
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 46,
+              endMinute: 60,
+            },
+            {
+              value: 1,
+              percentage: 25,
+              startMinute: 61,
+              endMinute: 75,
+            },
+            {
+              value: 1,
+              percentage: 25,
+              startMinute: 76,
+              endMinute: 90,
+            },
+          ],
+          conceded: [
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 1,
+              endMinute: 15,
+            },
+            {
+              value: 1,
+              percentage: 20,
+              startMinute: 16,
+              endMinute: 30,
+            },
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 31,
+              endMinute: 45,
+            },
+            {
+              value: null,
+              percentage: 0,
+              startMinute: 46,
+              endMinute: 60,
+            },
+            {
+              value: 1,
+              percentage: 20,
+              startMinute: 61,
+              endMinute: 75,
+            },
+            {
+              value: 3,
+              percentage: 60,
+              startMinute: 76,
+              endMinute: 90,
+            },
+          ],
+        },
+      },
+    ],
+    topPlayerTournaments: [
+      {
+        uniqueTournamentId: 155,
+        uniqueTournamentName: "Liga Profesional de Fútbol",
+        seasons: [
+          {
+            id: 77826,
+            year: "2025",
+          },
+          {
+            id: 70268,
+            year: "2025",
+          },
+          {
+            id: 57478,
+            year: "2024",
+          },
+          {
+            id: 47647,
+            year: "2023",
+          },
+          {
+            id: 41884,
+            year: "2022",
+          },
+          {
+            id: 37231,
+            year: "2021",
+          },
+          {
+            id: 12117,
+            year: "16/17",
+          },
+          {
+            id: 11237,
+            year: "2016",
+          },
+          {
+            id: 9651,
+            year: "2015",
+          },
         ],
-        "in": [
-          {
-            "player": {
-              "name": "José Devecchi",
-              "slug": "jose-devecchi",
-              "shortName": "J. Devecchi",
-              "id": 578460
-            },
-            "transfer": {
-              "type": 1,
-              "transferFee": 0,
-              "transferFeeDescription": "-",
-              "transferDateTimestamp": 1753228800,
-              "from": {
-                "name": "San Lorenzo",
-                "id": 3201,
-                "slug": "san-lorenzo"
-              },
-              "to": {
-                "name": "Sarmiento",
-                "id": 42338,
-                "slug": "sarmiento"
-              }
-            }
-          }
-        ]
       },
-      "goalDistribution": [
-        {
-          "name": "Liga Profesional de Fútbol",
-          "uniqueTournament": {
-            "name": "Liga Profesional de Fútbol",
-            "id": 155
+      {
+        uniqueTournamentId: 1024,
+        uniqueTournamentName: "Copa Argentina",
+        seasons: [
+          {
+            id: 70664,
+            year: "2025",
           },
-          "year": "2025",
-          "season": {
-            "name": "Torneo Clausura",
-            "year": "2025",
-            "id": 77826
-          },
-          "overall": {
-            "matches": 15,
-            "scored": [
-              {
-                "value": 3,
-                "percentage": 25,
-                "startMinute": 1,
-                "endMinute": 15
-              },
-              {
-                "value": 2,
-                "percentage": 16,
-                "startMinute": 16,
-                "endMinute": 30
-              },
-              {
-                "value": 3,
-                "percentage": 25,
-                "startMinute": 31,
-                "endMinute": 45
-              },
-              {
-                "value": 2,
-                "percentage": 16,
-                "startMinute": 46,
-                "endMinute": 60
-              },
-              {
-                "value": 1,
-                "percentage": 8,
-                "startMinute": 61,
-                "endMinute": 75
-              },
-              {
-                "value": 1,
-                "percentage": 8,
-                "startMinute": 76,
-                "endMinute": 90
-              }
-            ],
-            "conceded": [
-              {
-                "value": 1,
-                "percentage": 6,
-                "startMinute": 1,
-                "endMinute": 15
-              },
-              {
-                "value": 1,
-                "percentage": 6,
-                "startMinute": 16,
-                "endMinute": 30
-              },
-              {
-                "value": 2,
-                "percentage": 12,
-                "startMinute": 31,
-                "endMinute": 45
-              },
-              {
-                "value": 1,
-                "percentage": 6,
-                "startMinute": 46,
-                "endMinute": 60
-              },
-              {
-                "value": 4,
-                "percentage": 25,
-                "startMinute": 61,
-                "endMinute": 75
-              },
-              {
-                "value": 7,
-                "percentage": 43,
-                "startMinute": 76,
-                "endMinute": 90
-              }
-            ]
-          },
-          "home": {
-            "matches": 8,
-            "scored": [
-              {
-                "value": 3,
-                "percentage": 37,
-                "startMinute": 1,
-                "endMinute": 15
-              },
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 16,
-                "endMinute": 30
-              },
-              {
-                "value": 3,
-                "percentage": 37,
-                "startMinute": 31,
-                "endMinute": 45
-              },
-              {
-                "value": 2,
-                "percentage": 25,
-                "startMinute": 46,
-                "endMinute": 60
-              },
-              {
-                "value": 0,
-                "percentage": 0,
-                "startMinute": 61,
-                "endMinute": 75
-              },
-              {
-                "value": 0,
-                "percentage": 0,
-                "startMinute": 76,
-                "endMinute": 90
-              }
-            ],
-            "conceded": [
-              {
-                "value": 1,
-                "percentage": 9,
-                "startMinute": 1,
-                "endMinute": 15
-              },
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 16,
-                "endMinute": 30
-              },
-              {
-                "value": 2,
-                "percentage": 18,
-                "startMinute": 31,
-                "endMinute": 45
-              },
-              {
-                "value": 1,
-                "percentage": 9,
-                "startMinute": 46,
-                "endMinute": 60
-              },
-              {
-                "value": 3,
-                "percentage": 27,
-                "startMinute": 61,
-                "endMinute": 75
-              },
-              {
-                "value": 4,
-                "percentage": 36,
-                "startMinute": 76,
-                "endMinute": 90
-              }
-            ]
-          },
-          "away": {
-            "matches": 7,
-            "scored": [
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 1,
-                "endMinute": 15
-              },
-              {
-                "value": 2,
-                "percentage": 50,
-                "startMinute": 16,
-                "endMinute": 30
-              },
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 31,
-                "endMinute": 45
-              },
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 46,
-                "endMinute": 60
-              },
-              {
-                "value": 1,
-                "percentage": 25,
-                "startMinute": 61,
-                "endMinute": 75
-              },
-              {
-                "value": 1,
-                "percentage": 25,
-                "startMinute": 76,
-                "endMinute": 90
-              }
-            ],
-            "conceded": [
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 1,
-                "endMinute": 15
-              },
-              {
-                "value": 1,
-                "percentage": 20,
-                "startMinute": 16,
-                "endMinute": 30
-              },
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 31,
-                "endMinute": 45
-              },
-              {
-                "value": null,
-                "percentage": 0,
-                "startMinute": 46,
-                "endMinute": 60
-              },
-              {
-                "value": 1,
-                "percentage": 20,
-                "startMinute": 61,
-                "endMinute": 75
-              },
-              {
-                "value": 3,
-                "percentage": 60,
-                "startMinute": 76,
-                "endMinute": 90
-              }
-            ]
-          }
-        }
-      ],
-      "topPlayerTournaments": [
-        {
-          "uniqueTournamentId": 155,
-          "uniqueTournamentName": "Liga Profesional de Fútbol",
-          "seasons": [
-            {
-              "id": 77826,
-              "year": "2025"
-            },
-            {
-              "id": 70268,
-              "year": "2025"
-            },
-            {
-              "id": 57478,
-              "year": "2024"
-            },
-            {
-              "id": 47647,
-              "year": "2023"
-            },
-            {
-              "id": 41884,
-              "year": "2022"
-            },
-            {
-              "id": 37231,
-              "year": "2021"
-            },
-            {
-              "id": 12117,
-              "year": "16/17"
-            },
-            {
-              "id": 11237,
-              "year": "2016"
-            },
-            {
-              "id": 9651,
-              "year": "2015"
-            }
-          ]
-        },
-        {
-          "uniqueTournamentId": 1024,
-          "uniqueTournamentName": "Copa Argentina",
-          "seasons": [
-            {
-              "id": 70664,
-              "year": "2025"
-            }
-          ]
-        }
-      ]
-    }
-}
+        ],
+      },
+    ],
+  },
+};
 
 //team past & next matches
 //https://api.sofascore.com/mobile/v4/team/42338/lastnext
@@ -4800,248 +4659,250 @@ const data17 = {
 
 //example response
 
-const data18 = {
-    "matches": {
-      "last": {
-        "sport": {
-          "id": 1,
-          "name": "Football",
-          "slug": "football"
-        },
-        "rows": 1,
-        "tournaments": [
-          {
-            "tournament": {
-              "name": "Liga Profesional, Clausura",
-              "id": 156467,
-              "uniqueId": 155,
-              "uniqueName": "Liga Profesional de Fútbol",
-              "hasEventPlayerStatistics": true,
-              "hasRounds": true
-            },
-            "category": {
-              "name": "Argentina",
-              "priority": 0,
-              "mcc": [722],
-              "id": 48,
-              "flag": "argentina"
-            },
-            "season": {
-              "name": "Torneo Clausura",
-              "year": "2025",
-              "id": 77826
-            },
-            "hasEventPlayerStatistics": true,
-            "hasEventPlayerHeatMap": null,
-            "hasBoxScore": null,
-            "displayInverseHomeAwayTeams": false,
-            "events": [
-              {
-                "roundInfo": {
-                  "round": 15
-                },
-                "status": {
-                  "code": 100,
-                  "type": "finished"
-                },
-                "winnerCode": 1,
-                "homeTeam": {
-                  "name": "Sarmiento",
-                  "slug": "sarmiento",
-                  "gender": "M",
-                  "disabled": false,
-                  "national": false,
-                  "id": 42338,
-                  "subTeams": []
-                },
-                "awayTeam": {
-                  "name": "Instituto De Córdoba",
-                  "slug": "instituto-cordoba",
-                  "gender": "M",
-                  "national": false,
-                  "id": 4937,
-                  "subTeams": []
-                },
-                "homeScore": {
-                  "current": 2,
-                  "display": 2,
-                  "period1": 2,
-                  "period2": 0,
-                  "normaltime": 2
-                },
-                "awayScore": {
-                  "current": 1,
-                  "display": 1,
-                  "period1": 0,
-                  "period2": 1,
-                  "normaltime": 1
-                },
-                "time": {},
-                "changes": {
-                  "changes": ["status.code", "status.description", "status.type"],
-                  "changeTimestamp": 1762733826
-                },
-                "hasHighlights": true,
-                "hasHighlightsStream": false,
-                "hasGlobalHighlights": true,
-                "hasEventPlayerStatistics": true,
-                "crowdsourcingDataDisplayEnabled": false,
-                "id": 14069578,
-                "cardsCode": "00",
-                "statusDescription": "FT",
-                "hasLiveForm": true,
-                "startTimestamp": 1762726800,
-                "webUrl": "/football/match/sarmiento-instituto-de-cordoba/MYbsNWq#id:14069578",
-                "hasTime": false,
-                "resultOnly": false
-              },
-              {
-                "roundInfo": {
-                  "round": 14
-                },
-                "status": {
-                  "code": 100,
-                  "type": "finished"
-                },
-                "winnerCode": 3,
-                "homeTeam": {
-                  "name": "Platense",
-                  "slug": "platense",
-                  "gender": "M",
-                  "national": false,
-                  "id": 36837,
-                  "subTeams": []
-                },
-                "awayTeam": {
-                  "name": "Sarmiento",
-                  "slug": "sarmiento",
-                  "gender": "M",
-                  "disabled": false,
-                  "national": false,
-                  "id": 42338,
-                  "subTeams": []
-                },
-                "homeScore": {
-                  "current": 1,
-                  "display": 1,
-                  "period1": 0,
-                  "period2": 1,
-                  "normaltime": 1
-                },
-                "awayScore": {
-                  "current": 1,
-                  "display": 1,
-                  "period1": 0,
-                  "period2": 1,
-                  "normaltime": 1
-                },
-                "time": {},
-                "changes": {
-                  "changes": ["status.code", "status.description", "status.type"],
-                  "changeTimestamp": 1762206002
-                },
-                "hasHighlights": true,
-                "hasHighlightsStream": false,
-                "hasGlobalHighlights": true,
-                "hasEventPlayerStatistics": true,
-                "crowdsourcingDataDisplayEnabled": false,
-                "id": 14069564,
-                "cardsCode": "00",
-                "statusDescription": "FT",
-                "hasLiveForm": true,
-                "startTimestamp": 1762199100,
-                "webUrl": "/football/match/sarmiento-platense/MLosNWq#id:14069564",
-                "hasTime": false,
-                "resultOnly": false
-              }
-            ]
-          }
-        ]
+const data17 = {
+  matches: {
+    last: {
+      sport: {
+        id: 1,
+        name: "Football",
+        slug: "football",
       },
-      "next": {
-        "sport": {
-          "id": 1,
-          "name": "Football",
-          "slug": "football"
+      rows: 1,
+      tournaments: [
+        {
+          tournament: {
+            name: "Liga Profesional, Clausura",
+            id: 156467,
+            uniqueId: 155,
+            uniqueName: "Liga Profesional de Fútbol",
+            hasEventPlayerStatistics: true,
+            hasRounds: true,
+          },
+          category: {
+            name: "Argentina",
+            priority: 0,
+            mcc: [722],
+            id: 48,
+            flag: "argentina",
+          },
+          season: {
+            name: "Torneo Clausura",
+            year: "2025",
+            id: 77826,
+          },
+          hasEventPlayerStatistics: true,
+          hasEventPlayerHeatMap: null,
+          hasBoxScore: null,
+          displayInverseHomeAwayTeams: false,
+          events: [
+            {
+              roundInfo: {
+                round: 15,
+              },
+              status: {
+                code: 100,
+                type: "finished",
+              },
+              winnerCode: 1,
+              homeTeam: {
+                name: "Sarmiento",
+                slug: "sarmiento",
+                gender: "M",
+                disabled: false,
+                national: false,
+                id: 42338,
+                subTeams: [],
+              },
+              awayTeam: {
+                name: "Instituto De Córdoba",
+                slug: "instituto-cordoba",
+                gender: "M",
+                national: false,
+                id: 4937,
+                subTeams: [],
+              },
+              homeScore: {
+                current: 2,
+                display: 2,
+                period1: 2,
+                period2: 0,
+                normaltime: 2,
+              },
+              awayScore: {
+                current: 1,
+                display: 1,
+                period1: 0,
+                period2: 1,
+                normaltime: 1,
+              },
+              time: {},
+              changes: {
+                changes: ["status.code", "status.description", "status.type"],
+                changeTimestamp: 1762733826,
+              },
+              hasHighlights: true,
+              hasHighlightsStream: false,
+              hasGlobalHighlights: true,
+              hasEventPlayerStatistics: true,
+              crowdsourcingDataDisplayEnabled: false,
+              id: 14069578,
+              cardsCode: "00",
+              statusDescription: "FT",
+              hasLiveForm: true,
+              startTimestamp: 1762726800,
+              webUrl:
+                "/football/match/sarmiento-instituto-de-cordoba/MYbsNWq#id:14069578",
+              hasTime: false,
+              resultOnly: false,
+            },
+            {
+              roundInfo: {
+                round: 14,
+              },
+              status: {
+                code: 100,
+                type: "finished",
+              },
+              winnerCode: 3,
+              homeTeam: {
+                name: "Platense",
+                slug: "platense",
+                gender: "M",
+                national: false,
+                id: 36837,
+                subTeams: [],
+              },
+              awayTeam: {
+                name: "Sarmiento",
+                slug: "sarmiento",
+                gender: "M",
+                disabled: false,
+                national: false,
+                id: 42338,
+                subTeams: [],
+              },
+              homeScore: {
+                current: 1,
+                display: 1,
+                period1: 0,
+                period2: 1,
+                normaltime: 1,
+              },
+              awayScore: {
+                current: 1,
+                display: 1,
+                period1: 0,
+                period2: 1,
+                normaltime: 1,
+              },
+              time: {},
+              changes: {
+                changes: ["status.code", "status.description", "status.type"],
+                changeTimestamp: 1762206002,
+              },
+              hasHighlights: true,
+              hasHighlightsStream: false,
+              hasGlobalHighlights: true,
+              hasEventPlayerStatistics: true,
+              crowdsourcingDataDisplayEnabled: false,
+              id: 14069564,
+              cardsCode: "00",
+              statusDescription: "FT",
+              hasLiveForm: true,
+              startTimestamp: 1762199100,
+              webUrl: "/football/match/sarmiento-platense/MLosNWq#id:14069564",
+              hasTime: false,
+              resultOnly: false,
+            },
+          ],
         },
-        "rows": 1,
-        "tournaments": [
-          {
-            "tournament": {
-              "name": "Liga Profesional, Clausura",
-              "id": 156467,
-              "uniqueId": 155,
-              "uniqueName": "Liga Profesional de Fútbol",
-              "hasEventPlayerStatistics": true,
-              "hasRounds": true
+      ],
+    },
+    next: {
+      sport: {
+        id: 1,
+        name: "Football",
+        slug: "football",
+      },
+      rows: 1,
+      tournaments: [
+        {
+          tournament: {
+            name: "Liga Profesional, Clausura",
+            id: 156467,
+            uniqueId: 155,
+            uniqueName: "Liga Profesional de Fútbol",
+            hasEventPlayerStatistics: true,
+            hasRounds: true,
+          },
+          category: {
+            name: "Argentina",
+            priority: 0,
+            mcc: [722],
+            id: 48,
+            flag: "argentina",
+          },
+          season: {
+            name: "Torneo Clausura",
+            year: "2025",
+            id: 77826,
+          },
+          hasEventPlayerStatistics: true,
+          hasEventPlayerHeatMap: null,
+          hasBoxScore: null,
+          displayInverseHomeAwayTeams: false,
+          events: [
+            {
+              roundInfo: {
+                round: 16,
+              },
+              status: {
+                code: 0,
+                type: "notstarted",
+              },
+              homeTeam: {
+                name: "San Lorenzo",
+                slug: "san-lorenzo",
+                gender: "M",
+                disabled: false,
+                national: false,
+                id: 3201,
+                subTeams: [],
+              },
+              awayTeam: {
+                name: "Sarmiento",
+                slug: "sarmiento",
+                gender: "M",
+                disabled: false,
+                national: false,
+                id: 42338,
+                subTeams: [],
+              },
+              homeScore: {},
+              awayScore: {},
+              time: {},
+              changes: {
+                changeTimestamp: 0,
+              },
+              hasHighlights: false,
+              hasHighlightsStream: false,
+              hasGlobalHighlights: false,
+              crowdsourcingDataDisplayEnabled: false,
+              id: 14069595,
+              cardsCode: "00",
+              statusDescription: "-",
+              startTimestamp: 1763298000,
+              webUrl:
+                "/football/match/sarmiento-san-lorenzo/bobsNWq#id:14069595",
+              hasTime: false,
+              resultOnly: false,
             },
-            "category": {
-              "name": "Argentina",
-              "priority": 0,
-              "mcc": [722],
-              "id": 48,
-              "flag": "argentina"
-            },
-            "season": {
-              "name": "Torneo Clausura",
-              "year": "2025",
-              "id": 77826
-            },
-            "hasEventPlayerStatistics": true,
-            "hasEventPlayerHeatMap": null,
-            "hasBoxScore": null,
-            "displayInverseHomeAwayTeams": false,
-            "events": [
-              {
-                "roundInfo": {
-                  "round": 16
-                },
-                "status": {
-                  "code": 0,
-                  "type": "notstarted"
-                },
-                "homeTeam": {
-                  "name": "San Lorenzo",
-                  "slug": "san-lorenzo",
-                  "gender": "M",
-                  "disabled": false,
-                  "national": false,
-                  "id": 3201,
-                  "subTeams": []
-                },
-                "awayTeam": {
-                  "name": "Sarmiento",
-                  "slug": "sarmiento",
-                  "gender": "M",
-                  "disabled": false,
-                  "national": false,
-                  "id": 42338,
-                  "subTeams": []
-                },
-                "homeScore": {},
-                "awayScore": {},
-                "time": {},
-                "changes": {
-                  "changeTimestamp": 0
-                },
-                "hasHighlights": false,
-                "hasHighlightsStream": false,
-                "hasGlobalHighlights": false,
-                "crowdsourcingDataDisplayEnabled": false,
-                "id": 14069595,
-                "cardsCode": "00",
-                "statusDescription": "-",
-                "startTimestamp": 1763298000,
-                "webUrl": "/football/match/sarmiento-san-lorenzo/bobsNWq#id:14069595",
-                "hasTime": false,
-                "resultOnly": false
-              }
-            ]
-          }
-        ]
-      }
-    }
-}
+          ],
+        },
+      ],
+    },
+  },
+};
 
 //team manager
 //https://api.sofascore.com/mobile/v4/manager/39701/details
@@ -5049,332 +4910,550 @@ const data18 = {
 
 //example response
 
-const data19 = {
-    "coach": {
-      "name": "Facundo Sava",
-      "slug": "facundo-sava",
-      "shortName": "F. Sava",
-      "formerPlayer": {
-        "name": "Facundo Sava",
-        "slug": "facundo-sava",
-        "shortName": "F. Sava",
-        "id": 39701
+const data18 = {
+  coach: {
+    name: "Facundo Sava",
+    slug: "facundo-sava",
+    shortName: "F. Sava",
+    formerPlayer: {
+      name: "Facundo Sava",
+      slug: "facundo-sava",
+      shortName: "F. Sava",
+      id: 39701,
+    },
+    id: 39701,
+    nationality: "ARG",
+    flag: "argentina",
+    nationalityIOC: "ARG",
+    hasImage: true,
+    performance: {
+      total: 334,
+      wins: 130,
+      draws: 85,
+      losses: 119,
+      goalsScored: 444,
+      goalsConceded: 469,
+      totalPoints: 475,
+    },
+    generalInfo: {
+      nationality: "argentina",
+      averageCoachTermDays: 212,
+      preferredFormation: "4-4-2",
+    },
+    dateOfBirthTimestamp: 131846400,
+    team: {
+      name: "Sarmiento",
+      slug: "sarmiento",
+      gender: "M",
+      sport: {
+        id: 1,
+        name: "Football",
+        slug: "football",
       },
-      "id": 39701,
-      "nationality": "ARG",
-      "flag": "argentina",
-      "nationalityIOC": "ARG",
-      "hasImage": true,
-      "performance": {
-        "total": 334,
-        "wins": 130,
-        "draws": 85,
-        "losses": 119,
-        "goalsScored": 444,
-        "goalsConceded": 469,
-        "totalPoints": 475
+      disabled: false,
+      national: false,
+      id: 42338,
+      fullName: "Sarmiento",
+      flag: "argentina",
+      teamColors: {
+        primary: "#006600",
+        secondary: "#006600",
+        text: "#006600",
       },
-      "generalInfo": {
-        "nationality": "argentina",
-        "averageCoachTermDays": 212,
-        "preferredFormation": "4-4-2"
+    },
+    careerHistory: [
+      {
+        team: {
+          name: "Sarmiento",
+          slug: "sarmiento",
+          gender: "M",
+          disabled: false,
+          national: false,
+          id: 42338,
+        },
+        teamName: "Sarmiento Junin",
+        function: "manager",
+        days: 96,
+        matches: 12,
+        wins: 5,
+        draws: 2,
+        losses: 5,
+        averageGoalsScored: 0.83,
+        averageGoalsConceded: 1,
+        startTimestamp: 1754438400,
       },
-      "dateOfBirthTimestamp": 131846400,
-      "team": {
-        "name": "Sarmiento",
-        "slug": "sarmiento",
-        "gender": "M",
-        "sport": {
-          "id": 1,
-          "name": "Football",
-          "slug": "football"
+      {
+        team: {
+          name: "Atlético Tucumán",
+          slug: "atletico-tucuman",
+          gender: "M",
+          disabled: false,
+          national: false,
+          id: 36833,
         },
-        "disabled": false,
-        "national": false,
-        "id": 42338,
-        "fullName": "Sarmiento",
-        "flag": "argentina",
-        "teamColors": {
-          "primary": "#006600",
-          "secondary": "#006600",
-          "text": "#006600"
-        }
+        teamName: "Atl. Tucumán",
+        function: "manager",
+        days: 342,
+        matches: 39,
+        wins: 14,
+        draws: 9,
+        losses: 16,
+        averageGoalsScored: 1.08,
+        averageGoalsConceded: 1.36,
+        startTimestamp: 1709424000,
+        endTimestamp: 1738972800,
       },
-      "careerHistory": [
-        {
-          "team": {
-            "name": "Sarmiento",
-            "slug": "sarmiento",
-            "gender": "M",
-            "disabled": false,
-            "national": false,
-            "id": 42338
-          },
-          "teamName": "Sarmiento Junin",
-          "function": "manager",
-          "days": 96,
-          "matches": 12,
-          "wins": 5,
-          "draws": 2,
-          "losses": 5,
-          "averageGoalsScored": 0.83,
-          "averageGoalsConceded": 1,
-          "startTimestamp": 1754438400
+      {
+        team: {
+          name: "Huracán",
+          slug: "huracan",
+          gender: "M",
+          disabled: false,
+          national: false,
+          id: 7629,
         },
-        {
-          "team": {
-            "name": "Atlético Tucumán",
-            "slug": "atletico-tucuman",
-            "gender": "M",
-            "disabled": false,
-            "national": false,
-            "id": 36833
-          },
-          "teamName": "Atl. Tucumán",
-          "function": "manager",
-          "days": 342,
-          "matches": 39,
-          "wins": 14,
-          "draws": 9,
-          "losses": 16,
-          "averageGoalsScored": 1.08,
-          "averageGoalsConceded": 1.36,
-          "startTimestamp": 1709424000,
-          "endTimestamp": 1738972800
+        teamName: "Huracán",
+        function: "manager",
+        days: 48,
+        matches: 6,
+        wins: 1,
+        draws: 1,
+        losses: 4,
+        averageGoalsScored: 0.67,
+        averageGoalsConceded: 1.33,
+        startTimestamp: 1704067200,
+        endTimestamp: 1708214400,
+      },
+      {
+        team: {
+          name: "Cerro Porteño",
+          slug: "cerro-porteno",
+          gender: "M",
+          disabled: false,
+          national: false,
+          id: 5991,
         },
-        {
-          "team": {
-            "name": "Huracán",
-            "slug": "huracan",
-            "gender": "M",
-            "disabled": false,
-            "national": false,
-            "id": 7629
-          },
-          "teamName": "Huracán",
-          "function": "manager",
-          "days": 48,
-          "matches": 6,
-          "wins": 1,
-          "draws": 1,
-          "losses": 4,
-          "averageGoalsScored": 0.67,
-          "averageGoalsConceded": 1.33,
-          "startTimestamp": 1704067200,
-          "endTimestamp": 1708214400
-        },
-        {
-          "team": {
-            "name": "Cerro Porteño",
-            "slug": "cerro-porteno",
-            "gender": "M",
-            "disabled": false,
-            "national": false,
-            "id": 5991
-          },
-          "teamName": "Cerro Porteño",
-          "function": "manager",
-          "days": 147,
-          "matches": 30,
-          "wins": 15,
-          "draws": 7,
-          "losses": 8,
-          "averageGoalsScored": 1.6,
-          "averageGoalsConceded": 1.5,
-          "startTimestamp": 1676246400,
-          "endTimestamp": 1688947200
-        }
-      ]
-    }
-}
-
+        teamName: "Cerro Porteño",
+        function: "manager",
+        days: 147,
+        matches: 30,
+        wins: 15,
+        draws: 7,
+        losses: 8,
+        averageGoalsScored: 1.6,
+        averageGoalsConceded: 1.5,
+        startTimestamp: 1676246400,
+        endTimestamp: 1688947200,
+      },
+    ],
+  },
+};
 
 // Cup and tournament endpoints
 
-//tournaments
+//categories
+//https://api.sofascore.com/api/v1/sport/football/categories
+//@GET("https://api.sofascore.com/api/v1/sport/{sport}/categories")
+//example response
+
+const data19 = {
+  categories: [
+    {
+      name: "England",
+      slug: "england",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      priority: 10,
+      id: 1,
+      flag: "england",
+      alpha2: "EN",
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "إنجلترا",
+          hi: "इंग्लैंड",
+          bn: "ইংল্যান্ড",
+        },
+        shortNameTranslation: {},
+      },
+    },
+    {
+      name: "Brazil",
+      slug: "brazil",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      priority: 0,
+      id: 13,
+      flag: "brazil",
+      alpha2: "BR",
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "البرازيل",
+        },
+        shortNameTranslation: {},
+      },
+    },
+    {
+      name: "Germany",
+      slug: "germany",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      priority: 8,
+      id: 30,
+      flag: "germany",
+      alpha2: "DE",
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "ألمانيا",
+          hi: "जर्मनी",
+          bn: "জার্মানি",
+        },
+        shortNameTranslation: {},
+      },
+    },
+    {
+      name: "Spain",
+      slug: "spain",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      priority: 9,
+      id: 32,
+      flag: "spain",
+      alpha2: "ES",
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "إسبانيا",
+          hi: "स्पेन",
+          bn: "স্পেন",
+        },
+        shortNameTranslation: {},
+      },
+    },
+    {
+      name: "World",
+      slug: "world",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      priority: 20,
+      id: 1468,
+      flag: "international",
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "العالم",
+          hi: "विश्व",
+          bn: "বিশ্ব",
+        },
+        shortNameTranslation: {},
+      },
+    },
+  ],
+};
+
+//all categories
+//https://www.sofascore.com/api/v1/sport/football/categories/all
+//https://www.sofascore.com/api/v1/sport/football/categories
+
+//@GET("https://www.sofascore.com/api/v1/sport/{sport}/categories/all")
+//example response
+const data20 = {
+  categories: [
+    {
+      name: "Virtual Leagues",
+      slug: "virtual-leagues",
+      sport: {
+        name: "Football",
+        slug: "football",
+        id: 1,
+      },
+      priority: 0,
+      id: 1156,
+      flag: "virtual-leagues",
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "الدوريات الافتراضية",
+        },
+        shortNameTranslation: {},
+      },
+    },
+  ],
+};
+
+//tournaments by category/country
 //https://api.sofascore.com/api/v1/category/17/unique-tournaments
 //@GET("https://api.sofascore.com/api/v1/category/{id}/unique-tournaments")
-
 //example response
 
 const data20 = {
-    "groups": [
-      {
-        "uniqueTournaments": [
-          {
-            "name": "Austrian Bundesliga",
-            "slug": "bundesliga",
-            "primaryColorHex": "#b80a0c",
-            "secondaryColorHex": "#eb544a",
-            "category": {
-              "name": "Austria",
-              "slug": "austria",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 17,
-              "flag": "austria",
-              "alpha2": "AT",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "النمسا"
-                },
-                "shortNameTranslation": {}
-              }
+  groups: [
+    {
+      uniqueTournaments: [
+        {
+          name: "Austrian Bundesliga",
+          slug: "bundesliga",
+          primaryColorHex: "#b80a0c",
+          secondaryColorHex: "#eb544a",
+          category: {
+            name: "Austria",
+            slug: "austria",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
             },
-            "userCount": 26310,
-            "id": 45,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "الدوري النمساوي الممتاز",
-                "hi": "ऑस्ट्रियन बुंडेसलीगा",
-                "bn": "অস্ট্রিয়ান বুন্ডেসলিগা"
+            id: 17,
+            flag: "austria",
+            alpha2: "AT",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "النمسا",
               },
-              "shortNameTranslation": {}
-            }
+              shortNameTranslation: {},
+            },
           },
-          {
-            "name": "ÖFB Cup",
-            "slug": "ofb-cup",
-            "primaryColorHex": "#dc2e25",
-            "secondaryColorHex": "#0065b1",
-            "category": {
-              "name": "Austria",
-              "slug": "austria",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 17,
-              "flag": "austria",
-              "alpha2": "AT",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "النمسا"
-                },
-                "shortNameTranslation": {}
-              }
+          userCount: 26310,
+          id: 45,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "الدوري النمساوي الممتاز",
+              hi: "ऑस्ट्रियन बुंडेसलीगा",
+              bn: "অস্ট্রিয়ান বুন্ডেসলিগা",
             },
-            "userCount": 4788,
-            "id": 445,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "كأس النمسا",
-                "hi": "ओएफबी कप",
-                "bn": "ওএফবি কাপ"
-              },
-              "shortNameTranslation": {}
-            }
+            shortNameTranslation: {},
           },
-          {
-            "name": "2. Liga",
-            "slug": "2-liga",
-            "primaryColorHex": "#ea1013",
-            "secondaryColorHex": "#b5b5b5",
-            "category": {
-              "name": "Austria",
-              "slug": "austria",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 17,
-              "flag": "austria",
-              "alpha2": "AT",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "النمسا"
-                },
-                "shortNameTranslation": {}
-              }
+        },
+        {
+          name: "ÖFB Cup",
+          slug: "ofb-cup",
+          primaryColorHex: "#dc2e25",
+          secondaryColorHex: "#0065b1",
+          category: {
+            name: "Austria",
+            slug: "austria",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
             },
-            "userCount": 4412,
-            "id": 135,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "دوري الدرجة الثانية",
-                "hi": "2. लीगा",
-                "bn": "2. লীগ"
+            id: 17,
+            flag: "austria",
+            alpha2: "AT",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "النمسا",
               },
-              "shortNameTranslation": {}
-            }
+              shortNameTranslation: {},
+            },
           },
-          {
-            "name": "Frauen Bundesliga",
-            "slug": "frauen-bundesliga",
-            "primaryColorHex": "#cc0033",
-            "secondaryColorHex": "#ad536a",
-            "category": {
-              "name": "Austria",
-              "slug": "austria",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 17,
-              "flag": "austria",
-              "alpha2": "AT",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "النمسا"
-                },
-                "shortNameTranslation": {}
-              }
+          userCount: 4788,
+          id: 445,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "كأس النمسا",
+              hi: "ओएफबी कप",
+              bn: "ওএফবি কাপ",
             },
-            "userCount": 940,
-            "id": 9415,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "البوندسليغا للسيدات"
-              },
-              "shortNameTranslation": {}
-            }
+            shortNameTranslation: {},
           },
-          {
-            "name": "ÖFB Cup, Frauen",
-            "slug": "ofb-cup-women",
-            "category": {
-              "name": "Austria",
-              "slug": "austria",
-              "sport": {
-                "name": "Football",
-                "slug": "football",
-                "id": 1
-              },
-              "id": 17,
-              "flag": "austria",
-              "alpha2": "AT",
-              "fieldTranslations": {
-                "nameTranslation": {
-                  "ar": "النمسا"
-                },
-                "shortNameTranslation": {}
-              }
+        },
+        {
+          name: "2. Liga",
+          slug: "2-liga",
+          primaryColorHex: "#ea1013",
+          secondaryColorHex: "#b5b5b5",
+          category: {
+            name: "Austria",
+            slug: "austria",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
             },
-            "userCount": 49,
-            "id": 26795,
-            "displayInverseHomeAwayTeams": false,
-            "fieldTranslations": {
-              "nameTranslation": {
-                "ar": "كأس ÖFB، للسيدات"
+            id: 17,
+            flag: "austria",
+            alpha2: "AT",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "النمسا",
               },
-              "shortNameTranslation": {}
-            }
-          }
-        ]
-      }
-    ]
-}
+              shortNameTranslation: {},
+            },
+          },
+          userCount: 4412,
+          id: 135,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "دوري الدرجة الثانية",
+              hi: "2. लीगा",
+              bn: "2. লীগ",
+            },
+            shortNameTranslation: {},
+          },
+        },
+        {
+          name: "Frauen Bundesliga",
+          slug: "frauen-bundesliga",
+          primaryColorHex: "#cc0033",
+          secondaryColorHex: "#ad536a",
+          category: {
+            name: "Austria",
+            slug: "austria",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
+            },
+            id: 17,
+            flag: "austria",
+            alpha2: "AT",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "النمسا",
+              },
+              shortNameTranslation: {},
+            },
+          },
+          userCount: 940,
+          id: 9415,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "البوندسليغا للسيدات",
+            },
+            shortNameTranslation: {},
+          },
+        },
+        {
+          name: "ÖFB Cup, Frauen",
+          slug: "ofb-cup-women",
+          category: {
+            name: "Austria",
+            slug: "austria",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1,
+            },
+            id: 17,
+            flag: "austria",
+            alpha2: "AT",
+            fieldTranslations: {
+              nameTranslation: {
+                ar: "النمسا",
+              },
+              shortNameTranslation: {},
+            },
+          },
+          userCount: 49,
+          id: 26795,
+          displayInverseHomeAwayTeams: false,
+          fieldTranslations: {
+            nameTranslation: {
+              ar: "كأس ÖFB، للسيدات",
+            },
+            shortNameTranslation: {},
+          },
+        },
+      ],
+    },
+  ],
+};
 
+//tournaments by country code
+//https://www.sofascore.com/api/v1/config/default-unique-tournaments/KE/football
+//@GET("https://www.sofascore.com/api/v1/config/default-unique-tournaments/{countryCode}/{sport}")
+
+const data21 = {
+  uniqueTournaments: [
+    {
+      name: "UEFA Super Cup",
+      slug: "uefa-super-cup",
+      primaryColorHex: "#626366",
+      secondaryColorHex: "#009ade",
+      category: {
+        name: "Europe",
+        slug: "europe",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        id: 1465,
+        flag: "europe",
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "أوروبا",
+            hi: "यूरोप",
+            bn: "ইউরোপ",
+          },
+          shortNameTranslation: {},
+        },
+      },
+      userCount: 100584,
+      id: 465,
+      displayInverseHomeAwayTeams: false,
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "كأس السوبر الأوروبي",
+          hi: "यूईएफए सुपर कप",
+          bn: "উয়েফা সুপার কাপ",
+        },
+        shortNameTranslation: {},
+      },
+    },
+    {
+      name: "Kenyan Premier League",
+      slug: "premier-league",
+      primaryColorHex: "#eb1a23",
+      secondaryColorHex: "#3ebc7a",
+      category: {
+        name: "Kenya",
+        slug: "kenya",
+        sport: {
+          name: "Football",
+          slug: "football",
+          id: 1,
+        },
+        id: 805,
+        flag: "kenya",
+        alpha2: "KE",
+        fieldTranslations: {
+          nameTranslation: {
+            ar: "كينيا",
+          },
+          shortNameTranslation: {},
+        },
+      },
+      userCount: 5349,
+      id: 1644,
+      displayInverseHomeAwayTeams: false,
+      fieldTranslations: {
+        nameTranslation: {
+          ar: "الدوري الكيني الممتاز لكرة القدم",
+          hi: "केन्यन प्रीमियर लीग",
+          bn: "কেনিয়া প্রিমিয়ার লীগ",
+        },
+        shortNameTranslation: {},
+      },
+    },
+  ],
+};
 
 //tournament seasons
 //https://api.sofascore.com/mobile/v4/unique-tournament/155/seasons
@@ -5382,131 +5461,130 @@ const data20 = {
 
 //example response
 
-const data21 = {
-    "seasons": [
-      {
-        "name": "Torneo Clausura",
-        "year": "2025",
-        "id": 77826,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": true,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Torneo Apertura",
-        "year": "2025",
-        "id": 70268,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": true,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Liga Profesional 2024",
-        "year": "2024",
-        "id": 57478,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Liga Profesional 2023",
-        "year": "2023",
-        "id": 47647,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Liga Profesional 2022",
-        "year": "2022",
-        "id": 41884,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Superliga 2021",
-        "year": "2021",
-        "id": 37231,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Superliga 19/20",
-        "year": "19/20",
-        "id": 24239,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": true
-      },
-      {
-        "name": "Primera Division 2015",
-        "year": "2015",
-        "id": 9651,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": true,
-        "hasTopPlayers": true,
-        "hasTopTeams": false
-      },
-      {
-        "name": "Primera Division 2014",
-        "year": "2014",
-        "id": 8338,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": true,
-        "hasTopTeams": false
-      },
-      {
-        "name": "Primera Division 08/09",
-        "year": "08/09",
-        "id": 1636,
-        "hasEvents": true,
-        "hasGoalScorers": false,
-        "hasStandings": true,
-        "hasTournamentInfo": false,
-        "hasCupTree": false,
-        "hasTopPlayers": false,
-        "hasTopTeams": false
-      }
-    ]
-}
-
+const data22 = {
+  seasons: [
+    {
+      name: "Torneo Clausura",
+      year: "2025",
+      id: 77826,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: true,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Torneo Apertura",
+      year: "2025",
+      id: 70268,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: true,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Liga Profesional 2024",
+      year: "2024",
+      id: 57478,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Liga Profesional 2023",
+      year: "2023",
+      id: 47647,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Liga Profesional 2022",
+      year: "2022",
+      id: 41884,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Superliga 2021",
+      year: "2021",
+      id: 37231,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Superliga 19/20",
+      year: "19/20",
+      id: 24239,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: true,
+    },
+    {
+      name: "Primera Division 2015",
+      year: "2015",
+      id: 9651,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: true,
+      hasTopPlayers: true,
+      hasTopTeams: false,
+    },
+    {
+      name: "Primera Division 2014",
+      year: "2014",
+      id: 8338,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: true,
+      hasTopTeams: false,
+    },
+    {
+      name: "Primera Division 08/09",
+      year: "08/09",
+      id: 1636,
+      hasEvents: true,
+      hasGoalScorers: false,
+      hasStandings: true,
+      hasTournamentInfo: false,
+      hasCupTree: false,
+      hasTopPlayers: false,
+      hasTopTeams: false,
+    },
+  ],
+};
 
 //tournament/league top scorers/players
 //https://api.sofascore.com/mobile/v4/unique-tournament/155/season/77826/top-players
@@ -5514,222 +5592,222 @@ const data21 = {
 
 //example response
 
-const data22 = {
-    "statistics": [
-      {
-        "name": "Average rating",
-        "topPlayers": [
-          {
-            "matches": 13,
-            "playedEnough": true,
-            "formattedValue": "7.83",
-            "player": {
-              "name": "Leandro Paredes",
-              "slug": "leandro-paredes",
-              "shortName": "L. Paredes",
-              "id": 255389
-            },
-            "team": {
-              "name": "Boca Juniors",
-              "slug": "boca-juniors",
-              "gender": "M",
-              "national": false,
-              "id": 3202
-            }
+const data23 = {
+  statistics: [
+    {
+      name: "Average rating",
+      topPlayers: [
+        {
+          matches: 13,
+          playedEnough: true,
+          formattedValue: "7.83",
+          player: {
+            name: "Leandro Paredes",
+            slug: "leandro-paredes",
+            shortName: "L. Paredes",
+            id: 255389,
           },
-          {
-            "matches": 15,
-            "playedEnough": true,
-            "formattedValue": "7.65",
-            "player": {
-              "name": "Ángel Di María",
-              "slug": "angel-di-maria",
-              "shortName": "Á. Di María",
-              "id": 30027
-            },
-            "team": {
-              "name": "Rosario Central",
-              "slug": "rosario-central",
-              "gender": "M",
-              "national": false,
-              "id": 3217
-            }
-          }
-        ]
-      },
-      {
-        "name": "Goals",
-        "topPlayers": [
-          {
-            "matches": 13,
-            "playedEnough": true,
-            "formattedValue": "8",
-            "player": {
-              "name": "Ronaldo Martinez",
-              "slug": "ronaldo-martinez",
-              "shortName": "R. Martinez",
-              "id": 874452
-            },
-            "team": {
-              "name": "Platense",
-              "slug": "platense",
-              "gender": "M",
-              "national": false,
-              "id": 36837
-            }
+          team: {
+            name: "Boca Juniors",
+            slug: "boca-juniors",
+            gender: "M",
+            national: false,
+            id: 3202,
           },
-          {
-            "matches": 15,
-            "playedEnough": true,
-            "formattedValue": "7",
-            "player": {
-              "name": "Ángel Di María",
-              "slug": "angel-di-maria",
-              "shortName": "Á. Di María",
-              "id": 30027
-            },
-            "team": {
-              "name": "Rosario Central",
-              "slug": "rosario-central",
-              "gender": "M",
-              "national": false,
-              "id": 3217
-            }
-          }
-        ]
-      },
-      {
-        "name": "Assists",
-        "topPlayers": [
-          {
-            "matches": 15,
-            "playedEnough": true,
-            "formattedValue": "5",
-            "player": {
-              "name": "Mateo Del Blanco",
-              "slug": "del-blanco-mateo",
-              "shortName": "M. D. Blanco",
-              "id": 1183059
-            },
-            "team": {
-              "name": "Club Atlético Unión de Santa Fe",
-              "slug": "club-atletico-union",
-              "gender": "M",
-              "national": false,
-              "id": 3204
-            }
+        },
+        {
+          matches: 15,
+          playedEnough: true,
+          formattedValue: "7.65",
+          player: {
+            name: "Ángel Di María",
+            slug: "angel-di-maria",
+            shortName: "Á. Di María",
+            id: 30027,
           },
-          {
-            "matches": 14,
-            "playedEnough": true,
-            "formattedValue": "4",
-            "player": {
-              "name": "Facundo Bruera",
-              "slug": "facundo-bruera",
-              "shortName": "F. Bruera",
-              "id": 933164
-            },
-            "team": {
-              "name": "Barracas Central",
-              "slug": "barracas-central",
-              "gender": "M",
-              "national": false,
-              "id": 65668
-            }
-          }
-        ]
-      },
-      {
-        "name": "Goals + Assists",
-        "topPlayers": [
-          {
-            "matches": 15,
-            "playedEnough": true,
-            "formattedValue": "10",
-            "player": {
-              "name": "Ángel Di María",
-              "slug": "angel-di-maria",
-              "shortName": "Á. Di María",
-              "id": 30027
-            },
-            "team": {
-              "name": "Rosario Central",
-              "slug": "rosario-central",
-              "gender": "M",
-              "national": false,
-              "id": 3217
-            }
+          team: {
+            name: "Rosario Central",
+            slug: "rosario-central",
+            gender: "M",
+            national: false,
+            id: 3217,
           },
-          {
-            "matches": 13,
-            "playedEnough": true,
-            "formattedValue": "9",
-            "player": {
-              "name": "Ronaldo Martinez",
-              "slug": "ronaldo-martinez",
-              "shortName": "R. Martinez",
-              "id": 874452
-            },
-            "team": {
-              "name": "Platense",
-              "slug": "platense",
-              "gender": "M",
-              "national": false,
-              "id": 36837
-            }
-          }
-        ]
-      },
-      {
-        "name": "Clean sheets",
-        "topPlayers": [
-          {
-            "matches": 15,
-            "playedEnough": true,
-            "formattedValue": "8",
-            "player": {
-              "name": "Matías Borgogno",
-              "slug": "matias-borgogno",
-              "shortName": "M. Borgogno",
-              "id": 934122
-            },
-            "team": {
-              "name": "San Martín de San Juan",
-              "slug": "san-martin-de-san-juan",
-              "gender": "M",
-              "national": false,
-              "id": 7772
-            }
+        },
+      ],
+    },
+    {
+      name: "Goals",
+      topPlayers: [
+        {
+          matches: 13,
+          playedEnough: true,
+          formattedValue: "8",
+          player: {
+            name: "Ronaldo Martinez",
+            slug: "ronaldo-martinez",
+            shortName: "R. Martinez",
+            id: 874452,
           },
-          {
-            "matches": 14,
-            "playedEnough": true,
-            "formattedValue": "8",
-            "player": {
-              "name": "Orlando Gill",
-              "slug": "orlando-gil",
-              "shortName": "O. Gill",
-              "id": 991709
-            },
-            "team": {
-              "name": "San Lorenzo",
-              "slug": "san-lorenzo",
-              "gender": "M",
-              "national": false,
-              "id": 3201
-            }
-          }
-        ]
-      }
-    ],
-    "metadata": {
-      "league": "Argentine Primera División",
-      "season": "2024",
-      "lastUpdated": "2024-07-20",
-      "totalPlayers": 500,
-      "totalTeams": 28
-    }
-}
+          team: {
+            name: "Platense",
+            slug: "platense",
+            gender: "M",
+            national: false,
+            id: 36837,
+          },
+        },
+        {
+          matches: 15,
+          playedEnough: true,
+          formattedValue: "7",
+          player: {
+            name: "Ángel Di María",
+            slug: "angel-di-maria",
+            shortName: "Á. Di María",
+            id: 30027,
+          },
+          team: {
+            name: "Rosario Central",
+            slug: "rosario-central",
+            gender: "M",
+            national: false,
+            id: 3217,
+          },
+        },
+      ],
+    },
+    {
+      name: "Assists",
+      topPlayers: [
+        {
+          matches: 15,
+          playedEnough: true,
+          formattedValue: "5",
+          player: {
+            name: "Mateo Del Blanco",
+            slug: "del-blanco-mateo",
+            shortName: "M. D. Blanco",
+            id: 1183059,
+          },
+          team: {
+            name: "Club Atlético Unión de Santa Fe",
+            slug: "club-atletico-union",
+            gender: "M",
+            national: false,
+            id: 3204,
+          },
+        },
+        {
+          matches: 14,
+          playedEnough: true,
+          formattedValue: "4",
+          player: {
+            name: "Facundo Bruera",
+            slug: "facundo-bruera",
+            shortName: "F. Bruera",
+            id: 933164,
+          },
+          team: {
+            name: "Barracas Central",
+            slug: "barracas-central",
+            gender: "M",
+            national: false,
+            id: 65668,
+          },
+        },
+      ],
+    },
+    {
+      name: "Goals + Assists",
+      topPlayers: [
+        {
+          matches: 15,
+          playedEnough: true,
+          formattedValue: "10",
+          player: {
+            name: "Ángel Di María",
+            slug: "angel-di-maria",
+            shortName: "Á. Di María",
+            id: 30027,
+          },
+          team: {
+            name: "Rosario Central",
+            slug: "rosario-central",
+            gender: "M",
+            national: false,
+            id: 3217,
+          },
+        },
+        {
+          matches: 13,
+          playedEnough: true,
+          formattedValue: "9",
+          player: {
+            name: "Ronaldo Martinez",
+            slug: "ronaldo-martinez",
+            shortName: "R. Martinez",
+            id: 874452,
+          },
+          team: {
+            name: "Platense",
+            slug: "platense",
+            gender: "M",
+            national: false,
+            id: 36837,
+          },
+        },
+      ],
+    },
+    {
+      name: "Clean sheets",
+      topPlayers: [
+        {
+          matches: 15,
+          playedEnough: true,
+          formattedValue: "8",
+          player: {
+            name: "Matías Borgogno",
+            slug: "matias-borgogno",
+            shortName: "M. Borgogno",
+            id: 934122,
+          },
+          team: {
+            name: "San Martín de San Juan",
+            slug: "san-martin-de-san-juan",
+            gender: "M",
+            national: false,
+            id: 7772,
+          },
+        },
+        {
+          matches: 14,
+          playedEnough: true,
+          formattedValue: "8",
+          player: {
+            name: "Orlando Gill",
+            slug: "orlando-gil",
+            shortName: "O. Gill",
+            id: 991709,
+          },
+          team: {
+            name: "San Lorenzo",
+            slug: "san-lorenzo",
+            gender: "M",
+            national: false,
+            id: 3201,
+          },
+        },
+      ],
+    },
+  ],
+  metadata: {
+    league: "Argentine Primera División",
+    season: "2024",
+    lastUpdated: "2024-07-20",
+    totalPlayers: 500,
+    totalTeams: 28,
+  },
+};
 
 //tournament/league standings
 //https://api.sofascore.com/mobile/v4/unique-tournament/17/season/61627/standings
@@ -5737,288 +5815,487 @@ const data22 = {
 
 //example response
 
-const data23 = {
-    "tableRows": [
-      {
-        "team": {
-          "name": "Liverpool",
-          "slug": "liverpool",
-          "gender": "M",
-          "disabled": false,
-          "national": false,
-          "id": 44,
-          "shortName": "Liverpool"
-        },
-        "isLive": false,
-        "promotion": {
-          "id": 307,
-          "name": "Champions League"
-        },
-        "descriptions": [],
-        "position": "1",
-        "homePosition": "1",
-        "awayPosition": "1",
-        "points": "84",
-        "homePoints": "46",
-        "awayPoints": "38",
-        "totalFields": {
-          "matchesTotal": "38",
-          "winsTotal": "25",
-          "drawsTotal": "9",
-          "lossesTotal": "4",
-          "winsLossesTotal": "25-4",
-          "goalsTotal": "86:41",
-          "pctGoalTotal": "209.76",
-          "scoreDiffFormattedTotal": "+45",
-          "pointsTotal": "84",
-          "percentageTotal": "-",
-          "gamesBehindTotal": "-",
-          "overtimeWinsTotal": "-",
-          "overtimeLossesTotal": "-",
-          "penaltyWinsTotal": "-",
-          "penaltyLossesTotal": "-",
-          "overtimeAndPenaltyWinsTotal": "-",
-          "threePointsTotal": "-",
-          "twoPointsTotal": "-",
-          "onePointTotal": "-",
-          "noResultTotal": "-",
-          "netRunRateTotal": "-",
-          "streakTotal": "-"
-        },
-        "homeFields": {
-          "matchesHome": "19",
-          "winsHome": "14",
-          "drawsHome": "4",
-          "lossesHome": "1",
-          "winsLossesHome": "14-1",
-          "goalsHome": "42:16",
-          "pctGoalHome": "262.50",
-          "scoreDiffFormattedHome": "+26",
-          "pointsHome": "46",
-          "percentageHome": "-",
-          "gamesBehindHome": "-",
-          "overtimeWinsHome": "-",
-          "overtimeLossesHome": "-",
-          "penaltyWinsHome": "-",
-          "penaltyLossesHome": "-",
-          "overtimeAndPenaltyWinsHome": "-",
-          "threePointsHome": "-",
-          "twoPointsHome": "-",
-          "onePointHome": "-",
-          "noResultHome": "-",
-          "netRunRateHome": "-",
-          "streakHome": "-"
-        },
-        "awayFields": {
-          "matchesAway": "19",
-          "winsAway": "11",
-          "drawsAway": "5",
-          "lossesAway": "3",
-          "winsLossesAway": "11-3",
-          "goalsAway": "44:25",
-          "pctGoalAway": "176.00",
-          "scoreDiffFormattedAway": "+19",
-          "pointsAway": "38",
-          "percentageAway": "-",
-          "gamesBehindAway": "-",
-          "overtimeWinsAway": "-",
-          "overtimeLossesAway": "-",
-          "penaltyWinsAway": "-",
-          "penaltyLossesAway": "-",
-          "overtimeAndPenaltyWinsAway": "-",
-          "threePointsAway": "-",
-          "twoPointsAway": "-",
-          "onePointAway": "-",
-          "noResultAway": "-",
-          "netRunRateAway": "-",
-          "streakAway": "-"
-        },
-        "totalForm": ["W", "L", "D", "L", "D"],
-        "homeForm": ["W", "W", "W", "D", "D"],
-        "awayForm": ["W", "L", "W", "L", "L"],
-        "id": 1134312
-      }
-    ],
-    "sport": {
-      "id": 1,
-      "slug": "football",
-      "name": "Football"
-    },
-    "category": {
-      "name": "England",
-      "priority": 10,
-      "id": 1,
-      "flag": "england"
-    },
-    "tournament": {
-      "name": "Premier League",
-      "id": 1,
-      "uniqueId": 17,
-      "uniqueName": "Premier League",
-      "hasEventPlayerStatistics": true
-    },
-    "season": {
-      "name": "Premier League 24/25",
-      "year": "24/25",
-      "id": 61627
-    },
-    "name": "Premier League",
-    "descriptions": [],
-    "tieBreakingRules": {
-      "rules": "In the event that two (or more) teams have an equal number of points, the following rules break the tie: 1. Goal difference 2. Goals scored 3. H2H",
-      "rulesTranslations": {
-        "aze": "Əgər iki və ya daha artıq komandaların xalları bərabər olarsa, o zaman aşağıdakı qaydalar hər şeyə aydınlıq gətirəcək: \n1. Qol fərqi\n2. Vurulan qollar\n3. Müqayisə",
-        "pt": "No caso de duas (ou mais) equipes terem o mesmo número de pontos, as seguintes regras determinam o desempate: 1. Diferença de gols 2. Gols marcados 3. H2H",
-        "tr": "İki (veya daha fazla) takımın puanları eşit olduğu durumda, eşitliği bozmak için şu kurallar uygulanır:\n1. Gol farkı\n2. Atılan goller\n3. İkili averaj (H2H"
-      }
-    },
-    "updatedAt": "2024-08-24T19:51:34+00:00",
-    "updatedAtFormated": "24.08.2024. 19:51",
-    "updatedAtTimestamp": 1724529094,
-    "totalPointsFields": ["pointsTotal"],
-    "homePointsFields": ["pointsHome"],
-    "awayPointsFields": ["pointsAway"],
-    "totalTableKeys": {
-      "matchesTotal": "P",
-      "winsTotal": "W",
-      "drawsTotal": "D",
-      "lossesTotal": "L",
-      "goalsTotal": "Goals",
-      "pointsTotal": "PTS"
-    },
-    "homeTableKeys": {
-      "matchesHome": "P",
-      "winsHome": "W",
-      "drawsHome": "D",
-      "lossesHome": "L",
-      "goalsHome": "Goals",
-      "pointsHome": "PTS"
-    },
-    "awayTableKeys": {
-      "matchesAway": "P",
-      "winsAway": "W",
-      "drawsAway": "D",
-      "lossesAway": "L",
-      "goalsAway": "Goals",
-      "pointsAway": "PTS"
-    },
-    "filteredTableKeys": {
-      "matchesTotal": "P",
-      "scoreDiffFormattedTotal": "DIFF",
-      "pointsTotal": "PTS"
-    },
-    "filteredHomeTableKeys": {
-      "matchesHome": "P",
-      "scoreDiffFormattedHome": "DIFF",
-      "pointsHome": "PTS"
-    },
-    "filteredAwayTableKeys": {
-      "matchesAway": "P",
-      "scoreDiffFormattedAway": "DIFF",
-      "pointsAway": "PTS"
-    },
-    "round": 1,
-    "id": 126654,
-    "tableKeysOrder": ["matchesTotal", "winsTotal", "drawsTotal", "lossesTotal", "goalsTotal", "pointsTotal"],
-    "homeTableKeysOrder": ["matchesHome", "winsHome", "drawsHome", "lossesHome", "goalsHome", "pointsHome"],
-    "awayTableKeysOrder": ["matchesAway", "winsAway", "drawsAway", "lossesAway", "goalsAway", "pointsAway"],
-    "filteredTableKeysOrder": ["matchesTotal", "scoreDiffFormattedTotal", "pointsTotal"],
-    "filteredHomeTableKeysOrder": ["matchesHome", "scoreDiffFormattedHome", "pointsHome"],
-    "filteredAwayTableKeysOrder": ["matchesAway", "scoreDiffFormattedAway", "pointsAway"],
-    "isLive": false,
-    "hasHomeAwayStandings": true,
-    "promotions": {
-      "307": {
-        "id": 307,
-        "name": "Champions League",
-        "nameTranslations": {
-          "ar": "دوري الأبطال",
-          "aze": "Çempionlar Liqası",
-          "bg": "Шампионска лига",
-          "bs": "Liga prvaka",
-          "cs": "liga mistrů",
-          "el": "Τσάμπιονς Λιγκ",
-          "es": "Liga de Campeones",
-          "et": "Meistrite Liiga",
-          "fi": "Mestarien liiga",
-          "fr": "Ligue des Champions",
-          "heb": "ליגת האלופות",
-          "hi": "चैंपियंस लीग",
-          "hr": "Liga Prvaka",
-          "hu": "Bajnokok ligája",
-          "id": "Liga Champions",
-          "ja": "チャンピオンズリーグ",
-          "ka": "ჩემპიონთა ლიგა",
-          "ko": "챔피언스리그",
-          "lt": "Čempionų Lyga",
-          "lv": "Čempionu Līga",
-          "me": "Liga Šampiona",
-          "mk": "Лига на Шампиони",
-          "pl": "Liga Mistrzów",
-          "pt": "Liga dos Campeões",
-          "pt-pt": "Liga dos Campeões",
-          "ro": "Liga Campionilor",
-          "ru": "Лига чемпионов",
-          "sk": "Liga Majstrov",
-          "sl": "Liga prvakov",
-          "sqi": "Liga e Kampionëve",
-          "sr": "Лига шампиона",
-          "srl": "Liga Šampiona",
-          "sw": "Ligi ya Mabingwa",
-          "th": "แชมเปียนส์ลีก",
-          "tr": "Şampiyonlar Ligi",
-          "ukr": "Ліга Чемпіонів",
-          "zh": "冠军联赛",
-          "zht": "冠軍聯賽"
-        }
+const data24 = {
+  tableRows: [
+    {
+      team: {
+        name: "Liverpool",
+        slug: "liverpool",
+        gender: "M",
+        disabled: false,
+        national: false,
+        id: 44,
+        shortName: "Liverpool",
       },
-      "309": {
-        "id": 309,
-        "name": "UEFA Europa League",
-        "nameTranslations": {
-          "ar": "دوري كأس الاتحاد الأوروبي",
-          "aze": "UEFA Avropa Liqası",
-          "bg": "УЕФА Лига Европа",
-          "bs": "UEFA Europska liga",
-          "cs": "UEFA Evropská liga",
-          "el": "ΟΥΕΦΑ Γιουρόπα Λιγκ",
-          "es": "UEFA Liga Europea",
-          "et": "UEFA Euroopa Liiga",
-          "fi": "Eurooppa-liiga",
-          "fr": "Ligue Europa de l'UEFA",
-          "heb": "הליגה האירופית",
-          "hi": "यूरोपा लीग",
-          "hr": "UEFA Europska Liga",
-          "hu": "UEFA Európaliga",
-          "id": "Liga Europa UEFA",
-          "ja": "UEFA欧州リーグ",
-          "ka": "უფა-ს ევროპა ლიგა",
-          "ko": "UEFA 유로파리그",
-          "lt": "UEFA Europos lyga",
-          "lv": "UEFA Eiropas Līga",
-          "me": "UEFA Liga Evrope",
-          "mk": "УЕФА Лига Европа",
-          "ms": "Liga Europa UEFA",
-          "nl": "UEFA, Europese Liga",
-          "pl": "UEFA Liga Europejska",
-          "pt": "Liga Europeia UEFA",
-          "pt-pt": "Liga Europa",
-          "ru": "УЕФА Лига Европы",
-          "sk": "UEFA európska liga",
-          "sl": "UEFA Liga Evropa",
-          "sqi": "UEFA Europa Ligë",
-          "sr": "УЕФА Европска Лига",
-          "srl": "UEFA Liga Evrope",
-          "sw": "Ligi ya klabu bingwa ulaya",
-          "th": "ยูฟ่า ยุโรปา ลีก",
-          "tr": "UEFA Avrupa Ligi",
-          "ukr": "Ліга Європи УЄФА",
-          "zh": "欧足联欧洲联赛",
-          "zht": "歐霸盃足球聯賽"
-        }
-      }
-    }
-}
+      isLive: false,
+      promotion: {
+        id: 307,
+        name: "Champions League",
+      },
+      descriptions: [],
+      position: "1",
+      homePosition: "1",
+      awayPosition: "1",
+      points: "84",
+      homePoints: "46",
+      awayPoints: "38",
+      totalFields: {
+        matchesTotal: "38",
+        winsTotal: "25",
+        drawsTotal: "9",
+        lossesTotal: "4",
+        winsLossesTotal: "25-4",
+        goalsTotal: "86:41",
+        pctGoalTotal: "209.76",
+        scoreDiffFormattedTotal: "+45",
+        pointsTotal: "84",
+        percentageTotal: "-",
+        gamesBehindTotal: "-",
+        overtimeWinsTotal: "-",
+        overtimeLossesTotal: "-",
+        penaltyWinsTotal: "-",
+        penaltyLossesTotal: "-",
+        overtimeAndPenaltyWinsTotal: "-",
+        threePointsTotal: "-",
+        twoPointsTotal: "-",
+        onePointTotal: "-",
+        noResultTotal: "-",
+        netRunRateTotal: "-",
+        streakTotal: "-",
+      },
+      homeFields: {
+        matchesHome: "19",
+        winsHome: "14",
+        drawsHome: "4",
+        lossesHome: "1",
+        winsLossesHome: "14-1",
+        goalsHome: "42:16",
+        pctGoalHome: "262.50",
+        scoreDiffFormattedHome: "+26",
+        pointsHome: "46",
+        percentageHome: "-",
+        gamesBehindHome: "-",
+        overtimeWinsHome: "-",
+        overtimeLossesHome: "-",
+        penaltyWinsHome: "-",
+        penaltyLossesHome: "-",
+        overtimeAndPenaltyWinsHome: "-",
+        threePointsHome: "-",
+        twoPointsHome: "-",
+        onePointHome: "-",
+        noResultHome: "-",
+        netRunRateHome: "-",
+        streakHome: "-",
+      },
+      awayFields: {
+        matchesAway: "19",
+        winsAway: "11",
+        drawsAway: "5",
+        lossesAway: "3",
+        winsLossesAway: "11-3",
+        goalsAway: "44:25",
+        pctGoalAway: "176.00",
+        scoreDiffFormattedAway: "+19",
+        pointsAway: "38",
+        percentageAway: "-",
+        gamesBehindAway: "-",
+        overtimeWinsAway: "-",
+        overtimeLossesAway: "-",
+        penaltyWinsAway: "-",
+        penaltyLossesAway: "-",
+        overtimeAndPenaltyWinsAway: "-",
+        threePointsAway: "-",
+        twoPointsAway: "-",
+        onePointAway: "-",
+        noResultAway: "-",
+        netRunRateAway: "-",
+        streakAway: "-",
+      },
+      totalForm: ["W", "L", "D", "L", "D"],
+      homeForm: ["W", "W", "W", "D", "D"],
+      awayForm: ["W", "L", "W", "L", "L"],
+      id: 1134312,
+    },
+  ],
+  sport: {
+    id: 1,
+    slug: "football",
+    name: "Football",
+  },
+  category: {
+    name: "England",
+    priority: 10,
+    id: 1,
+    flag: "england",
+  },
+  tournament: {
+    name: "Premier League",
+    id: 1,
+    uniqueId: 17,
+    uniqueName: "Premier League",
+    hasEventPlayerStatistics: true,
+  },
+  season: {
+    name: "Premier League 24/25",
+    year: "24/25",
+    id: 61627,
+  },
+  name: "Premier League",
+  descriptions: [],
+  tieBreakingRules: {
+    rules:
+      "In the event that two (or more) teams have an equal number of points, the following rules break the tie: 1. Goal difference 2. Goals scored 3. H2H",
+    rulesTranslations: {
+      aze: "Əgər iki və ya daha artıq komandaların xalları bərabər olarsa, o zaman aşağıdakı qaydalar hər şeyə aydınlıq gətirəcək: \n1. Qol fərqi\n2. Vurulan qollar\n3. Müqayisə",
+      pt: "No caso de duas (ou mais) equipes terem o mesmo número de pontos, as seguintes regras determinam o desempate: 1. Diferença de gols 2. Gols marcados 3. H2H",
+      tr: "İki (veya daha fazla) takımın puanları eşit olduğu durumda, eşitliği bozmak için şu kurallar uygulanır:\n1. Gol farkı\n2. Atılan goller\n3. İkili averaj (H2H",
+    },
+  },
+  updatedAt: "2024-08-24T19:51:34+00:00",
+  updatedAtFormated: "24.08.2024. 19:51",
+  updatedAtTimestamp: 1724529094,
+  totalPointsFields: ["pointsTotal"],
+  homePointsFields: ["pointsHome"],
+  awayPointsFields: ["pointsAway"],
+  totalTableKeys: {
+    matchesTotal: "P",
+    winsTotal: "W",
+    drawsTotal: "D",
+    lossesTotal: "L",
+    goalsTotal: "Goals",
+    pointsTotal: "PTS",
+  },
+  homeTableKeys: {
+    matchesHome: "P",
+    winsHome: "W",
+    drawsHome: "D",
+    lossesHome: "L",
+    goalsHome: "Goals",
+    pointsHome: "PTS",
+  },
+  awayTableKeys: {
+    matchesAway: "P",
+    winsAway: "W",
+    drawsAway: "D",
+    lossesAway: "L",
+    goalsAway: "Goals",
+    pointsAway: "PTS",
+  },
+  filteredTableKeys: {
+    matchesTotal: "P",
+    scoreDiffFormattedTotal: "DIFF",
+    pointsTotal: "PTS",
+  },
+  filteredHomeTableKeys: {
+    matchesHome: "P",
+    scoreDiffFormattedHome: "DIFF",
+    pointsHome: "PTS",
+  },
+  filteredAwayTableKeys: {
+    matchesAway: "P",
+    scoreDiffFormattedAway: "DIFF",
+    pointsAway: "PTS",
+  },
+  round: 1,
+  id: 126654,
+  tableKeysOrder: [
+    "matchesTotal",
+    "winsTotal",
+    "drawsTotal",
+    "lossesTotal",
+    "goalsTotal",
+    "pointsTotal",
+  ],
+  homeTableKeysOrder: [
+    "matchesHome",
+    "winsHome",
+    "drawsHome",
+    "lossesHome",
+    "goalsHome",
+    "pointsHome",
+  ],
+  awayTableKeysOrder: [
+    "matchesAway",
+    "winsAway",
+    "drawsAway",
+    "lossesAway",
+    "goalsAway",
+    "pointsAway",
+  ],
+  filteredTableKeysOrder: [
+    "matchesTotal",
+    "scoreDiffFormattedTotal",
+    "pointsTotal",
+  ],
+  filteredHomeTableKeysOrder: [
+    "matchesHome",
+    "scoreDiffFormattedHome",
+    "pointsHome",
+  ],
+  filteredAwayTableKeysOrder: [
+    "matchesAway",
+    "scoreDiffFormattedAway",
+    "pointsAway",
+  ],
+  isLive: false,
+  hasHomeAwayStandings: true,
+  promotions: {
+    307: {
+      id: 307,
+      name: "Champions League",
+      nameTranslations: {
+        ar: "دوري الأبطال",
+        aze: "Çempionlar Liqası",
+        bg: "Шампионска лига",
+        bs: "Liga prvaka",
+        cs: "liga mistrů",
+        el: "Τσάμπιονς Λιγκ",
+        es: "Liga de Campeones",
+        et: "Meistrite Liiga",
+        fi: "Mestarien liiga",
+        fr: "Ligue des Champions",
+        heb: "ליגת האלופות",
+        hi: "चैंपियंस लीग",
+        hr: "Liga Prvaka",
+        hu: "Bajnokok ligája",
+        id: "Liga Champions",
+        ja: "チャンピオンズリーグ",
+        ka: "ჩემპიონთა ლიგა",
+        ko: "챔피언스리그",
+        lt: "Čempionų Lyga",
+        lv: "Čempionu Līga",
+        me: "Liga Šampiona",
+        mk: "Лига на Шампиони",
+        pl: "Liga Mistrzów",
+        pt: "Liga dos Campeões",
+        "pt-pt": "Liga dos Campeões",
+        ro: "Liga Campionilor",
+        ru: "Лига чемпионов",
+        sk: "Liga Majstrov",
+        sl: "Liga prvakov",
+        sqi: "Liga e Kampionëve",
+        sr: "Лига шампиона",
+        srl: "Liga Šampiona",
+        sw: "Ligi ya Mabingwa",
+        th: "แชมเปียนส์ลีก",
+        tr: "Şampiyonlar Ligi",
+        ukr: "Ліга Чемпіонів",
+        zh: "冠军联赛",
+        zht: "冠軍聯賽",
+      },
+    },
+    309: {
+      id: 309,
+      name: "UEFA Europa League",
+      nameTranslations: {
+        ar: "دوري كأس الاتحاد الأوروبي",
+        aze: "UEFA Avropa Liqası",
+        bg: "УЕФА Лига Европа",
+        bs: "UEFA Europska liga",
+        cs: "UEFA Evropská liga",
+        el: "ΟΥΕΦΑ Γιουρόπα Λιγκ",
+        es: "UEFA Liga Europea",
+        et: "UEFA Euroopa Liiga",
+        fi: "Eurooppa-liiga",
+        fr: "Ligue Europa de l'UEFA",
+        heb: "הליגה האירופית",
+        hi: "यूरोपा लीग",
+        hr: "UEFA Europska Liga",
+        hu: "UEFA Európaliga",
+        id: "Liga Europa UEFA",
+        ja: "UEFA欧州リーグ",
+        ka: "უფა-ს ევროპა ლიგა",
+        ko: "UEFA 유로파리그",
+        lt: "UEFA Europos lyga",
+        lv: "UEFA Eiropas Līga",
+        me: "UEFA Liga Evrope",
+        mk: "УЕФА Лига Европа",
+        ms: "Liga Europa UEFA",
+        nl: "UEFA, Europese Liga",
+        pl: "UEFA Liga Europejska",
+        pt: "Liga Europeia UEFA",
+        "pt-pt": "Liga Europa",
+        ru: "УЕФА Лига Европы",
+        sk: "UEFA európska liga",
+        sl: "UEFA Liga Evropa",
+        sqi: "UEFA Europa Ligë",
+        sr: "УЕФА Европска Лига",
+        srl: "UEFA Liga Evrope",
+        sw: "Ligi ya klabu bingwa ulaya",
+        th: "ยูฟ่า ยุโรปา ลีก",
+        tr: "UEFA Avrupa Ligi",
+        ukr: "Ліга Європи УЄФА",
+        zh: "欧足联欧洲联赛",
+        zht: "歐霸盃足球聯賽",
+      },
+    },
+  },
+};
+
+//tournament/league events/matches
+//https://api.sofascore.com/mobile/v4/unique-tournament/17/season/61627/events
+//@GET("https://api.sofascore.com/mobile/v4/unique-tournament/{league_id}/season/{season_id}/events")
+
+//example response
+
+const data25 = {
+  sport: {
+    id: 1,
+    name: "Football",
+    slug: "football",
+  },
+  rows: 1,
+  tournaments: [
+    {
+      tournament: {
+        name: "Premier League",
+        id: 1,
+        uniqueId: 17,
+        uniqueName: "Premier League",
+        hasEventPlayerStatistics: true,
+        hasRounds: true,
+      },
+      category: {
+        name: "England",
+        priority: 10,
+        mcc: [234, 235],
+        id: 1,
+        flag: "england",
+      },
+      season: {
+        name: "Premier League 24/25",
+        year: "24/25",
+        id: 61627,
+      },
+      hasEventPlayerStatistics: true,
+      hasEventPlayerHeatMap: null,
+      hasBoxScore: null,
+      displayInverseHomeAwayTeams: false,
+      events: [
+        {
+          roundInfo: {
+            round: 1,
+          },
+          status: {
+            code: 100,
+            type: "finished",
+          },
+          winnerCode: 1,
+          homeTeam: {
+            name: "Manchester United",
+            slug: "manchester-united",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 35,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Fulham",
+            slug: "fulham",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 43,
+            subTeams: [],
+          },
+          homeScore: {
+            current: 1,
+            display: 1,
+            period1: 0,
+            period2: 1,
+            normaltime: 1,
+          },
+          awayScore: {
+            current: 0,
+            display: 0,
+            period1: 0,
+            period2: 0,
+            normaltime: 0,
+          },
+          time: {},
+          changes: {
+            changes: ["status.code", "status.description", "status.type"],
+            changeTimestamp: 1723841539,
+          },
+          hasHighlights: false,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: false,
+          hasEventPlayerStatistics: true,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 12436870,
+          cardsCode: "00",
+          statusDescription: "FT",
+          hasLiveForm: true,
+          startTimestamp: 1723834800,
+          webUrl: "/football/match/fulham-manchester-united/KsT#id:12436870",
+          hasTime: false,
+          resultOnly: false,
+        },
+        {
+          roundInfo: {
+            round: 1,
+          },
+          status: {
+            code: 100,
+            type: "finished",
+          },
+          winnerCode: 2,
+          homeTeam: {
+            name: "Ipswich Town",
+            slug: "ipswich-town",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 32,
+            subTeams: [],
+          },
+          awayTeam: {
+            name: "Liverpool",
+            slug: "liverpool",
+            gender: "M",
+            disabled: false,
+            national: false,
+            id: 44,
+            subTeams: [],
+          },
+          homeScore: {
+            current: 0,
+            display: 0,
+            period1: 0,
+            period2: 0,
+            normaltime: 0,
+          },
+          awayScore: {
+            current: 2,
+            display: 2,
+            period1: 0,
+            period2: 2,
+            normaltime: 2,
+          },
+          time: {},
+          changes: {
+            changes: ["status.code", "status.description", "status.type"],
+            changeTimestamp: 1723901232,
+          },
+          hasHighlights: false,
+          hasHighlightsStream: false,
+          hasGlobalHighlights: false,
+          hasEventPlayerStatistics: true,
+          crowdsourcingDataDisplayEnabled: false,
+          id: 12436871,
+          cardsCode: "00",
+          statusDescription: "FT",
+          hasLiveForm: true,
+          startTimestamp: 1723894200,
+          webUrl: "/football/match/liverpool-ipswich-town/HsU#id:12436871",
+          hasTime: false,
+          resultOnly: false,
+        },
+      ],
+    },
+  ],
+};
 
 //This JSON represents a complete football league standings data structure with:
 //Team information (Liverpool as the example)
@@ -6029,173 +6306,6 @@ const data23 = {
 //Form guides (recent match results)
 //Internationalization support with translations
 //Table configuration for display purposes
-
-
-
-//tournament/league events/matches
-//https://api.sofascore.com/mobile/v4/unique-tournament/17/season/61627/events
-//@GET("https://api.sofascore.com/mobile/v4/unique-tournament/{league_id}/season/{season_id}/events")
-
-//example response
-
-const data24 = {
-    "sport": {
-      "id": 1,
-      "name": "Football",
-      "slug": "football"
-    },
-    "rows": 1,
-    "tournaments": [
-      {
-        "tournament": {
-          "name": "Premier League",
-          "id": 1,
-          "uniqueId": 17,
-          "uniqueName": "Premier League",
-          "hasEventPlayerStatistics": true,
-          "hasRounds": true
-        },
-        "category": {
-          "name": "England",
-          "priority": 10,
-          "mcc": [234, 235],
-          "id": 1,
-          "flag": "england"
-        },
-        "season": {
-          "name": "Premier League 24/25",
-          "year": "24/25",
-          "id": 61627
-        },
-        "hasEventPlayerStatistics": true,
-        "hasEventPlayerHeatMap": null,
-        "hasBoxScore": null,
-        "displayInverseHomeAwayTeams": false,
-        "events": [
-          {
-            "roundInfo": {
-              "round": 1
-            },
-            "status": {
-              "code": 100,
-              "type": "finished"
-            },
-            "winnerCode": 1,
-            "homeTeam": {
-              "name": "Manchester United",
-              "slug": "manchester-united",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 35,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Fulham",
-              "slug": "fulham",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 43,
-              "subTeams": []
-            },
-            "homeScore": {
-              "current": 1,
-              "display": 1,
-              "period1": 0,
-              "period2": 1,
-              "normaltime": 1
-            },
-            "awayScore": {
-              "current": 0,
-              "display": 0,
-              "period1": 0,
-              "period2": 0,
-              "normaltime": 0
-            },
-            "time": {},
-            "changes": {
-              "changes": ["status.code", "status.description", "status.type"],
-              "changeTimestamp": 1723841539
-            },
-            "hasHighlights": false,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": false,
-            "hasEventPlayerStatistics": true,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 12436870,
-            "cardsCode": "00",
-            "statusDescription": "FT",
-            "hasLiveForm": true,
-            "startTimestamp": 1723834800,
-            "webUrl": "/football/match/fulham-manchester-united/KsT#id:12436870",
-            "hasTime": false,
-            "resultOnly": false
-          },
-          {
-            "roundInfo": {
-              "round": 1
-            },
-            "status": {
-              "code": 100,
-              "type": "finished"
-            },
-            "winnerCode": 2,
-            "homeTeam": {
-              "name": "Ipswich Town",
-              "slug": "ipswich-town",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 32,
-              "subTeams": []
-            },
-            "awayTeam": {
-              "name": "Liverpool",
-              "slug": "liverpool",
-              "gender": "M",
-              "disabled": false,
-              "national": false,
-              "id": 44,
-              "subTeams": []
-            },
-            "homeScore": {
-              "current": 0,
-              "display": 0,
-              "period1": 0,
-              "period2": 0,
-              "normaltime": 0
-            },
-            "awayScore": {
-              "current": 2,
-              "display": 2,
-              "period1": 0,
-              "period2": 2,
-              "normaltime": 2
-            },
-            "time": {},
-            "changes": {
-              "changes": ["status.code", "status.description", "status.type"],
-              "changeTimestamp": 1723901232
-            },
-            "hasHighlights": false,
-            "hasHighlightsStream": false,
-            "hasGlobalHighlights": false,
-            "hasEventPlayerStatistics": true,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 12436871,
-            "cardsCode": "00",
-            "statusDescription": "FT",
-            "hasLiveForm": true,
-            "startTimestamp": 1723894200,
-            "webUrl": "/football/match/liverpool-ipswich-town/HsU#id:12436871",
-            "hasTime": false,
-            "resultOnly": false
-          }
-        ]
-      }
-    ]
-}
 
 //a complete example JSON data set. This example includes:
 //Sport information with ID, name, and slug
