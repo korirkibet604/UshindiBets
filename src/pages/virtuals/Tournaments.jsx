@@ -14,7 +14,7 @@ import {
   faTimes,
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
-import { useSofaScoreApi } from '../../hooks/useSofaScoreApi';
+import { useBetikaApi } from '../../hooks/useBetikaApi';
 
 export default function Tournaments() {
   const [selectedDate, setSelectedDate] = useState('today');
@@ -56,7 +56,7 @@ export default function Tournaments() {
             date = today.toISOString().split('T')[0];
         }
 
-        const response = await useSofaScoreApi.getScheduledEvents('football', date);
+        const response = await useBetikaApi.getScheduledEvents('football', date);
         const events = response.data.events || [];
 
         // Transform API data to match our component structure

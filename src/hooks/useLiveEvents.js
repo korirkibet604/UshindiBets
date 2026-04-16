@@ -1,9 +1,9 @@
 // hooks/useLiveEvents.js
 import { useState, useEffect, useRef } from "react";
-import { useSofaScoreApi } from "./useSofaScoreApi";
+import { useBetikaApi } from "./useBetikaApi";
 
 export const useLiveEvents = (sport = "football", pollInterval = 15000) => {
-  const { getLiveEvents, loading, error } = useSofaScoreApi();
+  const { getLiveEvents, loading, error } = useBetikaApi();
   const [events, setEvents] = useState(null);
   const intervalRef = useRef();
 

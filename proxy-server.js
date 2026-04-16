@@ -8,7 +8,7 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-  origin: ['https://footyscore.onrender.com', 'http://localhost:5173'],
+  origin: ['https://UshindiBets.onrender.com', 'http://localhost:5173'],
   credentials: true
 }));
 

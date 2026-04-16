@@ -1,9 +1,9 @@
 // hooks/useTeamMatches.js
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const useTeamMatches = (teamId, limit = 10) => {
-  const { getTeamLastNext, loading, error } = useSofaScoreApi();
+  const { getTeamLastNext, loading, error } = useBetikaApi();
   const [matches, setMatches] = useState([]);
   const [upcomingMatches, setUpcomingMatches] = useState([]);
 

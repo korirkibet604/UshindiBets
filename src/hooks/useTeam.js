@@ -1,6 +1,6 @@
 // hooks/useTeam.js
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const useTeam = (teamId) => {
   const {
@@ -10,7 +10,7 @@ export const useTeam = (teamId) => {
     getTeamLastNext,
     loading,
     error
-  } = useSofaScoreApi();
+  } = useBetikaApi();
 
   const [team, setTeam] = useState(null);
   const [players, setPlayers] = useState([]);

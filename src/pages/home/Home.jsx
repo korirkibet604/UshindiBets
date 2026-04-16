@@ -94,6 +94,8 @@ function Home() {
 
     // Add leagues from fixtures
     if (fixtures) {
+      console.log(fixtures)
+      
       fixtures.forEach((fixture) => {
         if (fixture.tournament && !allLeagues.has(fixture.tournament.id)) {
           allLeagues.set(fixture.tournament.id, {
@@ -178,7 +180,6 @@ function Home() {
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
       />
-      Live Matches Section
       <div className="section-header">
         <h2>
           <i className="fas fa-bolt"></i> Live Matches

@@ -1,9 +1,9 @@
 // hooks/useScheduledEvents.js
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const useScheduledEvents = (date, sport = 'football') => {
-  const { getScheduledEvents, loading, error } = useSofaScoreApi();
+  const { getScheduledEvents, loading, error } = useBetikaApi();
   const [fixtures, setEvents] = useState([]);
 
   const fetchScheduledEvents = async () => {

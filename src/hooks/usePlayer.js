@@ -1,9 +1,9 @@
 // hooks/usePlayer.js
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const usePlayer = (playerId) => {
-  const { getPlayerDetails, getPlayerTransferHistory, loading, error } = useSofaScoreApi();
+  const { getPlayerDetails, getPlayerTransferHistory, loading, error } = useBetikaApi();
   const [player, setPlayer] = useState(null);
   const [transferHistory, setTransferHistory] = useState([]);
   const [stats, setStats] = useState(null);

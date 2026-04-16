@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const usePlayerStats = (playerId, tournamentId, seasonId) => {
-  const { getPlayerTournamentStats, loading, error } = useSofaScoreApi();
+  const { getPlayerTournamentStats, loading, error } = useBetikaApi();
   const [playerStats, setPlayerStats] = useState(null);
 
   const fetchPlayerStats = async () => {

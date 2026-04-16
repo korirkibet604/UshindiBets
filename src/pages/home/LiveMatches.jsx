@@ -142,7 +142,7 @@ function LiveMatches() {
         </NavLink>
       </div>
 
-      {/* Live Matches Section */}
+      {/* Live Matches */}
       <div className="section-header">
         {/*<h2><i className="fas fa-bolt"></i> Live Matches</h2>*/}
         <h2 className={`polling-indicator ${isPolling ? "active" : "paused"}`}>

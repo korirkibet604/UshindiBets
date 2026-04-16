@@ -1,6 +1,6 @@
 // hooks/useTournament.js
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const useTournament = (tournamentId) => {
   const {
@@ -9,7 +9,7 @@ export const useTournament = (tournamentId) => {
     getTournamentStatistics,
     loading,
     error
-  } = useSofaScoreApi();
+  } = useBetikaApi();
 
   const [seasons, setSeasons] = useState([]);
   const [currentSeason, setCurrentSeason] = useState(null);

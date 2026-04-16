@@ -1,6 +1,6 @@
 // hooks/useMatchData.js
 import { useState, useEffect, useRef } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const useMatchData = (matchId, pollInterval = 10000) => {
   const {
@@ -11,7 +11,7 @@ export const useMatchData = (matchId, pollInterval = 10000) => {
     getHeadToHead,
     loading,
     error
-  } = useSofaScoreApi();
+  } = useBetikaApi();
 
   const [matchData, setMatchData] = useState({
     detail: null,

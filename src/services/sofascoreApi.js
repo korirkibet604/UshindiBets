@@ -51,10 +51,13 @@ export const sofascoreApi = {
 
   // Scheduled events by date
   getScheduledEvents: (sport, date) =>
-    apiClient.get(
-      `/uo/matches?page=${1}&limit=${10}&tab=&sub_type_id=${
+    /*apiClient.get(
+      `https://api.betika.com/v1/uo/matches?page=${1}&limit=${10}&tab=&sub_type_id=${
         (1, 186, 34)
       }0&sport_id=${14}`
+    ),*/
+    fetch(
+      'https://api.betika.com/v1/uo/matches?page=1&limit=10&tab=&sub_type_id=1,186,340&sport_id=14&sort_id=1&period_id=-1&esports=false'
     ),
 
   //https://live.betika.com/v1/uo/matches?page=1&limit=100&sub_type_id=2,186,340&sport=soccer&sort=1

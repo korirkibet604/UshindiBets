@@ -1,8 +1,8 @@
-// hooks/useSofaScoreApi.js
+// hooks/useBetikaApi.js
 import { useState, useCallback } from "react";
 import { sofascoreApi } from "../services/sofascoreApi";
 
-export const useSofaScoreApi = () => {
+export const useBetikaApi = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 

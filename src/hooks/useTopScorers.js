@@ -1,9 +1,9 @@
 // hooks/useTopScorers.js
 import { useState, useEffect } from 'react';
-import { useSofaScoreApi } from './useSofaScoreApi';
+import { useBetikaApi } from './useBetikaApi';
 
 export const useTopScorers = (tournamentId, seasonId) => {
-  const { getTournamentTopPlayers, getTournamentStatistics, loading, error } = useSofaScoreApi();
+  const { getTournamentTopPlayers, getTournamentStatistics, loading, error } = useBetikaApi();
   const [topScorers, setTopScorers] = useState([]);
   const [topAssists, setTopAssists] = useState([]);
   const [playerStats, setPlayerStats] = useState([]);

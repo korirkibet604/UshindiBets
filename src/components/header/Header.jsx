@@ -40,6 +40,7 @@ function Header() {
           <NavLink to="/">All</NavLink>
           <NavLink to="/live">Live</NavLink>
           <NavLink to="/fixtures">Fixtures</NavLink>
+          <NavLink to="/boost">Boost</NavLink>
           <NavLink to="/virtuals">Virtuals</NavLink>
         </nav>
         <div className="user-actions">
