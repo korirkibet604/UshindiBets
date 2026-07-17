@@ -1,0 +1,192 @@
+.boost-page {
+  padding: 10px;
+
+  .boost-header {
+    text-align: center;
+    margin: 20px 0;
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      i { color: var(--warning); margin-right: 8px; }
+    }
+    p { color: var(--text-secondary); margin-top: 4px; }
+  }
+
+  .jackpot-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    button {
+      flex: 1;
+      padding: 12px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      &.active {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+    }
+  }
+
+  .jackpot-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+    .meta-item {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      .meta-label { display: block; font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 4px; }
+      .meta-value { display: block; font-weight: 700; font-size: 1rem; color: var(--highlight); }
+    }
+    @media screen and (max-width: 576px) { grid-template-columns: 1fr; }
+  }
+
+  .jackpot-matches {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .jackpot-match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: var(--shadow);
+    gap: 12px;
+
+    .jm-info {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .jm-num {
+        background: var(--accent);
+        color: white;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .jm-teams {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 0.9rem;
+        .jm-vs { color: var(--text-secondary); font-size: 0.75rem; }
+      }
+      .jm-league { font-size: 0.75rem; color: var(--text-secondary); }
+    }
+
+    .jm-odds {
+      display: flex;
+      gap: 6px;
+      .jm-odd {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        min-width: 52px;
+        span { font-size: 0.75rem; color: var(--text-secondary); }
+        strong { font-size: 0.9rem; }
+        &:hover { background: rgba(14,165,233,0.15); }
+        &.selected {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: white;
+          span { color: rgba(255,255,255,0.85); }
+        }
+        &:disabled { opacity: 0.4; cursor: not-allowed; }
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      flex-direction: column;
+      align-items: stretch;
+      .jm-odds { justify-content: space-between; }
+    }
+  }
+
+  .jackpot-footer {
+    margin-top: 24px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+    .jp-progress {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      span { font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+      .jp-bar {
+        flex: 1;
+        height: 8px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 4px;
+        overflow: hidden;
+        .jp-fill {
+          height: 100%;
+          background: var(--highlight);
+          transition: width 0.3s ease;
+        }
+      }
+    }
+    .jp-actions {
+      display: flex;
+      gap: 10px;
+      input {
+        flex: 1;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 8px;
+        padding: 11px 14px;
+        color: var(--text);
+        font-size: 1rem;
+        outline: none;
+      }
+      .jp-submit {
+        background: var(--highlight);
+        color: white;
+        border: none;
+        padding: 0 28px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover:not(:disabled) { transform: translateY(-1px); }
+        &:disabled { opacity: 0.5; cursor: not-allowed; }
+      }
+    }
+    .jp-hint { display: block; margin-top: 8px; font-size: 0.82rem; color: var(--text-secondary); }
+  }
+
+  .boost-loading, .boost-error, .no-matches {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+  }
+  .boost-error { color: #fca5a5; }
+}

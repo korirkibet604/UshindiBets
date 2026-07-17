@@ -217,4 +217,78 @@
             }
         }
     }
+
+    .slip-empty {
+        text-align: center;
+        padding: 30px 10px;
+        color: var(--text-secondary);
+        i { font-size: 2rem; margin-bottom: 10px; opacity: 0.5; }
+        p { font-weight: 600; margin-bottom: 4px; }
+        span { font-size: 0.8rem; opacity: 0.7; }
+    }
+
+    .slip-controls {
+        .clear-bet {
+            background: rgba(244, 63, 94, 0.1);
+            border: none;
+            color: var(--highlight);
+            border-radius: 8px;
+            padding: 0 14px;
+            cursor: pointer;
+            font-size: 1rem;
+            &:hover { background: rgba(244, 63, 94, 0.2); }
+        }
+    }
+
+    .slip-error {
+        margin-top: 10px;
+        background: rgba(244, 63, 94, 0.12);
+        border: 1px solid rgba(244, 63, 94, 0.3);
+        color: #fca5a5;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+    }
+
+    .slip-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        padding: 20px;
+    }
+    .slip-modal {
+        background: var(--secondary);
+        border-radius: 14px;
+        padding: 24px;
+        max-width: 380px;
+        width: 100%;
+        box-shadow: var(--shadow);
+        h3 { margin-bottom: 16px; font-weight: 700; }
+        .confirm-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            .win { color: var(--success); }
+        }
+        .confirm-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 18px;
+            button {
+                flex: 1;
+                padding: 11px;
+                border-radius: 8px;
+                border: none;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .cancel { background: rgba(255,255,255,0.08); color: var(--text); }
+            .confirm-btn { background: var(--success); color: white; }
+        }
+    }
 }

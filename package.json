@@ -11,6 +11,7 @@
     "start": "node proxy-server.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.7",
     "axios": "^1.13.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",

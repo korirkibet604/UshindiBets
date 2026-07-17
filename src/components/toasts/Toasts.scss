@@ -1,0 +1,67 @@
+.toasts-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 360px;
+  width: calc(100% - 40px);
+
+  @media screen and (max-width: 576px) {
+    top: 70px;
+    right: 10px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  animation: toastIn 0.3s ease;
+
+  &.toast-odds { border-left-color: #0ea5e9; }
+  &.toast-match { border-left-color: var(--highlight); }
+  &.toast-transaction { border-left-color: var(--success); }
+  &.toast-marketing { border-left-color: var(--warning); }
+  &.toast-success { border-left-color: var(--success); }
+  &.toast-error { border-left-color: #f43f5e; }
+
+  .toast-icon {
+    font-size: 1.1rem;
+    padding-top: 2px;
+    color: var(--accent);
+  }
+  &.toast-odds .toast-icon { color: #0ea5e9; }
+  &.toast-match .toast-icon { color: var(--highlight); }
+  &.toast-transaction .toast-icon { color: var(--success); }
+  &.toast-marketing .toast-icon { color: var(--warning); }
+
+  .toast-body { flex: 1; }
+  .toast-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 2px; }
+  .toast-msg { font-size: 0.85rem; color: var(--text-secondary); }
+
+  .toast-close {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 0.85rem;
+    &:hover { color: var(--text); }
+  }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
