@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-const BETIKA_API_BASE = "https://betika-api-production.up.railway.app";
+const BETIKA_API_BASE = "https://betika-api-v2-production.up.railway.app";
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
