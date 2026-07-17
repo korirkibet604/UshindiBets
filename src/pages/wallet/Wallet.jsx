@@ -61,7 +61,7 @@ function Wallet() {
       customizations: {
         title: "UshindiBets Deposit",
         description: `Wallet deposit of ${formatMoney(amt)}`,
-        logo: "https://img.sofascore.com/api/v1/team/2697/image",
+        logo: "/vite.svg",
       },
       callback: async (data) => {
         setProcessing(true);

@@ -133,17 +133,17 @@ function Home() {
         <div className="promo-card">
           <h3 className="promo-title">Welcome Bonus</h3>
           <p className="promo-desc">Get a 100% bonus on your first deposit up to {formatMoney(5000)}</p>
-          <button className="promo-btn">Claim Now</button>
+          <button className="promo-btn" onClick={() => navigate("/register")}>Claim Now</button>
         </div>
         <div className="promo-card">
           <h3 className="promo-title">Acca Boost</h3>
           <p className="promo-desc">Get up to 50% bonus on your accumulator wins</p>
-          <button className="promo-btn">Learn More</button>
+          <button className="promo-btn" onClick={() => navigate("/fixtures")}>Bet Now</button>
         </div>
         <div className="promo-card">
           <h3 className="promo-title">Free Bet Club</h3>
           <p className="promo-desc">Earn free bets every week with our loyalty program</p>
-          <button className="promo-btn">Join Now</button>
+          <button className="promo-btn" onClick={() => navigate("/wallet")}>Join Now</button>
         </div>
       </div>
     </div>

@@ -39,12 +39,12 @@ export const getCurrencySymbol = (code) =>
 
 export const detectCountry = async () => {
   try {
-    const { data } = await axios.get("https://ipapi.co/json/", { timeout: 8000 });
+    const { data } = await axios.get("https://ipwho.is/", { timeout: 8000 });
     const code = (data.country_code || "KE").toUpperCase();
     return {
       countryCode: code,
-      countryName: data.country_name || "Kenya",
-      currency: COUNTRY_CURRENCY_MAP[code]?.currency || data.currency || "KES",
+      countryName: data.country || "Kenya",
+      currency: COUNTRY_CURRENCY_MAP[code]?.currency || data.currency?.code || "KES",
       flag: COUNTRY_CURRENCY_MAP[code]?.flag || "🌍",
     };
   } catch {

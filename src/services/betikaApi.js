@@ -1,10 +1,13 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_BETIKA_API_URL || "https://betika-api-production.up.railway.app";
+// Route through the Supabase edge function proxy to avoid CORS issues with the
+// Railway-hosted betika-api (which does not send CORS headers).
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const PROXY_BASE = `${SUPABASE_URL}/functions/v1/betika-proxy`;
 
 const apiClient = axios.create({
-  baseURL: API_BASE,
-  timeout: 20000,
+  baseURL: PROXY_BASE,
+  timeout: 25000,
   headers: { Accept: "application/json" },
 });
 
