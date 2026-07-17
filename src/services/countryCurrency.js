@@ -41,6 +41,8 @@ export const detectCountry = async () => {
   try {
     const { data } = await axios.get("https://ipwho.is/", { timeout: 8000 });
     const code = (data.country_code || "KE").toUpperCase();
+
+    console.log(await axios.get("https://www.cloudbet.com/sports-api/c/v6/sports/events/35200649?entities=all&locale=en"))
     return {
       countryCode: code,
       countryName: data.country || "Kenya",
