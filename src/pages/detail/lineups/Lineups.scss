@@ -1,0 +1,101 @@
+.lineups {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+    .lineup {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+        .lineup-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            img{
+                width: 2rem;
+                height: 2rem;
+                object-fit: fill;
+                object-position: center;
+                overflow: hidden;
+                @media screen and (max-width: 1501px){
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+        .team-lineup {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            .player {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                .player-number {
+                    background: var(--accent);
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+                .player-name {
+                    flex: 1;
+                }
+
+                .player-position {
+                    color: var(--text-secondary);
+                    font-size: 0.9rem;
+                    width: 80px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 576px) {
+        &{
+            gap: 10px;
+            margin-top: 10px;
+            grid-template-columns: 1fr;
+            .lineup {
+                border-radius: 8px;
+                padding: 6px;
+                .lineup-header {
+                    gap: 8px;
+                    margin-bottom: 10px;
+                    padding-bottom: 8px;
+                }
+                .team-lineup {
+                    gap: 8px;
+                    .player {
+                        gap: 8px;
+                        padding: 5px 0;
+                        .player-number {
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            font-size: 0.9rem;
+                            font-weight: 600;
+                        }
+                        .player-name {
+                            flex: 1;
+                        }
+
+                        .player-position {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

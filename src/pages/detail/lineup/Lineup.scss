@@ -1,0 +1,390 @@
+.lineup-container {
+    width: 100%;
+    flex: 1;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 576px){
+        margin-bottom: 10px;
+    }
+
+    .lineup-team-name {
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--light-gray);
+
+        @media screen and (max-width: 576px){
+            font-size: 16px;
+            padding-bottom: 5px;
+            margin-bottom: 7px;
+            flex-wrap: wrap;
+            gap: 8px;
+            text-align: center;
+        }
+
+        .formation {
+            font-size: 14px;
+            color: var(--gray);
+            font-weight: 500;
+
+            @media screen and (max-width: 576px){
+                font-size: 12px;
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    .pitch {
+        background: #4caf50;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 30px 30px;
+        border: 3px solid var(--text);
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+        height: 500px;
+        border-radius: 5px;
+
+        @media screen and (max-width: 576px){
+            width: 100%;
+            height: 100vw;
+            max-height: 800px;
+            min-height: 320px;
+            margin-bottom: 10px;
+        }
+
+        // Desktop layout (horizontal pitch)
+        .player {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #16213e;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+
+            &:hover {
+                transform: scale(1.1);
+                background: var(--secondary);
+                .player-details {
+                    display: block;
+                }
+            }
+
+            // Desktop column positioning (left/right)
+            &.column-0{
+                &.home{
+                    left: calc(60px - 20px);
+
+                }
+                &.away{
+                    right: calc(60px - 20px);
+                }
+            }
+            &.column-1{
+                &.home{
+                    left: calc(12.5% - 20px);
+                }
+                &.away{
+                    right: calc(12.5% - 20px);
+                }
+            }
+            &.column-2{
+                &.home{
+                    left: calc(25% - 20px);
+                }
+                &.away{
+                    right: calc(25% - 20px);
+                }
+            }
+            &.column-3{
+                &.home{
+                    left: calc(33%);
+                }
+                &.away{
+                    right: calc(33%);
+                }
+            }
+            &.column-4{
+                &.home{
+                    left: calc(50% - 70px);
+                }
+                &.away{
+                    right: calc(50% - 70px);
+                }
+            }
+
+            // Desktop row positioning (top/bottom)
+            &.row-1{
+                top: calc(20% - 20px);
+            }
+            &.row-2{
+                top: calc(40% - 20px);
+            }
+            &.row-3{
+                top: calc(50% - 20px);
+            }
+            &.row-4{
+                top: calc(60% - 20px);
+            }
+            &.row-5{
+                top: calc(80% - 20px);
+            }
+
+            &.away{
+                background: rgb(194, 9, 9);//#0f3460;
+                .player-details{
+                    background: rgb(194, 9, 9);//#0f3460;
+                }
+            }
+
+            .player-details {
+                display: none;
+                position: absolute;
+                background: #16213e;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                width: 160px;
+                font-size: 13px;
+                color: #f1f1f1;
+                border-radius: 5px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+                .player-name {
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                }
+
+                .player-position {
+                    color: var(--gray);
+                    font-size: 12px;
+                }
+            }
+
+            @media screen and (max-width: 576px){
+                width: 25px;
+                height: 25px;
+                font-weight: 500;
+                font-size: 10px;
+
+                &:hover {
+                    transform: scale(1.05);
+                    .player-details {
+                        display: block;
+                    }
+                }
+
+
+                &.column-0-reposive{
+                    &.home{
+                        top: calc(60px - 20px);
+                    }
+                    &.away{
+                        bottom: calc(60px - 20px);
+                    }
+                }
+                &.column-1-reposive{
+                    &.home{
+                        top: calc(12.5% - 20px);
+                    }
+                    &.away{
+                        bottom: calc(12.5% - 20px);
+                    }
+                }
+                &.column-2-reposive{
+                    &.home{
+                        top: calc(25% - 20px);
+                    }
+                    &.away{
+                        bottom: calc(25% - 20px);
+                    }
+                }
+                &.column-3-reposive{
+                    &.home{
+                        top: calc(33%);
+                    }
+                    &.away{
+                        bottom: calc(33%);
+                    }
+                }
+                &.column-4-reposive{
+                    &.home{
+                        top: calc(50% - 70px);
+                    }
+                    &.away{
+                        bottom: calc(50% - 70px);
+                    }
+                }
+
+                // Desktop row positioning (top/bottom)
+                &.row-1-reposive{
+                    left: calc(20% - 20px);
+                }
+                &.row-2-reposive{
+                    left: calc(40% - 20px);
+                }
+                &.row-3-reposive{
+                    left: calc(50% - 20px);
+                }
+                &.row-4-reposive{
+                    left: calc(60% - 20px);
+                }
+                &.row-5-reposive{
+                    left: calc(80% - 20px);
+                }
+
+                .player-details {
+                    padding: 6px;
+                    width: 140px;
+                    border-radius: 6px;
+                    .player-name {
+                        font-weight: 500;
+                        margin-bottom: 3px;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 400px){
+                width: 15px;
+                height: 15px;
+                font-size: 7px;
+
+                .player-details {
+                    padding: 3px;
+                    width: 120px;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    font-weight: normal;
+
+
+                    .player-name {
+                        font-weight: 400;
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+
+        // Desktop goal posts (left/right)
+        .goal-post {
+            width: 60px;
+            height: 100px;
+            position: absolute;
+            top: calc(50% - 50px);
+            border: 3px solid white;
+
+            &.home {
+                left: 0;
+                border-left: none;
+            }
+
+            &.away {
+                right: 0;
+                border-right: none;
+            }
+
+
+            @media screen and (max-width: 576px) {
+                width: 100px;
+                height: 60px;
+                position: absolute;
+                left: calc(50% - 50px);
+                border: 3px solid white;
+
+                &.home {
+                    top: 0;
+                    border: 3px solid white;
+                    border-top: none;
+                    left: calc(50% - 50px);
+                }
+
+                &.away {
+                    bottom: 0;
+                    border: 3px solid white;
+                    border-bottom: none;
+                    top: auto;
+                    left: calc(50% - 50px);
+                }
+            }
+            @media screen and (max-width: 400px) {
+                width: 80px;
+                height: 50px;
+                left: calc(50% - 40px);
+            }
+        }
+
+        // Desktop center elements
+        .center-circle {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: calc(50% - 50px);
+            top: calc(50% - 50px);
+            border-radius: 50%;
+            border: 3px solid white;
+
+            @media screen and (max-width: 576px){
+                width: 60px;
+                height: 60px;
+                left: calc(50% - 30px);
+                top: calc(50% - 30px);
+            }
+
+            @media screen and (max-width: 400px) {
+                width: 50px;
+                height: 50px;
+                left: calc(50% - 25px);
+                top: calc(50% - 25px);
+            }
+        }
+
+        .center-line {
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            background: white;
+            left: calc(50% - 1.5px);
+
+            @media screen and (max-width: 576px) {
+                width: 100%;
+                height: 3px;
+                top: calc(50% - 1.5px);
+                left: 0;
+            }
+        }
+
+        .center-dot {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: calc(50% - 5px);
+            top: calc(50% - 5px);
+            background: white;
+            border-radius: 50%;
+            background: white;
+
+            @media screen and (max-width: 400px) {
+                width: 6px;
+                height: 6px;
+
+                left: calc(50% - 3px);
+                top: calc(50% - 3px);
+            }
+        }
+    }
+}

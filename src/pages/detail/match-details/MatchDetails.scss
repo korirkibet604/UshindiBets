@@ -1,0 +1,89 @@
+#match-details{
+    .stats {
+        margin: 25px 0;
+        .stat-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            .stat-label {
+                width: 150px;
+                font-size: 14px;
+                color: var(--gray);
+                align-self: flex-start;
+            }
+            .stat-value {
+                width: 40px;
+                text-align: right;
+                font-size: 14px;
+                font-weight: 500;
+                align-self: flex-end;
+            }
+
+            @media screen and (max-width: 576px){
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                margin-bottom: 8px;
+                background: var(--card-bg);
+                border-radius: 8px;
+                padding: 5px;
+                box-shadow: var(--shadow);
+            }
+
+            .stat-bars {
+                width: 100%;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                .stat-bar {
+                    height: 8px;
+                    border-radius: 4px;
+                    margin: 0 5px;
+                    &.home {
+                        background: #16213e;
+                    }
+
+                    &.away {
+                        background: var(--highlight);
+                    }
+                }
+            }
+        }
+    }
+
+
+    /* Events */
+    .events {
+        margin-top: 25px;
+        .event {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+
+            @media screen and (max-width: 576px){
+                background: var(--card-hover);
+                border-radius: 8px;
+                padding: 5px;
+                //box-shadow: var(--shadow);
+                margin-bottom: 5px;
+            }
+            .event-time {
+                width: 50px;
+                font-weight: 600;
+                color: var(--text-highlight);
+            }
+            .event-icon {
+                width: 30px;
+                text-align: center;
+                color: var(--highlight);
+            }
+
+            .event-description {
+                flex: 1;
+            }
+        }
+    }
+}
