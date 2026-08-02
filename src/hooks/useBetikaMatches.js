@@ -2,8 +2,9 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { betikaApi } from "../services/betikaApi";
 
 export const useBetikaMatches = (options = {}) => {
-  const { limit = 100, league, competition, team, date, sort, pollInterval = 0, auto = true } = options;
+  const { sportId, competitionId, category, team, date, pollInterval = 0, auto = true } = options;
   const [matches, setMatches] = useState([]);
+  const [tags, setTags] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [lastUpdate, setLastUpdate] = useState(null);
@@ -12,21 +13,22 @@ export const useBetikaMatches = (options = {}) => {
   const fetchMatches = useCallback(async () => {
     try {
       setError(null);
-      const params = { limit };
-      if (league) params.league = league;
-      if (competition) params.competition = competition;
+      const params = {};
+      if (sportId) params.sport_id = sportId;
+      if (competitionId) params.competition_id = competitionId;
+      if (category) params.category = category;
       if (team) params.team = team;
       if (date) params.date = date;
-      if (sort) params.sort = sort;
       const data = await betikaApi.getMatches(params);
-      setMatches(data?.matches || []);
-      setLastUpdate(data?.lastUpdate || new Date().toISOString());
+      setMatches(data?.data || []);
+      setTags(data?.meta?.tags || []);
+      setLastUpdate(data?.timestamp || new Date().toISOString());
     } catch (e) {
       setError(e.message || "Failed to load matches");
     } finally {
       setLoading(false);
     }
-  }, [limit, league, competition, team, date, sort]);
+  }, [sportId, competitionId, category, team, date]);
 
   useEffect(() => {
     if (auto) fetchMatches();
@@ -38,7 +40,7 @@ export const useBetikaMatches = (options = {}) => {
     return () => clearInterval(intervalRef.current);
   }, [pollInterval, fetchMatches]);
 
-  return { matches, loading, error, lastUpdate, refetch: fetchMatches };
+  return { matches, tags, loading, error, lastUpdate, refetch: fetchMatches };
 };
 
 export default useBetikaMatches;

@@ -11,7 +11,6 @@ function LiveMatches() {
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const { matches, loading, error, lastUpdate } = useBetikaMatches({
-    limit: 200,
     pollInterval: 30000,
   });
   const { addSelection, selections } = useBetslip();
@@ -21,14 +20,21 @@ function LiveMatches() {
 
   const filtered = useMemo(() => {
     let list = normalized;
-    if (selectedLeague) list = list.filter((m) => m.league === selectedLeague.name);
+    if (selectedLeague) {
+      list = list.filter(
+        (m) =>
+          m.category === selectedLeague.category &&
+          m.competition === selectedLeague.competition
+      );
+    }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       list = list.filter(
         (m) =>
           m.homeTeam?.toLowerCase().includes(q) ||
           m.awayTeam?.toLowerCase().includes(q) ||
-          m.league?.toLowerCase().includes(q)
+          m.category?.toLowerCase().includes(q) ||
+          m.competition?.toLowerCase().includes(q)
       );
     }
     return list;
@@ -75,7 +81,7 @@ function LiveMatches() {
         {filtered.map((match) => (
           <div className="match-card live" key={match.id} onClick={() => navigate(`/live/${match.id}`)}>
             <div className="match-status">
-              <span>{match.league} • {match.competition}</span>
+              <span>{match.category} • {match.competition}</span>
               <div className="live-indicator">
                 <i className="fas fa-circle"></i> LIVE
               </div>

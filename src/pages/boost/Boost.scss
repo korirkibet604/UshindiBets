@@ -189,4 +189,33 @@
     color: var(--text-secondary);
   }
   .boost-error { color: #fca5a5; }
+
+  .boost-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    i { font-size: 3rem; color: var(--warning); margin-bottom: 14px; }
+    h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--text); }
+    p { font-size: 0.9rem; max-width: 420px; margin: 0 auto 24px; line-height: 1.5; }
+    .previous-list {
+      text-align: left;
+      max-width: 460px;
+      margin: 0 auto;
+      h4 { font-size: 0.95rem; margin-bottom: 12px; color: var(--text); }
+      .prev-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 12px;
+        background: var(--card-bg);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        font-size: 0.88rem;
+        .prev-status {
+          color: var(--text-secondary);
+          text-transform: capitalize;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 }

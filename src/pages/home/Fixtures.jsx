@@ -9,7 +9,7 @@ import { useBetslip } from "../../context/BetslipContext";
 function Fixtures() {
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const { matches, loading, error } = useBetikaMatches({ limit: 500, pollInterval: 120000 });
+  const { matches, loading, error } = useBetikaMatches({ pollInterval: 120000 });
   const { addSelection, selections } = useBetslip();
   const navigate = useNavigate();
 
@@ -18,14 +18,21 @@ function Fixtures() {
 
   const filtered = useMemo(() => {
     let list = normalized;
-    if (selectedLeague) list = list.filter((m) => m.league === selectedLeague.name);
+    if (selectedLeague) {
+      list = list.filter(
+        (m) =>
+          m.category === selectedLeague.category &&
+          m.competition === selectedLeague.competition
+      );
+    }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       list = list.filter(
         (m) =>
           m.homeTeam?.toLowerCase().includes(q) ||
           m.awayTeam?.toLowerCase().includes(q) ||
-          m.league?.toLowerCase().includes(q)
+          m.category?.toLowerCase().includes(q) ||
+          m.competition?.toLowerCase().includes(q)
       );
     }
     return list;
@@ -70,7 +77,7 @@ function Fixtures() {
         {filtered.map((match) => (
           <div className="match-card" key={match.id} onClick={() => navigate(`/live/${match.id}`)}>
             <div className="match-status">
-              <span>{match.league} • {match.competition}</span>
+              <span>{match.category} • {match.competition}</span>
               <span>{match.date} {match.time}</span>
             </div>
             <div className="match-teams">

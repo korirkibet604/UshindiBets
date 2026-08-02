@@ -10,23 +10,25 @@ function Boost() {
   const { user, wallet, refreshWallet } = useAuth();
   const { formatMoney } = useCurrency();
   const { addNotification } = useNotifications();
-  const [jackpot, setJackpot] = useState(null);
-  const [midweek, setMidweek] = useState(null);
-  const [active, setActive] = useState("must-be-won");
+  const [jackpots, setJackpots] = useState([]);
+  const [boosted, setBoosted] = useState([]);
+  const [previous, setPrevious] = useState([]);
+  const [activeIdx, setActiveIdx] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [picks, setPicks] = useState({}); // { matchId: "1" | "X" | "2" }
+  const [picks, setPicks] = useState({});
   const [stake, setStake] = useState(49);
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    Promise.all([betikaApi.getJackpot(), betikaApi.getMidweekJackpot()])
-      .then(([j, m]) => {
+    Promise.all([betikaApi.getJackpot(), betikaApi.getBoosted(), betikaApi.getPreviousJackpots()])
+      .then(([j, b, p]) => {
         if (cancelled) return;
-        setJackpot(j?.data || null);
-        setMidweek(m?.data || null);
+        setJackpots(j?.data || []);
+        setBoosted(b?.data || []);
+        setPrevious(p?.data || []);
       })
       .catch((e) => !cancelled && setError(e.message))
       .finally(() => !cancelled && setLoading(false));
@@ -35,9 +37,11 @@ function Boost() {
     };
   }, []);
 
-  const current = active === "must-be-won" ? jackpot : midweek;
-  const matches = current?.matches || [];
-  const meta = current?.jackpot || {};
+  // Combine all jackpot-style events; pick the active one
+  const allEvents = [...jackpots, ...boosted];
+  const current = allEvents[activeIdx] || null;
+  const matches = current?.matches || current?.games || [];
+  const meta = current || {};
 
   const togglePick = (matchId, pick) => {
     setPicks((prev) => ({ ...prev, [matchId]: prev[matchId] === pick ? null : pick }));
@@ -67,8 +71,8 @@ function Boost() {
         .from("jackpot_entries")
         .insert({
           user_id: user.id,
-          jackpot_type: active,
-          jackpot_id: current?.jackpot?.name || active,
+          jackpot_type: current?.jackpot_type || current?.type || "boost",
+          jackpot_id: current?.id || current?.jackpot_id || String(activeIdx),
           picks: Object.entries(picks).map(([matchId, pick]) => ({ matchId, pick })),
           stake: Number(stake),
           status: "entered",
@@ -91,14 +95,14 @@ function Boost() {
         status: "successful",
         reference: entry?.id,
         provider: "system",
-        meta: { jackpot: active },
+        meta: { jackpot: current?.name || "boost" },
       });
 
       await refreshWallet();
       await addNotification({
         category: "transaction",
         title: "Jackpot entry submitted",
-        body: `You entered the ${meta.name || "Jackpot"} with ${pickedCount} picks.`,
+        body: `You entered ${meta.name || "the jackpot"} with ${pickedCount} picks.`,
         meta: { entry_id: entry?.id },
       });
       setPicks({});
@@ -116,71 +120,82 @@ function Boost() {
         <p>Pick all matches correctly to win the grand prize!</p>
       </div>
 
-      <div className="jackpot-tabs">
-        <button className={active === "must-be-won" ? "active" : ""} onClick={() => { setActive("must-be-won"); setPicks({}); }}>
-          Grand Jackpot
-        </button>
-        <button className={active === "midweek" ? "active" : ""} onClick={() => { setActive("midweek"); setPicks({}); }}>
-          Midweek Jackpot
-        </button>
-      </div>
-
       {loading && <div className="boost-loading">Loading jackpot...</div>}
       {error && <div className="boost-error">{error}</div>}
+
+      {!loading && allEvents.length > 0 && (
+        <div className="jackpot-tabs">
+          {allEvents.map((ev, i) => (
+            <button
+              key={ev.id || i}
+              className={i === activeIdx ? "active" : ""}
+              onClick={() => { setActiveIdx(i); setPicks({}); }}
+            >
+              {ev.name || ev.jackpot_name || `Jackpot ${i + 1}`}
+            </button>
+          ))}
+        </div>
+      )}
 
       {!loading && current && (
         <>
           <div className="jackpot-meta">
             <div className="meta-item">
               <span className="meta-label">Grand Prize</span>
-              <span className="meta-value">{meta.grandPrize || "Up to KES 50,000,000"}</span>
+              <span className="meta-value">{meta.grand_prize || meta.prize || "Up to KES 50,000,000"}</span>
             </div>
             <div className="meta-item">
               <span className="meta-label">Stake</span>
-              <span className="meta-value">{meta.stakeAmount || "KES 49"}</span>
+              <span className="meta-value">{meta.stake_amount || meta.stake || "KES 49"}</span>
             </div>
-            {meta.countdown && (
-              <div className="meta-item">
-                <span className="meta-label">Closes in</span>
-                <span className="meta-value">
-                  {meta.countdown.days || 0}d {meta.countdown.hours || 0}h {meta.countdown.minutes || 0}m
-                </span>
-              </div>
-            )}
+            <div className="meta-item">
+              <span className="meta-label">Matches</span>
+              <span className="meta-value">{matches.length || meta.total_matches || 0}</span>
+            </div>
           </div>
 
           <div className="jackpot-matches">
-            {matches.length === 0 && <div className="no-matches">No jackpot matches available right now. Try refreshing.</div>}
-            {matches.map((m, i) => (
-              <div className="jackpot-match" key={m.id ?? i}>
-                <div className="jm-info">
-                  <span className="jm-num">{i + 1}</span>
-                  <div className="jm-teams">
-                    <span className="jm-team">{m.homeTeam}</span>
-                    <span className="jm-vs">vs</span>
-                    <span className="jm-team">{m.awayTeam}</span>
+            {matches.length === 0 && (
+              <div className="no-matches">No jackpot matches available right now. Try refreshing.</div>
+            )}
+            {matches.map((m, i) => {
+              const home = m.home_team || m.homeTeam || m.team1 || "Home";
+              const away = m.away_team || m.awayTeam || m.team2 || "Away";
+              const mid = m.id || m.match_id || i;
+              const oh = m.home_odd || m.homeOdd || m.odds?.home;
+              const od = m.neutral_odd || m.neutralOdd || m.draw_odd || m.odds?.draw;
+              const oa = m.away_odd || m.awayOdd || m.odds?.away;
+              return (
+                <div className="jackpot-match" key={mid}>
+                  <div className="jm-info">
+                    <span className="jm-num">{i + 1}</span>
+                    <div className="jm-teams">
+                      <span className="jm-team">{home}</span>
+                      <span className="jm-vs">vs</span>
+                      <span className="jm-team">{away}</span>
+                    </div>
+                    <span className="jm-league">{m.competition || m.league || ""}</span>
                   </div>
-                  <span className="jm-league">{m.league}</span>
+                  <div className="jm-odds">
+                    {[
+                      { k: "1", v: oh },
+                      { k: "X", v: od },
+                      { k: "2", v: oa },
+                    ].map((o) => (
+                      <button
+                        key={o.k}
+                        className={`jm-odd ${picks[mid] === o.k ? "selected" : ""}`}
+                        onClick={() => o.v && togglePick(mid, o.k)}
+                        disabled={!o.v}
+                      >
+                        <span>{o.k}</span>
+                        <strong>{o.v ? Number(o.v).toFixed(2) : "-"}</strong>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="jm-odds">
-                  {[
-                    { k: "1", v: m.odds?.home },
-                    { k: "X", v: m.odds?.draw },
-                    { k: "2", v: m.odds?.away },
-                  ].map((o) => (
-                    <button
-                      key={o.k}
-                      className={`jm-odd ${picks[m.id] === o.k ? "selected" : ""}`}
-                      onClick={() => togglePick(m.id, o.k)}
-                      disabled={!o.v}
-                    >
-                      <span>{o.k}</span>
-                      <strong>{o.v ? Number(o.v).toFixed(2) : "-"}</strong>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {matches.length > 0 && (
@@ -205,6 +220,25 @@ function Boost() {
             </div>
           )}
         </>
+      )}
+
+      {!loading && allEvents.length === 0 && !error && (
+        <div className="boost-empty">
+          <i className="fas fa-trophy"></i>
+          <h3>No active jackpots right now</h3>
+          <p>Jackpot and boosted events appear here when Betika publishes them. Check back soon!</p>
+          {previous.length > 0 && (
+            <div className="previous-list">
+              <h4>Previous Jackpots</h4>
+              {previous.slice(0, 5).map((p, i) => (
+                <div className="prev-item" key={i}>
+                  <span>{p.name || p.jackpot_name || "Jackpot"}</span>
+                  <span className="prev-status">{p.status || "completed"}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

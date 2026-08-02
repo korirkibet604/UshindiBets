@@ -1,10 +1,13 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_BETIKA_API_URL || "https://betika-api-production.up.railway.app";
+// Route through the Supabase edge function proxy to avoid CORS issues with the
+// Railway-hosted betika-api (which does not send CORS headers).
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const PROXY_BASE = `${SUPABASE_URL}/functions/v1/betika-proxy`;
 
 const apiClient = axios.create({
-  baseURL: API_BASE,
-  timeout: 20000,
+  baseURL: PROXY_BASE,
+  timeout: 25000,
   headers: { Accept: "application/json" },
 });
 
@@ -19,30 +22,30 @@ apiClient.interceptors.response.use(
 export const betikaApi = {
   health: () => apiClient.get("/api/health").then((r) => r.data),
 
+  // GET /api/matches?limit=&sport_id=&competition_id=&category=&team=&date=
   getMatches: (params = {}) =>
     apiClient.get("/api/matches", { params }).then((r) => r.data),
 
+  // GET /api/matches/:id  -> single match with full odds[] markets
   getMatchById: (matchId) =>
-    apiClient.get(`/api/match/${matchId}`).then((r) => r.data),
+    apiClient.get(`/api/matches/${matchId}`).then((r) => r.data),
 
-  getLeagues: () => apiClient.get("/api/leagues").then((r) => r.data),
+  // GET /api/matches/sport/:sportId
+  getMatchesBySport: (sportId, params = {}) =>
+    apiClient.get(`/api/matches/sport/${sportId}`, { params }).then((r) => r.data),
 
-  getLeagueMatches: (league, params = {}) =>
-    apiClient.get(`/api/leagues/${encodeURIComponent(league)}`, { params }).then((r) => r.data),
+  // GET /api/sports  -> all sports with categories/competitions
+  getSports: () => apiClient.get("/api/sports").then((r) => r.data),
 
-  getCompetitions: () => apiClient.get("/api/competitions").then((r) => r.data),
+  // GET /api/sport/:sportId
+  getSport: (sportId) => apiClient.get(`/api/sport/${sportId}`).then((r) => r.data),
 
-  search: (q, params = {}) =>
-    apiClient.get("/api/search", { params: { q, ...params } }).then((r) => r.data),
-
-  getStats: () => apiClient.get("/api/stats").then((r) => r.data),
+  // GET /api/jackpot
+  getJackpot: () => apiClient.get("/api/jackpot").then((r) => r.data),
+  getPreviousJackpots: () => apiClient.get("/api/jackpot/previous").then((r) => r.data),
+  getBoosted: () => apiClient.get("/api/jackpot/boosted").then((r) => r.data),
 
   refresh: () => apiClient.get("/api/refresh").then((r) => r.data),
-
-  getJackpot: () => apiClient.get("/api/jackpot").then((r) => r.data),
-  getMidweekJackpot: () => apiClient.get("/api/jackpot/midweek").then((r) => r.data),
-  getAllJackpots: () => apiClient.get("/api/jackpot/all").then((r) => r.data),
-  refreshJackpot: (type) => apiClient.get(`/api/jackpot/refresh/${type}`).then((r) => r.data),
 };
 
 export default betikaApi;

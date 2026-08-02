@@ -1,45 +1,87 @@
 // Normalize a betika-api match into a consistent shape for the UI.
-// The raw `date` field is messy ("Spain • LaLiga\n08/05"); we keep league/competition separately
-// and derive a display date from the `time` + `date` fields.
+// Real API fields: id, homeTeam, awayTeam, startTime ("YYYY-MM-DD HH:mm:ss"),
+// competition, category, sportId, sportName, homeOdd, neutralOdd, awayOdd,
+// odds[] (markets), sideBets, isEsport, isSrl.
 export const normalizeMatch = (m) => {
-  const leagueParts = (m.league || "").split("•").map((s) => s.trim());
-  const compParts = (m.competition || "").split("•").map((s) => s.trim());
-  const league = leagueParts[0] || m.league || "Unknown";
-  const competition = compParts[1] || leagueParts[1] || m.competition || league;
+  const startTime = m.startTime || "";
+  let date = "";
+  let time = "";
+  if (startTime) {
+    const parts = startTime.split(" ");
+    date = parts[0] || "";
+    time = parts[1] || "";
+  }
 
-  // date field often looks like "Spain • LaLiga\n08/05" — extract trailing dd/mm
-  let displayDate = m.date || "";
-  const dateMatch = displayDate.match(/(\d{2}\/\d{2})/);
-  if (dateMatch) displayDate = dateMatch[1];
+  // Top-level 1X2 odds come as strings
+  const odds = {
+    home: num(m.homeOdd),
+    draw: num(m.neutralOdd),
+    away: num(m.awayOdd),
+  };
+
+  // Full markets array (each market: { sub_type_id, name, odds: [{display, odd_value, ...}] })
+  const markets = (m.odds || []).map((mk) => ({
+    id: mk.sub_type_id,
+    name: mk.name,
+    odds: (mk.odds || []).map((o) => ({
+      display: o.display,
+      key: o.odd_key,
+      value: num(o.odd_value),
+      specialBetValue: o.special_bet_value || "",
+      outcomeId: o.outcome_id,
+    })),
+  }));
 
   return {
     id: m.id,
-    league,
-    competition,
-    date: displayDate,
-    time: m.time || "",
-    homeTeam: m.homeTeam,
-    awayTeam: m.awayTeam,
-    odds: {
-      home: m.odds?.home ?? null,
-      draw: m.odds?.draw ?? null,
-      away: m.odds?.away ?? null,
-    },
-    totalMarkets: m.totalMarkets || 0,
-    markers: m.markers || [],
-    matchUrl: m.matchUrl || "",
-    scrapedAt: m.scrapedAt,
+    homeTeam: m.homeTeam || "Home",
+    awayTeam: m.awayTeam || "Away",
+    startTime,
+    date,
+    time,
+    competition: m.competition || "",
+    category: m.category || "",
+    sportId: m.sportId || "",
+    sportName: m.sportName || "Soccer",
+    competitionId: m.competitionId || "",
+    sideBets: m.sideBets || "0",
+    odds,
+    markets,
+    isEsport: !!m.isEsport,
+    isSrl: !!m.isSrl,
   };
+};
+
+const num = (v) => {
+  const n = parseFloat(v);
+  return isNaN(n) ? null : n;
 };
 
 export const normalizeMatches = (list = []) => (list || []).map(normalizeMatch);
 
-// Extract unique leagues from normalized matches
+// Extract unique categories (countries) from normalized matches
 export const extractLeagues = (matches = []) => {
   const map = new Map();
   matches.forEach((m) => {
-    if (m.league && !map.has(m.league)) {
-      map.set(m.league, { id: m.league, name: m.league, competition: m.competition });
+    const key = m.category || m.competition;
+    if (key && !map.has(key)) {
+      map.set(key, {
+        id: m.competitionId || key,
+        name: m.competition ? `${m.category} • ${m.competition}` : key,
+        category: m.category,
+        competition: m.competition,
+      });
+    }
+  });
+  return Array.from(map.values());
+};
+
+// Extract sports from normalized matches
+export const extractSports = (matches = []) => {
+  const map = new Map();
+  matches.forEach((m) => {
+    if (m.sportId && !map.has(m.sportId)) {
+      map.set(m.sportId, { id: m.sportId, name: m.sportName });
     }
   });
   return Array.from(map.values());

@@ -1,6 +1,6 @@
 import "./Home.scss";
 import Controls from "../../components/controls/Controls";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useBetikaMatches } from "../../hooks/useBetikaMatches";
 import { useEffect, useState, useMemo } from "react";
 import { normalizeMatches, extractLeagues } from "../../utils/matchUtils";
@@ -14,8 +14,7 @@ function Home() {
   const { addSelection, selections } = useBetslip();
   const { formatMoney } = useCurrency();
 
-  const { matches, loading, error, lastUpdate } = useBetikaMatches({
-    limit: 100,
+  const { matches, tags, loading, error, lastUpdate } = useBetikaMatches({
     pollInterval: 60000,
   });
 
@@ -24,14 +23,20 @@ function Home() {
 
   const filtered = useMemo(() => {
     let list = normalized;
-    if (selectedLeague) list = list.filter((m) => m.league === selectedLeague.name);
+    if (selectedLeague) {
+      list = list.filter(
+        (m) =>
+          m.category === selectedLeague.category &&
+          m.competition === selectedLeague.competition
+      );
+    }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       list = list.filter(
         (m) =>
           m.homeTeam?.toLowerCase().includes(q) ||
           m.awayTeam?.toLowerCase().includes(q) ||
-          m.league?.toLowerCase().includes(q) ||
+          m.category?.toLowerCase().includes(q) ||
           m.competition?.toLowerCase().includes(q)
       );
     }
@@ -82,7 +87,7 @@ function Home() {
         {filtered.slice(0, 12).map((match) => (
           <div className="match-card" key={match.id} onClick={() => navigate(`/live/${match.id}`)}>
             <div className="match-status">
-              <span>{match.league} • {match.competition}</span>
+              <span>{match.category} • {match.competition}</span>
               <span>{match.date} {match.time}</span>
             </div>
             <div className="match-teams">
@@ -133,17 +138,17 @@ function Home() {
         <div className="promo-card">
           <h3 className="promo-title">Welcome Bonus</h3>
           <p className="promo-desc">Get a 100% bonus on your first deposit up to {formatMoney(5000)}</p>
-          <button className="promo-btn">Claim Now</button>
+          <button className="promo-btn" onClick={() => navigate("/register")}>Claim Now</button>
         </div>
         <div className="promo-card">
           <h3 className="promo-title">Acca Boost</h3>
           <p className="promo-desc">Get up to 50% bonus on your accumulator wins</p>
-          <button className="promo-btn">Learn More</button>
+          <button className="promo-btn" onClick={() => navigate("/fixtures")}>Bet Now</button>
         </div>
         <div className="promo-card">
           <h3 className="promo-title">Free Bet Club</h3>
           <p className="promo-desc">Earn free bets every week with our loyalty program</p>
-          <button className="promo-btn">Join Now</button>
+          <button className="promo-btn" onClick={() => navigate("/wallet")}>Join Now</button>
         </div>
       </div>
     </div>

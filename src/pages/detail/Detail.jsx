@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { betikaApi } from "../../services/betikaApi";
 import { useBetslip } from "../../context/BetslipContext";
+import { normalizeMatch } from "../../utils/matchUtils";
 
 function Detail() {
   const [tab, setTab] = useState("overview");
@@ -22,7 +23,7 @@ function Detail() {
       .getMatchById(id)
       .then((res) => {
         if (cancelled) return;
-        setMatch(res?.data || null);
+        setMatch(normalizeMatch(res?.data || {}));
       })
       .catch((e) => !cancelled && setError(e.message || "Failed to load match"))
       .finally(() => !cancelled && setLoading(false));
@@ -86,8 +87,8 @@ function Detail() {
 
       <div className="match-card live">
         <div className="match-status">
-          <span>{match.league} • {match.competition}</span>
-          <span>{match.matchTime || match.date} {match.time || ""}</span>
+          <span>{match.category} • {match.competition}</span>
+          <span>{match.date} {match.time}</span>
         </div>
         <div className="match-teams">
           <div className="team">
@@ -95,7 +96,7 @@ function Detail() {
           </div>
           <div className="match-score">
             <div className="score">-:-</div>
-            <div className="match-time">{match.matchTime || "Preview"}</div>
+            <div className="match-time">{match.time || "Preview"}</div>
           </div>
           <div className="team">
             <div className="team-name">{awayTeam}</div>
@@ -119,11 +120,12 @@ function Detail() {
         <div className="tab-content active">
           <h2>Match Info</h2>
           <div className="info-grid">
-            <div className="info-item"><strong>League</strong><span>{match.league}</span></div>
+            <div className="info-item"><strong>Category</strong><span>{match.category}</span></div>
             <div className="info-item"><strong>Competition</strong><span>{match.competition}</span></div>
             <div className="info-item"><strong>Date</strong><span>{match.date}</span></div>
             <div className="info-item"><strong>Time</strong><span>{match.time}</span></div>
-            <div className="info-item"><strong>Total Markets</strong><span>{match.totalMarkets || markets.length}</span></div>
+            <div className="info-item"><strong>Sport</strong><span>{match.sportName}</span></div>
+            <div className="info-item"><strong>Markets</strong><span>{match.sideBets || markets.length}</span></div>
           </div>
           {markets.length > 0 && (
             <>
@@ -136,11 +138,11 @@ function Detail() {
                       {m.odds?.map((o, j) => (
                         <button
                           key={j}
-                          className={`odd-pill ${isPicked(m.name, o.label) ? "selected" : ""}`}
-                          onClick={() => o.value && pickOdd(m.name, o.label, o.value)}
+                          className={`odd-pill ${isPicked(m.name, o.display) ? "selected" : ""}`}
+                          onClick={() => o.value && pickOdd(m.name, o.display, o.value)}
                         >
-                          <span className="odd-label">{o.label}</span>
-                          <span className="odd-value">{o.value ? Number(o.value).toFixed(2) : "-"}</span>
+                          <span className="odd-label">{o.display}</span>
+                          <span className="odd-value">{o.value ? o.value.toFixed(2) : "-"}</span>
                         </button>
                       ))}
                     </div>
@@ -166,11 +168,11 @@ function Detail() {
                     {m.odds?.map((o, j) => (
                       <button
                         key={j}
-                        className={`odd-pill ${isPicked(m.name, o.label) ? "selected" : ""}`}
-                        onClick={() => o.value && pickOdd(m.name, o.label, o.value)}
+                        className={`odd-pill ${isPicked(m.name, o.display) ? "selected" : ""}`}
+                        onClick={() => o.value && pickOdd(m.name, o.display, o.value)}
                       >
-                        <span className="odd-label">{o.label}</span>
-                        <span className="odd-value">{o.value ? Number(o.value).toFixed(2) : "-"}</span>
+                        <span className="odd-label">{o.display}</span>
+                        <span className="odd-value">{o.value ? o.value.toFixed(2) : "-"}</span>
                       </button>
                     ))}
                   </div>
@@ -184,18 +186,7 @@ function Detail() {
       {tab === "stats" && (
         <div className="tab-content active">
           <h2>Statistics</h2>
-          {match.statistics && Object.keys(match.statistics).length > 0 ? (
-            <div className="stats-grid">
-              {Object.entries(match.statistics).map(([k, v]) => (
-                <div className="stat-row" key={k}>
-                  <span>{k}</span>
-                  <strong>{v}</strong>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="no-data">Statistics will be available once the match starts.</div>
-          )}
+          <div className="no-data">Statistics will be available once the match starts.</div>
         </div>
       )}
     </div>
