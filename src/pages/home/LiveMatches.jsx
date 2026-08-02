@@ -1,29 +1,23 @@
 import "./Home.scss";
 import Controls from "../../components/controls/Controls";
 import { useNavigate } from "react-router-dom";
-import { useBetikaMatches } from "../../hooks/useBetikaMatches";
+import { useLiveEvents } from "../../hooks/useLiveEvents";
 import { useMemo, useState } from "react";
-import { normalizeMatches, extractLeagues } from "../../utils/matchUtils";
+import { extractLeagues } from "../../utils/matchUtils";
 import { useBetslip } from "../../context/BetslipContext";
 
 function LiveMatches() {
   const navigate = useNavigate();
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [sortBy, setSortBy] = useState("start_time");
-  const { matches, loading, error, lastUpdate } = useBetikaMatches({
-    date: selectedDate,
-    sortBy,
-    pollInterval: 30000,
-  });
+  const [sortBy, setSortBy] = useState(1);
+  const { matches, loading, error } = useLiveEvents({ sort: sortBy }, 15000);
   const { addSelection, selections } = useBetslip();
 
-  const normalized = useMemo(() => normalizeMatches(matches), [matches]);
-  const leagues = useMemo(() => extractLeagues(normalized), [normalized]);
+  const leagues = useMemo(() => extractLeagues(matches), [matches]);
 
   const filtered = useMemo(() => {
-    let list = normalized;
+    let list = matches;
     if (selectedLeague) {
       list = list.filter(
         (m) =>
@@ -42,7 +36,7 @@ function LiveMatches() {
       );
     }
     return list;
-  }, [normalized, selectedLeague, searchQuery]);
+  }, [matches, selectedLeague, searchQuery]);
 
   const isPicked = (matchId, market, pick) =>
     selections.some((s) => s.matchId === matchId && s.market === market && s.pick === pick);
@@ -56,6 +50,7 @@ function LiveMatches() {
       market,
       pick,
       odds,
+      isLive: true,
     });
 
   return (
@@ -67,17 +62,15 @@ function LiveMatches() {
         onLeagueChange={setSelectedLeague}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        selectedDate={selectedDate}
-        onDateChange={setSelectedDate}
         sortBy={sortBy}
         onSortChange={setSortBy}
       />
 
       <div className="section-header">
         <h2 className="polling-indicator active">
-          <i className="fas fa-sync fa-spin"></i> Live updates every 30s
+          <i className="fas fa-sync fa-spin"></i> Live updates every 15s
         </h2>
-        <span className="view-all">{loading ? "Loading..." : `${filtered.length} matches`}</span>
+        <span className="view-all">{loading ? "Loading..." : `${filtered.length} live`}</span>
       </div>
 
       {error && <div className="no-matches">Unable to load live matches: {error}. Retrying...</div>}
@@ -99,8 +92,8 @@ function LiveMatches() {
                 <div className="team-name">{match.homeTeam}</div>
               </div>
               <div className="match-score">
-                <div className="score">-:-</div>
-                <div className="match-time">{match.time || "LIVE"}</div>
+                <div className="score">{match.currentScore || "-:-"}</div>
+                <div className="match-time">{match.matchTime || match.eventStatus || "LIVE"}</div>
               </div>
               <div className="team">
                 <div className="team-name">{match.awayTeam}</div>

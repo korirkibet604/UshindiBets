@@ -44,8 +44,8 @@ function Home() {
   const navigate = useNavigate();
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [sortBy, setSortBy] = useState("start_time");
+  const [selectedPeriod, setSelectedPeriod] = useState(-1);
+  const [sortBy, setSortBy] = useState(1);
   const { addSelection, selections } = useBetslip();
   const { formatMoney } = useCurrency();
   const { user, refreshWallet } = useAuth();
@@ -54,8 +54,8 @@ function Home() {
   const [claiming, setClaiming] = useState(null);
 
   const { matches, tags, loading, error, lastUpdate } = useBetikaMatches({
-    date: selectedDate,
-    sortBy,
+    sortId: sortBy,
+    periodId: selectedPeriod,
     pollInterval: 60000,
   });
 
@@ -155,8 +155,8 @@ function Home() {
         onLeagueChange={setSelectedLeague}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        selectedDate={selectedDate}
-        onDateChange={setSelectedDate}
+        selectedPeriod={selectedPeriod}
+        onPeriodChange={setSelectedPeriod}
         sortBy={sortBy}
         onSortChange={setSortBy}
       />

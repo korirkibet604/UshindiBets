@@ -9,9 +9,9 @@ import { useBetslip } from "../../context/BetslipContext";
 function Fixtures() {
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [sortBy, setSortBy] = useState("start_time");
-  const { matches, loading, error } = useBetikaMatches({ date: selectedDate, sortBy, pollInterval: 120000 });
+  const [selectedPeriod, setSelectedPeriod] = useState(-1);
+  const [sortBy, setSortBy] = useState(1);
+  const { matches, loading, error } = useBetikaMatches({ sortId: sortBy, periodId: selectedPeriod, pollInterval: 120000 });
   const { addSelection, selections } = useBetslip();
   const navigate = useNavigate();
 
@@ -63,8 +63,8 @@ function Fixtures() {
         onLeagueChange={setSelectedLeague}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        selectedDate={selectedDate}
-        onDateChange={setSelectedDate}
+        selectedPeriod={selectedPeriod}
+        onPeriodChange={setSelectedPeriod}
         sortBy={sortBy}
         onSortChange={setSortBy}
       />

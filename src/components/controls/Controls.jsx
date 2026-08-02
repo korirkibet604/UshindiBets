@@ -1,6 +1,24 @@
 import { useState, useEffect } from "react";
 import "./Controls.scss";
 
+const SORT_OPTIONS = [
+  { value: 1, label: "Highlights" },
+  { value: 2, label: "Start Time" },
+  { value: 3, label: "Top Leagues" },
+];
+
+const PERIOD_OPTIONS = [
+  { value: -2, label: "Next 48 Hours" },
+  { value: -1, label: "Today" },
+  { value: 1, label: "Tomorrow" },
+  { value: 2, label: "Day After Tomorrow" },
+  { value: 3, label: "In 3 Days" },
+  { value: 4, label: "In 4 Days" },
+  { value: 5, label: "In 5 Days" },
+  { value: 6, label: "In 6 Days" },
+  { value: 7, label: "In 7 Days" },
+];
+
 function Controls({
   isLive = false,
   leagues = [],
@@ -8,8 +26,8 @@ function Controls({
   onLeagueChange,
   searchQuery,
   onSearchChange,
-  selectedDate,
-  onDateChange,
+  selectedPeriod,
+  onPeriodChange,
   sortBy,
   onSortChange,
 }) {
@@ -41,8 +59,6 @@ function Controls({
 
   const handleSearchChange = (e) => onSearchChange && onSearchChange(e.target.value);
 
-  const todayStr = new Date().toISOString().split("T")[0];
-
   return (
     <div>
       <div className="controls">
@@ -70,30 +86,29 @@ function Controls({
       </div>
 
       <div className="controls-secondary">
-        <div className="date-picker">
-          <i className="fas fa-calendar-alt"></i>
-          <input
-            type="date"
-            value={selectedDate || ""}
-            onChange={(e) => onDateChange && onDateChange(e.target.value || null)}
-            max={todayStr}
-          />
-          {selectedDate && (
-            <button className="clear-date" onClick={() => onDateChange && onDateChange(null)}>
-              <i className="fas fa-times"></i>
-            </button>
-          )}
-        </div>
+        {!isLive && (
+          <div className="period-dropdown">
+            <i className="fas fa-clock"></i>
+            <select
+              value={selectedPeriod ?? -1}
+              onChange={(e) => onPeriodChange && onPeriodChange(Number(e.target.value))}
+            >
+              {PERIOD_OPTIONS.map((p) => (
+                <option key={p.value} value={p.value}>{p.label}</option>
+              ))}
+            </select>
+          </div>
+        )}
 
         <div className="sort-dropdown">
           <i className="fas fa-sort-amount-down"></i>
           <select
-            value={sortBy || "start_time"}
-            onChange={(e) => onSortChange && onSortChange(e.target.value)}
+            value={sortBy ?? 1}
+            onChange={(e) => onSortChange && onSortChange(Number(e.target.value))}
           >
-            <option value="start_time">Start Time</option>
-            <option value="highlights">Highlights</option>
-            <option value="top_leagues">Top Leagues</option>
+            {SORT_OPTIONS.map((s) => (
+              <option key={s.value} value={s.value}>{s.label}</option>
+            ))}
           </select>
         </div>
       </div>

@@ -1,55 +1,38 @@
 // hooks/useLiveEvents.js
-import { useState, useEffect, useRef } from "react";
-import { useBetikaApi } from "./useBetikaApi";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { betikaApi } from "../services/betikaApi";
+import { normalizeMatches } from "../utils/matchUtils";
 
-export const useLiveEvents = (sport = "football", pollInterval = 15000) => {
-  const { getLiveEvents, loading, error } = useBetikaApi();
-  const [events, setEvents] = useState(null);
+export const useLiveEvents = (params = {}, pollInterval = 15000) => {
+  const { sort = 1, sport = "null", subTypeId = "1,186,340" } = params;
+  const [matches, setMatches] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const intervalRef = useRef();
 
-  const fetchLiveEvents = async () => {
+  const fetchLiveEvents = useCallback(async () => {
     try {
-      const liveEvents = await getLiveEvents(sport);
-      setEvents(liveEvents?.data || []);
-    } catch (err) {
-      console.error("Error fetching live events:", err);
+      setError(null);
+      const data = await betikaApi.getLiveMatches({ sort, sport, sub_type_id: subTypeId });
+      setMatches(normalizeMatches(data?.data || []));
+    } catch (e) {
+      setError(e.message || "Failed to load live matches");
+    } finally {
+      setLoading(false);
     }
-  };
-
-  // Start polling
-  const startPolling = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-
-    intervalRef.current = setInterval(() => {
-      fetchLiveEvents();
-    }, pollInterval);
-  };
-
-  // Stop polling
-  const stopPolling = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  };
+  }, [sort, sport, subTypeId]);
 
   useEffect(() => {
-    fetchLiveEvents(); // Initial fetch
-    startPolling(); // Start polling
+    fetchLiveEvents();
+  }, [fetchLiveEvents]);
 
-    return () => {
-      stopPolling(); // Cleanup on unmount
-    };
-  }, [sport]);
+  useEffect(() => {
+    if (!pollInterval || pollInterval <= 0) return;
+    intervalRef.current = setInterval(fetchLiveEvents, pollInterval);
+    return () => clearInterval(intervalRef.current);
+  }, [pollInterval, fetchLiveEvents]);
 
-  return {
-    events,
-    loading,
-    error,
-    refetch: fetchLiveEvents,
-    startPolling,
-    stopPolling,
-  };
+  return { matches, loading, error, refetch: fetchLiveEvents };
 };
+
+export default useLiveEvents;

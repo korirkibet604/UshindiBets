@@ -247,7 +247,7 @@
     margin-bottom: 15px;
     flex-wrap: wrap;
 
-    .date-picker, .sort-dropdown {
+    .date-picker, .sort-dropdown, .period-dropdown {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -278,6 +278,6 @@
     }
     @media screen and (max-width: 576px) {
         justify-content: space-between;
-        .date-picker, .sort-dropdown { padding: 6px 10px; font-size: 0.8rem; }
+        .date-picker, .sort-dropdown, .period-dropdown { padding: 6px 10px; font-size: 0.8rem; }
     }
 }

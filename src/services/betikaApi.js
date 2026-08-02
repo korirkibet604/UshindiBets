@@ -1,7 +1,5 @@
 import axios from "axios";
 
-// Route through the Supabase edge function proxy to avoid CORS issues with the
-// Railway-hosted betika-api (which does not send CORS headers).
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const PROXY_BASE = `${SUPABASE_URL}/functions/v1/betika-proxy`;
 
@@ -22,7 +20,9 @@ apiClient.interceptors.response.use(
 export const betikaApi = {
   health: () => apiClient.get("/api/health").then((r) => r.data),
 
-  // GET /api/matches?limit=&sport_id=&competition_id=&category=&team=&date=
+  // GET /api/matches?page=&limit=&sport_id=&sub_type_id=&sort_id=&period_id=&tab=&esports=
+  // sort_id: 1=highlights, 2=start_time, 3=top_leagues
+  // period_id: -2=next 48h, -1=today, 1=tomorrow, 2=day after tomorrow, etc.
   getMatches: (params = {}) =>
     apiClient.get("/api/matches", { params }).then((r) => r.data),
 
@@ -46,6 +46,27 @@ export const betikaApi = {
   getBoosted: () => apiClient.get("/api/jackpot/boosted").then((r) => r.data),
 
   refresh: () => apiClient.get("/api/refresh").then((r) => r.data),
+
+  // LIVE matches — routed directly to live.betika.com via proxy /live/*
+  // Example: https://live.betika.com/v1/uo/matches?page=1&limit=1000&sub_type_id=1,186,340&sport=null&sort=1
+  getLiveMatches: (params = {}) => {
+    const {
+      page = 1,
+      limit = 1000,
+      sub_type_id = "1,186,340",
+      sort = 1,
+      sport = "null",
+    } = params;
+    return apiClient
+      .get("/live/uo/matches", {
+        params: { page, limit, sub_type_id, sport, sort },
+      })
+      .then((r) => r.data);
+  },
+
+  // LIVE match detail — https://live.betika.com/v1/uo/match?id=<matchId>
+  getLiveMatch: (matchId) =>
+    apiClient.get("/live/uo/match", { params: { id: matchId } }).then((r) => r.data),
 };
 
 export default betikaApi;

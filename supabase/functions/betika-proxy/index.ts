@@ -4,7 +4,8 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-const BETIKA_API_BASE = "https://betika-api-production.up.railway.app";
+const RAILWAY_BASE = "https://betika-api-production.up.railway.app";
+const BETIKA_LIVE_BASE = "https://live.betika.com/v1";
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
@@ -16,7 +17,17 @@ Deno.serve(async (req: Request) => {
     const pathParts = url.pathname.split("/").filter(Boolean);
     const fnIdx = pathParts.findIndex((p) => p === "betika-proxy");
     const apiPath = fnIdx >= 0 ? pathParts.slice(fnIdx + 1).join("/") : pathParts.join("/");
-    const targetUrl = `${BETIKA_API_BASE}/${apiPath}${url.search}`;
+
+    // Route /live/* directly to live.betika.com (bypassing our Railway server)
+    // Everything else goes to the Railway server which transforms the data
+    const isLive = apiPath.startsWith("live/");
+    let targetUrl;
+    if (isLive) {
+      const routePath = apiPath.replace(/^live\//, "");
+      targetUrl = `${BETIKA_LIVE_BASE}/${routePath}${url.search}`;
+    } else {
+      targetUrl = `${RAILWAY_BASE}/${apiPath}${url.search}`;
+    }
 
     const res = await fetch(targetUrl, {
       method: req.method,
