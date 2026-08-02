@@ -18,15 +18,19 @@
     .account-info {
       h2 { font-size: 1.3rem; font-weight: 700; }
       p { color: var(--text-secondary); font-size: 0.9rem; }
-      .balance-pill {
-        display: inline-block;
+      .balance-pills {
+        display: flex;
+        gap: 8px;
         margin-top: 6px;
-        background: var(--highlight);
-        color: white;
+        flex-wrap: wrap;
+      }
+      .balance-pill {
         padding: 4px 12px;
         border-radius: 20px;
         font-weight: 700;
         font-size: 0.85rem;
+        &.real { background: var(--highlight); color: white; }
+        &.bonus { background: rgba(245,158,11,0.2); color: #fbbf24; }
       }
     }
   }
@@ -120,19 +124,24 @@
   .bet-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
   }
 
-  .bet-item {
+  .bet-accordion {
     background: rgba(255,255,255,0.04);
     border-radius: 10px;
-    padding: 14px;
-    .bet-top {
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+
+    .bet-accordion-header {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      &:hover { background: rgba(255,255,255,0.06); }
+
       .bet-status {
         font-size: 0.72rem;
         padding: 3px 8px;
@@ -143,32 +152,80 @@
       .status-won { background: rgba(22,163,74,0.15); color: var(--success); }
       .status-lost { background: rgba(244,63,94,0.15); color: #f43f5e; }
       .status-void { background: rgba(250,204,21,0.15); color: var(--warning); }
-      .bet-type { font-size: 0.78rem; color: var(--text-secondary); text-transform: capitalize; }
-      .bet-date { font-size: 0.78rem; color: var(--text-secondary); margin-left: auto; }
+
+      .bet-type {
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        text-transform: capitalize;
+      }
+      .bet-odds {
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-left: auto;
+      }
+      .bet-stake {
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .accordion-chevron {
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        transition: transform 0.2s;
+      }
     }
-    .bet-selections {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 10px;
-      .bet-sel {
+
+    .bet-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 14px;
+
+      .bet-date {
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        padding: 8px 0 6px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+      .bet-selections {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 10px;
+        .bet-sel {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.85rem;
+          padding: 6px 0;
+          border-bottom: 1px solid rgba(255,255,255,0.04);
+          .sel-match { flex: 1; }
+          .sel-pick { color: var(--text-secondary); font-size: 0.82rem; }
+          .sel-odds { font-weight: 700; }
+          .sel-status {
+            font-size: 0.68rem;
+            padding: 2px 6px;
+            border-radius: 8px;
+            text-transform: capitalize;
+          }
+          .sel-status.pending { background: rgba(14,165,233,0.12); color: var(--accent); }
+          .sel-status.won { background: rgba(22,163,74,0.12); color: var(--success); }
+          .sel-status.lost { background: rgba(244,63,94,0.12); color: #f43f5e; }
+          .sel-status.void { background: rgba(250,204,21,0.12); color: var(--warning); }
+        }
+      }
+      .bet-bottom {
         display: flex;
         justify-content: space-between;
         font-size: 0.85rem;
-        padding: 4px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        .sel-match { flex: 1; }
-        .sel-pick { color: var(--text-secondary); }
-        .sel-odds { font-weight: 700; }
+        padding: 8px 0 12px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        strong { color: var(--text); }
       }
     }
-    .bet-bottom {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      strong { color: var(--text); }
+
+    &.expanded .bet-accordion-body {
+      max-height: 600px;
+      padding: 0 14px 8px;
     }
   }
 

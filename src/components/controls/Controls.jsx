@@ -8,6 +8,10 @@ function Controls({
   onLeagueChange,
   searchQuery,
   onSearchChange,
+  selectedDate,
+  onDateChange,
+  sortBy,
+  onSortChange,
 }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
@@ -37,6 +41,8 @@ function Controls({
 
   const handleSearchChange = (e) => onSearchChange && onSearchChange(e.target.value);
 
+  const todayStr = new Date().toISOString().split("T")[0];
+
   return (
     <div>
       <div className="controls">
@@ -60,6 +66,35 @@ function Controls({
             value={searchQuery || ""}
             onChange={handleSearchChange}
           />
+        </div>
+      </div>
+
+      <div className="controls-secondary">
+        <div className="date-picker">
+          <i className="fas fa-calendar-alt"></i>
+          <input
+            type="date"
+            value={selectedDate || ""}
+            onChange={(e) => onDateChange && onDateChange(e.target.value || null)}
+            max={todayStr}
+          />
+          {selectedDate && (
+            <button className="clear-date" onClick={() => onDateChange && onDateChange(null)}>
+              <i className="fas fa-times"></i>
+            </button>
+          )}
+        </div>
+
+        <div className="sort-dropdown">
+          <i className="fas fa-sort-amount-down"></i>
+          <select
+            value={sortBy || "start_time"}
+            onChange={(e) => onSortChange && onSortChange(e.target.value)}
+          >
+            <option value="start_time">Start Time</option>
+            <option value="highlights">Highlights</option>
+            <option value="top_leagues">Top Leagues</option>
+          </select>
         </div>
       </div>
     </div>

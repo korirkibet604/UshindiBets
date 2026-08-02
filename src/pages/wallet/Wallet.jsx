@@ -18,6 +18,13 @@ function Wallet() {
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState(null);
 
+  // Withdraw state
+  const [withdrawAmount, setWithdrawAmount] = useState(500);
+  const [withdrawMethod, setWithdrawMethod] = useState("mpesa");
+  const [withdrawPhone, setWithdrawPhone] = useState(profile?.phone || "");
+  const [withdrawAccount, setWithdrawAccount] = useState("");
+  const [withdrawing, setWithdrawing] = useState(false);
+
   const fetchTransactions = useCallback(async () => {
     if (!user) return;
     const { data } = await supabase
@@ -46,7 +53,7 @@ function Wallet() {
       return;
     }
     const tx_ref = `ushindi-${user.id.slice(0, 8)}-${Date.now()}`;
-    // @ts-ignore - FlutterwaveCheckout injected by inline script
+    // @ts-ignore
     window.FlutterwaveCheckout({
       public_key: FLW_PUBLIC_KEY,
       tx_ref,
@@ -61,7 +68,7 @@ function Wallet() {
       customizations: {
         title: "UshindiBets Deposit",
         description: `Wallet deposit of ${formatMoney(amt)}`,
-        logo: "https://img.sofascore.com/api/v1/team/2697/image",
+        logo: "/vite.svg",
       },
       callback: async (data) => {
         setProcessing(true);
@@ -100,6 +107,62 @@ function Wallet() {
     });
   };
 
+  const handleWithdraw = async () => {
+    setError(null);
+    const amt = Number(withdrawAmount);
+    if (!amt || amt < 100) {
+      setError("Minimum withdrawal is 100.");
+      return;
+    }
+    if (amt > Number(wallet?.balance || 0)) {
+      setError("Insufficient balance for withdrawal.");
+      return;
+    }
+    if (withdrawMethod === "mpesa" && !withdrawPhone) {
+      setError("Enter your M-Pesa phone number.");
+      return;
+    }
+    if (withdrawMethod === "bank" && !withdrawAccount) {
+      setError("Enter your bank account number.");
+      return;
+    }
+    setWithdrawing(true);
+    try {
+      const { error: wErr } = await supabase.rpc("withdraw_wallet", {
+        p_user_id: user.id,
+        p_amount: amt,
+      });
+      if (wErr) throw wErr;
+
+      await supabase.from("transactions").insert({
+        user_id: user.id,
+        type: "withdrawal",
+        amount: -amt,
+        currency: wallet?.currency || "KES",
+        status: "pending",
+        provider: withdrawMethod,
+        meta: {
+          method: withdrawMethod,
+          phone: withdrawPhone || null,
+          account: withdrawAccount || null,
+        },
+      });
+
+      await refreshWallet();
+      await fetchTransactions();
+      await addNotification({
+        category: "transaction",
+        title: "Withdrawal requested",
+        body: `${formatMoney(amt)} withdrawal via ${withdrawMethod.toUpperCase()} is being processed.`,
+      });
+      setWithdrawAmount(500);
+    } catch (e) {
+      setError(e.message || "Withdrawal failed.");
+    } finally {
+      setWithdrawing(false);
+    }
+  };
+
   return (
     <div className="wallet-page">
       <div className="wallet-header">
@@ -108,11 +171,15 @@ function Wallet() {
           <span className="bal-label">Available Balance</span>
           <span className="bal-amount">{formatMoney(wallet?.balance || 0)}</span>
           <span className="bal-bonus">Bonus: {formatMoney(wallet?.bonus_balance || 0)}</span>
+          <button className="withdraw-btn-top" onClick={() => setTab("withdraw")}>
+            <i className="fas fa-arrow-up"></i> Withdraw
+          </button>
         </div>
       </div>
 
       <div className="wallet-tabs">
         <button className={tab === "deposit" ? "active" : ""} onClick={() => setTab("deposit")}>Deposit</button>
+        <button className={tab === "withdraw" ? "active" : ""} onClick={() => setTab("withdraw")}>Withdraw</button>
         <button className={tab === "history" ? "active" : ""} onClick={() => setTab("history")}>History</button>
       </div>
 
@@ -149,6 +216,75 @@ function Wallet() {
           <div className="deposit-note">
             <i className="fas fa-shield-alt"></i>
             <span>Payments are secured and verified by Flutterwave. We never store your card details.</span>
+          </div>
+        </div>
+      )}
+
+      {tab === "withdraw" && (
+        <div className="deposit-panel">
+          <h3>Withdraw funds</h3>
+          <p className="deposit-sub">Withdrawals are processed within 24 hours to your preferred method.</p>
+
+          <div className="withdraw-methods">
+            <button
+              className={`method-btn ${withdrawMethod === "mpesa" ? "active" : ""}`}
+              onClick={() => setWithdrawMethod("mpesa")}
+            >
+              <i className="fas fa-mobile-alt"></i> M-Pesa
+            </button>
+            <button
+              className={`method-btn ${withdrawMethod === "bank" ? "active" : ""}`}
+              onClick={() => setWithdrawMethod("bank")}
+            >
+              <i className="fas fa-university"></i> Bank
+            </button>
+          </div>
+
+          <div className="amount-input">
+            <label>Amount ({currency})</label>
+            <input
+              type="number"
+              value={withdrawAmount}
+              onChange={(e) => setWithdrawAmount(e.target.value)}
+              min={100}
+              placeholder="Enter amount"
+            />
+            <small className="input-hint">Available: {formatMoney(wallet?.balance || 0)}</small>
+          </div>
+
+          {withdrawMethod === "mpesa" && (
+            <div className="amount-input">
+              <label>M-Pesa Phone Number</label>
+              <input
+                type="tel"
+                value={withdrawPhone}
+                onChange={(e) => setWithdrawPhone(e.target.value)}
+                placeholder="+254 7xx xxx xxx"
+              />
+            </div>
+          )}
+
+          {withdrawMethod === "bank" && (
+            <div className="amount-input">
+              <label>Bank Account Number</label>
+              <input
+                type="text"
+                value={withdrawAccount}
+                onChange={(e) => setWithdrawAccount(e.target.value)}
+                placeholder="Account number"
+              />
+            </div>
+          )}
+
+          {error && <div className="wallet-error">{error}</div>}
+
+          <button className="deposit-btn withdraw-action" onClick={handleWithdraw} disabled={withdrawing}>
+            {withdrawing ? <><i className="fas fa-spinner fa-spin"></i> Processing...</> : <><i className="fas fa-paper-plane"></i> Request Withdrawal</>}
+          </button>
+
+          <div className="deposit-note">
+            <i className="fas fa-info-circle"></i>
+            <span>Bonus balance cannot be withdrawn. It can only be used for eligible sports bets.</span>
           </div>
         </div>
       )}

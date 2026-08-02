@@ -10,7 +10,11 @@ function LiveMatches() {
   const navigate = useNavigate();
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [sortBy, setSortBy] = useState("start_time");
   const { matches, loading, error, lastUpdate } = useBetikaMatches({
+    date: selectedDate,
+    sortBy,
     pollInterval: 30000,
   });
   const { addSelection, selections } = useBetslip();
@@ -63,6 +67,10 @@ function LiveMatches() {
         onLeagueChange={setSelectedLeague}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
+        selectedDate={selectedDate}
+        onDateChange={setSelectedDate}
+        sortBy={sortBy}
+        onSortChange={setSortBy}
       />
 
       <div className="section-header">

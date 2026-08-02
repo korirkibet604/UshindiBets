@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, useCallback } from "react";
 import { detectCountry, getCurrencySymbol, CURRENCIES } from "../services/countryCurrency";
+import { fetchExchangeRates, convertCurrency } from "../services/exchangeRates";
 import { useAuth } from "./AuthContext";
 
 const CurrencyContext = createContext(null);
@@ -9,6 +10,8 @@ export const CurrencyProvider = ({ children }) => {
   const [currency, setCurrency] = useState("KES");
   const [country, setCountry] = useState({ code: "KE", name: "Kenya", flag: "🇰🇪" });
   const [detected, setDetected] = useState(false);
+  const [rates, setRates] = useState({});
+  const [baseCurrency] = useState("KES"); // wallet is stored in KES
 
   // Detect once on mount (if not logged in)
   useEffect(() => {
@@ -29,6 +32,11 @@ export const CurrencyProvider = ({ children }) => {
     });
   }, [profile, detected]);
 
+  // Fetch exchange rates on mount
+  useEffect(() => {
+    fetchExchangeRates().then(setRates);
+  }, []);
+
   const changeCurrency = useCallback(
     async (code) => {
       setCurrency(code);
@@ -45,17 +53,38 @@ export const CurrencyProvider = ({ children }) => {
 
   const symbol = getCurrencySymbol(currency);
 
+  // Convert from base (KES) wallet amount to display currency
+  const convert = useCallback(
+    (amount, from = baseCurrency, to = currency) =>
+      convertCurrency(rates, Number(amount || 0), from, to),
+    [rates, baseCurrency, currency]
+  );
+
   const formatMoney = useCallback(
-    (amount) => {
-      const n = Number(amount || 0);
-      return `${symbol} ${n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    (amount, fromCurrency = baseCurrency) => {
+      const converted = convert(amount, fromCurrency, currency);
+      const n = Number(converted || 0);
+      return `${symbol} ${n.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`;
     },
-    [symbol]
+    [symbol, convert, baseCurrency, currency]
   );
 
   return (
     <CurrencyContext.Provider
-      value={{ currency, country, symbol, currencies: CURRENCIES, changeCurrency, formatMoney }}
+      value={{
+        currency,
+        country,
+        symbol,
+        currencies: CURRENCIES,
+        changeCurrency,
+        formatMoney,
+        convert,
+        rates,
+        baseCurrency,
+      }}
     >
       {children}
     </CurrencyContext.Provider>

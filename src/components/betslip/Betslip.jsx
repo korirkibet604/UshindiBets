@@ -12,6 +12,10 @@ function Betslip() {
     selections,
     stake,
     setStake,
+    useBonus,
+    setUseBonus,
+    canUseBonus,
+    hasLiveSelection,
     visible,
     setVisible,
     removeSelection,
@@ -24,7 +28,7 @@ function Betslip() {
     count,
   } = useBetslip();
   const { formatMoney, currency } = useCurrency();
-  const { user } = useAuth();
+  const { user, wallet } = useAuth();
   const navigate = useNavigate();
   const [confirm, setConfirm] = useState(null);
 
@@ -34,22 +38,13 @@ function Betslip() {
 
   const handleStake = (e) => {
     const v = Number(e.target.value);
-    if (v > 50000) {
-      setStake(50000);
-      return;
-    }
-    if (v < 0) {
-      setStake(0);
-      return;
-    }
+    if (v > 50000) { setStake(50000); return; }
+    if (v < 0) { setStake(0); return; }
     setStake(v);
   };
 
   const handlePlace = async () => {
-    if (!user) {
-      navigate("/login");
-      return;
-    }
+    if (!user) { navigate("/login"); return; }
     setConfirm({ stake, totalOdds, win });
   };
 
@@ -91,10 +86,7 @@ function Betslip() {
                 </div>
               </div>
               <div className="item-odds">{Number(item.odds).toFixed(2)}</div>
-              <button
-                className="remove-item"
-                onClick={() => removeSelection(item.matchId, item.market)}
-              >
+              <button className="remove-item" onClick={() => removeSelection(item.matchId, item.market)}>
                 <i className="fas fa-times"></i>
               </button>
             </div>
@@ -104,6 +96,22 @@ function Betslip() {
 
       {selections.length > 0 && (
         <>
+          {canUseBonus && (
+            <div className="bonus-toggle">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={useBonus}
+                  onChange={(e) => setUseBonus(e.target.checked)}
+                />
+                <span>Use bonus balance ({formatMoney(wallet?.bonus_balance || 0)})</span>
+              </label>
+              {hasLiveSelection && (
+                <small className="bonus-warning">Bonus disabled: live games in slip</small>
+              )}
+            </div>
+          )}
+
           <div className="potential-win">
             <div className="values-container">
               <div>Stake: <strong>{formatMoney(stake)}</strong></div>
@@ -146,6 +154,7 @@ function Betslip() {
           <div className="slip-modal" onClick={(e) => e.stopPropagation()}>
             <h3>Confirm Bet</h3>
             <div className="confirm-row"><span>Stake:</span><strong>{formatMoney(confirm.stake)}</strong></div>
+            {useBonus && <div className="confirm-row"><span>Bonus used:</span><strong>Yes</strong></div>}
             <div className="confirm-row"><span>Total Odds:</span><strong>{confirm.totalOdds.toFixed(2)}</strong></div>
             <div className="confirm-row"><span>Potential Win:</span><strong className="win">{formatMoney(confirm.win)}</strong></div>
             <div className="confirm-actions">

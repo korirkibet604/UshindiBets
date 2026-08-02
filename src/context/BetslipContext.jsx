@@ -1,13 +1,18 @@
 import { createContext, useContext, useState, useCallback, useMemo } from "react";
 import { useAuth } from "./AuthContext";
+import { useNotifications } from "./NotificationContext";
+import { useCurrency } from "./CurrencyContext";
 import { supabase } from "../services/supabaseClient";
 
 const BetslipContext = createContext(null);
 
 export const BetslipProvider = ({ children }) => {
   const { wallet, refreshWallet, user } = useAuth();
+  const { addNotification } = useNotifications();
+  const { formatMoney } = useCurrency();
   const [selections, setSelections] = useState([]);
   const [stake, setStake] = useState(100);
+  const [useBonus, setUseBonus] = useState(false);
   const [visible, setVisible] = useState(false);
   const [placing, setPlacing] = useState(false);
   const [lastError, setLastError] = useState(null);
@@ -19,17 +24,14 @@ export const BetslipProvider = ({ children }) => {
         (s) => s.matchId === sel.matchId && s.market === sel.market
       );
       if (existingIdx >= 0) {
-        // same match+market: replace pick
         const existing = prev[existingIdx];
         if (existing.pick === sel.pick) {
-          // toggle off
           return prev.filter((_, i) => i !== existingIdx);
         }
         const copy = [...prev];
         copy[existingIdx] = sel;
         return copy;
       }
-      // remove any prior selection on the same match+market group (1X2 family)
       const filtered = prev.filter(
         (s) => !(s.matchId === sel.matchId && s.market === sel.market)
       );
@@ -53,6 +55,13 @@ export const BetslipProvider = ({ children }) => {
     [stake, totalOdds]
   );
 
+  // Bonus cannot be used on live games or jackpots
+  const hasLiveSelection = useMemo(
+    () => selections.some((s) => s.isLive),
+    [selections]
+  );
+  const canUseBonus = !hasLiveSelection && Number(wallet?.bonus_balance || 0) > 0;
+
   const placeBet = useCallback(async () => {
     setLastError(null);
     if (!user) {
@@ -68,14 +77,30 @@ export const BetslipProvider = ({ children }) => {
       setLastError("Minimum stake is 10.");
       throw new Error("Invalid stake");
     }
+
+    // Bonus validation
+    if (useBonus) {
+      if (hasLiveSelection) {
+        setLastError("Bonus cannot be used on live games.");
+        throw new Error("Bonus restricted");
+      }
+      const bonusBal = Number(wallet?.bonus_balance || 0);
+      if (bonusBal <= 0) {
+        setLastError("No bonus balance available.");
+        throw new Error("No bonus");
+      }
+    }
+
     const balance = Number(wallet?.balance || 0);
-    if (stakeNum > balance) {
+    const bonusBalance = useBonus ? Number(wallet?.bonus_balance || 0) : 0;
+    const totalAvailable = balance + bonusBalance;
+    if (stakeNum > totalAvailable) {
       setLastError("Insufficient balance. Please deposit.");
       throw new Error("Insufficient balance");
     }
+
     setPlacing(true);
     try {
-      // 1. create bet slip
       const { data: slip, error: slipErr } = await supabase
         .from("bet_slips")
         .insert({
@@ -86,12 +111,12 @@ export const BetslipProvider = ({ children }) => {
           potential_win: potentialWin,
           status: "open",
           currency: wallet?.currency || "KES",
+          meta: useBonus ? { used_bonus: true } : null,
         })
         .select()
         .maybeSingle();
       if (slipErr) throw slipErr;
 
-      // 2. insert selections
       const rows = selections.map((s) => ({
         bet_slip_id: slip.id,
         match_id: s.matchId,
@@ -104,18 +129,29 @@ export const BetslipProvider = ({ children }) => {
       const { error: selErr } = await supabase.from("bet_selections").insert(rows);
       if (selErr) throw selErr;
 
-      // 3. debit wallet
-      const { error: wErr } = await supabase.rpc("debit_wallet", {
-        p_user_id: user.id,
-        p_amount: stakeNum,
-      });
-      if (wErr) {
-        // best-effort: mark slip void
-        await supabase.from("bet_slips").update({ status: "void" }).eq("id", slip.id);
-        throw wErr;
+      // Debit from real balance first, then bonus
+      let remainingStake = stakeNum;
+      if (useBonus && bonusBalance > 0) {
+        const bonusPart = Math.min(bonusBalance, remainingStake);
+        const { error: bErr } = await supabase.rpc("credit_wallet", {
+          p_user_id: user.id,
+          p_amount: -bonusPart,
+          p_bonus: true,
+        });
+        if (bErr) throw bErr;
+        remainingStake -= bonusPart;
+      }
+      if (remainingStake > 0) {
+        const { error: wErr } = await supabase.rpc("debit_wallet", {
+          p_user_id: user.id,
+          p_amount: remainingStake,
+        });
+        if (wErr) {
+          await supabase.from("bet_slips").update({ status: "void" }).eq("id", slip.id);
+          throw wErr;
+        }
       }
 
-      // 4. record transaction
       await supabase.from("transactions").insert({
         user_id: user.id,
         type: "bet_stake",
@@ -124,11 +160,20 @@ export const BetslipProvider = ({ children }) => {
         status: "successful",
         reference: slip.id,
         provider: "system",
-        meta: { slip_id: slip.id, selections: selections.length },
+        meta: { slip_id: slip.id, selections: selections.length, used_bonus: useBonus },
       });
 
       await refreshWallet();
       clearSlip();
+      setUseBonus(false);
+
+      await addNotification({
+        category: "success",
+        title: "Bet placed successfully!",
+        body: `Your ${selections.length > 1 ? "accumulator" : "single"} bet of ${formatMoney(stakeNum)} at ${totalOdds.toFixed(2)} odds has been placed. Good luck!`,
+        link: "/account",
+      });
+
       return slip;
     } catch (e) {
       setLastError(e.message || "Failed to place bet");
@@ -136,7 +181,7 @@ export const BetslipProvider = ({ children }) => {
     } finally {
       setPlacing(false);
     }
-  }, [user, wallet, selections, stake, totalOdds, potentialWin, refreshWallet, clearSlip]);
+  }, [user, wallet, selections, stake, totalOdds, potentialWin, useBonus, hasLiveSelection, refreshWallet, clearSlip, addNotification, formatMoney]);
 
   return (
     <BetslipContext.Provider
@@ -144,6 +189,10 @@ export const BetslipProvider = ({ children }) => {
         selections,
         stake,
         setStake,
+        useBonus,
+        setUseBonus,
+        canUseBonus,
+        hasLiveSelection,
         visible,
         setVisible,
         addSelection,

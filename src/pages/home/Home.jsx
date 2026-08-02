@@ -2,19 +2,60 @@ import "./Home.scss";
 import Controls from "../../components/controls/Controls";
 import { useNavigate } from "react-router-dom";
 import { useBetikaMatches } from "../../hooks/useBetikaMatches";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { normalizeMatches, extractLeagues } from "../../utils/matchUtils";
 import { useBetslip } from "../../context/BetslipContext";
 import { useCurrency } from "../../context/CurrencyContext";
+import { useAuth } from "../../context/AuthContext";
+import { useNotifications } from "../../context/NotificationContext";
+import { supabase } from "../../services/supabaseClient";
+
+const BONUSES = [
+  {
+    type: "welcome",
+    title: "Welcome Bonus",
+    desc: "Get a 100% bonus on your first deposit up to {amt}",
+    amount: 5000,
+    requiresDeposit: true,
+    cta: "Claim Now",
+    icon: "fa-hand-holding-heart",
+  },
+  {
+    type: "acca",
+    title: "Acca Boost",
+    desc: "Get up to 50% bonus on your accumulator wins",
+    amount: 1000,
+    requiresDeposit: false,
+    cta: "Claim Boost",
+    icon: "fa-chart-line",
+  },
+  {
+    type: "freebet",
+    title: "Free Bet Club",
+    desc: "Earn a free bet bonus every week with our loyalty program",
+    amount: 200,
+    requiresDeposit: false,
+    cta: "Join Club",
+    icon: "fa-gift",
+  },
+];
 
 function Home() {
   const navigate = useNavigate();
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [sortBy, setSortBy] = useState("start_time");
   const { addSelection, selections } = useBetslip();
   const { formatMoney } = useCurrency();
+  const { user, refreshWallet } = useAuth();
+  const { addNotification } = useNotifications();
+  const [claimedBonuses, setClaimedBonuses] = useState([]);
+  const [claiming, setClaiming] = useState(null);
 
   const { matches, tags, loading, error, lastUpdate } = useBetikaMatches({
+    date: selectedDate,
+    sortBy,
     pollInterval: 60000,
   });
 
@@ -43,6 +84,53 @@ function Home() {
     return list;
   }, [normalized, selectedLeague, searchQuery]);
 
+  const fetchClaimedBonuses = useCallback(async () => {
+    if (!user) return;
+    const { data } = await supabase
+      .from("bonus_claims")
+      .select("*")
+      .eq("user_id", user.id);
+    setClaimedBonuses(data || []);
+  }, [user]);
+
+  useEffect(() => {
+    fetchClaimedBonuses();
+  }, [fetchClaimedBonuses]);
+
+  const isClaimed = (type) => claimedBonuses.some((b) => b.bonus_type === type);
+
+  const claimBonus = async (bonus) => {
+    if (!user) {
+      navigate("/register");
+      return;
+    }
+    if (isClaimed(bonus.type)) return;
+    setClaiming(bonus.type);
+    try {
+      const { error } = await supabase.rpc("credit_bonus", {
+        p_user_id: user.id,
+        p_amount: bonus.amount,
+        p_bonus_type: bonus.type,
+      });
+      if (error) throw error;
+      await refreshWallet();
+      await fetchClaimedBonuses();
+      await addNotification({
+        category: "marketing",
+        title: `${bonus.title} claimed!`,
+        body: `${formatMoney(bonus.amount)} bonus has been added to your bonus balance. Use it on eligible sports bets.`,
+      });
+    } catch (e) {
+      await addNotification({
+        category: "error",
+        title: "Failed to claim bonus",
+        body: e.message,
+      });
+    } finally {
+      setClaiming(null);
+    }
+  };
+
   const isPicked = (matchId, market, pick) =>
     selections.some((s) => s.matchId === matchId && s.market === market && s.pick === pick);
 
@@ -67,6 +155,10 @@ function Home() {
         onLeagueChange={setSelectedLeague}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
+        selectedDate={selectedDate}
+        onDateChange={setSelectedDate}
+        sortBy={sortBy}
+        onSortChange={setSortBy}
       />
 
       <div className="section-header">
@@ -135,21 +227,36 @@ function Home() {
         </h2>
       </div>
       <div className="promotions">
-        <div className="promo-card">
-          <h3 className="promo-title">Welcome Bonus</h3>
-          <p className="promo-desc">Get a 100% bonus on your first deposit up to {formatMoney(5000)}</p>
-          <button className="promo-btn" onClick={() => navigate("/register")}>Claim Now</button>
-        </div>
-        <div className="promo-card">
-          <h3 className="promo-title">Acca Boost</h3>
-          <p className="promo-desc">Get up to 50% bonus on your accumulator wins</p>
-          <button className="promo-btn" onClick={() => navigate("/fixtures")}>Bet Now</button>
-        </div>
-        <div className="promo-card">
-          <h3 className="promo-title">Free Bet Club</h3>
-          <p className="promo-desc">Earn free bets every week with our loyalty program</p>
-          <button className="promo-btn" onClick={() => navigate("/wallet")}>Join Now</button>
-        </div>
+        {BONUSES.map((bonus) => {
+          const claimed = isClaimed(bonus.type);
+          const descText = bonus.desc.replace("{amt}", formatMoney(bonus.amount));
+          return (
+            <div className={`promo-card ${claimed ? "claimed" : ""}`} key={bonus.type}>
+              <div className="promo-icon">
+                <i className={`fas ${bonus.icon}`}></i>
+              </div>
+              <h3 className="promo-title">{bonus.title}</h3>
+              <p className="promo-desc">{descText}</p>
+              {claimed ? (
+                <button className="promo-btn claimed-btn" disabled>
+                  <i className="fas fa-check"></i> Claimed
+                </button>
+              ) : (
+                <button
+                  className="promo-btn"
+                  onClick={() => claimBonus(bonus)}
+                  disabled={claiming === bonus.type}
+                >
+                  {claiming === bonus.type ? (
+                    <><i className="fas fa-spinner fa-spin"></i> Claiming...</>
+                  ) : (
+                    bonus.cta
+                  )}
+                </button>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { betikaApi } from "../services/betikaApi";
 
 export const useBetikaMatches = (options = {}) => {
-  const { sportId, competitionId, category, team, date, pollInterval = 0, auto = true } = options;
+  const { sportId, competitionId, category, team, date, sortBy, pollInterval = 0, auto = true } = options;
   const [matches, setMatches] = useState([]);
   const [tags, setTags] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,6 +19,7 @@ export const useBetikaMatches = (options = {}) => {
       if (category) params.category = category;
       if (team) params.team = team;
       if (date) params.date = date;
+      if (sortBy) params.sort = sortBy;
       const data = await betikaApi.getMatches(params);
       setMatches(data?.data || []);
       setTags(data?.meta?.tags || []);
@@ -28,7 +29,7 @@ export const useBetikaMatches = (options = {}) => {
     } finally {
       setLoading(false);
     }
-  }, [sportId, competitionId, category, team, date]);
+  }, [sportId, competitionId, category, team, date, sortBy]);
 
   useEffect(() => {
     if (auto) fetchMatches();

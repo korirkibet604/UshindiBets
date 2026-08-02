@@ -239,3 +239,45 @@
         border-radius: 10px;
     }
 }
+
+.controls-secondary {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+
+    .date-picker, .sort-dropdown {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--card-bg);
+        border-radius: 30px;
+        padding: 8px 16px;
+        i { color: var(--text-secondary); font-size: 0.9rem; }
+        input, select {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            outline: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-weight: 500;
+            &::-webkit-calendar-picker-indicator { filter: invert(0.8); cursor: pointer; }
+            option { background: var(--secondary); color: var(--text); }
+        }
+        .clear-date {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 2px;
+            font-size: 0.8rem;
+            &:hover { color: var(--highlight); }
+        }
+    }
+    @media screen and (max-width: 576px) {
+        justify-content: space-between;
+        .date-picker, .sort-dropdown { padding: 6px 10px; font-size: 0.8rem; }
+    }
+}

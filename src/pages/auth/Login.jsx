@@ -1,16 +1,18 @@
 import "./Auth.scss";
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 export default function Login() {
-  const { signIn } = useAuth();
+  const { signIn, session, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  if (!authLoading && session) return <Navigate to="/" replace />;
 
   const submit = async (e) => {
     e.preventDefault();

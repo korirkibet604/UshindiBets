@@ -14,6 +14,7 @@ function Account() {
   const [phone, setPhone] = useState(profile?.phone || "");
   const [saving, setSaving] = useState(false);
   const [bets, setBets] = useState([]);
+  const [expandedBet, setExpandedBet] = useState(null);
   const [limits, setLimits] = useState({ daily: "", weekly: "", monthly: "" });
   const [savingLimits, setSavingLimits] = useState(false);
 
@@ -32,14 +33,8 @@ function Account() {
     if (!user) return;
     const { data } = await supabase.from("responsible_limits").select("*").eq("user_id", user.id);
     const map = {};
-    (data || []).forEach((l) => {
-      map[l.period] = l.max_deposit || "";
-    });
-    setLimits({
-      daily: map.daily || "",
-      weekly: map.weekly || "",
-      monthly: map.monthly || "",
-    });
+    (data || []).forEach((l) => { map[l.period] = l.max_deposit || ""; });
+    setLimits({ daily: map.daily || "", weekly: map.weekly || "", monthly: map.monthly || "" });
   }, [user]);
 
   useEffect(() => {
@@ -87,6 +82,8 @@ function Account() {
     }
   };
 
+  const toggleBet = (id) => setExpandedBet(expandedBet === id ? null : id);
+
   return (
     <div className="account-page">
       <div className="account-header">
@@ -96,7 +93,12 @@ function Account() {
         <div className="account-info">
           <h2>{profile?.display_name || user?.email}</h2>
           <p>{user?.email}</p>
-          <span className="balance-pill">{formatMoney(wallet?.balance || 0)}</span>
+          <div className="balance-pills">
+            <span className="balance-pill real">{formatMoney(wallet?.balance || 0)}</span>
+            <span className="balance-pill bonus">
+              <i className="fas fa-gift"></i> Bonus: {formatMoney(wallet?.bonus_balance || 0)}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -144,25 +146,31 @@ function Account() {
           ) : (
             <div className="bet-list">
               {bets.map((bet) => (
-                <div className="bet-item" key={bet.id}>
-                  <div className="bet-top">
+                <div className={`bet-accordion ${expandedBet === bet.id ? "expanded" : ""}`} key={bet.id}>
+                  <div className="bet-accordion-header" onClick={() => toggleBet(bet.id)}>
                     <span className={`bet-status status-${bet.status}`}>{bet.status}</span>
                     <span className="bet-type">{bet.type}</span>
-                    <span className="bet-date">{new Date(bet.created_at).toLocaleString()}</span>
+                    <span className="bet-odds">@{Number(bet.total_odds).toFixed(2)}</span>
+                    <span className="bet-stake">{formatMoney(bet.stake)}</span>
+                    <i className={`fas fa-chevron-${expandedBet === bet.id ? "up" : "down"} accordion-chevron`}></i>
                   </div>
-                  <div className="bet-selections">
-                    {bet.bet_selections?.map((s) => (
-                      <div className="bet-sel" key={s.id}>
-                        <span className="sel-match">{s.match_name || s.match_id}</span>
-                        <span className="sel-pick">{s.market} • {s.pick}</span>
-                        <span className="sel-odds">@{Number(s.odds).toFixed(2)}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bet-bottom">
-                    <span>Stake: <strong>{formatMoney(bet.stake)}</strong></span>
-                    <span>Odds: <strong>{Number(bet.total_odds).toFixed(2)}</strong></span>
-                    <span>Potential: <strong>{formatMoney(bet.potential_win)}</strong></span>
+                  <div className="bet-accordion-body">
+                    <div className="bet-date">{new Date(bet.created_at).toLocaleString()}</div>
+                    <div className="bet-selections">
+                      {bet.bet_selections?.map((s) => (
+                        <div className="bet-sel" key={s.id}>
+                          <span className="sel-match">{s.match_name || s.match_id}</span>
+                          <span className="sel-pick">{s.market} • {s.pick}</span>
+                          <span className="sel-odds">@{Number(s.odds).toFixed(2)}</span>
+                          <span className={`sel-status status-${s.status}`}>{s.status}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="bet-bottom">
+                      <span>Stake: <strong>{formatMoney(bet.stake)}</strong></span>
+                      <span>Odds: <strong>{Number(bet.total_odds).toFixed(2)}</strong></span>
+                      <span>Potential: <strong>{formatMoney(bet.potential_win)}</strong></span>
+                    </div>
                   </div>
                 </div>
               ))}

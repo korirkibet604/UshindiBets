@@ -1,11 +1,11 @@
 import "./Auth.scss";
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { detectCountry, CURRENCIES } from "../../services/countryCurrency";
 
 export default function Register() {
-  const { signUp } = useAuth();
+  const { signUp, session, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
@@ -18,6 +18,8 @@ export default function Register() {
   const [currency, setCurrency] = useState("KES");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  if (!authLoading && session) return <Navigate to="/" replace />;
 
   useEffect(() => {
     detectCountry().then((d) => {
