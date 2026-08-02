@@ -14,6 +14,8 @@ function Betslip() {
     setStake,
     useBonus,
     setUseBonus,
+    keepSlip,
+    setKeepSlip,
     canUseBonus,
     hasLiveSelection,
     visible,
@@ -111,6 +113,17 @@ function Betslip() {
               )}
             </div>
           )}
+
+          <div className="keep-slip-toggle">
+            <label>
+              <input
+                type="checkbox"
+                checked={keepSlip}
+                onChange={(e) => setKeepSlip(e.target.checked)}
+              />
+              <span>Keep betslip after placing bet</span>
+            </label>
+          </div>
 
           <div className="potential-win">
             <div className="values-container">

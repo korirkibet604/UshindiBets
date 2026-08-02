@@ -1,0 +1,1 @@
+ALTER TABLE bet_slips ADD COLUMN IF NOT EXISTS meta jsonb;

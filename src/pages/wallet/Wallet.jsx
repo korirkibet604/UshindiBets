@@ -213,6 +213,11 @@ function Wallet() {
             {processing ? <><i className="fas fa-spinner fa-spin"></i> Processing...</> : <><i className="fas fa-credit-card"></i> Deposit {formatMoney(amount)}</>}
           </button>
 
+          <div className="deposit-note tax-note">
+            <i className="fas fa-percent"></i>
+            <span><strong>All deposits are subject to a 5% VAT tax.</strong> The tax is deducted at the point of deposit.</span>
+          </div>
+
           <div className="deposit-note">
             <i className="fas fa-shield-alt"></i>
             <span>Payments are secured and verified by Flutterwave. We never store your card details.</span>
@@ -281,6 +286,11 @@ function Wallet() {
           <button className="deposit-btn withdraw-action" onClick={handleWithdraw} disabled={withdrawing}>
             {withdrawing ? <><i className="fas fa-spinner fa-spin"></i> Processing...</> : <><i className="fas fa-paper-plane"></i> Request Withdrawal</>}
           </button>
+
+          <div className="deposit-note tax-note">
+            <i className="fas fa-percent"></i>
+            <span><strong>All withdrawals are subject to a 10% tax.</strong> The tax is deducted from your withdrawal amount before processing.</span>
+          </div>
 
           <div className="deposit-note">
             <i className="fas fa-info-circle"></i>

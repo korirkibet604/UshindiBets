@@ -11,7 +11,7 @@ function Fixtures() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPeriod, setSelectedPeriod] = useState(-1);
   const [sortBy, setSortBy] = useState(1);
-  const { matches, loading, error } = useBetikaMatches({ sortId: sortBy, periodId: selectedPeriod, pollInterval: 120000 });
+  const { matches, loading, loadingMore, error, loadMore, hasMore } = useBetikaMatches({ sortId: sortBy, periodId: selectedPeriod, pollInterval: 120000 });
   const { addSelection, selections } = useBetslip();
   const navigate = useNavigate();
 
@@ -124,6 +124,14 @@ function Fixtures() {
           </div>
         ))}
       </div>
+
+      {hasMore && (
+        <div className="load-more-wrap">
+          <button className="load-more-btn" onClick={loadMore} disabled={loadingMore}>
+            {loadingMore ? <><i className="fas fa-spinner fa-spin"></i> Loading...</> : <>Load More Matches</>}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

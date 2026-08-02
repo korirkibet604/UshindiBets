@@ -13,6 +13,7 @@ export const BetslipProvider = ({ children }) => {
   const [selections, setSelections] = useState([]);
   const [stake, setStake] = useState(100);
   const [useBonus, setUseBonus] = useState(false);
+  const [keepSlip, setKeepSlip] = useState(false);
   const [visible, setVisible] = useState(false);
   const [placing, setPlacing] = useState(false);
   const [lastError, setLastError] = useState(null);
@@ -164,7 +165,7 @@ export const BetslipProvider = ({ children }) => {
       });
 
       await refreshWallet();
-      clearSlip();
+      if (!keepSlip) clearSlip();
       setUseBonus(false);
 
       await addNotification({
@@ -181,7 +182,7 @@ export const BetslipProvider = ({ children }) => {
     } finally {
       setPlacing(false);
     }
-  }, [user, wallet, selections, stake, totalOdds, potentialWin, useBonus, hasLiveSelection, refreshWallet, clearSlip, addNotification, formatMoney]);
+  }, [user, wallet, selections, stake, totalOdds, potentialWin, useBonus, keepSlip, hasLiveSelection, refreshWallet, clearSlip, addNotification, formatMoney]);
 
   return (
     <BetslipContext.Provider
@@ -191,6 +192,8 @@ export const BetslipProvider = ({ children }) => {
         setStake,
         useBonus,
         setUseBonus,
+        keepSlip,
+        setKeepSlip,
         canUseBonus,
         hasLiveSelection,
         visible,

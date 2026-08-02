@@ -11,7 +11,7 @@ function LiveMatches() {
   const [selectedLeague, setSelectedLeague] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState(1);
-  const { matches, loading, error } = useLiveEvents({ sort: sortBy }, 15000);
+  const { matches, loading, loadingMore, error, loadMore, hasMore } = useLiveEvents({ sort: sortBy }, 15000);
   const { addSelection, selections } = useBetslip();
 
   const leagues = useMemo(() => extractLeagues(matches), [matches]);
@@ -125,6 +125,14 @@ function LiveMatches() {
           </div>
         ))}
       </div>
+
+      {hasMore && (
+        <div className="load-more-wrap">
+          <button className="load-more-btn" onClick={loadMore} disabled={loadingMore}>
+            {loadingMore ? <><i className="fas fa-spinner fa-spin"></i> Loading...</> : <>Load More Matches</>}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

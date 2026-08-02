@@ -675,6 +675,26 @@
     animation: pulse 1.5s infinite;
 }
 
+.load-more-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 16px;
+}
+
+.load-more-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    &:hover:not(:disabled) { background: var(--accent); color: white; transform: translateY(-1px); }
+    &:disabled { opacity: 0.6; cursor: not-allowed; }
+}
+
 @keyframes pulse {
     0% {
         opacity: 1;

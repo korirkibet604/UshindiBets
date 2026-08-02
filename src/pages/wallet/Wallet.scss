@@ -168,6 +168,14 @@
     i { color: var(--accent); padding-top: 2px; }
   }
 
+  .deposit-note.tax-note {
+    background: rgba(245,158,11,0.08);
+    border: 1px solid rgba(245,158,11,0.15);
+    i { color: #f59e0b; }
+    span { color: #fbbf24; }
+    strong { color: #fbbf24; font-weight: 700; }
+  }
+
   .wallet-error {
     background: rgba(244,63,94,0.12);
     border: 1px solid rgba(244,63,94,0.3);

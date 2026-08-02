@@ -52,7 +52,7 @@ export const betikaApi = {
   getLiveMatches: (params = {}) => {
     const {
       page = 1,
-      limit = 1000,
+      limit = 50,
       sub_type_id = "1,186,340",
       sort = 1,
       sport = "null",

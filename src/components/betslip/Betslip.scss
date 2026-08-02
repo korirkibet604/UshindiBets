@@ -158,6 +158,20 @@
         }
     }
 
+    .keep-slip-toggle {
+        padding: 8px 16px;
+        border-top: 1px solid var(--light-gray);
+        label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            input { width: 15px; height: 15px; cursor: pointer; }
+        }
+    }
+
     .potential-win {
         padding: 16px;
         background: var(--card-bg);

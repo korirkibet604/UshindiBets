@@ -53,7 +53,7 @@ function Home() {
   const [claimedBonuses, setClaimedBonuses] = useState([]);
   const [claiming, setClaiming] = useState(null);
 
-  const { matches, tags, loading, error, lastUpdate } = useBetikaMatches({
+  const { matches, tags, loading, loadingMore, error, lastUpdate, loadMore, hasMore } = useBetikaMatches({
     sortId: sortBy,
     periodId: selectedPeriod,
     pollInterval: 60000,
@@ -220,6 +220,14 @@ function Home() {
           </div>
         ))}
       </div>
+
+      {hasMore && (
+        <div className="load-more-wrap">
+          <button className="load-more-btn" onClick={loadMore} disabled={loadingMore}>
+            {loadingMore ? <><i className="fas fa-spinner fa-spin"></i> Loading...</> : <>Load More Matches</>}
+          </button>
+        </div>
+      )}
 
       <div className="section-header">
         <h2>
