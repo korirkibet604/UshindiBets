@@ -14,6 +14,12 @@ function Virtuals() {
         </div>
         <div className="virtual-name">Gold Plinko</div>
       </div>
+      <div className="virtual-card rps-card" onClick={() => navigate('/virtuals/rps')}>
+        <div className="virtual-logo rps-logo">
+          <i className="fas fa-hand-scissors"></i>
+        </div>
+        <div className="virtual-name">Rock Paper Scissors</div>
+      </div>
       {
         games.games.map((game, index) => {
           return (
