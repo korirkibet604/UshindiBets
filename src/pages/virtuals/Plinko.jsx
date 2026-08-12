@@ -548,6 +548,3 @@ const Plinko = () => {
 };
 
 export default Plinko;
-
-
-export default Plinko
