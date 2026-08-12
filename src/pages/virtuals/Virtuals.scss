@@ -49,6 +49,20 @@
             display: none;
         }
 
+        .plinko-logo {
+            font-size: 3rem;
+            color: #ffd966;
+            background: linear-gradient(135deg, #0a1628, #1a2f4a) !important;
+        }
+
+        .plinko-card {
+            border: 1px solid rgba(255, 217, 102, 0.3);
+            &:hover {
+                background: rgba(255, 217, 102, 0.1) !important;
+                border-color: #ffd966;
+            }
+        }
+
         @media screen and (max-width: 576px) {
             min-width: calc((100% - 40px)/2);
             gap: 20px;

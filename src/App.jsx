@@ -5,6 +5,7 @@ import Detail from "./pages/detail/Detail";
 import Home from "./pages/home/Home";
 import { createBrowserRouter, RouterProvider, Outlet, Navigate, useLocation } from "react-router-dom";
 import Virtuals from "./pages/virtuals/Virtuals";
+import Plinko from "./pages/virtuals/Plinko";
 import { useEffect, useState } from "react";
 import Fixtures from "./pages/home/Fixtures";
 import LiveMatches from "./pages/home/LiveMatches";
@@ -71,6 +72,7 @@ const AppRoutes = () => {
             { path: "/live", element: <LiveMatches /> },
             { path: "/live/:id", element: <Detail /> },
             { path: "/virtuals", element: <Virtuals /> },
+            { path: "/virtuals/plinko", element: <Plinko /> },
             { path: "/boost", element: <Boost /> },
             { path: "/player/:id", element: <Player /> },
             {
