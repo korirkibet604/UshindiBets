@@ -1,9 +1,10 @@
 import "./Detail.scss";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { betikaApi } from "../../services/betikaApi";
 import { useBetslip } from "../../context/BetslipContext";
 import { normalizeMatch } from "../../utils/matchUtils";
+import { BETTING_FREE } from '../../constants';
 
 function Detail() {
   const [tab, setTab] = useState("overview");
@@ -76,49 +77,102 @@ function Detail() {
   const homeTeam = match.homeTeam || "Home";
   const awayTeam = match.awayTeam || "Away";
 
+  console.log(match)
   return (
     <div className="detail-content" id="detailContent">
-      <div className="detail-header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          <i className="fas fa-arrow-left"></i>
-        </button>
-        <h2>Match Details</h2>
-      </div>
+          <div className="detail-header">
+                <button className="back-btn" id="backBtn" onClick={() => window.history.back()}>
+                    <i className="fas fa-arrow-left"></i>
+                </button>
+                <h2>Match Details</h2>
+            </div>
 
-      <div className="match-card live">
-        <div className="match-status">
-          <span>{match.category} • {match.competition}</span>
-          <span>{match.date} {match.time}</span>
-        </div>
-        <div className="match-teams">
-          <div className="team">
-            <div className="team-name">{homeTeam}</div>
-          </div>
-          <div className="match-score">
-            <div className="score">-:-</div>
-            <div className="match-time">{match.time || "Preview"}</div>
-          </div>
-          <div className="team">
-            <div className="team-name">{awayTeam}</div>
-          </div>
-        </div>
-      </div>
+            <div className="match-card live">
+            <div className="match-status">
+                    <span>{match.competition}</span>
+                    {match.isLive ?
+                        <div className="live-indicator">
+                            <i className="fas fa-circle"></i> LIVE
+                        </div> :
+                        <span>{match.date} {match.time}</span> 
+                    }
+                </div>
+                <div className="match-teams">
+                    <div className="team">
+                        {/*<img
+                            src={`https://img.sofascore.com/api/v1/team/${match.event.homeTeam.id}/image`}
+                            alt=""
+                            className="team-logo"
+                        />*/}
+                        <div className="team-name">{match.homeTeam}</div>
+                    </div>
+                    <div className="match-score">
+                        <div className="score">
+                            <span className={match.isLive && ["Started", "1st half", "2nd half"].includes(match.eventStatus) ? "live-score" : "" }>
+                                {match.currentScore}
+                            </span>
+                        </div>
+                        <div className="match-time">
+                        {match.isLive ?
+                            (match.eventStatus === "Halftime" ? "HT" :
+                            `${match.matchTime}'`)
+                            : new Date(match.startTime).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+                        }
+                        </div>
+                    </div>
+                    <div className="team">
+                        {/*<img
+                            src={`https://img.sofascore.com/api/v1/team/${match.event.awayTeam.id}/image`}
+                            alt=""
+                            className="team-logo"
+                        />*/}
+                        <div className="team-name">{match.awayTeam}</div>
+                    </div>
+                </div>
+                {BETTING_FREE && <div className="match-info">
+                    <span><i className="fas fa-stadium"></i>{/*match.event.venue?.name*/}</span>
+                    <span><i className="fas fa-user"></i>{/*match.event.venue?.capacity*/}</span>
+                    <span><i className="fas fa-whistle"></i> Michael Oliver</span>
+                </div>}
+                {BETTING_FREE && <NavLink to="/" className="highlight-btn">
+                    <i className="fas fa-play-circle"></i> Watch Live
+                </NavLink>}
+                {
+                    /*BETTING_FREE ? (<div className="match-info">
+                        <span><i className="fas fa-stadium"></i>{match.venue}</span>
+                    </div>) :*/
+                        !BETTING_FREE && markets.length > 0 && (<div className="betting-options">
+                            <div className="bet-option">
+                                <div className="option-name">Home</div>
+                                <div className="option-odds">{match.odds.home.toFixed(2)}</div>
+                            </div>
+                            <div className="bet-option">
+                                <div className="option-name">Draw</div>
+                                <div className="option-odds">{match.odds.draw.toFixed(2)}</div>
+                            </div>
+                            <div className="bet-option">
+                                <div className="option-name">Away</div>
+                                <div className="option-odds">{match.odds.away.toFixed(2)}</div>
+                            </div>
+                        </div>)
+                }
+            </div>
 
       <div className="tabs">
         <div className={`tab ${tab === "overview" && "active"}`} onClick={() => setTab("overview")}>
-          Overview
+          Top Markets
         </div>
         <div className={`tab ${tab === "markets" && "active"}`} onClick={() => setTab("markets")}>
-          Markets
+          All Markets
         </div>
-        <div className={`tab ${tab === "stats" && "active"}`} onClick={() => setTab("stats")}>
+        {/*<div className={`tab ${tab === "stats" && "active"}`} onClick={() => setTab("stats")}>
           Statistics
-        </div>
+        </div>*/}
       </div>
 
       {tab === "overview" && (
         <div className="tab-content active">
-          <h2>Match Info</h2>
+          {/*<h2>Match Info</h2>
           <div className="info-grid">
             <div className="info-item"><strong>Category</strong><span>{match.category}</span></div>
             <div className="info-item"><strong>Competition</strong><span>{match.competition}</span></div>
@@ -126,10 +180,10 @@ function Detail() {
             <div className="info-item"><strong>Time</strong><span>{match.time}</span></div>
             <div className="info-item"><strong>Sport</strong><span>{match.sportName}</span></div>
             <div className="info-item"><strong>Markets</strong><span>{match.sideBets || markets.length}</span></div>
-          </div>
+          </div>*/}
           {markets.length > 0 && (
             <>
-              <h2>Top Markets</h2>
+              {/*<h2>Top Markets</h2>*/}
               <div className="markets-preview">
                 {markets.slice(0, 3).map((m, i) => (
                   <div className="market-block" key={i}>
@@ -156,7 +210,7 @@ function Detail() {
 
       {tab === "markets" && (
         <div className="tab-content active">
-          <h2>All Markets ({markets.length})</h2>
+          {/*<h2>All Markets ({markets.length})</h2>*/}
           {markets.length === 0 ? (
             <div className="no-data">No market data available for this match yet.</div>
           ) : (

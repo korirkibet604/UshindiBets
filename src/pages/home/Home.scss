@@ -323,7 +323,7 @@
                 margin-top: 10px;
 
                 .bet-option {
-                    background: rgba(255, 255, 255, 0.05);
+                    background: var(--option-bg);
                     border-radius: 6px;
                     padding: 6px;
                     text-align: center;
@@ -337,7 +337,12 @@
 
                     &.selected {
                         background: var(--accent);
-                        box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.5);
+                        border-color: var(--accent);
+                        box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.5);
+                        color: white;
+                        .option-name{
+                            color: rgba(255,255,255,0.85);
+                        }
                     }
 
                     .option-name {

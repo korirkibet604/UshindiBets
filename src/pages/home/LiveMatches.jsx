@@ -93,7 +93,12 @@ function LiveMatches() {
               </div>
               <div className="match-score">
                 <div className="score">{match.currentScore || "-:-"}</div>
-                <div className="match-time">{match.matchTime || match.eventStatus || "LIVE"}</div>
+                <div className="match-time" style={{color: "red"}}>
+                  {match.isLive ?
+                    (match.eventStatus === "Halftime" ? "HT" :
+                    `${match.matchTime}'`) : new Date(match.startTime).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+                  }
+                </div>
               </div>
               <div className="team">
                 <div className="team-name">{match.awayTeam}</div>

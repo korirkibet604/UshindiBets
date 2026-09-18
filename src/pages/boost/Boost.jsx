@@ -240,6 +240,8 @@ function Boost() {
                 .filter(Boolean)
                 .join(" — ");
 
+              const startTime = m.start_time
+
               // Odds come as an array under m.odds with display "1" | "X" | "2"
               const oddsArr = m.odds || [];
               const findOdd = (display) => {
@@ -254,6 +256,11 @@ function Boost() {
 
               return (
                 <div className="jackpot-match" key={mid}>
+                  <div className="meta">
+                    <span className="jm-league">{league}</span>
+                    <span className="jm-date">{startTime}</span>
+                  </div>
+                  <div className="content">
                   <div className="jm-info">
                     <span className="jm-num">{i + 1}</span>
                     <div className="jm-teams">
@@ -261,7 +268,6 @@ function Boost() {
                       <span className="jm-vs">vs</span>
                       <span className="jm-team">{away}</span>
                     </div>
-                    <span className="jm-league">{league}</span>
                   </div>
                   <div className="jm-odds">
                     {[
@@ -281,6 +287,7 @@ function Boost() {
                         <strong>{o.v ? Number(o.v).toFixed(2) : "-"}</strong>
                       </button>
                     ))}
+                  </div>
                   </div>
                 </div>
               );
