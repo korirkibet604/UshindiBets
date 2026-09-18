@@ -42,6 +42,7 @@ export const betikaApi = {
 
   // GET /api/jackpot
   getJackpot: () => apiClient.get("/api/jackpot").then((r) => r.data),
+  getJackpotEvents: (eventId) => apiClient.get(`/api/jackpot/${eventId}`).then((r) => r.data),
   getPreviousJackpots: () => apiClient.get("/api/jackpot/previous").then((r) => r.data),
   getBoosted: () => apiClient.get("/api/jackpot/boosted").then((r) => r.data),
 
